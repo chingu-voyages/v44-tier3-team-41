@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/chingu-voyages/v44-tier3-team-41#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
