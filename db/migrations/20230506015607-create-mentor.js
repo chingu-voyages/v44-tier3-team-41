@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Mentees', {
+    await queryInterface.createTable('Mentors', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -34,11 +34,11 @@ module.exports = {
       profile_img: {
         type: Sequelize.STRING
       },
-      goal: {
-        type: Sequelize.STRING
-      },
-      mentorId: {
+      yrsExp: {
         type: Sequelize.INTEGER
+      },
+      stack: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -51,6 +51,6 @@ module.exports = {
     }, options);
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Mentees', options);
+    await queryInterface.dropTable('Mentors', options);
   }
 };

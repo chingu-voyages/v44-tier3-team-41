@@ -4,7 +4,7 @@ const {
 } = require('sequelize');
 const bcrypt = require('bcryptjs');
 module.exports = (sequelize, DataTypes) => {
-  class Mentee extends Model {
+  class Mentor extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Mentee.init({
+  Mentor.init({
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     hashedPassword: DataTypes.STRING,
@@ -22,11 +22,11 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     country: DataTypes.STRING,
     profile_img: DataTypes.STRING,
-    goal: DataTypes.STRING,
-    mentorId: DataTypes.INTEGER
+    yrsExp: DataTypes.INTEGER,
+    stack: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Mentee',
+    modelName: 'Mentor',
   });
-  return Mentee;
+  return Mentor;
 };
