@@ -15,13 +15,33 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Mentor.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    hashedPassword: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2, 40],
+      },
+    },
+    email: {
+      type: DataTypes.STRING, allowNull: false, validate: {
+        len: [5, 300],
+        isEmail: true,
+      }
+    },
+    hashedPassword: {
+      type: DataTypes.STRING.BINARY,
+      allowNull: false,
+      validate: {
+        len: [60, 60],
+      },
+    },
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     country: DataTypes.STRING,
-    profile_img: DataTypes.STRING,
+    profileImg: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     yrsExp: DataTypes.INTEGER,
     stack: DataTypes.STRING
   }, {

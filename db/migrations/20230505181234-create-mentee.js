@@ -14,13 +14,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(40),
+        allowNull: false,
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(300),
+        allowNull: false,
+        unique: true
       },
       hashedPassword: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING.BINARY,
+        allowNull: false
       },
       city: {
         type: Sequelize.STRING
@@ -31,8 +35,9 @@ module.exports = {
       country: {
         type: Sequelize.STRING
       },
-      profile_img: {
-        type: Sequelize.STRING
+      profileImg: {
+        type: Sequelize.STRING,
+        allowNull: true
       },
       goal: {
         type: Sequelize.STRING
@@ -42,12 +47,14 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     }, options);
   },
   async down(queryInterface, Sequelize) {

@@ -11,17 +11,46 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Mentee.belongsTo(models.Mentor, {
+        foreignKey: 'mentorId',
+      })
+      Mentee.hasMany(models.Message, {
+        foreignKey: 'ownerMen',
+        onDelete: 'CASCADE'
+      })
+      Mentee.hasMany(models.Channel, {
+        foreignKey: 'menteeId'
+      })
     }
   }
   Mentee.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    hashedPassword: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2, 40],
+      },
+    },
+    email: {
+      type: DataTypes.STRING, allowNull: false, validate: {
+        len: [5, 300],
+        isEmail: true,
+      }
+    },
+    hashedPassword: {
+      type: DataTypes.STRING.BINARY,
+      allowNull: false,
+      validate: {
+        len: [60, 60],
+      },
+    },
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     country: DataTypes.STRING,
-    profile_img: DataTypes.STRING,
+    profileImg: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     goal: DataTypes.STRING,
     mentorId: DataTypes.INTEGER
   }, {
