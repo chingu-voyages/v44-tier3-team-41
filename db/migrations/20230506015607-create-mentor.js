@@ -42,7 +42,7 @@ module.exports = {
       yrsExp: {
         type: Sequelize.INTEGER
       },
-      stack: {
+      expertise: {
         type: Sequelize.STRING
       },
       createdAt: {

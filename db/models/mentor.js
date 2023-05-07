@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     yrsExp: DataTypes.INTEGER,
-    stack: DataTypes.STRING
+    expertise: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Mentor',
