@@ -6,7 +6,9 @@ import SearchBar from "./SearchBar";
 const navigation = [
   { name: "Hire talents", href: "#" },
   { name: "Become a mentor", href: "#" },
-  { name: "Find a mentor", href: "#" },
+  { name: "Find a mentor", href: "/MentorListPage" },
+  { name: "About", href: "/About" },
+  { name: "Contact", href: "/Contact" },
 ];
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,16 +17,16 @@ export default function Hero() {
     <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
-          className="flex items-center justify-between p-6 lg:px-8"
+          className="flex items-center justify-between p-2 lg:px-8"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="">
               <span className="sr-only">DevelopMe</span>
               <img
-                className="h-8 w-auto"
-                src="https://res.cloudinary.com/yilin1234/image/upload/v1683264706/placeholder_drrcla.png"
-                alt=""
+                className="w-auto h-20"
+                src="dm_logo_wht_blue.png"
+                alt="dm_logo"
               />
             </a>
           </div>
