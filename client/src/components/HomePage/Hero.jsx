@@ -6,7 +6,9 @@ import SearchBar from "./SearchBar";
 const navigation = [
   { name: "Hire talents", href: "#" },
   { name: "Become a mentor", href: "#" },
-  { name: "Find a mentor", href: "#" },
+  { name: "Find a mentor", href: "/MentorListPage" },
+  { name: "About", href: "/About" },
+  { name: "Contact", href: "/Contact" },
 ];
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
