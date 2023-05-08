@@ -22,9 +22,9 @@ export default function Hero() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">DevelopMe</span>
               <img
-                className="h-8 w-auto"
-                src="https://res.cloudinary.com/yilin1234/image/upload/v1683264706/placeholder_drrcla.png"
-                alt=""
+                className="w-auto h-14"
+                src="dm_logo_wht_blue.png"
+                alt="dm_logo"
               />
             </a>
           </div>
