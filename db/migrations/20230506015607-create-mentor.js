@@ -1,6 +1,5 @@
-'use strict';
 /** @type {import('sequelize-cli').Migration} */
-let options = {};
+const options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;
 }
@@ -11,7 +10,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
         type: Sequelize.STRING(40),
@@ -20,30 +19,33 @@ module.exports = {
       email: {
         type: Sequelize.STRING(300),
         allowNull: false,
-        unique: true
+        unique: true,
       },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
-        allowNull: false
+        allowNull: false,
       },
       city: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       state: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       country: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       profileImg: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
       },
       yrsExp: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       expertise: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      },
+      role: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
@@ -59,5 +61,5 @@ module.exports = {
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Mentors', options);
-  }
+  },
 };

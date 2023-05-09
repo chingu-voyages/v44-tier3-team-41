@@ -18,7 +18,8 @@ module.exports = {
         country: "United States",
         profileImg: "http://dummyimage.com/187x100.png/ff4444/ffffff",
         yrsExp: 1,
-        expertise: "JavaScript, Express, MongoDB"
+        expertise: "JavaScript, HTML, CSS"
+        , role: "Frontend developer"
       },
       {
         name: "Nata Videan",
@@ -30,6 +31,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/140x100.png/cc0000/ffffff",
         yrsExp: 2,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: "Full-stack developer"
       },
       {
         name: "Hynda Lytton",
@@ -41,6 +43,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/116x100.png/cc0000/ffffff",
         yrsExp: 3,
         expertise: "JavaScript, Express, MongoDB"
+        , role: "Full-stack developer"
       },
       {
         name: "Heindrick Belliveau",
@@ -51,7 +54,8 @@ module.exports = {
         country: "United States",
         profileImg: "http://dummyimage.com/213x100.png/5fa2dd/ffffff",
         yrsExp: 4,
-        expertise: "React, Python, Flask, SQLAlchemy"
+        expertise: "Python, Flask, SQLAlchemy",
+        role: "Backend developer"
       },
       {
         name: "Jerri Babington",
@@ -63,6 +67,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/105x100.png/cc0000/ffffff",
         yrsExp: 5,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Dennet Rumbellow",
@@ -74,6 +79,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/197x100.png/5fa2dd/ffffff",
         yrsExp: 6,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Margeaux Heinel",
@@ -84,7 +90,8 @@ module.exports = {
         country: "South Africa",
         profileImg: "http://dummyimage.com/219x100.png/dddddd/000000",
         yrsExp: 7,
-        expertise: "JavaScript, Express, MongoDB"
+        expertise: "JavaScript, HTML, CSS"
+        , role: "Frontend developer"
       },
       {
         name: "Brenden Bucktrout",
@@ -96,6 +103,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/118x100.png/cc0000/ffffff",
         yrsExp: 8,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Derek Windley",
@@ -107,6 +115,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/213x100.png/cc0000/ffffff",
         yrsExp: 9,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Kelsy Extence",
@@ -118,6 +127,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/221x100.png/cc0000/ffffff",
         yrsExp: 10,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Ora Hargraves",
@@ -129,6 +139,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/123x100.png/ff4444/ffffff",
         yrsExp: 11,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Regan Fery",
@@ -140,6 +151,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/140x100.png/5fa2dd/ffffff",
         yrsExp: 12,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: ""
       },
       {
         name: "Norah Casserly",
@@ -151,6 +163,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/236x100.png/dddddd/000000",
         yrsExp: 13,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Andras Meindl",
@@ -162,6 +175,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/143x100.png/ff4444/ffffff",
         yrsExp: 14,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Charlotte Macknish",
@@ -173,6 +187,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/240x100.png/ff4444/ffffff",
         yrsExp: 15,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: ""
       },
       {
         name: "Alyss Romei",
@@ -184,6 +199,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/105x100.png/dddddd/000000",
         yrsExp: 16,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Merrill Stanmore",
@@ -195,6 +211,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/128x100.png/ff4444/ffffff",
         yrsExp: 17,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: ""
       },
       {
         name: "Willy D'Ambrosi",
@@ -206,6 +223,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/116x100.png/5fa2dd/ffffff",
         yrsExp: 18,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Bartholemy Garlic",
@@ -217,6 +235,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/151x100.png/dddddd/000000",
         yrsExp: 19,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Nicholle Brigman",
@@ -228,6 +247,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/147x100.png/5fa2dd/ffffff",
         yrsExp: 20,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Adolf Lingwood",
@@ -239,6 +259,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/169x100.png/dddddd/000000",
         yrsExp: 21,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Jeth Mioni",
@@ -250,6 +271,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/173x100.png/cc0000/ffffff",
         yrsExp: 22,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: ""
       },
       {
         name: "Natassia Garrett",
@@ -261,6 +283,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/113x100.png/cc0000/ffffff",
         yrsExp: 23,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Manuel Harrod",
@@ -272,6 +295,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/226x100.png/5fa2dd/ffffff",
         yrsExp: 24,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Gabriello Bessell",
@@ -283,6 +307,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/168x100.png/5fa2dd/ffffff",
         yrsExp: 25,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Waverly McGuiness",
@@ -294,6 +319,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/102x100.png/ff4444/ffffff",
         yrsExp: 26,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: ""
       },
       {
         name: "Pollyanna Leaman",
@@ -305,6 +331,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/208x100.png/ff4444/ffffff",
         yrsExp: 27,
         expertise: "Java, Python, React, Angular, PostgreSQL"
+        , role: ""
       },
       {
         name: "Dylan Laurenz",
@@ -316,6 +343,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/109x100.png/5fa2dd/ffffff",
         yrsExp: 28,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       },
       {
         name: "Deena Lackney",
@@ -327,6 +355,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/114x100.png/5fa2dd/ffffff",
         yrsExp: 29,
         expertise: "React, Python, Flask, SQLAlchemy"
+        , role: ""
       },
       {
         name: "Ossie Innman",
@@ -338,6 +367,7 @@ module.exports = {
         profileImg: "http://dummyimage.com/210x100.png/dddddd/000000",
         yrsExp: 30,
         expertise: "JavaScript, Express, MongoDB"
+        , role: ""
       }
     ]
 
