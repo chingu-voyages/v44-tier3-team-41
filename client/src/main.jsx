@@ -11,7 +11,7 @@ import "./index.css";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <HomePage />,
   },
   {

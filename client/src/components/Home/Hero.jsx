@@ -5,16 +5,8 @@ import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 
 const navigation = [
-<<<<<<< HEAD:client/src/components/HomePage/Hero.jsx
-  { name: "Hire talents", href: "#" },
-  { name: "Become a mentor", href: "#" },
-  { name: "Find a mentor", href: "/MentorListPage" },
-  { name: "About", href: "/About" },
-  { name: "Contact", href: "/Contact" },
-=======
   { name: "Become a mentor", href: "/signup" },
   { name: "Find a mentor", href: "#" },
->>>>>>> feature/login_signup_change_landing_page:client/src/components/Home/Hero.jsx
 ];
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,19 +19,11 @@ export default function Hero() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-<<<<<<< HEAD:client/src/components/HomePage/Hero.jsx
-            <a href="/" className="">
-              <span className="sr-only">DevelopMe</span>
-              <img
-                className="w-auto h-20"
-                src="dm_logo_wht_blue.png"
-=======
             <a className="-m-1.5 p-1.5">
               <span className="sr-only">DevelopMe</span>
               <img
                 className="w-auto h-20"
                 src="../../../public/dm_logo_wht_blue.png"
->>>>>>> feature/login_signup_change_landing_page:client/src/components/Home/Hero.jsx
                 alt="dm_logo"
               />
             </a>

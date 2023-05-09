@@ -9,7 +9,7 @@ const MentorDetail = () => {
       <div className="bg-gray-300">
         {" "}
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Link to={"/home"}>
+          <Link to={"/"}>
             <img
               className="mx-auto h-12 w-auto"
               src="../../../public/dm_logo_clear.png"

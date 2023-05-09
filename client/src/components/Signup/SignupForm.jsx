@@ -18,7 +18,7 @@ export default function SignupForm() {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 pb-10 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Link to={"/home"}>
+          <Link to={"/"}>
             <img
               className="mx-auto h-12 w-auto"
               src="../../../public/dm_logo_clear.png"
