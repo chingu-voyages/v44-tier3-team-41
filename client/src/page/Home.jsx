@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "../components/HomePage/Hero";
-import MiddleSection from "../components/HomePage/MiddleSection";
-import Team from "../components/HomePage/Team";
-import Footer from "../components/HomePage/Footer";
+import Hero from "../components/Home/Hero";
+import MiddleSection from "../components/Home/MiddleSection";
+import Team from "../components/Home/Team";
+import Footer from "../components/Home/Footer";
 
 const HomePage = () => {
   return (

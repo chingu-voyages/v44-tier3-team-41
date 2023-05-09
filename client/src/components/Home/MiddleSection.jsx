@@ -1,6 +1,4 @@
 import {
-  CloudIcon,
-  LockClosedIcon,
   PencilIcon,
   CircleStackIcon,
   Square3Stack3DIcon,
@@ -27,16 +25,6 @@ const features = [
     name: "DevOps Engineer",
     description: "100 mentors",
     icon: ArrowPathRoundedSquareIcon,
-  },
-  {
-    name: "Security Engineer",
-    description: "100 mentors",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Cloud Architect",
-    description: "100 mentors",
-    icon: CloudIcon,
   },
 ];
 

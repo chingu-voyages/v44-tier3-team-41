@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Hire talents", href: "#" },
-  { name: "Become a mentor", href: "#" },
+  { name: "Become a mentor", href: "/signup" },
   { name: "Find a mentor", href: "#" },
 ];
 export default function Hero() {
@@ -19,12 +19,12 @@ export default function Hero() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a className="-m-1.5 p-1.5">
               <span className="sr-only">DevelopMe</span>
               <img
-                className="h-8 w-auto"
-                src="https://res.cloudinary.com/yilin1234/image/upload/v1683264706/placeholder_drrcla.png"
-                alt=""
+                className="w-auto h-20"
+                src="../../../public/dm_logo_wht_blue.png"
+                alt="dm_logo"
               />
             </a>
           </div>
@@ -50,18 +50,22 @@ export default function Hero() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Log in
-            </a>
-            <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900 ml-4"
-            >
-              Sign up
-            </a>
+            <Link to={`/login`}>
+              <button
+                type="button"
+                className="rounded-md border border-solid border-black bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-50"
+              >
+                Log in
+              </button>
+            </Link>
+            <Link to={`/signup`}>
+              <button
+                type="button"
+                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 ml-4"
+              >
+                Sign up
+              </button>
+            </Link>
           </div>
         </nav>
         <Dialog
@@ -97,7 +101,7 @@ export default function Hero() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
                     </a>
