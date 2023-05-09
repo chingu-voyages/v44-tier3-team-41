@@ -1,6 +1,4 @@
 import {
-  CloudIcon,
-  LockClosedIcon,
   PencilIcon,
   CircleStackIcon,
   Square3Stack3DIcon,
