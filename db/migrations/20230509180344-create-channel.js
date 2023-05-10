@@ -1,9 +1,6 @@
 'use strict';
+
 /** @type {import('sequelize-cli').Migration} */
-let options = {};
-if (process.env.NODE_ENV === 'production') {
-  options.schema = process.env.SCHEMA;
-}
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Channels', {
@@ -21,17 +18,15 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-    }, options);
+        type: Sequelize.DATE
+      }
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Channels', options);
+    await queryInterface.dropTable('Channels');
   }
 };

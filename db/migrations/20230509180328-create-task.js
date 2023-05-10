@@ -1,43 +1,38 @@
 'use strict';
+
 /** @type {import('sequelize-cli').Migration} */
-let options = {};
-if (process.env.NODE_ENV === 'production') {
-  options.schema = process.env.SCHEMA;
-}
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Messages', {
+    await queryInterface.createTable('Tasks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      channelId: {
+      mentorId: {
         type: Sequelize.INTEGER
       },
-      ownerMen: {
+      menteeId: {
         type: Sequelize.INTEGER
       },
-      ownerMon: {
-        type: Sequelize.INTEGER
+      description: {
+        type: Sequelize.STRING
       },
-      message: {
+      deadline: {
         type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-    }, options);
+        type: Sequelize.DATE
+      }
+    });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Messages', options);
+    await queryInterface.dropTable('Tasks');
   }
 };

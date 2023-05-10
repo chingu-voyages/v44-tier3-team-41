@@ -1,8 +1,8 @@
 const user = {
-  name: "Rebecca Nicholas",
-  role: "Product Designer",
+  name: 'Rebecca Nicholas',
+  role: 'Product Designer',
   imageUrl:
-    "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 };
 
 export default function Banner() {
@@ -22,7 +22,7 @@ export default function Banner() {
               />
             </div>
             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
-              <p className="text-sm font-medium text-gray-600"></p>
+              <p className="text-sm font-medium text-gray-600" />
               <p className="text-xl font-bold text-gray-900 sm:text-2xl">
                 {user.name}
               </p>

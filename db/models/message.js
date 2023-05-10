@@ -1,7 +1,9 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Message extends Model {
     /**
@@ -10,7 +12,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Message.belongsTo(models.Mentee, {
+        foreignKey: 'ownerMen',
+      });
+      Message.belongsTo(models.Mentor, {
+        foreignKey: 'ownerMon',
+      });
+      Message.belongsTo(models.Channel, {
+        foreignKey: 'channelId'
+      });
     }
   }
   Message.init({

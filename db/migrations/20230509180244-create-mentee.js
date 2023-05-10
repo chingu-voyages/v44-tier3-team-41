@@ -1,6 +1,5 @@
-'use strict';
 /** @type {import('sequelize-cli').Migration} */
-let options = {};
+const options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;
 }
@@ -36,10 +35,21 @@ module.exports = {
         type: Sequelize.STRING
       },
       profileImg: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
       goal: {
+        type: Sequelize.STRING
+      },
+      skill: {
+        type: Sequelize.STRING
+      },
+      about: {
+        type: Sequelize.STRING
+      },
+      occupation: {
+        type: Sequelize.STRING
+      },
+      project: {
         type: Sequelize.STRING
       },
       mentorId: {

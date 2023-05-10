@@ -1,7 +1,9 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Task extends Model {
     /**
@@ -10,7 +12,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Task.belongsTo(models.Mentee, {
+        foreignKey: 'menteeId',
+      });
+      Task.belongsTo(models.Mentor, {
+        foreignKey: 'mentorId',
+      });
     }
   }
   Task.init({

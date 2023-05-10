@@ -1,7 +1,8 @@
+'use strict';
+
 const {
-  Model,
+  Model
 } = require('sequelize');
-const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
   class Mentee extends Model {
@@ -19,6 +20,9 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       });
       Mentee.hasMany(models.Channel, {
+        foreignKey: 'menteeId',
+      });
+      Mentee.hasMany(models.Task, {
         foreignKey: 'menteeId',
       });
     }
@@ -54,11 +58,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     goal: DataTypes.STRING,
+    skill: DataTypes.STRING,
     about: DataTypes.STRING,
     occupation: DataTypes.STRING,
-    projects: DataTypes.STRING,
-    skills: DataTypes.STRING,
-    mentorId: DataTypes.INTEGER,
+    project: DataTypes.STRING,
+    mentorId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Mentee',

@@ -1,7 +1,6 @@
-const {
-  Model,
-} = require('sequelize');
-const bcrypt = require('bcryptjs');
+'use strict';
+
+const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Mentor extends Model {
@@ -11,7 +10,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Mentor.hasMany(models.Mentee, {
+        foreignKey: 'mentorId'
+      });
+      Mentor.hasMany(models.Message, {
+        foreignKey: 'ownerMon',
+        onDelete: 'CASCADE',
+      });
+      Mentor.hasMany(models.Channel, {
+        foreignKey: 'mentorId',
+      });
+      Mentor.hasMany(models.Task, {
+        foreignKey: 'mentorId',
+      });
     }
   }
   Mentor.init({
@@ -48,8 +59,7 @@ module.exports = (sequelize, DataTypes) => {
     expertise: DataTypes.STRING,
     role: DataTypes.STRING,
     about: DataTypes.STRING,
-    company: DataTypes.STRING,
-
+    company: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Mentor',

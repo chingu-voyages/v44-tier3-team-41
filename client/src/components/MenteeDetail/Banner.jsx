@@ -1,8 +1,8 @@
 const user = {
-  name: "John Smith",
-  role: "Frontend Developer",
+  name: 'John Smith',
+  role: 'Frontend Developer',
   imageUrl:
-    "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
 };
 
 export default function Banner() {
@@ -22,7 +22,7 @@ export default function Banner() {
               />
             </div>
             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
-              <p className="text-sm font-medium text-gray-600"></p>
+              <p className="text-sm font-medium text-gray-600" />
               <p className="text-xl font-bold text-gray-900 sm:text-2xl">
                 {user.name}
               </p>
