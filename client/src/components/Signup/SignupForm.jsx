@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
-import { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { Link } from 'react-router-dom';
+import { Fragment, useState } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 const roles = [
-  { id: 1, name: "mentor" },
-  { id: 2, name: "mentee" },
+  { id: 1, name: 'mentor' },
+  { id: 2, name: 'mentee' },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function SignupForm() {
@@ -18,7 +18,7 @@ export default function SignupForm() {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 pb-10 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Link to={"/"}>
+          <Link to="/">
             <img
               className="mx-auto h-12 w-auto"
               src="../../../public/dm_logo_clear.png"
@@ -57,25 +57,23 @@ export default function SignupForm() {
                       leaveTo="opacity-0"
                     >
                       <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                        {roles.map((role) => (
+                        {roles.map(role => (
                           <Listbox.Option
                             key={role.id}
-                            className={({ active }) =>
-                              classNames(
-                                active
-                                  ? "bg-indigo-600 text-white"
-                                  : "text-gray-900",
-                                "relative cursor-default select-none py-2 pl-3 pr-9"
-                              )
-                            }
+                            className={({ active }) => classNames(
+                              active
+                                ? 'bg-indigo-600 text-white'
+                                : 'text-gray-900',
+                              'relative cursor-default select-none py-2 pl-3 pr-9'
+                            )}
                             value={role}
                           >
                             {({ selected, active }) => (
                               <>
                                 <span
                                   className={classNames(
-                                    selected ? "font-semibold" : "font-normal",
-                                    "block truncate"
+                                    selected ? 'font-semibold' : 'font-normal',
+                                    'block truncate'
                                   )}
                                 >
                                   {role.name}
@@ -84,8 +82,8 @@ export default function SignupForm() {
                                 {selected ? (
                                   <span
                                     className={classNames(
-                                      active ? "text-white" : "text-indigo-600",
-                                      "absolute inset-y-0 right-0 flex items-center pr-4"
+                                      active ? 'text-white' : 'text-indigo-600',
+                                      'absolute inset-y-0 right-0 flex items-center pr-4'
                                     )}
                                   >
                                     <CheckIcon
@@ -172,9 +170,10 @@ export default function SignupForm() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Already have an account?{" "}
+            Already have an account?
+            {' '}
             <Link
-              to={`/login`}
+              to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Log In

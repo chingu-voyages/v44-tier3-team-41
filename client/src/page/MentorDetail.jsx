@@ -1,15 +1,15 @@
-import React from "react";
-import Banner from "../components/MentorDetail/Banner";
-import DetailCard from "../components/MentorDetail/DetailCard";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Banner from '../components/MentorDetail/Banner';
+import DetailCard from '../components/MentorDetail/DetailCard';
 
 const MentorDetail = () => {
   return (
     <div className="flex flex-col">
       <div className="bg-gray-300">
-        {" "}
+        {' '}
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Link to={"/"}>
+          <Link to="/">
             <img
               className="mx-auto h-12 w-auto"
               src="../../../public/dm_logo_clear.png"

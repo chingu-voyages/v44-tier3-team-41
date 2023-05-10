@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const MentorListPage = () => {
-    return (
-        <div>MentorListPage</div>
-    )
-}
+  return <div>MentorListPage</div>;
+};
 
-export default MentorListPage
+export default MentorListPage;

@@ -1,33 +1,31 @@
 'use strict';
 
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Mentee extends Model {
+  class Mentor extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Mentee.belongsTo(models.Mentor, {
-        foreignKey: 'mentorId',
+      Mentor.hasMany(models.Mentee, {
+        foreignKey: 'mentorId'
       });
-      Mentee.hasMany(models.Message, {
-        foreignKey: 'ownerMen',
+      Mentor.hasMany(models.Message, {
+        foreignKey: 'ownerMon',
         onDelete: 'CASCADE',
       });
-      Mentee.hasMany(models.Channel, {
-        foreignKey: 'menteeId',
+      Mentor.hasMany(models.Channel, {
+        foreignKey: 'mentorId',
       });
-      Mentee.hasMany(models.Task, {
-        foreignKey: 'menteeId',
+      Mentor.hasMany(models.Task, {
+        foreignKey: 'mentorId',
       });
     }
   }
-  Mentee.init({
+  Mentor.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -57,15 +55,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    goal: DataTypes.STRING,
-    skill: DataTypes.STRING,
+    yrsExp: DataTypes.INTEGER,
+    expertise: DataTypes.STRING,
+    role: DataTypes.STRING,
     about: DataTypes.STRING,
-    occupation: DataTypes.STRING,
-    project: DataTypes.STRING,
-    mentorId: DataTypes.INTEGER
+    company: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Mentee',
+    modelName: 'Mentor',
   });
-  return Mentee;
+  return Mentor;
 };
