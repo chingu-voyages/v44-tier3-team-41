@@ -29,6 +29,8 @@ module.exports = {
     'no-unused-vars': 0,
     'eol-last': 0,
     'no-return-await': 0,
-    strict: 0
+    strict: 0,
+    'no-console': 0,
+    ignoreComments: true
   },
 };
