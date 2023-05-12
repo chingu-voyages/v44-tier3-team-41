@@ -1,6 +1,5 @@
-'use strict';
 /** @type {import('sequelize-cli').Migration} */
-let options = {};
+const options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;
 }
@@ -14,24 +13,43 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(40),
+        allowNull: false,
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(300),
+        allowNull: false,
+        unique: true
       },
       hashedPassword: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING.BINARY,
+        allowNull: false
       },
       city: {
+        type: Sequelize.STRING
+      },
+      state: {
         type: Sequelize.STRING
       },
       country: {
         type: Sequelize.STRING
       },
-      profile_img: {
+      profileImg: {
         type: Sequelize.STRING
       },
       goal: {
+        type: Sequelize.STRING
+      },
+      skill: {
+        type: Sequelize.STRING
+      },
+      about: {
+        type: Sequelize.STRING
+      },
+      occupation: {
+        type: Sequelize.STRING
+      },
+      project: {
         type: Sequelize.STRING
       },
       mentorId: {
@@ -39,12 +57,14 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     }, options);
   },
   async down(queryInterface, Sequelize) {

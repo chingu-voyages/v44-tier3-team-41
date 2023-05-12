@@ -15,7 +15,7 @@ import MentorList from "./page/MentorList.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <HomePage />,
   },
   {

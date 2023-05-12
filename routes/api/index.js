@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const mentorRouter = require('./mentor.js');
+const menteeRouter = require('./mentee.js');
 
-router.post('/test', function (req, res) {
-    res.json({ requestBody: req.body });
-});
+router.use('/mentor', mentorRouter);
+router.use('/mentee', menteeRouter)
 
-module.exports = router;
+module.exports = router
