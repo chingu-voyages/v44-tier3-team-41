@@ -6,8 +6,12 @@ import LoginPage from "./page/Login.jsx";
 import SignupPage from "./page/Signup.jsx";
 import MentorDetail from "./page/MentorDetail.jsx";
 import MenteeDetail from "./page/MenteeDetail.jsx";
-import App from "./App.jsx";
+import DashBoardSideBar from "./page/DashBoardSideBar.jsx";
+import Message from "./page/Message.jsx";
+import Profile from "./page/Profile.jsx";
+import Report from "./page/Report.jsx";
 import "./index.css";
+import MentorList from "./page/MentorList.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,28 @@ const router = createBrowserRouter([
     path: "/mentee_detail/1",
     // path: "/mentor_detail/:id",
     element: <MenteeDetail />,
+  },
+  {
+    path: "/",
+    element: <DashBoardSideBar />,
+    children: [
+      {
+        path: "/dashboard/mentorlist",
+        element: <MentorList />,
+      },
+      {
+        path: "/dashboard/message",
+        element: <Message />,
+      },
+      {
+        path: "/dashboard/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/dashboard/report",
+        element: <Report />,
+      },
+    ],
   },
 ]);
 
