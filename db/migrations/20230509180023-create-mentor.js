@@ -26,6 +26,9 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
+      classification: {
+        type: Sequelize.STRING
+      },
       city: {
         type: Sequelize.STRING
       },

@@ -54,28 +54,27 @@ export default function SignupForm() {
                       as={Fragment}
                       leave="transition ease-in duration-100"
                       leaveFrom="opacity-100"
-                      leaveTo="opacity-0"
-                    >
+                      leaveTo="opacity-0">
                       <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                         {roles.map(role => (
                           <Listbox.Option
                             key={role.id}
-                            className={({ active }) => classNames(
-                              active
-                                ? 'bg-indigo-600 text-white'
-                                : 'text-gray-900',
-                              'relative cursor-default select-none py-2 pl-3 pr-9'
-                            )}
-                            value={role}
-                          >
+                            className={({ active }) =>
+                              classNames(
+                                active
+                                  ? 'bg-indigo-600 text-white'
+                                  : 'text-gray-900',
+                                'relative cursor-default select-none py-2 pl-3 pr-9'
+                              )
+                            }
+                            value={role}>
                             {({ selected, active }) => (
                               <>
                                 <span
                                   className={classNames(
                                     selected ? 'font-semibold' : 'font-normal',
                                     'block truncate'
-                                  )}
-                                >
+                                  )}>
                                   {role.name}
                                 </span>
 
@@ -84,8 +83,7 @@ export default function SignupForm() {
                                     className={classNames(
                                       active ? 'text-white' : 'text-indigo-600',
                                       'absolute inset-y-0 right-0 flex items-center pr-4'
-                                    )}
-                                  >
+                                    )}>
                                     <CheckIcon
                                       className="h-5 w-5"
                                       aria-hidden="true"
@@ -105,8 +103,7 @@ export default function SignupForm() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
+                className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
               </label>
               <div className="mt-2">
@@ -124,8 +121,7 @@ export default function SignupForm() {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
+                  className="block text-sm font-medium leading-6 text-gray-900">
                   Password
                 </label>
               </div>
@@ -142,8 +138,7 @@ export default function SignupForm() {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="confirm_password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
+                  className="block text-sm font-medium leading-6 text-gray-900">
                   Confirm Password
                 </label>
               </div>
@@ -162,20 +157,17 @@ export default function SignupForm() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
+                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Register
               </button>
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Already have an account?
-            {' '}
+            Already have an account?{' '}
             <Link
               to="/login"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-            >
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
               Log In
             </Link>
           </p>
