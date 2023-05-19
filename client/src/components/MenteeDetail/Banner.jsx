@@ -1,11 +1,4 @@
-const user = {
-  name: 'John Smith',
-  role: 'Frontend Developer',
-  imageUrl:
-    'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-};
-
-export default function Banner() {
+function Banner({ mentee }) {
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow">
       <h2 className="sr-only" id="profile-overview-title">
@@ -17,16 +10,16 @@ export default function Banner() {
             <div className="flex-shrink-0">
               <img
                 className="mx-auto h-20 w-20 rounded-full"
-                src={user.imageUrl}
-                alt=""
+                src={mentee.profileImg}
+                alt="profile picture"
               />
             </div>
             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
               <p className="text-sm font-medium text-gray-600" />
               <p className="text-xl font-bold text-gray-900 sm:text-2xl">
-                {user.name}
+                {mentee.name}
               </p>
-              <p className="text-sm font-medium text-gray-600">{user.role}</p>
+              <p className="text-sm font-medium text-gray-600">{mentee.role}</p>
             </div>
           </div>
           <div className="mt-5 flex justify-center sm:mt-0">
@@ -42,3 +35,5 @@ export default function Banner() {
     </div>
   );
 }
+
+export default Banner;

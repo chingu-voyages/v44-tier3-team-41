@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 
-const navigation = [
-  { name: "Become a mentor", href: "/signup" },
-  { name: "Find a mentor", href: "#" },
-];
+const navigation = [{ name: "Become a mentor", href: "/signup" }];
+
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -50,7 +47,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link to={`/login`}>
+            <Link to={"/login"}>
               <button
                 type="button"
                 className="rounded-md border border-solid border-black bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-50"
@@ -58,7 +55,7 @@ export default function Hero() {
                 Log in
               </button>
             </Link>
-            <Link to={`/signup`}>
+            <Link to={"/signup"}>
               <button
                 type="button"
                 className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 ml-4"
@@ -137,7 +134,6 @@ export default function Hero() {
               Book and meet over 16,736+ mentors for 1:1 mentorship in our
               global community.
             </p>
-            <SearchBar />
           </div>
         </div>
       </div>

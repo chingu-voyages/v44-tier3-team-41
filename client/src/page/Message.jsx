@@ -31,25 +31,15 @@ function Message() {
         role: "default",
       });
 
-      const other2 = new Talk.User({
-        id: "3",
-        name: "Amelia June",
-        email: "ameliajune@example.com",
-        photoUrl:
-          "https://res.cloudinary.com/yilin1234/image/upload/v1683763414/Screenshot_2023-05-10_at_8.03.24_PM_n0iabj.png",
-        welcomeMessage: "Hello!",
-        role: "default",
-      });
-
       const session = new Talk.Session({
         appId: "tOv2gsZw",
         me: me,
       });
 
-      const conversationId = Talk.oneOnOneId(me, other2);
+      const conversationId = Talk.oneOnOneId(me, other);
       const conversation = session.getOrCreateConversation(conversationId);
       conversation.setParticipant(me);
-      conversation.setParticipant(other2);
+      conversation.setParticipant(other);
 
       const chatbox = session.createInbox();
       chatbox.select(conversation);

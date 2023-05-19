@@ -1,11 +1,4 @@
-const user = {
-  name: 'Rebecca Nicholas',
-  role: 'Product Designer',
-  imageUrl:
-    'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-};
-
-export default function Banner() {
+function Banner({ mentor }) {
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow">
       <h2 className="sr-only" id="profile-overview-title">
@@ -17,16 +10,16 @@ export default function Banner() {
             <div className="flex-shrink-0">
               <img
                 className="mx-auto h-20 w-20 rounded-full"
-                src={user.imageUrl}
-                alt=""
+                src={mentor.profileImg}
+                alt="profile picture"
               />
             </div>
             <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
               <p className="text-sm font-medium text-gray-600" />
               <p className="text-xl font-bold text-gray-900 sm:text-2xl">
-                {user.name}
+                {mentor.name}
               </p>
-              <p className="text-sm font-medium text-gray-600">{user.role}</p>
+              <p className="text-sm font-medium text-gray-600">{mentor.role}</p>
             </div>
           </div>
           <div className="mt-5 flex justify-center sm:mt-0">
@@ -42,3 +35,5 @@ export default function Banner() {
     </div>
   );
 }
+
+export default Banner;
