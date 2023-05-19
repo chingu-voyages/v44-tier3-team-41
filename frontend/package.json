@@ -13,10 +13,11 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^5.3.4",
+    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
-    "redux-thunk": "^2.4.2"
+    "redux-thunk": "^2.4.2",
+    "talkjs": "^0.16.0"
   },
   "scripts": {
     "start": "react-scripts start",

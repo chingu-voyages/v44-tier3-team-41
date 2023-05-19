@@ -1,22 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Banner from '../components/MenteeDetail/Banner';
-import DetailCard from '../components/MenteeDetail/DetailCard';
+import React from "react";
+import Banner from "../components/MenteeDetail/Banner";
+import DetailCard from "../components/MenteeDetail/DetailCard";
 
 const MentorDetail = () => {
   return (
     <div className="flex flex-col">
       <div className="bg-gray-300">
-        {' '}
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Link to="/">
-            <img
-              className="mx-auto h-12 w-auto"
-              src="../../../public/dm_logo_clear.png"
-              alt="Your Company"
-            />
-          </Link>
-        </div>
         <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
           <Banner />
         </div>

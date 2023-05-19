@@ -1,7 +1,18 @@
-import React from 'react';
+import React from "react";
 
-const MentorListPage = () => {
-  return <div>MentorListPage</div>;
-};
+import MentorCard from "../components/MentorCard/MentorCard";
 
-export default MentorListPage;
+export default function MentorList() {
+  const mentors = [];
+
+  return (
+    <div>
+      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {mentors &&
+          mentors.map((mentor, index) => (
+            <MentorCard key={index} mentor={mentor} />
+          ))}
+      </ul>
+    </div>
+  );
+}
