@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
-const navigation = [{ name: "Become a mentor", href: "/signup" }];
+const navigation = [
+  { name: "Become a mentor", href: "/signup" },
+];
 
 export default function Hero() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] =
+    useState(false);
 
   return (
     <div className="bg-white">
@@ -17,7 +23,9 @@ export default function Hero() {
         >
           <div className="flex lg:flex-1">
             <a className="-m-1.5 p-1.5">
-              <span className="sr-only">DevelopMe</span>
+              <span className="sr-only">
+                DevelopMe
+              </span>
               <img
                 className="w-auto h-20"
                 src="../../../public/dm_logo_wht_blue.png"
@@ -29,10 +37,17 @@ export default function Hero() {
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() =>
+                setMobileMenuOpen(true)
+              }
             >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <span className="sr-only">
+                Open main menu
+              </span>
+              <Bars3Icon
+                className="h-6 w-6"
+                aria-hidden="true"
+              />
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
@@ -74,8 +89,13 @@ export default function Hero() {
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">DevelopMe</span>
+              <a
+                href="#"
+                className="-m-1.5 p-1.5"
+              >
+                <span className="sr-only">
+                  DevelopMe
+                </span>
                 <img
                   className="h-8 w-auto"
                   src="https://res.cloudinary.com/yilin1234/image/upload/v1683264706/placeholder_drrcla.png"
@@ -85,10 +105,17 @@ export default function Hero() {
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() =>
+                  setMobileMenuOpen(false)
+                }
               >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                <span className="sr-only">
+                  Close menu
+                </span>
+                <XMarkIcon
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                />
               </button>
             </div>
             <div className="mt-6 flow-root">
@@ -128,11 +155,13 @@ export default function Hero() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Learn and grow with help from world-class mentors for free
+              Learn and grow with help from
+              world-class mentors for free x
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Book and meet over 16,736+ mentors for 1:1 mentorship in our
-              global community.
+              Book and meet over 16,736+ mentors
+              for 1:1 mentorship in our global
+              community.
             </p>
           </div>
         </div>
