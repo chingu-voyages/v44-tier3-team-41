@@ -1,9 +1,11 @@
 import React, { useState, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { loginThunk } from "../../store/session";
+
+
 
 const roles = [
   { id: 1, name: "Mentor" },
@@ -15,6 +17,7 @@ function classNames(...classes) {
 }
 
 export default function LoginForm() {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +26,7 @@ export default function LoginForm() {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  // if (sessionUser) return <Redirect to='/' />
+  if (sessionUser) navigate('/dashboard')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +36,12 @@ export default function LoginForm() {
 
     return dispatch(loginThunk(email, password, classification.name)).catch(
       async (res) => {
+
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       }
     );
+
   };
 
   return (

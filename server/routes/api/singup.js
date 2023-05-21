@@ -9,7 +9,7 @@ const router = express.Router();
 //! Sign up
 router.post('/', async (req, res) => {
     const {
-        name, email, password, classification, profileImg, role, about
+        name, email, password, classification
     } = req.body;
 
     let User;
@@ -37,9 +37,6 @@ router.post('/', async (req, res) => {
         name,
         email,
         password,
-        profileImg,
-        role,
-        about
     });
 
     await setTokenCookie(res, user);

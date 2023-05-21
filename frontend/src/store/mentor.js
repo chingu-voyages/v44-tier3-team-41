@@ -22,15 +22,7 @@ const mentorStudents = data => {
 //** Thunk */
 export const getAllMentorsThunk = (filters = {}) => async dispatch => {
 
-    const nonEmptyFilters = Object.fromEntries(
-        Object.entries(filters).filter(([key, value]) => value !== '')
-    );
-
-    if (Object.keys(nonEmptyFilters).length === 0) {
-        // No non-empty filters, do not send the dispatch
-        return;
-    }
-    const params = new URLSearchParams(nonEmptyFilters)
+    const params = new URLSearchParams(filters)
 
     const response = await csrfFetch(`/api/mentor/search?${params}`);
     if (response.ok) {

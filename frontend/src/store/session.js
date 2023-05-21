@@ -63,7 +63,7 @@ export const loginThunk = (email, password, classification) => async dispatch =>
             classification
         }),
     });
-    /********** */
+
     if (response.ok) {
         let data = await response.json();
         dispatch(setUser(data));

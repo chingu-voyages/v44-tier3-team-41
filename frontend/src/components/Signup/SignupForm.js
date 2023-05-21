@@ -1,4 +1,4 @@
-import { Link, Redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +16,7 @@ function classNames(...classes) {
 
 export default function SignupForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,6 @@ export default function SignupForm() {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  console.log({ name: name, email: email, password: password });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ export default function SignupForm() {
     }
   };
 
-  // if (sessionUser) return <Redirect to='/' />
+  if (sessionUser) navigate('/')
 
   return (
     <>
