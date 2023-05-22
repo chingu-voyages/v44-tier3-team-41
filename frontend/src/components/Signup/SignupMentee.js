@@ -54,6 +54,11 @@ export default function SignupMentee() {
             method="POST"
             onSubmit={handleSubmit}
           >
+            <ul>
+              {errors.map((error, idx) => (
+                <li key={idx} className='text-red-500'>{error}</li>
+              ))}
+            </ul>
             <div>
               <label className="block text-sm font-medium leading-6 text-gray-900">
                 Role: Mentee
