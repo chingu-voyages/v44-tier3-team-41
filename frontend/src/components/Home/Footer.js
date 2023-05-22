@@ -17,7 +17,7 @@ export default function Footer() {
                 alt="DM Logo"
               />
             </a>
-            <p className="text-sm text-gray-500 pl-5 py-4">
+            <p className="text-xs text-gray-400 pl-5 py-4">
               Platform for aspiring software
               developers to connect with Mentors!
             </p>
@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
         <div className="mt-4 border-t border-gray-900/10 pb-8 sm:mt-3 lg:mt-4">
           <p className="text-xs leading-5 text-gray-500 pt-4">
-            &copy; 2023 DevelopMe, Inc. All rights
+            &copy; 2023 DevelopMe. All rights
             reserved.
           </p>
         </div>
