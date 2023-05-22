@@ -1,6 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#fafafa]" aria-labelledby="footer-heading">
+    <footer
+      className="bg-[#fafafa]"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -10,18 +13,20 @@ export default function Footer() {
             <a href="/" className="">
               <img
                 className="h-12"
-                src="../../../public/dm_logo_clear.png"
+                src="dm_logo_clear.png"
                 alt="DM Logo"
               />
             </a>
             <p className="text-sm text-gray-500 pl-5 py-4">
-              Platform for aspiring software developers to connect with Mentors!
+              Platform for aspiring software
+              developers to connect with Mentors!
             </p>
           </div>
         </div>
         <div className="mt-4 border-t border-gray-900/10 pb-8 sm:mt-3 lg:mt-4">
           <p className="text-xs leading-5 text-gray-500 pt-4">
-            &copy; 2023 DevelopMe, Inc. All rights reserved.
+            &copy; 2023 DevelopMe, Inc. All rights
+            reserved.
           </p>
         </div>
       </div>
