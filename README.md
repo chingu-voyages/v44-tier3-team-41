@@ -74,23 +74,16 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With:
-* [![Javascript][Javascript]][Javascript-url]
-* [![HTML5][HTML5]][HTML-url]
-* [![CSS][CSS]][CSS-url]
-* [![Tailwind CSS][Tailwind CSS]][Tailwind CSS-url]
-* [![React][React.js]][React-url]
-* [![React Router][React Router]][React Router-url]
-* [![Redux][Redux]][Redux-url]
-* [![Node.js][Node.js]][Node-url]
-* [![NPM][NPM]][NPM-url]
-* [![Express][Express]][Express-url]
-* [![Sequelize][Sequelize]][Sequelize-url]
+* basic: [![Javascript][Javascript]][Javascript-url][![HTML5][HTML5]][HTML-url][![CSS][CSS]][CSS-url]
+* style: [![Tailwind CSS][Tailwind CSS]][Tailwind CSS-url]
+* frontend: [![React][React.js]][React-url][![React Router][React Router]][React Router-url][![Redux][Redux]][Redux-url]
+* backend: [![Node.js][Node.js]][Node-url][![Express][Express]][Express-url]
+* package management: [![NPM][NPM]][NPM-url]
+* ORM: [![Sequelize][Sequelize]][Sequelize-url]
 * [![.ENV][.ENV]][.ENV-url]
-* [![Git][Git]][Git-url]
-* [![Github][Github]][Github-url]
-* [![Render][Render]][Render-url]
-
-
+* remote repository[![Git][Git]][Git-url][![Github][Github]][Github-url]
+* deployment: [![Render][Render]][Render-url]
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
