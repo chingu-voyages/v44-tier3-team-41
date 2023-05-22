@@ -12,7 +12,7 @@ function Message() {
 
     if (talkLoaded) {
       const me = new Talk.User({
-        id: "1",
+        id: "henrymill@example.com",
         name: "Henry Mill",
         email: "henrymill@example.com",
         photoUrl:
@@ -22,7 +22,7 @@ function Message() {
       });
 
       const other = new Talk.User({
-        id: "2",
+        id: "jessicawells@example.com",
         name: "Jessica Wells",
         email: "jessicawells@example.com",
         photoUrl:

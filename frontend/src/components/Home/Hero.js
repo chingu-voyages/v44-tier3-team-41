@@ -7,7 +7,12 @@ import {
 import { Link } from "react-router-dom";
 
 const navigation = [
+<<<<<<< HEAD
   { name: "Become a mentor", href: "/signup" },
+=======
+  { name: "Become a mentor", href: "/signupMentor" },
+  { name: "Become a mentee", href: "/signupMentee" },
+>>>>>>> feature/readme_userStories_test_message
 ];
 
 export default function Hero() {
@@ -28,7 +33,11 @@ export default function Hero() {
               </span>
               <img
                 className="w-auto h-20"
+<<<<<<< HEAD
                 src="dm_logo_clear.png"
+=======
+                src="../../../public/dm_logo_clear.png"
+>>>>>>> feature/readme_userStories_test_message
                 alt="dm_logo"
               />
             </a>
@@ -68,14 +77,6 @@ export default function Hero() {
                 className="rounded-md border border-solid border-black bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-50"
               >
                 Log in
-              </button>
-            </Link>
-            <Link to={"/signup"}>
-              <button
-                type="button"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 ml-4"
-              >
-                Sign up
               </button>
             </Link>
           </div>
@@ -132,6 +133,7 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="py-6">
+<<<<<<< HEAD
                   <a
                     href="/"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
@@ -144,6 +146,14 @@ export default function Hero() {
                   >
                     Sign up
                   </a>
+=======
+                  <Link
+                    to={"/login"}
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Log in
+                  </Link>
+>>>>>>> feature/readme_userStories_test_message
                 </div>
               </div>
             </div>
