@@ -9,7 +9,7 @@ const router = express.Router();
 //! Sign up
 router.post('/', async (req, res) => {
     const {
-        name, email, password, classification
+        name, email, password, classification,
     } = req.body;
 
     let User;

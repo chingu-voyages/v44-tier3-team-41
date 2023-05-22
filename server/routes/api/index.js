@@ -2,7 +2,7 @@ const router = require('express').Router();
 const mentorRouter = require('./mentor.js');
 const menteeRouter = require('./mentee.js');
 const sessionRouter = require('./session.js');
-const signupRouter = require('./singup.js');
+const signupRouter = require('./signup.js');
 const { restoreUser } = require('../../utils/auth.js');
 
 // Connect restoreUser middleware to the API router

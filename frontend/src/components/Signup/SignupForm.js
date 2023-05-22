@@ -34,16 +34,18 @@ export default function SignupForm() {
     if (password === confirmPassword) {
       setErrors([]);
 
-      return dispatch(
+      return await dispatch(
         signupThunk(name, email, password, classification.name)
       ).catch(async (res) => {
+
         const data = await res.json();
+
         if (data && data.errors) setErrors(data.errors);
       });
     }
   };
 
-  if (sessionUser) navigate("/");
+  if (sessionUser) navigate("/dashboard");
 
   return (
     <>
