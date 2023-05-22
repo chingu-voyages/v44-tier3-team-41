@@ -48,13 +48,6 @@ module.exports = (sequelize, DataTypes) => {
       Mentee.belongsTo(models.Mentor, {
         foreignKey: 'mentorId',
       });
-      // Mentee.hasMany(models.Message, {
-      //   foreignKey: 'ownerMen',
-      //   onDelete: 'CASCADE',
-      // });
-      // Mentee.hasMany(models.Channel, {
-      //   foreignKey: 'menteeId',
-      // });
       Mentee.hasMany(models.Task, {
         foreignKey: 'menteeId',
       });

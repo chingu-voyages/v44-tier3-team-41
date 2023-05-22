@@ -36,6 +36,6 @@ module.exports = {
     ignoreComments: 0,
     'consistent-return': 'off',
     radix: 'off',
-    'global-require': 'off'
+    'global-require': 'off',
   },
 };

@@ -63,6 +63,11 @@ export default function LoginForm() {
             method="POST"
             onSubmit={handleSubmit}
           >
+            <ul>
+              {errors.map((error, idx) => (
+                <li key={idx} className='text-red-500'>{error}</li>
+              ))}
+            </ul>
             <Listbox value={classification} onChange={setClassification}>
               {({ open }) => (
                 <>

@@ -1,0 +1,27 @@
+{
+  "name": "v44-tier3-team-41",
+  "version": "1.0.0",
+  "description": "<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 --> <a name=\"readme-top\"></a>",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/v44-tier3-team-41.git"
+  },
+  "author": "Alex Hunt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/v44-tier3-team-41/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/v44-tier3-team-41#readme",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
