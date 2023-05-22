@@ -1,6 +1,10 @@
 import { Fragment, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { Dialog, Menu, Transition } from "@headlessui/react";
+import {
+  Dialog,
+  Menu,
+  Transition,
+} from "@headlessui/react";
 import {
   Bars3Icon,
   UserGroupIcon,
@@ -65,12 +69,16 @@ function classNames(...classes) {
 }
 
 function DashBoard() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] =
+    useState(false);
 
   return (
     <>
       <div>
-        <Transition.Root show={sidebarOpen} as={Fragment}>
+        <Transition.Root
+          show={sidebarOpen}
+          as={Fragment}
+        >
           <Dialog
             as="div"
             className="relative z-50 lg:hidden"
@@ -112,9 +120,13 @@ function DashBoard() {
                       <button
                         type="button"
                         className="-m-2.5 p-2.5"
-                        onClick={() => setSidebarOpen(false)}
+                        onClick={() =>
+                          setSidebarOpen(false)
+                        }
                       >
-                        <span className="sr-only">Close sidebar</span>
+                        <span className="sr-only">
+                          Close sidebar
+                        </span>
                         <XMarkIcon
                           className="h-6 w-6 text-white"
                           aria-hidden="true"
@@ -127,7 +139,7 @@ function DashBoard() {
                     <div className="flex h-16 shrink-0 items-center">
                       <img
                         className="h-12 w-auto"
-                        src="/dm_logo_clear.png"
+                        src="dm_logo_white_blue_clear.png"
                         alt="Your Company"
                       />
                     </div>
@@ -135,30 +147,34 @@ function DashBoard() {
                       <ul className="flex flex-1 flex-col gap-y-7">
                         <li>
                           <ul className="-mx-2 space-y-1">
-                            {navigation.map((item) => (
-                              <li key={item.name}>
-                                <Link
-                                  to={item.href}
-                                  className={classNames(
-                                    item.current
-                                      ? "bg-indigo-700 text-white"
-                                      : "text-indigo-200 hover:text-white hover:bg-indigo-700",
-                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                  )}
+                            {navigation.map(
+                              (item) => (
+                                <li
+                                  key={item.name}
                                 >
-                                  <item.icon
+                                  <Link
+                                    to={item.href}
                                     className={classNames(
                                       item.current
-                                        ? "text-white"
-                                        : "text-indigo-200 group-hover:text-white",
-                                      "h-6 w-6 shrink-0"
+                                        ? "bg-indigo-700 text-white"
+                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                      "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                     )}
-                                    aria-hidden="true"
-                                  />
-                                  {item.name}
-                                </Link>
-                              </li>
-                            ))}
+                                  >
+                                    <item.icon
+                                      className={classNames(
+                                        item.current
+                                          ? "text-white"
+                                          : "text-indigo-200 group-hover:text-white",
+                                        "h-6 w-6 shrink-0"
+                                      )}
+                                      aria-hidden="true"
+                                    />
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              )
+                            )}
                           </ul>
                         </li>
                       </ul>
@@ -177,7 +193,7 @@ function DashBoard() {
             <div className="flex h-16 shrink-0 items-center">
               <img
                 className="h-12 w-auto"
-                src="/dm_logo_clear.png"
+                src="dm_logo_white_blue_clear.png"
                 alt="Your Company"
               />
             </div>
@@ -223,8 +239,13 @@ function DashBoard() {
               className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
               onClick={() => setSidebarOpen(true)}
             >
-              <span className="sr-only">Open sidebar</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+              <span className="sr-only">
+                Open sidebar
+              </span>
+              <Bars3Icon
+                className="h-6 w-6"
+                aria-hidden="true"
+              />
             </button>
 
             {/* Separator */}
@@ -243,9 +264,14 @@ function DashBoard() {
                 />
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative">
+                <Menu
+                  as="div"
+                  className="relative"
+                >
                   <Menu.Button className="-m-1.5 flex items-center p-1.5">
-                    <span className="sr-only">Open user menu</span>
+                    <span className="sr-only">
+                      Open user menu
+                    </span>
                     <img
                       className="h-8 w-8 rounded-full bg-gray-50"
                       src="https://res.cloudinary.com/yilin1234/image/upload/v1683748285/Screenshot_2023-05-10_at_3.50.52_PM_laxz2z.png"
@@ -274,21 +300,27 @@ function DashBoard() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
-                      {userNavigation.map((item) => (
-                        <Menu.Item key={item.name}>
-                          {({ active }) => (
-                            <a
-                              href={item.href}
-                              className={classNames(
-                                active ? "bg-gray-50" : "",
-                                "block px-3 py-1 text-sm leading-6 text-gray-900"
-                              )}
-                            >
-                              {item.name}
-                            </a>
-                          )}
-                        </Menu.Item>
-                      ))}
+                      {userNavigation.map(
+                        (item) => (
+                          <Menu.Item
+                            key={item.name}
+                          >
+                            {({ active }) => (
+                              <a
+                                href={item.href}
+                                className={classNames(
+                                  active
+                                    ? "bg-gray-50"
+                                    : "",
+                                  "block px-3 py-1 text-sm leading-6 text-gray-900"
+                                )}
+                              >
+                                {item.name}
+                              </a>
+                            )}
+                          </Menu.Item>
+                        )
+                      )}
                     </Menu.Items>
                   </Transition>
                 </Menu>
