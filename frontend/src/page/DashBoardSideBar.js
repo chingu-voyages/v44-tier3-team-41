@@ -15,48 +15,8 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 
-const navigation = [
-  {
-    name: "Mentors",
-    href: "mentorlist",
-    icon: HomeIcon,
-    current: true,
-  },
-
-  {
-    name: "Mentees",
-    href: "menteelist",
-    icon: UserGroupIcon,
-    current: false,
-  },
-  {
-    name: "Message",
-    href: "message",
-    icon: ChatBubbleLeftIcon,
-    current: false,
-  },
-  {
-    name: "Search",
-    href: "search",
-    icon: MagnifyingGlassIcon,
-    current: false,
-  },
-  {
-    name: "Profile",
-    href: "userProfile",
-    icon: UserCircleIcon,
-    current: false,
-  },
-  {
-    name: "Reports",
-    href: "report",
-    icon: ChartPieIcon,
-    current: false,
-  },
-];
-
 const userNavigation = [
-  { name: "Your profile", href: "#" },
+  { name: "Your profile", href: "userProfile" },
   { name: "Sign out", href: "#" },
 ];
 
@@ -66,6 +26,46 @@ function classNames(...classes) {
 
 function DashBoard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentTab, setCurrentTab] = useState("Mentors");
+  const navigation = [
+    {
+      name: "Mentors",
+      href: "mentorlist",
+      icon: HomeIcon,
+      current: currentTab === "Mentors",
+    },
+
+    {
+      name: "Mentees",
+      href: "menteelist",
+      icon: UserGroupIcon,
+      current: currentTab === "Mentees",
+    },
+    {
+      name: "Message",
+      href: "message",
+      icon: ChatBubbleLeftIcon,
+      current: currentTab === "Message",
+    },
+    {
+      name: "Search",
+      href: "search",
+      icon: MagnifyingGlassIcon,
+      current: currentTab === "Search",
+    },
+    {
+      name: "Profile",
+      href: "userProfile",
+      icon: UserCircleIcon,
+      current: currentTab === "Profile",
+    },
+    {
+      name: "Reports",
+      href: "report",
+      icon: ChartPieIcon,
+      current: currentTab === "Reports",
+    },
+  ];
 
   return (
     <>
@@ -139,6 +139,7 @@ function DashBoard() {
                               <li key={item.name}>
                                 <Link
                                   to={item.href}
+                                  onClick={() => setCurrentTab(item.name)}
                                   className={classNames(
                                     item.current
                                       ? "bg-indigo-700 text-white"
@@ -189,6 +190,7 @@ function DashBoard() {
                       <li key={item.name}>
                         <Link
                           to={item.href}
+                          onClick={() => setCurrentTab(item.name)}
                           className={classNames(
                             item.current
                               ? "bg-indigo-700 text-white"

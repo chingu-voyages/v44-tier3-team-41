@@ -2,8 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./page/Home";
-import LoginPage from "./page/Login";
-import SignupPage from "./page/Signup";
+import LoginForm from "./components/Login/LoginForm";
+import SignupMentor from "./components/Signup/SignupMentor";
+import SignupMentee from "./components/Signup/SignupMentee";
 import MentorDetail from "./page/MentorDetail";
 import MenteeDetail from "./page/MenteeDetail";
 import DashBoardSideBar from "./page/DashBoardSideBar";
@@ -19,8 +20,9 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signupMentor" element={<SignupMentor />} />
+        <Route path="/signupMentee" element={<SignupMentee />} />
         <Route path="/dashboard" element={<DashBoardSideBar />}>
           <Route path="mentorlist" element={<MentorList />} />
           <Route path="menteelist" element={<MenteeList />} />

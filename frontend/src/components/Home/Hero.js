@@ -3,7 +3,10 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
-const navigation = [{ name: "Become a mentor", href: "/signup" }];
+const navigation = [
+  { name: "Become a mentor", href: "/signupMentor" },
+  { name: "Become a mentee", href: "/signupMentee" },
+];
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,7 +23,7 @@ export default function Hero() {
               <span className="sr-only">DevelopMe</span>
               <img
                 className="w-auto h-20"
-                src="../../../public/dm_logo_wht_blue.png"
+                src="../../../public/dm_logo_clear.png"
                 alt="dm_logo"
               />
             </a>
@@ -53,14 +56,6 @@ export default function Hero() {
                 className="rounded-md border border-solid border-black bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-50"
               >
                 Log in
-              </button>
-            </Link>
-            <Link to={"/signup"}>
-              <button
-                type="button"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 ml-4"
-              >
-                Sign up
               </button>
             </Link>
           </div>
@@ -105,18 +100,12 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
+                  <Link
+                    to={"/login"}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
-                  </a>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Sign up
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

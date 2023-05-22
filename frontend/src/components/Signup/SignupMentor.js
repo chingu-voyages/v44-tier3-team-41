@@ -1,28 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { signupThunk } from "../../store/session";
 
-const roles = [
-  { id: 1, name: "Mentor" },
-  { id: 2, name: "Mentee" },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function SignupForm() {
+export default function SignupMentor() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
-  const [classification, setClassification] = useState(roles[0]);
 
   const [errors, setErrors] = useState([]);
 
@@ -33,12 +20,12 @@ export default function SignupForm() {
     if (password === confirmPassword) {
       setErrors([]);
 
-      return dispatch(
-        signupThunk(name, email, password, classification.name)
-      ).catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      });
+      return dispatch(signupThunk(name, email, password, "Mentor")).catch(
+        async (res) => {
+          const data = await res.json();
+          if (data && data.errors) setErrors(data.errors);
+        }
+      );
     }
   };
 
@@ -67,82 +54,11 @@ export default function SignupForm() {
             method="POST"
             onSubmit={handleSubmit}
           >
-            <Listbox value={classification} onChange={setClassification}>
-              {({ open }) => (
-                <>
-                  <Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
-                    Role
-                  </Listbox.Label>
-                  <div className="relative mt-2">
-                    <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                      <span className="block truncate">
-                        {classification.name}
-                      </span>
-                      <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-                        <ChevronUpDownIcon
-                          className="h-5 w-5 text-gray-400"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </Listbox.Button>
-
-                    <Transition
-                      show={open}
-                      as={Fragment}
-                      leave="transition ease-in duration-100"
-                      leaveFrom="opacity-100"
-                      leaveTo="opacity-0"
-                    >
-                      <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                        {roles.map((role) => (
-                          <Listbox.Option
-                            key={role.id}
-                            className={({ active }) =>
-                              classNames(
-                                active
-                                  ? "bg-indigo-600 text-white"
-                                  : "text-gray-900",
-                                "relative cursor-default select-none py-2 pl-3 pr-9"
-                              )
-                            }
-                            value={role}
-                          >
-                            {({ classification, active }) => (
-                              <>
-                                <span
-                                  className={classNames(
-                                    classification
-                                      ? "font-semibold"
-                                      : "font-normal",
-                                    "block truncate"
-                                  )}
-                                >
-                                  {role.name}
-                                </span>
-
-                                {classification ? (
-                                  <span
-                                    className={classNames(
-                                      active ? "text-white" : "text-indigo-600",
-                                      "absolute inset-y-0 right-0 flex items-center pr-4"
-                                    )}
-                                  >
-                                    <CheckIcon
-                                      className="h-5 w-5"
-                                      aria-hidden="true"
-                                    />
-                                  </span>
-                                ) : null}
-                              </>
-                            )}
-                          </Listbox.Option>
-                        ))}
-                      </Listbox.Options>
-                    </Transition>
-                  </div>
-                </>
-              )}
-            </Listbox>
+            <div>
+              <label className="block text-sm font-medium leading-6 text-gray-900">
+                Role: Mentor
+              </label>
+            </div>
             <div>
               <label
                 htmlFor="name"
@@ -196,7 +112,7 @@ export default function SignupForm() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
+                  placeholder="   Password"
                   // autoComplete="off"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -216,7 +132,7 @@ export default function SignupForm() {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Confirm Password"
+                  placeholder="   Confirm Password"
                   // autoComplete="off"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
