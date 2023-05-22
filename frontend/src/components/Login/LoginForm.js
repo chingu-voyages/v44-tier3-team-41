@@ -204,12 +204,20 @@ export default function LoginForm() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Don't have an account?{" "}
+            Don't have an account? Sign Up{" "}
             <Link
-              to={`/signup`}
+              to={`/signupMentor`}
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              Sign Up
+              Mentor
+            </Link>
+            {"   "}
+            or{"   "}
+            <Link
+              to={`/signupMentee`}
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >
+              Mentee
             </Link>
           </p>
         </div>

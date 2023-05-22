@@ -7,7 +7,8 @@ import {
 import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Become a mentor", href: "/signup" },
+  { name: "Become a mentor", href: "/signupMentor" },
+  { name: "Become a mentee", href: "/signupMentee" },
 ];
 
 export default function Hero() {
@@ -28,7 +29,7 @@ export default function Hero() {
               </span>
               <img
                 className="w-auto h-20"
-                src="dm_logo_clear.png"
+                src="dm_logo_wht_blue.png"
                 alt="dm_logo"
               />
             </a>
@@ -68,14 +69,6 @@ export default function Hero() {
                 className="rounded-md border border-solid border-black bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-50"
               >
                 Log in
-              </button>
-            </Link>
-            <Link to={"/signup"}>
-              <button
-                type="button"
-                className="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 ml-4"
-              >
-                Sign up
               </button>
             </Link>
           </div>
@@ -132,24 +125,18 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="/"
+                  <Link
+                    to={"/login"}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
-                  </a>
-                  <a
-                    href="/"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Sign up
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Dialog.Panel>
-        </Dialog>
-      </header>
+                  </Link>
+                </div >
+              </div >
+            </div >
+          </Dialog.Panel >
+        </Dialog >
+      </header >
 
       <div className="relative isolate px-8">
         <div className="mx-auto max-w-6xl sm:py-48 lg:py-72">
@@ -226,6 +213,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

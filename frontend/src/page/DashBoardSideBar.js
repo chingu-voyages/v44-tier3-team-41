@@ -19,48 +19,8 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 
-const navigation = [
-  {
-    name: "Mentors",
-    href: "mentorlist",
-    icon: HomeIcon,
-    current: true,
-  },
-
-  {
-    name: "Mentees",
-    href: "menteelist",
-    icon: UserGroupIcon,
-    current: false,
-  },
-  {
-    name: "Message",
-    href: "message",
-    icon: ChatBubbleLeftIcon,
-    current: false,
-  },
-  {
-    name: "Search",
-    href: "search",
-    icon: MagnifyingGlassIcon,
-    current: false,
-  },
-  {
-    name: "Profile",
-    href: "userProfile",
-    icon: UserCircleIcon,
-    current: false,
-  },
-  {
-    name: "Reports",
-    href: "report",
-    icon: ChartPieIcon,
-    current: false,
-  },
-];
-
 const userNavigation = [
-  { name: "Your profile", href: "#" },
+  { name: "Your profile", href: "userProfile" },
   { name: "Sign out", href: "#" },
 ];
 
@@ -69,8 +29,47 @@ function classNames(...classes) {
 }
 
 function DashBoard() {
-  const [sidebarOpen, setSidebarOpen] =
-    useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [currentTab, setCurrentTab] = useState("Mentors");
+  const navigation = [
+    {
+      name: "Mentors",
+      href: "mentorlist",
+      icon: HomeIcon,
+      current: currentTab === "Mentors",
+    },
+
+    {
+      name: "Mentees",
+      href: "menteelist",
+      icon: UserGroupIcon,
+      current: currentTab === "Mentees",
+    },
+    {
+      name: "Message",
+      href: "message",
+      icon: ChatBubbleLeftIcon,
+      current: currentTab === "Message",
+    },
+    {
+      name: "Search",
+      href: "search",
+      icon: MagnifyingGlassIcon,
+      current: currentTab === "Search",
+    },
+    {
+      name: "Profile",
+      href: "userProfile",
+      icon: UserCircleIcon,
+      current: currentTab === "Profile",
+    },
+    {
+      name: "Reports",
+      href: "report",
+      icon: ChartPieIcon,
+      current: currentTab === "Reports",
+    },
+  ];
 
   return (
     <>
@@ -147,33 +146,31 @@ function DashBoard() {
                       <ul className="flex flex-1 flex-col gap-y-7">
                         <li>
                           <ul className="-mx-2 space-y-1">
-                            {navigation.map(
-                              (item) => (
-                                <li
-                                  key={item.name}
+                            {navigation.map((item) => (
+                              <li key={item.name}>
+
+                                <Link
+                                  to={item.href}
+                                  className={classNames(
+                                    item.current
+                                      ? "bg-indigo-700 text-white"
+                                      : "text-indigo-200 hover:text-white hover:bg-indigo-700",
+                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                  )}
                                 >
-                                  <Link
-                                    to={item.href}
+                                  <item.icon
                                     className={classNames(
                                       item.current
-                                        ? "bg-indigo-700 text-white"
-                                        : "text-indigo-200 hover:text-white hover:bg-indigo-700",
-                                      "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                        ? "text-white"
+                                        : "text-indigo-200 group-hover:text-white",
+                                      "h-6 w-6 shrink-0"
                                     )}
-                                  >
-                                    <item.icon
-                                      className={classNames(
-                                        item.current
-                                          ? "text-white"
-                                          : "text-indigo-200 group-hover:text-white",
-                                        "h-6 w-6 shrink-0"
-                                      )}
-                                      aria-hidden="true"
-                                    />
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              )
+                                    aria-hidden="true"
+                                  />
+                                  {item.name}
+                                </Link>
+                              </li>
+                            )
                             )}
                           </ul>
                         </li>
@@ -205,6 +202,7 @@ function DashBoard() {
                       <li key={item.name}>
                         <Link
                           to={item.href}
+                          onClick={() => setCurrentTab(item.name)}
                           className={classNames(
                             item.current
                               ? "bg-indigo-700 text-white"
