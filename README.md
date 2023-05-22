@@ -21,14 +21,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/alexh205/Ninja_e-commerce">
-    <img width="120" alt="NinjaVillage_logo" src="https://user-images.githubusercontent.com/95322089/218267851-e7b9af4e-5686-4a1a-8965-fa5685a78459.png">
-  </a>
+  <a href="">
+    <img width="200" alt="NinjaVillage_logo" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/92185695/45e02588-a583-4b31-92ef-bcd160d41984"</a>
 
-  <h3 align="center">NinjaVillage (Amazon Clone)</h3>
+  <h3 align="center">DevelopMe (ADPList Clone)</h3>
 
   <p align="center">
-    This is an e-commerce application inspired by the popular e-commerce site <a href="amazon.com">Amazon</a>. Users can search, sell, purchase, and review products.
+    This is an social application inspired by the popular mentor site <a href="https://app.adplist.org">ADPList</a>. Users can view experienced mentor from industry, chat with mentor.
     <br />
     <br />
     <br />
@@ -84,14 +83,11 @@
 * [![Redux][Redux]][Redux-url]
 * [![Node.js][Node.js]][Node-url]
 * [![NPM][NPM]][NPM-url]
-* [![Yarn Badge][Yarn]][Yarn-url]
-* [![Python][Python]][Python-url]
-* [![Flask][Flask]][Flask-url]
+* [![Express][Express]][Express-url]
 * [![Sequelize][Sequelize]][Sequelize-url]
 * [![.ENV][.ENV]][.ENV-url]
 * [![Git][Git]][Git-url]
 * [![Github][Github]][Github-url]
-* [![Amazon AWS][Amazon AWS]][Amazon AWS-url]
 * [![Render][Render]][Render-url]
 
 
@@ -100,25 +96,22 @@
 
 # Images
 
-### Splash Page
-
-![main_page](https://user-images.githubusercontent.com/95322089/218265391-576f139a-c7da-4caf-a9bf-8cd54015202a.png)
+### Landing Page
 
 
-### Product Page
 
-![product_page](https://user-images.githubusercontent.com/95322089/218265408-7843256c-d458-467d-aadb-24014994c752.png)
 
-### Cart Page
-
-![cart](https://user-images.githubusercontent.com/95322089/218265454-c1477f79-c629-426c-a0e3-1d98e25811c9.png)
-
-### Wish List Page
-
-![Screenshot 2023-03-16 at 12 32 55 PM](https://user-images.githubusercontent.com/95322089/225688979-3abb4210-c3eb-4231-9dbe-a1dbb9c71489.jpg)
-
-### Past Orders Page
-![orders](https://user-images.githubusercontent.com/95322089/218265429-23612be5-67b2-4775-94fa-ee7043488c1d.png)
+### Mentor list Page
+  
+### Mentee list Page
+  
+### Message Page
+ 
+### Search Page
+  
+### Profile Page
+  
+### Reports Page
 
 
 <!-- GETTING STARTED -->
