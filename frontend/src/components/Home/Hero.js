@@ -29,7 +29,7 @@ export default function Hero() {
               </span>
               <img
                 className="w-auto h-20"
-                src="../../../public/dm_logo_clear.png"
+                src="dm_logo_wht_blue.png"
                 alt="dm_logo"
               />
             </a>
