@@ -28,7 +28,7 @@ export default function Hero() {
               </span>
               <img
                 className="w-auto h-20"
-                src="dm_logo_wht_blue.png"
+                src="dm_logo_clear.png"
                 alt="dm_logo"
               />
             </a>
