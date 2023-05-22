@@ -7,12 +7,8 @@ import {
 import { Link } from "react-router-dom";
 
 const navigation = [
-<<<<<<< HEAD
-  { name: "Become a mentor", href: "/signup" },
-=======
   { name: "Become a mentor", href: "/signupMentor" },
   { name: "Become a mentee", href: "/signupMentee" },
->>>>>>> feature/readme_userStories_test_message
 ];
 
 export default function Hero() {
@@ -33,11 +29,7 @@ export default function Hero() {
               </span>
               <img
                 className="w-auto h-20"
-<<<<<<< HEAD
-                src="dm_logo_clear.png"
-=======
                 src="../../../public/dm_logo_clear.png"
->>>>>>> feature/readme_userStories_test_message
                 alt="dm_logo"
               />
             </a>
@@ -133,33 +125,18 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="py-6">
-<<<<<<< HEAD
-                  <a
-                    href="/"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                  <a
-                    href="/"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Sign up
-                  </a>
-=======
                   <Link
                     to={"/login"}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Log in
                   </Link>
->>>>>>> feature/readme_userStories_test_message
-                </div>
-              </div>
-            </div>
-          </Dialog.Panel>
-        </Dialog>
-      </header>
+                </div >
+              </div >
+            </div >
+          </Dialog.Panel >
+        </Dialog >
+      </header >
 
       <div className="relative isolate px-8">
         <div className="mx-auto max-w-6xl sm:py-48 lg:py-72">
@@ -236,6 +213,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
