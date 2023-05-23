@@ -7,12 +7,9 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   async up(queryInterface, Sequelize) {
     options.tableName = 'Tasks';
-    return await queryInterface.bulkInsert(options, [
-      {}], {});
   },
 
   async down(queryInterface, Sequelize) {
     options.tableName = 'Tasks';
-    return await queryInterface.bulkDelete(options, {});
   }
 };
