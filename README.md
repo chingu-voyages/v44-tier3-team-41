@@ -273,4 +273,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [Tailwind CSS-url]:https://tailwindcss.com/
 [Amazon AWS]: https://img.shields.io/badge/Amazon%20AWS-232F3E?logo=amazonaws&logoColor=fff&style=for-the-badge
 [Amazon AWS-URL]:https://aws.amazon.com/
+[Express]: https://img.shields.io/badge/Express-000?logo=express&logoColor=fff&style=for-the-badge
+[Express-url]: https://expressjs.com/
 
