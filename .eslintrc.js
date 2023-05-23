@@ -37,5 +37,6 @@ module.exports = {
     'consistent-return': 'off',
     radix: 'off',
     'global-require': 'off',
+    'no-tab': 'off'
   },
 };

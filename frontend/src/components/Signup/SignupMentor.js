@@ -29,7 +29,7 @@ export default function SignupMentor() {
     }
   };
 
-  if (sessionUser) navigate("/");
+  if (sessionUser) navigate("/dashboard");
 
   return (
     <>
