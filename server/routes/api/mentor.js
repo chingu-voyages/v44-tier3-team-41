@@ -5,17 +5,9 @@ const { Mentor } = require('../../db/models');
 
 const router = express.Router();
 
-//! Query for All Mentors
-router.get('/', async (req, res) => {
-  const mentorsObj = await Mentor.findAll({ attributes: { exclude: ['hashedPassword'] } });
-
-  return res.json(mentorsObj);
-});
-
-/** ******************************************************** */
 //! Query Mentor search parameters
 
-router.get('/search', async (req, res) => {
+router.get('/', async (req, res) => {
   const {
     name,
     city,
@@ -115,7 +107,7 @@ router.get('/search', async (req, res) => {
   }
 });
 
-/** ************************************************************* */
+/** ******************************************************** */
 
 //! Query Mentor by Id
 router.get('/:id', async (req, res) => {

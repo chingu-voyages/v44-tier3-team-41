@@ -6,7 +6,7 @@ import { getAllMentorsThunk } from "../store/mentor";
 
 export default function MentorList() {
   const dispatch = useDispatch();
-  const data = useSelector(state => state.mentor.search)
+  const mentors = useSelector(state => state.mentor.search)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,19 +15,17 @@ export default function MentorList() {
     fetchData();
   }, [dispatch]);
 
-  if (data) {
-    let mentors = Object.values(data)
+  if (mentors)
+
     return (
       <div>
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {mentors &&
             mentors.map((mentor, index) => (
-
               <MentorCard key={index} mentor={mentor} />
-
             ))}
         </ul>
       </div>
     );
-  }
+
 }

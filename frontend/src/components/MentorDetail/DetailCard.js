@@ -1,4 +1,5 @@
 export default function DetailCard() {
+
   return (
     <div className="overflow-hidden bg-white shadow sm:rounded-lg">
       <div className="px-4 py-6 sm:px-6">

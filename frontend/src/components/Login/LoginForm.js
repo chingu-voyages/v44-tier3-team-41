@@ -22,6 +22,18 @@ export default function LoginForm() {
   const [errors, setErrors] = useState([]);
   const [classification, setClassification] = useState(roles[0]);
 
+  const demoLoginMentor = async e => {
+    e.preventDefault();
+
+    await dispatch(loginThunk('mentor@gu.io', 'password', 'Mentor'));
+  };
+
+  const demoLoginMentee = async e => {
+    e.preventDefault();
+
+    await dispatch(loginThunk('john.doe@cgu.io', 'password', 'Mentee'));
+  };
+
   const sessionUser = useSelector((state) => state.session.user);
 
   if (sessionUser) navigate("/dashboard");
@@ -32,7 +44,7 @@ export default function LoginForm() {
 
     // TODO update the value of classification
 
-    return dispatch(loginThunk(email, password, classification.name)).catch(
+    return await dispatch(loginThunk(email, password, classification.name)).catch(
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -55,7 +67,22 @@ export default function LoginForm() {
             Log in to your account
           </h2>
         </div>
-
+        <div className="text-center flex flex-row mx-auto">
+          <div className=" mx-2 my-2">
+            <button
+              className="text-white bg-slate-400 rounded-2xl hover:bg-slate-500 px-4 py-2 text-base mb-2"
+              onClick={demoLoginMentee}>
+              Demo Mentee Login
+            </button>
+          </div>
+          <div className=" mx-2 my-2 ">
+            <button
+              className="text-white bg-slate-400 rounded-2xl hover:bg-slate-500 px-4 py-2 text-base mb-2"
+              onClick={demoLoginMentor}>
+              Demo Mentor Login
+            </button>
+          </div>
+        </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form
             className="space-y-6"
