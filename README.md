@@ -31,9 +31,9 @@
     <br />
     <br />
     <br />
-    <a href="https://ninjavillage-pkud.onrender.com/">Live Site</a>
+    <a href="#">Live Site</a>
     ·
-    <a href="https://dbdiagram.io/d/63c77e35296d97641d7a5d69">DB Schema</a>
+    <a href="https://dbdiagram.io/d/64545220dca9fb07c489563d">DB Schema</a>
     <!-- ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
   </p>
@@ -80,8 +80,8 @@
 * backend: [![Node.js][Node.js]][Node-url][![Express][Express]][Express-url]
 * package management: [![NPM][NPM]][NPM-url]
 * ORM: [![Sequelize][Sequelize]][Sequelize-url]
-* [![.ENV][.ENV]][.ENV-url]
-* remote repository[![Git][Git]][Git-url][![Github][Github]][Github-url]
+* ENV: [![.ENV][.ENV]][.ENV-url]
+* remote repository:[![Git][Git]][Git-url][![Github][Github]][Github-url]
 * deployment: [![Render][Render]][Render-url]
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -110,45 +110,6 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-1. Clone this repository (only this branch)
-
-2. Install dependencies
-
-      ```bash
-      pipenv install -r requirements.txt
-      ```
-
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-
-4. Make sure the SQLite3 database connection URL is in the **.env** file
-
-5. This starter organizes all tables inside the `flask_schema` schema, defined
-   by the `SCHEMA` environment variable.  Replace the value for
-   `SCHEMA` with a unique name, **making sure you use the snake_case
-   convention**.
-
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
-
-   ```bash
-   pipenv shell
-   ```
-
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-7. open up a secondary terminal, and navigate to the 'frontend' directory.
-8. Install dependencies npm install within the 'frontend' directory.
-9. Run 'npm start'
 
 <!-- ### Prerequisites
 
@@ -194,24 +155,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Features
 
-- [x] Sign Up, Login users to the 'NinjaVillage' app
-- [x] Edit user profiles
-- [x] Demo login user
-- [x] Create, edit, and delete Products
-- [x] Search for products by name, description, and category
-- [x] filter product listings by categories (Books, Groceries, Clothing, Shoes & Jewelry,...)
-- [x] View user product stores
-- [x] Add products to shopping cart
-- [x] checkout carts
-- [x] View past orders
-- [x] Add secondary images to products
-- [x] Implement wish lists
-- [x] Implement AWS to handle media storage
-
+- [x] Sign Up, Login users to the 'Develop Me' app
+- [x] Demo login Mentee & Mentor
 
 ## Goals
 
-- [ ] Add images to reviews
+- [ ] Add profile images
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
