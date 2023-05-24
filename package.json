@@ -4,13 +4,20 @@
   "description": "<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 --> <a name=\"readme-top\"></a>",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "render-postbuild": "npm run build --prefix frontend",
+    "install": "npm --prefix server install server && npm --prefix frontend install frontend",
+    "dev:server": "npm install --prefix server start",
+    "dev:frontend": "npm install --prefix frontend start",
+    "sequelize": "npm run --prefix server sequelize",
+    "sequelize-cli": "npm run --prefix server sequelize-cli",
+    "start": "npm start --prefix server",
+    "build": "npm run build --prefix server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chingu-voyages/v44-tier3-team-41.git"
   },
-  "author": "Alex Hunt",
+  "author": "Alex Hunt, Ali Mora, Yi Lin ",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chingu-voyages/v44-tier3-team-41/issues"
