@@ -14,6 +14,7 @@ import Message from './page/Message';
 import Search from './page/Search';
 import Report from './page/Report';
 import Profile from './page/Profile';
+import UserProfile from './UserProfile';
 
 const App = () => {
 	return (

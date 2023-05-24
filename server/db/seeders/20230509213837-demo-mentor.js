@@ -13,6 +13,8 @@ module.exports = {
       {
         name: 'Rutter Pemble',
         email: 'mentor@gu.io',
+        countryCode: '001',
+        phone: '2341938721',
         hashedPassword: bcrypt.hashSync('password'),
         classification: 'Mentor',
         city: 'Austin',
@@ -28,6 +30,8 @@ module.exports = {
       {
         name: 'Nata Videan',
         email: 'nvidean1@smugmug.com',
+        countryCode: '033',
+        phone: '1341208421',
         hashedPassword: bcrypt.hashSync('Videan'),
         classification: 'Mentor',
         city: 'Lavaur',
@@ -43,6 +47,8 @@ module.exports = {
       {
         name: 'Hynda Lytton',
         email: 'hlytton2@wired.com',
+        countryCode: '001',
+        phone: '8341908721',
         hashedPassword: bcrypt.hashSync('Lytton'),
         classification: 'Mentor',
         city: 'Miami',
@@ -58,6 +64,8 @@ module.exports = {
       {
         name: 'Heindrick Belliveau',
         email: 'hbelliveau3@mapy.cz',
+        countryCode: '001',
+        phone: '5345909721',
         hashedPassword: bcrypt.hashSync('Belliveau'),
         classification: 'Mentor',
         city: 'New York City',
@@ -73,6 +81,8 @@ module.exports = {
       {
         name: 'Jerri Babington',
         email: 'jbabington4@wired.com',
+        countryCode: '001',
+        phone: '2151908721',
         hashedPassword: bcrypt.hashSync('Babington'),
         classification: 'Mentor',
         city: 'Philadelphia',
@@ -88,6 +98,8 @@ module.exports = {
       {
         name: 'Dennet Rumbellow',
         email: 'drumbellow5@yolasite.com',
+        countryCode: '086',
+        phone: '3341979221',
         hashedPassword: bcrypt.hashSync('Rumbellow'),
         classification: 'Mentor',
         city: 'Taifu',
@@ -103,6 +115,8 @@ module.exports = {
       {
         name: 'Margeaux Heinel',
         email: 'mheinel6@springer.com',
+        countryCode: '027',
+        phone: '7771908721',
         hashedPassword: bcrypt.hashSync('Heinel'),
         classification: 'Mentor',
         city: 'Peddie',
@@ -118,6 +132,8 @@ module.exports = {
       {
         name: 'Brenden Bucktrout',
         email: 'bbucktrout7@forbes.com',
+        countryCode: '086',
+        phone: '4191308721',
         hashedPassword: bcrypt.hashSync('Bucktrout'),
         classification: 'Mentor',
         city: 'Xiagong',
@@ -133,6 +149,8 @@ module.exports = {
       {
         name: 'Derek Windley',
         email: 'dwindley8@com.com',
+        countryCode: '027',
+        phone: '1341908721',
         hashedPassword: bcrypt.hashSync('Windley'),
         classification: 'Mentor',
         city: 'Vanderbijlpark',
@@ -148,6 +166,8 @@ module.exports = {
       {
         name: 'Kelsy Extence',
         email: 'kextence9@surveymonkey.com',
+        countryCode: '091',
+        phone: '9081341721',
         hashedPassword: bcrypt.hashSync('Extence'),
         classification: 'Mentor',
         city: 'Sadar Bazar',
@@ -163,6 +183,8 @@ module.exports = {
       {
         name: 'Ora Hargraves',
         email: 'ohargravesa@1688.com',
+        countryCode: '086',
+        phone: '9831908721',
         hashedPassword: bcrypt.hashSync('Hargraves'),
         classification: 'Mentor',
         city: 'Shangkuli',
@@ -178,6 +200,8 @@ module.exports = {
       {
         name: 'Regan Fery',
         email: 'rferyb@pbs.org',
+        countryCode: '001',
+        phone: '8411908721',
         hashedPassword: bcrypt.hashSync('Fery'),
         classification: 'Mentor',
         city: 'Tulsa',
@@ -193,6 +217,8 @@ module.exports = {
       {
         name: 'Norah Casserly',
         email: 'ncasserlyc@dell.com',
+        countryCode: '086',
+        phone: '3419018721',
         hashedPassword: bcrypt.hashSync('Casserly'),
         classification: 'Mentor',
         city: 'Yutan',
@@ -208,6 +234,8 @@ module.exports = {
       {
         name: 'Andras Meindl',
         email: 'ameindld@patch.com',
+        countryCode: '001',
+        phone: '6741908721',
         hashedPassword: bcrypt.hashSync('Meindl'),
         classification: 'Mentor',
         city: 'Hartford',
@@ -223,6 +251,8 @@ module.exports = {
       {
         name: 'Charlotte Macknish',
         email: 'cmacknishe@thetimes.co.uk',
+        countryCode: '001',
+        phone: '4921908721',
         hashedPassword: bcrypt.hashSync('Macknish'),
         classification: 'Mentor',
         city: 'Austin',
@@ -238,6 +268,8 @@ module.exports = {
       {
         name: 'Alyss Romei',
         email: 'aromeif@craigslist.org',
+        countryCode: '086',
+        phone: '3012908721',
         hashedPassword: bcrypt.hashSync('Romei'),
         classification: 'Mentor',
         city: 'Haoxinying',
@@ -253,6 +285,8 @@ module.exports = {
       {
         name: 'Merrill Stanmore',
         email: 'mstanmoreg@imgur.com',
+        countryCode: '001',
+        phone: '9910208721',
         hashedPassword: bcrypt.hashSync('Stanmore'),
         classification: 'Mentor',
         city: 'Agraharam',
@@ -268,6 +302,8 @@ module.exports = {
       {
         name: "Willy D'Ambrosi",
         email: 'wdambrosih@cbsnews.com',
+        countryCode: '001',
+        phone: '4471908721',
         hashedPassword: bcrypt.hashSync("D'Ambrosi"),
         classification: 'Mentor',
         city: 'Camden',
@@ -283,6 +319,8 @@ module.exports = {
       {
         name: 'Bartholemy Garlic',
         email: 'bgarlici@fda.gov',
+        countryCode: '086',
+        phone: '1908721134',
         hashedPassword: bcrypt.hashSync('Garlic'),
         classification: 'Mentor',
         city: 'Kongkeshu',
@@ -298,6 +336,8 @@ module.exports = {
       {
         name: 'Nicholle Brigman',
         email: 'nbrigmanj@umn.edu',
+        countryCode: '001',
+        phone: '8721341901',
         hashedPassword: bcrypt.hashSync('Brigman'),
         classification: 'Mentor',
         city: 'Memphis',

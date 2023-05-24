@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const GETALLMENTORS = 'mentor/GETALLMENTORS'
 const GETMENTOR = 'mentor/GETMENTOR'
 const GETSTUDENTS = 'mentor/GETSTUDENTS'
+const EDITMENTOR = 'mentor/EDITMENTOR'
 
 //** Action creator */
 
@@ -23,6 +24,13 @@ const getMentor = data => {
 const mentorStudents = data => {
     return {
         type: GETSTUDENTS,
+        payload: data
+    }
+}
+
+const editMentor = data => {
+    return {
+        type: EDITMENTOR,
         payload: data
     }
 }
@@ -50,6 +58,34 @@ export const getMentorThunk = (id) => async dispatch => {
     }
 }
 
+export const editMentorThunk = (user) => async dispatch => {
+
+    const response = await csrfFetch(`/api/mentor/${user.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: user.name,
+            email: user.email,
+            countryCode: user.countryCode,
+            phone: user.phone,
+            city: user.city,
+            state: user.state,
+            country: user.country,
+            profileImg: user.profileImg,
+            yrsExp: user.yrsExp,
+            about: user.about,
+            role: user.role,
+            skill: user.skill,
+            expertise: user.expertise,
+            company: user.company,
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(editMentor(data))
+    }
+}
+
 const initialState = { search: null, mentor: null, students: null }
 
 //** Reducers */
@@ -64,8 +100,11 @@ const mentorReducer = (state = initialState, action) => {
             return currentState;
 
         case GETMENTOR:
-            currentState.mentor = null
-            currentState.mentor = action.payload
+            currentState.mentor = { ...action.payload }
+            return currentState
+
+        case EDITMENTOR:
+            currentState.mentor = { ...action.payload }
             return currentState
 
         case GETSTUDENTS:

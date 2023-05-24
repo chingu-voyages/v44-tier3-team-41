@@ -1,8 +1,9 @@
 import { csrfFetch } from "./csrf";
 
-const GETALLMENTEES = 'mentor/GETALLMENTEES'
-const GETMENTEE = 'mentor/GETMENTEE'
-const GETTEACHER = 'mentor/GETTEACHER'
+const GETALLMENTEES = 'mentee/GETALLMENTEES'
+const GETMENTEE = 'mentee/GETMENTEE'
+const GETTEACHER = 'mentee/GETTEACHER'
+const EDITMENTEE = 'mentee/EDITMENTEE'
 
 //** Action creator */
 
@@ -23,6 +24,13 @@ const getMentee = data => {
 const getTeacher = data => {
     return {
         type: GETTEACHER,
+        payload: data
+    }
+}
+
+const editMentee = data => {
+    return {
+        type: EDITMENTEE,
         payload: data
     }
 }
@@ -50,6 +58,34 @@ export const getMenteeThunk = (id) => async dispatch => {
     }
 }
 
+
+export const editMenteeThunk = (user) => async dispatch => {
+
+    const response = await csrfFetch(`/api/mentee/${user.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: user.name,
+            email: user.email,
+            countryCode: user.countryCode,
+            phone: user.phone,
+            city: user.city,
+            state: user.state,
+            country: user.country,
+            profileImg: user.profileImg,
+            goal: user.goal,
+            about: user.about,
+            occupation: user.occupation,
+            skill: user.skill,
+            project: user.project,
+        })
+    })
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(editMentee(data))
+    }
+}
+
 const initialState = { search: null, mentee: null, teacher: null }
 
 //** Reducers */
@@ -64,13 +100,15 @@ const menteeReducer = (state = initialState, action) => {
             return currentState;
 
         case GETMENTEE:
-            currentState.mentee = null
-            currentState.mentee = action.payload
+            currentState.mentee = { ...action.payload }
+            return currentState
+
+        case EDITMENTEE:
+            currentState.mentee = { ...action.payload }
             return currentState
 
         case GETTEACHER:
-            currentState.teacher = null
-            currentState.teacher = action.payload
+            currentState.teacher = { ...action.payload }
             return currentState
 
         default:
