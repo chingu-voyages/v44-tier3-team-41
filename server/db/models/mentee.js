@@ -1,7 +1,7 @@
 'use strict';
 
 const {
-  Model
+  Model, Validator
 } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
@@ -44,6 +44,46 @@ module.exports = (sequelize, DataTypes) => {
       return await Mentee.scope('currentMentee').findByPk(mentee.id);
     }
 
+    static async upgrade({
+      id,
+      name,
+      email,
+      countryCode,
+      phone,
+      city,
+      state,
+      country,
+      profileImg,
+      goal,
+      about,
+      occupation,
+      skill,
+      project,
+      mentorId
+    }) {
+      await Mentee.update(
+        {
+          name,
+          email,
+          countryCode,
+          phone,
+          city,
+          state,
+          country,
+          profileImg,
+          goal,
+          about,
+          occupation,
+          skill,
+          project,
+          mentorId
+        },
+        { where: { id } }
+      );
+
+      return await Mentee.scope('currentMentee').findByPk(id);
+    }
+
     static associate(models) {
       Mentee.belongsTo(models.Mentor, {
         foreignKey: 'mentorId',
@@ -59,11 +99,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         len: [3, 40],
-        // isNotEmail(value) {
-        //   if (Validator.isEmail(value)) {
-        //     throw new Error('Cannot be an email.');
-        //   }
-        // }
+        isNotEmail(value) {
+          if (Validator.isEmail(value)) {
+            throw new Error('Cannot be an email.');
+          }
+        }
       },
     },
     email: {
@@ -73,6 +113,18 @@ module.exports = (sequelize, DataTypes) => {
         len: [5, 300],
         isEmail: true,
       },
+    },
+    countryCode: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [3, 3]
+      }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [10, 10]
+      }
     },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,

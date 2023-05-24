@@ -12,6 +12,8 @@ module.exports = {
     return await queryInterface.bulkInsert(options, [{
       name: 'John Doe',
       email: 'john.doe@cgu.io',
+      countryCode: '001',
+      phone: '1341908721',
       hashedPassword: bcrypt.hashSync('password'),
       classification: 'Mentee',
       city: 'New York',
@@ -27,6 +29,8 @@ module.exports = {
     }, {
       name: 'Dag Denness',
       email: 'ddenness6@jigsy.com',
+      countryCode: '001',
+      phone: '2348217201',
       hashedPassword: bcrypt.hashSync('password1'),
       classification: 'Mentee',
       city: 'Whitehorse',
@@ -42,6 +46,8 @@ module.exports = {
     }, {
       name: 'Glori cornhill',
       email: 'gcornhill3@artisteer.com',
+      countryCode: '001',
+      phone: '7926193015',
       hashedPassword: bcrypt.hashSync('password2'),
       classification: 'Mentee',
       city: 'Madison',
@@ -57,6 +63,8 @@ module.exports = {
     }, {
       name: 'Mozelle Scandroot',
       email: 'mscandrootc@abc.net.au',
+      countryCode: '001',
+      phone: '4017221183',
       hashedPassword: bcrypt.hashSync('password3'),
       classification: 'Mentee',
       city: 'North Little Rock',

@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { Op } = require('sequelize');
-const { Mentor } = require('../../db/models');
+const { Mentor, Mentee } = require('../../db/models');
 
 const router = express.Router();
 
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
   } = req.query;
 
   const query = {
-    where: {},
+    where: {}
   };
 
   // ? capitalize the first letter of every word in the input
@@ -107,13 +107,75 @@ router.get('/', async (req, res) => {
   }
 });
 
-/** ******************************************************** */
+/** ************************************************************* */
 
 //! Query Mentor by Id
 router.get('/:id', async (req, res) => {
-  const mentorObj = await Mentor.findOne({ where: { id: req.params.id }, attributes: { exclude: ['hashedPassword'] } });
+  const mentorObj = await Mentor.findOne({
+    where: { id: req.params.id },
+    attributes: { exclude: ['hashedPassword'] },
+    include: [
+      {
+        model: Mentee,
+        attributes: ['name', 'email', 'city', 'state', 'country', 'profileImg', 'goal', 'occupation', 'skill']
+      }
+    ]
+  });
 
   return res.json(mentorObj);
+});
+
+/** ***************************************************************** */
+
+//! Edit Mentor by Id
+router.put('/:id', async (req, res) => {
+  const {
+    name,
+    email,
+    countryCode,
+    phone,
+    city,
+    state,
+    country,
+    profileImg,
+    yrsExp,
+    about,
+    role,
+    expertise,
+    company
+  } = req.body;
+
+  const editedMentor = await Mentor.findByPk(req.params.id);
+
+  if (!editedMentor) {
+    return res.status(404).json({
+      message: "User couldn't be found",
+      statusCode: 404
+    });
+  }
+  // Check if the user is authorized to update the mentee record
+  // if (req.user.id !== editedMentor.id) {
+  //   return res.status(403).json({ message: 'Unauthorized', statusCode: '403' });
+  // }
+
+  const updatedMentor = await Mentor.upgrade({
+    id: req.params.id,
+    name,
+    email,
+    countryCode,
+    phone,
+    city,
+    state,
+    country,
+    profileImg,
+    yrsExp,
+    about,
+    role,
+    expertise,
+    company
+  });
+
+  return res.json(updatedMentor);
 });
 
 module.exports = router;
