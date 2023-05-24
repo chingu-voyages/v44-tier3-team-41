@@ -1,27 +1,34 @@
 {
   "name": "v44-tier3-team-41",
   "version": "1.0.0",
-  "description": "Your project's `readme` is as important to success as your code. For  this reason you should put as much care into its creation and maintenance as you would any other component of the application.",
-  "main": "index.js",
+  "description": "<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 --> <a name=\"readme-top\"></a>",
+  "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "render-postbuild": "npm run build --prefix frontend",
+    "install": "npm --prefix server install server && npm --prefix frontend install frontend",
+    "dev:server": "npm install --prefix server start",
+    "dev:frontend": "npm install --prefix frontend start",
+    "sequelize": "npm run --prefix server sequelize",
+    "sequelize-cli": "npm run --prefix server sequelize-cli",
+    "start": "npm start --prefix server",
+    "build": "npm run build --prefix server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chingu-voyages/v44-tier3-team-41.git"
   },
-  "author": "",
+  "author": "Alex Hunt, Ali Mora, Yi Lin ",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chingu-voyages/v44-tier3-team-41/issues"
   },
   "homepage": "https://github.com/chingu-voyages/v44-tier3-team-41#readme",
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2"
-  },
   "devDependencies": {
-    "nodemon": "^2.0.22",
-    "sqlite3": "^5.1.6"
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }
