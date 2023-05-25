@@ -62,8 +62,8 @@ export default function SignupMentor() {
 								alt="DM logo"
 							/>
 						</Link>
-						<h2 className="mt-5 text-left text-2xl font-bold leading-9 tracking-tight text-gray-900">
-							Sign up for a new account
+						<h2 className="mt-5 text-left text-lg font-bold leading-9 tracking-tight text-blue-900">
+							Sign up for a new Mentor account
 						</h2>
 						<p className="mt-4 text-sm font-light leading-5 text-gray-500">
 							Connect with our community of
