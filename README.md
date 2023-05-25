@@ -1,4 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
@@ -10,19 +11,19 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
+
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
+
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![LinkedIn][linkedin-shield]][linkedin-url] -->
-
-
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="">
-    <img width="200" alt="NinjaVillage_logo" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/92185695/45e02588-a583-4b31-92ef-bcd160d41984"</a>
+    <img width="200" alt="DM_logo" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/92185695/45e02588-a583-4b31-92ef-bcd160d41984"></a>
 
   <h3 align="center">DevelopMe (ADPList Clone)</h3>
 
@@ -31,15 +32,13 @@
     <br />
     <br />
     <br />
-    <a href="#">Live Site</a>
+    <a href="https://develop-me.onrender.com/" target="_blank">Live Site</a>
     ·
     <a href="https://dbdiagram.io/d/64545220dca9fb07c489563d">DB Schema</a>
     <!-- ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -67,49 +66,45 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With:
-* basic: [![Javascript][Javascript]][Javascript-url][![HTML5][HTML5]][HTML-url][![CSS][CSS]][CSS-url]
-* style: [![Tailwind CSS][Tailwind CSS]][Tailwind CSS-url]
-* frontend: [![React][React.js]][React-url][![React Router][React Router]][React Router-url][![Redux][Redux]][Redux-url]
-* backend: [![Node.js][Node.js]][Node-url][![Express][Express]][Express-url]
-* package management: [![NPM][NPM]][NPM-url]
-* ORM: [![Sequelize][Sequelize]][Sequelize-url]
-* ENV: [![.ENV][.ENV]][.ENV-url]
-* remote repository:[![Git][Git]][Git-url][![Github][Github]][Github-url]
-* deployment: [![Render][Render]][Render-url]
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+- basic: [![Javascript][Javascript]][Javascript-url][![HTML5][HTML5]][HTML-url][![CSS][CSS]][CSS-url]
+- style: [![Tailwind CSS][Tailwind CSS]][Tailwind CSS-url]
+- frontend: [![React][React.js]][React-url][![React Router][React Router]][React Router-url][![Redux][Redux]][Redux-url]
+- backend: [![Node.js][Node.js]][Node-url][![Express][Express]][Express-url]
+- package management: [![NPM][NPM]][NPM-url]
+- ORM: [![Sequelize][Sequelize]][Sequelize-url]
+- ENV: [![.ENV][.ENV]][.ENV-url]
+- remote repository:[![Git][Git]][Git-url][![Github][Github]][Github-url]
+- deployment: [![Render][Render]][Render-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Images
 
 ### Landing Page
 
-
-
-
 ### Mentor list Page
-  
+
 ### Mentee list Page
-  
+
 ### Message Page
- 
+
 ### Search Page
-  
+
 ### Profile Page
-  
+
 ### Reports Page
 
-
 <!-- GETTING STARTED -->
-## Getting Started
 
+## Getting Started
 
 <!-- ### Prerequisites
 
@@ -139,8 +134,6 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
 
@@ -150,9 +143,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
 <!-- ROADMAP -->
+
 ## Features
 
 - [x] Sign Up, Login users to the 'Develop Me' app
@@ -162,10 +154,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] Add profile images
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+`npm i`
 
+cd server `nmp start`
+
+cd frontend `npm start`
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
@@ -182,8 +177,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-
 
 <!-- LICENSE -->
 <!-- ## License
@@ -204,7 +197,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
  -->
 
-
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments
 
@@ -221,10 +213,9 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/alexh205/Ninja_e-commerce/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -251,28 +242,27 @@ Use this space to list resources you find helpful and would like to give credit 
 [NPM-url]: https://www.npmjs.com/
 [SQLite]: https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white
 [SQLite-url]: https://www.sqlite.org/index.html
-[Flask]:https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
+[Flask]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
 [Flask-url]: https://flask.palletsprojects.com/en/2.2.x/
-[Python]:https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
-[Python-url]:https://docs.python.org/3/
+[Python]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://docs.python.org/3/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Yarn]: https://img.shields.io/badge/Yarn-2C8EBB?logo=yarn&logoColor=fff&style=for-the-badge
 [Yarn-url]: https://yarnpkg.com/
-[React Router]:https://img.shields.io/badge/React%20Router-CA4245?logo=reactrouter&logoColor=fff&style=for-the-badge
+[React Router]: https://img.shields.io/badge/React%20Router-CA4245?logo=reactrouter&logoColor=fff&style=for-the-badge
 [React Router-url]: https://reactrouter.com/en/main
-[Sequelize]:https://img.shields.io/badge/Sequelize-52B0E7?logo=sequelize&logoColor=fff&style=for-the-badge
+[Sequelize]: https://img.shields.io/badge/Sequelize-52B0E7?logo=sequelize&logoColor=fff&style=for-the-badge
 [Sequelize-url]: https://sequelize.org/
 [.ENV]: https://img.shields.io/badge/.ENV-ECD53F?logo=dotenv&logoColor=000&style=for-the-badge
 [.ENV-url]: https://github.com/motdotla/dotenv
-[Render]:https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=000&style=for-the-badge
+[Render]: https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=000&style=for-the-badge
 [Render-url]: https://render.com/
-[Redux]:https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff&style=for-the-badge
+[Redux]: https://img.shields.io/badge/Redux-764ABC?logo=redux&logoColor=fff&style=for-the-badge
 [Redux-url]: https://redux.js.org/
 [Tailwind CSS]: https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=for-the-badge
-[Tailwind CSS-url]:https://tailwindcss.com/
+[Tailwind CSS-url]: https://tailwindcss.com/
 [Amazon AWS]: https://img.shields.io/badge/Amazon%20AWS-232F3E?logo=amazonaws&logoColor=fff&style=for-the-badge
-[Amazon AWS-URL]:https://aws.amazon.com/
+[Amazon AWS-URL]: https://aws.amazon.com/
 [Express]: https://img.shields.io/badge/Express-000?logo=express&logoColor=fff&style=for-the-badge
 [Express-url]: https://expressjs.com/
-
