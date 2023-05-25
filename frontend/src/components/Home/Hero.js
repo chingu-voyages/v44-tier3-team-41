@@ -23,7 +23,7 @@ export default function Hero() {
 
 	return (
 		<div className="bg-white">
-			<header className="absolute inset-x-0 top-0 z-50">
+			<header className="fixed inset-x-0 top-0 z-50 bg-white bg-opacity-90 border-b backdrop-blur">
 				<nav
 					className="flex items-center justify-between p-2 lg:px-8"
 					aria-label="Global">
@@ -33,7 +33,7 @@ export default function Hero() {
 								DevelopMe
 							</span>
 							<img
-								className="w-auto h-20"
+								className="w-auto h-16"
 								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
 								alt="dm_logo"
 							/>
