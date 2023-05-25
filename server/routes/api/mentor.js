@@ -1,6 +1,7 @@
 const express = require('express');
-
 const { Op } = require('sequelize');
+const { requireAuth } = require('../../utils/auth');
+
 const { Mentor, Mentee } = require('../../db/models');
 
 const router = express.Router();
@@ -128,7 +129,7 @@ router.get('/:id', async (req, res) => {
 /** ***************************************************************** */
 
 //! Edit Mentor by Id
-router.put('/:id', async (req, res) => {
+router.put('/:id', requireAuth, async (req, res) => {
   const {
     name,
     email,
@@ -154,9 +155,9 @@ router.put('/:id', async (req, res) => {
     });
   }
   // Check if the user is authorized to update the mentee record
-  // if (req.user.id !== editedMentor.id) {
-  //   return res.status(403).json({ message: 'Unauthorized', statusCode: '403' });
-  // }
+  if (req.user.id !== editedMentor.id) {
+    return res.status(403).json({ message: 'Unauthorized', statusCode: '403' });
+  }
 
   const updatedMentor = await Mentor.upgrade({
     id: req.params.id,
