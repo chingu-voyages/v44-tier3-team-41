@@ -1,6 +1,7 @@
 const express = require('express');
 
 const { Mentee, Mentor } = require('../../db/models');
+const { requireAuth } = require('../../utils/auth');
 
 const router = express.Router();
 
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 //! Query Mentee by Id
-router.get('/:id', async (req, res) => {
+router.get('/:id', requireAuth, async (req, res) => {
   const menteeObj = await Mentee.findOne({
     where: { id: req.params.id },
     attributes: { exclude: ['hashedPassword'] },
@@ -30,7 +31,7 @@ router.get('/:id', async (req, res) => {
 /** ********************************************************************** */
 //! Edit Mentee by id
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', requireAuth, async (req, res) => {
   const {
     name,
     email,
@@ -57,9 +58,9 @@ router.put('/:id', async (req, res) => {
     });
   }
   // Check if the user is authorized to update the mentee record
-  // if (req.user.id !== editedMentee.id) {
-  //   return res.status(403).json({ message: 'Unauthorized', statusCode: '403' });
-  // }
+  if (req.user.id !== editedMentee.id) {
+    return res.status(403).json({ message: 'Unauthorized', statusCode: '403' });
+  }
 
   const updatedMentee = await Mentee.upgrade({
     id: req.params.id,
