@@ -1,17 +1,23 @@
 [
-  {
-    "name": "Alex Hunt",
-    "role": "Software Developer",
-    "imageUrl": "https://avatars.githubusercontent.com/u/95322089?v=4"
-  },
-  {
-    "name": "Yi",
-    "role": "Software Developer",
-    "imageUrl": "https://avatars.githubusercontent.com/u/92185695?v=4"
-  },
-  {
-    "name": "Ali Mora",
-    "role": "Software Developer",
-    "imageUrl": "https://media.licdn.com/dms/image/C4E03AQErpn4g8sXLgw/profile-displayphoto-shrink_400_400/0/1622120785981?e=1690416000&v=beta&t=BFmN23me89kpcNNQeyVWUekQE55uejYLQgSEIV459F0"
-  }
+	{
+		"name": "Alex Hunt",
+		"role": "Software Developer",
+		"imageUrl": "https://avatars.githubusercontent.com/u/95322089?v=4",
+		"linkedinUrl": "https://www.linkedin.com/in/alexhuntdev",
+		"githubUrl": "https://github.com/alexh205"
+	},
+	{
+		"name": "Yi",
+		"role": "Software Developer",
+		"imageUrl": "https://avatars.githubusercontent.com/u/92185695?v=4",
+		"linkedinUrl": "https://www.linkedin.com/in/yi-lin-97b694232/",
+		"githubUrl": "https://github.com/yi-lin-1234"
+	},
+	{
+		"name": "Ali Mora",
+		"role": "Software Developer",
+		"imageUrl": "https://media.licdn.com/dms/image/C4E03AQErpn4g8sXLgw/profile-displayphoto-shrink_400_400/0/1622120785981?e=1690416000&v=beta&t=BFmN23me89kpcNNQeyVWUekQE55uejYLQgSEIV459F0",
+		"linkedUrl": "https://www.linkedin.com/in/daurius-ali-swarts-1b151420b/",
+		"githubUrl": "https://github.com/AliMora83"
+	}
 ]
