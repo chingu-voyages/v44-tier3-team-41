@@ -153,7 +153,7 @@ export default function Hero() {
 						<hr className="mt-4 border-blue-500 w-16 border-2" />
 					</div>
 					{/* Blue Guy Avatar */}
-					<div className="absolute top-[100px] right-[400px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[100px] right-[400px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
 						<img
 							className="h-24 w-24 rounded-full"
 							src="https://adplist.org/photos/mentors/1.webp"
@@ -161,7 +161,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Blue Lady Avatar */}
-					<div className="absolute top-[160px] right-[240px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[160px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
 						<img
 							className="h-20 w-20 rounded-full"
 							src="https://adplist.org/photos/mentors/2.webp"
@@ -169,7 +169,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Orange Guy Avatar */}
-					<div className="absolute top-[260px] right-[600px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[260px] right-[600px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
 						<img
 							className="h-20 w-20 rounded-full"
 							src="https://adplist.org/photos/mentors/3.webp"
@@ -177,7 +177,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Purple Lady Avatar */}
-					<div className="absolute top-[330px] right-[280px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[330px] right-[280px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float">
 						<img
 							className="h-40 w-40 rounded-full"
 							src="https://adplist.org/photos/mentors/4.webp"
@@ -185,7 +185,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Pink Guy Avatar */}
-					<div className="absolute top-[460px] right-[700px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[460px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float">
 						<img
 							className="h-20 w-20 rounded-full"
 							src="https://adplist.org/photos/mentors/5.webp"
@@ -193,7 +193,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* White Lady Avatar */}
-					<div className="absolute top-[530px] right-[420px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[530px] right-[420px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
 						<img
 							className="h-20 w-20 rounded-full"
 							src="https://adplist.org/photos/mentors/6.webp"
@@ -201,7 +201,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Pink Lady Avatar */}
-					<div className="absolute top-[530px] right-[240px] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[530px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
 						<img
 							className="h-24 w-24 rounded-full"
 							src="https://adplist.org/photos/mentors/7.webp"
