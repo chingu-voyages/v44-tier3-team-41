@@ -1,5 +1,4 @@
 import { csrfFetch } from './csrf'
-const initialState = { user: null }
 
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
@@ -93,6 +92,8 @@ export const getUserThunk = id => async () => {
     }
 };
 
+const initialState = { user: null }
+
 const sessionReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
@@ -100,7 +101,7 @@ const sessionReducer = (state = initialState, action) => {
             newState = Object.assign({}, state);
 
             if (Object.keys(action.user).length) {
-                newState.user = action.user;
+                newState = action.user;
             }
             return newState;
 

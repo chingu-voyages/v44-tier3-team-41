@@ -45,7 +45,7 @@ function MentorCard({ mentor }) {
 					</div>
 					<div className="-ml-px flex w-0 flex-1">
 						<a
-							href={`tel:${mentor.telephone}`}
+							href={`tel:${mentor.phone}`}
 							className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
 							<ChatBubbleLeftIcon
 								className="h-5 w-5 text-gray-400"
