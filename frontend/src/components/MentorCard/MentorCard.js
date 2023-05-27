@@ -1,16 +1,15 @@
-import { EnvelopeIcon } from '@heroicons/react/20/solid';
-import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
+import {EnvelopeIcon} from '@heroicons/react/20/solid';
+import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
+import {Link} from 'react-router-dom';
 
-function MentorCard({ mentor }) {
+function MentorCard({mentor}) {
 	if (!mentor) {
 		return <div>No mentor data</div>;
 	}
 
-
 	return (
 		<li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
-			<Link to={`/dashboard/mentor_detail/${mentor.id}`}>
+			<Link to={`/dashboard/mentor_detail`} state={mentor}>
 				<div className="flex flex-1 flex-col p-8">
 					<img
 						className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
@@ -44,15 +43,16 @@ function MentorCard({ mentor }) {
 						</a>
 					</div>
 					<div className="-ml-px flex w-0 flex-1">
-						<a
-							href={`tel:${mentor.telephone}`}
+						<Link
+							to={'/dashboard/directMessage'}
+							state={mentor}
 							className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
 							<ChatBubbleLeftIcon
 								className="h-5 w-5 text-gray-400"
 								aria-hidden="true"
 							/>
 							Chat
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

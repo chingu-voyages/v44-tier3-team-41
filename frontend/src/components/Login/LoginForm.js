@@ -1,13 +1,13 @@
-import React, { useState, Fragment } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
-import { loginThunk } from '../../store/session';
+import React, {useState, Fragment} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, useNavigate} from 'react-router-dom';
+import {Listbox, Transition} from '@headlessui/react';
+import {CheckIcon, ChevronUpDownIcon} from '@heroicons/react/20/solid';
+import {loginThunk} from '../../store/session';
 
 const roles = [
-	{ id: 1, name: 'Mentor' },
-	{ id: 2, name: 'Mentee' },
+	{id: 1, name: 'Mentor'},
+	{id: 2, name: 'Mentee'},
 ];
 
 function classNames(...classes) {
@@ -36,7 +36,7 @@ export default function LoginForm() {
 
 	const sessionUser = useSelector(state => state.session.user);
 
-	if (sessionUser) navigate('/dashboard');
+	if (sessionUser) navigate('/dashboard/mentorlist');
 
 	const handleSubmit = async e => {
 		e.preventDefault();
@@ -98,7 +98,7 @@ export default function LoginForm() {
 							))}
 						</ul>
 						<Listbox value={classification} onChange={setClassification}>
-							{({ open }) => (
+							{({open}) => (
 								<>
 									<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
 										Role
@@ -126,7 +126,7 @@ export default function LoginForm() {
 												{roles.map(role => (
 													<Listbox.Option
 														key={role.id}
-														className={({ active }) =>
+														className={({active}) =>
 															classNames(
 																active
 																	? 'bg-indigo-600 text-white'
@@ -135,7 +135,7 @@ export default function LoginForm() {
 															)
 														}
 														value={role}>
-														{({ classification, active }) => (
+														{({classification, active}) => (
 															<>
 																<span
 																	className={classNames(
