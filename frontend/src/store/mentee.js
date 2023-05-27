@@ -44,6 +44,7 @@ export const getAllMenteesThunk = (filters = {}) => async dispatch => {
     const response = await csrfFetch(`/api/mentee?${params}`);
     if (response.ok) {
         const data = await response.json();
+
         dispatch(getMentees(data));
     }
 };
@@ -96,7 +97,7 @@ const menteeReducer = (state = initialState, action) => {
     switch (action.type) {
         case GETALLMENTEES:
             currentState.search = null
-            currentState.search = [...action.payload.Mentee]
+            currentState.search = [...action.payload.Mentees]
             return currentState;
 
         case GETMENTEE:

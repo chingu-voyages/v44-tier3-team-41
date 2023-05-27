@@ -66,7 +66,7 @@ router.get('/', async (req, res) => {
     };
   }
 
-  //* Company Filter
+  //* Expertise Filter
   if (expertise) query.where.expertise = { [Op.like]: `%${capitalizeFirstLetters(expertise)}%` };
 
   //* Page filters

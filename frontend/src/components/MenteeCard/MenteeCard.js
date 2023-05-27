@@ -9,7 +9,7 @@ function MenteeCard({ mentee }) {
 
   return (
     <li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
-      <Link to={`/mentee_detail/${mentee.id}`}>
+      <Link to={`/dashboard/mentee_detail/${mentee.id}`}>
         <div className="flex flex-1 flex-col p-8">
           <img
             className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
@@ -40,7 +40,7 @@ function MenteeCard({ mentee }) {
           </div>
           <div className="-ml-px flex w-0 flex-1">
             <a
-              href={`tel:${mentee.telephone}`}
+              href={`tel:${mentee.phone}`}
               className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
             >
               <ChatBubbleLeftIcon
