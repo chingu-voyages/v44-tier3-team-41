@@ -27,6 +27,7 @@ const App = () => {
 		}
 		fetchUser()
 	}, [dispatch])
+
 	return (
 		<>
 			<Routes>
@@ -42,7 +43,7 @@ const App = () => {
 					<Route path="report" element={<Report />} />
 					<Route path="userProfile" element={<Profile />} />
 					<Route path="mentor_detail" element={<MentorDetail />} />
-					<Route path="mentee_detail/:id" element={<MenteeDetail />} />
+					<Route path="mentee_detail" element={<MenteeDetail />} />
 					<Route path="directMessage" element={<DirectMessage />} />
 					<Route path="jobBoard" element={<JobBoard />} />
 				</Route>

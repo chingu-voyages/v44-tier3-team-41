@@ -15,16 +15,15 @@ export default function MentorList() {
 		fetchData();
 	}, [dispatch]);
 
-	if (mentors) {
-		return (
-			<div>
-				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-					{mentors &&
-						mentors.map((mentor, index) => (
-							<MentorCard key={index} mentor={mentor} />
-						))}
-				</ul>
-			</div>
-		);
-	}
+
+	return (
+		<div>
+			<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+				{mentors?.map((mentor, index) => (
+					<MentorCard key={index} mentor={mentor} />
+				))}
+			</ul>
+		</div>
+	);
+
 }

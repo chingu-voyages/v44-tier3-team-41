@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react';
+import React, { useState, Fragment } from 'react';
 import {
 	useDispatch,
 	useSelector,
@@ -16,11 +16,11 @@ import {
 	ChevronUpDownIcon,
 	UserIcon,
 } from '@heroicons/react/20/solid';
-import {loginThunk} from '../../store/session';
+import { loginThunk } from '../../store/session';
 
 const roles = [
-	{id: 1, name: 'Mentor'},
-	{id: 2, name: 'Mentee'},
+	{ id: 1, name: 'Mentor' },
+	{ id: 2, name: 'Mentee' },
 ];
 
 function classNames(...classes) {
@@ -73,7 +73,7 @@ export default function LoginForm() {
 
 		// TODO update the value of classification
 
-		return dispatch(
+		return await dispatch(
 			loginThunk(
 				email,
 				password,
@@ -164,7 +164,7 @@ export default function LoginForm() {
 							<Listbox
 								value={classification}
 								onChange={setClassification}>
-								{({open}) => (
+								{({ open }) => (
 									<>
 										<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
 											Role

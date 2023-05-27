@@ -24,64 +24,125 @@ function classNames(...classes) {
 }
 
 function DashBoard() {
+
 	const [sidebarOpen, setSidebarOpen] =
 		useState(false);
 	const [currentTab, setCurrentTab] =
 		useState('Mentors');
-	const navigation = [
-		{
-			name: 'all mentors',
-			href: 'mentorlist',
-			icon: HomeIcon,
-			current: currentTab === 'all mentors',
-		},
-
-		{
-			name: 'all mentees',
-			href: 'menteelist',
-			icon: UserGroupIcon,
-			current: currentTab === 'all mentees',
-		},
-		{
-			name: 'my mentees',
-			href: 'menteelist',
-			icon: UsersIcon,
-			current: currentTab === 'my mentees',
-		},
-		{
-			name: 'chat',
-			href: 'messageBoard',
-			icon: ChatBubbleLeftIcon,
-			current: currentTab === 'chat',
-		},
-		{
-			name: 'search mentors',
-			href: 'search',
-			icon: MagnifyingGlassIcon,
-			current: currentTab === 'search mentors',
-		},
-		{
-			name: 'my profile',
-			href: 'userProfile',
-			icon: UserCircleIcon,
-			current: currentTab === 'my profile',
-		},
-		{
-			name: 'user data',
-			href: 'report',
-			icon: ChartPieIcon,
-			current: currentTab === 'user data',
-		},
-		{
-			name: 'job posts',
-			href: 'jobBoard',
-			icon: BriefcaseIcon,
-			current: currentTab === 'job posts',
-		},
-	];
+	let navigation
 
 	const currentUser = useSelector(state => state.session.user);
-	if (currentUser) console.log(currentUser);
+
+
+	if (currentUser?.classification === 'Mentor') {
+		navigation = [
+			{
+				name: 'all mentors',
+				href: 'mentorlist',
+				icon: HomeIcon,
+				current: currentTab === 'all mentors',
+			},
+
+			{
+				name: 'all mentees',
+				href: 'menteelist',
+				icon: UserGroupIcon,
+				current: currentTab === 'all mentees',
+			},
+			{
+				name: 'my mentees',
+				href: 'menteelist',
+				icon: UsersIcon,
+				current: currentTab === 'my mentees',
+			},
+			{
+				name: 'chat',
+				href: 'messageBoard',
+				icon: ChatBubbleLeftIcon,
+				current: currentTab === 'chat',
+			},
+			{
+				name: 'search mentors',
+				href: 'search',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'search mentors',
+			},
+			{
+				name: 'my profile',
+				href: 'userProfile',
+				icon: UserCircleIcon,
+				current: currentTab === 'my profile',
+			},
+			{
+				name: 'user data',
+				href: 'report',
+				icon: ChartPieIcon,
+				current: currentTab === 'user data',
+			},
+			{
+				name: 'job posts',
+				href: 'jobBoard',
+				icon: BriefcaseIcon,
+				current: currentTab === 'job posts',
+			},
+		]
+	} else {
+
+		navigation = [
+			{
+				name: 'all mentors',
+				href: 'mentorlist',
+				icon: HomeIcon,
+				current: currentTab === 'all mentors',
+			},
+
+			{
+				name: 'all mentees',
+				href: 'menteelist',
+				icon: UserGroupIcon,
+				current: currentTab === 'all mentees',
+			},
+			// {
+			// 	name: 'my mentees',
+			// 	href: 'menteelist',
+			// 	icon: UsersIcon,
+			// 	current: currentTab === 'my mentees',
+			// },
+			{
+				name: 'chat',
+				href: 'messageBoard',
+				icon: ChatBubbleLeftIcon,
+				current: currentTab === 'chat',
+			},
+			{
+				name: 'search mentors',
+				href: 'search',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'search mentors',
+			},
+			{
+				name: 'my profile',
+				href: 'userProfile',
+				icon: UserCircleIcon,
+				current: currentTab === 'my profile',
+			},
+			{
+				name: 'user data',
+				href: 'report',
+				icon: ChartPieIcon,
+				current: currentTab === 'user data',
+			},
+			{
+				name: 'job posts',
+				href: 'jobBoard',
+				icon: BriefcaseIcon,
+				current: currentTab === 'job posts',
+			},
+		]
+	}
+
+
+
 	if (currentUser) {
 		return (
 			<>

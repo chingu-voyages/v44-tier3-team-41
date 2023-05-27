@@ -1,20 +1,11 @@
-import React, {useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-import {getMenteeThunk} from '../store/mentee';
-import {useDispatch, useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MenteeDetail = () => {
-	const dispatch = useDispatch();
-	const {id} = useParams();
-	const mentee = useSelector(state => state.mentee.mentee);
+	const data = useLocation();
+	const mentee = data.state;
 
-	useEffect(() => {
-		const fetchData = async () => {
-			await dispatch(getMenteeThunk(id));
-		};
-		fetchData();
-	}, [dispatch, id]);
 
 	if (mentee)
 		return (
@@ -31,7 +22,7 @@ const MenteeDetail = () => {
 										<div className="flex-shrink-0">
 											<img
 												className="mx-auto h-20 w-20 rounded-full"
-												src={mentee.imageUrl}
+												src={mentee.profileImg}
 												alt=""
 											/>
 										</div>

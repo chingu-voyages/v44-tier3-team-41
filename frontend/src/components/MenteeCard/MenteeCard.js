@@ -9,7 +9,7 @@ function MenteeCard({ mentee }) {
 
   return (
     <li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
-      <Link to={`/dashboard/mentee_detail/${mentee.id}`}>
+      <Link to={'/dashboard/mentee_detail'} state={mentee}>
         <div className="flex flex-1 flex-col p-8">
           <img
             className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
@@ -39,8 +39,9 @@ function MenteeCard({ mentee }) {
             </a>
           </div>
           <div className="-ml-px flex w-0 flex-1">
-            <a
-              href={`tel:${mentee.phone}`}
+            <Link
+              to={'/dashboard/directMessage'}
+              state={mentee}
               className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
             >
               <ChatBubbleLeftIcon
@@ -48,7 +49,7 @@ function MenteeCard({ mentee }) {
                 aria-hidden="true"
               />
               Chat
-            </a>
+            </Link>
           </div>
         </div>
       </div>
