@@ -1,13 +1,26 @@
-import React, { useState, Fragment } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, ChevronUpDownIcon, UserIcon } from '@heroicons/react/20/solid';
-import { loginThunk } from '../../store/session';
+import React, {useState, Fragment} from 'react';
+import {
+	useDispatch,
+	useSelector,
+} from 'react-redux';
+import {
+	Link,
+	useNavigate,
+} from 'react-router-dom';
+import {
+	Listbox,
+	Transition,
+} from '@headlessui/react';
+import {
+	CheckIcon,
+	ChevronUpDownIcon,
+	UserIcon,
+} from '@heroicons/react/20/solid';
+import {loginThunk} from '../../store/session';
 
 const roles = [
-	{ id: 1, name: 'Mentor' },
-	{ id: 2, name: 'Mentee' },
+	{id: 1, name: 'Mentor'},
+	{id: 2, name: 'Mentee'},
 ];
 
 function classNames(...classes) {
@@ -51,7 +64,8 @@ export default function LoginForm() {
 		state => state.session.user
 	);
 
-	if (sessionUser) navigate('/dashboard/mentorlist');
+	if (sessionUser)
+		navigate('/dashboard/mentorlist');
 
 	const handleSubmit = async e => {
 		e.preventDefault();
@@ -73,9 +87,10 @@ export default function LoginForm() {
 	};
 
 	return (
-		<div>
-			<div className="flex h-screen bg-[#fafafa]">
-				<div className="flex w-2/3 min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+		<div className="flex h-screen bg-[#fafafa]">
+			{/* Left side */}
+			<div className=" w-2/3">
+				<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 					<div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition-all duration-200 ease-in-out">
 						<h2 className="text-center text-xs font-thin tracking-wider text-gray-600 uppercase">
 							Welcome back to
@@ -91,310 +106,215 @@ export default function LoginForm() {
 							Log in to your account
 						</h2>
 					</div>
-					<div className=" mx-2 my-2 ">
-						<button
-							className="text-white bg-slate-400 rounded-2xl hover:bg-slate-500 px-4 py-2 text-base mb-2"
-							onClick={demoLoginMentor}>
-							Demo Mentor Login
-						</button>
+
+					<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+						<form
+							className="space-y-6"
+							action="#"
+							method="POST"
+							onSubmit={handleSubmit}>
+							<ul>
+								{errors.map((error, idx) => (
+									<li
+										key={idx}
+										className="text-red-500">
+										{error}
+									</li>
+								))}
+							</ul>
+
+							<div className="flex">
+								<div className=" mx-2 my-2 ">
+									<button className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out">
+										<UserIcon
+											className="w-4 h-4 inline-block align-text-bottom mr-1"
+											onClick={demoLoginMentee}
+										/>
+										Mentee demo login
+									</button>
+								</div>
+								<div className=" mx-2 my-2 ">
+									<button className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out">
+										<UserIcon
+											className="w-4 h-4 inline-block align-text-bottom mr-1"
+											onClick={demoLoginMentor}
+										/>
+										Mentor demo login
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
-					<div className=" mx-2 my-2 ">
-						<button
-							className="text-white bg-slate-400 rounded-2xl hover:bg-slate-500 px-4 py-2 text-base mb-2"
-							onClick={demoLoginMentee}>
-							Demo Mentee Login
-						</button>
-					</div>
-				</div>
 
-				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-					<form
-						className="space-y-6"
-						action="#"
-						method="POST"
-						onSubmit={handleSubmit}>
-						<ul>
-							{errors.map((error, idx) => (
-								<li key={idx} className="text-red-500">
-									{error}
-								</li>
-							))}
-						</ul>
-						<Listbox value={classification} onChange={setClassification}>
-							{({ open }) => (
-								<>
-									<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
-										Role
-									</Listbox.Label>
-									<div className="relative mt-2">
-										<Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-											<span className="block truncate">
-												{classification.name}
-											</span>
-											<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-												<ChevronUpDownIcon
-													className="h-5 w-5 text-gray-400"
-													aria-hidden="true"
-												/>
-											</span>
-										</Listbox.Button>
+					<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+						<form
+							className="space-y-6"
+							action="#"
+							method="POST"
+							onSubmit={handleSubmit}>
+							<ul>
+								{errors.map((error, idx) => (
+									<li
+										key={idx}
+										className="text-red-500">
+										{error}
+									</li>
+								))}
+							</ul>
+							<Listbox
+								value={classification}
+								onChange={setClassification}>
+								{({open}) => (
+									<>
+										<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
+											Role
+										</Listbox.Label>
+										<div className="relative">
+											<Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+												<span className="block truncate">
+													{classification.name}
+												</span>
+												<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+													<ChevronUpDownIcon
+														className="h-5 w-5 text-gray-400"
+														aria-hidden="true"
+													/>
+												</span>
+											</Listbox.Button>
 
-										<Transition
-											show={open}
-											as={Fragment}
-											leave="transition ease-in duration-100"
-											leaveFrom="opacity-100"
-											leaveTo="opacity-0">
-											<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-												{roles.map(role => (
-													<Listbox.Option
-														key={role.id}
-														className={({ active }) =>
-															classNames(
-																active
-																	? 'bg-indigo-600 text-white'
-																	: 'text-gray-900',
-																'relative cursor-default select-none py-2 pl-3 pr-9'
-															)
-														}
-														value={role}>
-														{({ classification, active }) => (
-															<>
-																<span
-																	className={classNames(
-																		classification
-																			? 'font-semibold'
-																			: 'font-normal',
-																		'block truncate'
-																	)}>
-																	{role.name}
-																</span>
-
-																{classification ? (
+											<Transition
+												show={open}
+												as={Fragment}
+												leave="transition ease-in duration-100"
+												leaveFrom="opacity-100"
+												leaveTo="opacity-0">
+												<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+													{roles.map(role => (
+														<Listbox.Option
+															key={role.id}
+															className={({
+																active,
+															}) =>
+																classNames(
+																	active
+																		? 'bg-indigo-600 text-white'
+																		: 'text-gray-900',
+																	'relative cursor-default select-none py-2 pl-3 pr-9'
+																)
+															}
+															value={role}>
+															{({
+																classification,
+																active,
+															}) => (
+																<>
 																	<span
 																		className={classNames(
-																			active ? 'text-white' : 'text-indigo-600',
-																			'absolute inset-y-0 right-0 flex items-center pr-4'
+																			classification
+																				? 'font-semibold'
+																				: 'font-normal',
+																			'block truncate'
 																		)}>
-																		<CheckIcon
-																			className="h-5 w-5"
-																			aria-hidden="true"
-																		/>
+																		{role.name}
 																	</span>
-																) : null}
-															</>
-														)}
-													</Listbox.Option>
-												))}
-											</Listbox.Options>
-										</Transition>
-									</div>
-								</>
-							)}
-						</Listbox>
-						<div>
-							<label
-								htmlFor="email"
-								className="block text-sm font-medium leading-6 text-gray-900">
-								Email address
-							</label>
-							<div className="mt-2">
-								<button>
+
+																	{classification ? (
+																		<span
+																			className={classNames(
+																				active
+																					? 'text-white'
+																					: 'text-indigo-600',
+																				'absolute inset-y-0 right-0 flex items-center pr-4'
+																			)}>
+																			<CheckIcon
+																				className="h-5 w-5"
+																				aria-hidden="true"
+																			/>
+																		</span>
+																	) : null}
+																</>
+															)}
+														</Listbox.Option>
+													))}
+												</Listbox.Options>
+											</Transition>
+										</div>
+									</>
+								)}
+							</Listbox>
+							<div>
+								<label
+									htmlFor="email"
+									className="block text-sm font-medium leading-6 text-gray-900">
+									Email address
+								</label>
+								<div className="mt-1">
 									<input
 										id="email"
 										name="email"
 										type="email"
 										placeholder="  email"
 										value={email}
-										onChange={e => setEmail(e.target.value)}
+										onChange={e =>
+											setEmail(e.target.value)
+										}
 										autoComplete="email"
 										required
 										className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 									/>
-									Mentee demo login
-								</button>
+								</div>
 							</div>
-							<div className=" mx-2 my-2 ">
-								<button className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out">
-									<UserIcon
-										className="w-4 h-4 inline-block align-text-bottom mr-1"
-										onClick={demoLoginMentor}
+
+							<div>
+								<div className="flex items-center justify-between">
+									<label
+										htmlFor="password"
+										className="block text-sm font-medium leading-6 text-gray-900">
+										Password
+									</label>
+								</div>
+								<div className="mt-1">
+									<input
+										id="password"
+										name="password"
+										type="password"
+										value={password}
+										placeholder="  password"
+										onChange={e =>
+											setPassword(e.target.value)
+										}
+										autoComplete="current-password"
+										required
+										className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 									/>
-									Mentor demo login
+								</div>
+							</div>
+
+							<div>
+								<button
+									type="submit"
+									className="flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
+									Log in
 								</button>
 							</div>
-						</div>
-					</form>
-				</div>
+						</form>
 
-				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-					<form
-						className="space-y-6"
-						action="#"
-						method="POST"
-						onSubmit={handleSubmit}>
-						<ul>
-							{errors.map((error, idx) => (
-								<li
-									key={idx}
-									className="text-red-500">
-									{error}
-								</li>
-							))}
-						</ul>
-						<Listbox
-							value={classification}
-							onChange={setClassification}>
-							{({ open }) => (
-								<>
-									<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
-										Role
-									</Listbox.Label>
-									<div className="relative">
-										<Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-											<span className="block truncate">
-												{classification.name}
-											</span>
-											<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-												<ChevronUpDownIcon
-													className="h-5 w-5 text-gray-400"
-													aria-hidden="true"
-												/>
-											</span>
-										</Listbox.Button>
-
-										<Transition
-											show={open}
-											as={Fragment}
-											leave="transition ease-in duration-100"
-											leaveFrom="opacity-100"
-											leaveTo="opacity-0">
-											<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-												{roles.map(role => (
-													<Listbox.Option
-														key={role.id}
-														className={({
-															active,
-														}) =>
-															classNames(
-																active
-																	? 'bg-indigo-600 text-white'
-																	: 'text-gray-900',
-																'relative cursor-default select-none py-2 pl-3 pr-9'
-															)
-														}
-														value={role}>
-														{({
-															classification,
-															active,
-														}) => (
-															<>
-																<span
-																	className={classNames(
-																		classification
-																			? 'font-semibold'
-																			: 'font-normal',
-																		'block truncate'
-																	)}>
-																	{role.name}
-																</span>
-
-																{classification ? (
-																	<span
-																		className={classNames(
-																			active
-																				? 'text-white'
-																				: 'text-indigo-600',
-																			'absolute inset-y-0 right-0 flex items-center pr-4'
-																		)}>
-																		<CheckIcon
-																			className="h-5 w-5"
-																			aria-hidden="true"
-																		/>
-																	</span>
-																) : null}
-															</>
-														)}
-													</Listbox.Option>
-												))}
-											</Listbox.Options>
-										</Transition>
-									</div>
-								</>
-							)}
-						</Listbox>
-						<div>
-							<label
-								htmlFor="email"
-								className="block text-sm font-medium leading-6 text-gray-900">
-								Email address
-							</label>
-							<div className="mt-1">
-								<input
-									id="email"
-									name="email"
-									type="email"
-									placeholder="  email"
-									value={email}
-									onChange={e =>
-										setEmail(e.target.value)
-									}
-									autoComplete="email"
-									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								/>
-							</div>
-						</div>
-
-						<div>
-							<div className="flex items-center justify-between">
-								<label
-									htmlFor="password"
-									className="block text-sm font-medium leading-6 text-gray-900">
-									Password
-								</label>
-							</div>
-							<div className="mt-1">
-								<input
-									id="password"
-									name="password"
-									type="password"
-									value={password}
-									placeholder="  password"
-									onChange={e =>
-										setPassword(e.target.value)
-									}
-									autoComplete="current-password"
-									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-								/>
-							</div>
-						</div>
-
-						<div>
-							<button
-								type="submit"
-								className="flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
-								Log in
-							</button>
-						</div>
-					</form>
-
-					<p className="mt-5 text-center text-xs text-gray-500">
-						Don't have an account? Sign Up{' '}
-						<Link
-							to={`/signupMentor`}
-							className="font-semibold leading-6 text-indigo-600 hover:text-indigo-800">
-							Mentor
-						</Link>
-						{'   '}
-						or{'   '}
-						<Link
-							to={`/signupMentee`}
-							className="font-semibold leading-6 text-green-600 hover:text-green-800">
-							Mentee
-						</Link>
-					</p>
+						<p className="mt-5 text-center text-xs text-gray-500">
+							Don't have an account? Sign Up{' '}
+							<Link
+								to={`/signupMentor`}
+								className="font-semibold leading-6 text-indigo-600 hover:text-indigo-800">
+								Mentor
+							</Link>
+							{'   '}
+							or{'   '}
+							<Link
+								to={`/signupMentee`}
+								className="font-semibold leading-6 text-green-600 hover:text-green-800">
+								Mentee
+							</Link>
+						</p>
+					</div>
 				</div>
 			</div>
 			{/* Right side */}
@@ -432,6 +352,5 @@ export default function LoginForm() {
 				</div>
 			</div>
 		</div>
-
 	);
 }
