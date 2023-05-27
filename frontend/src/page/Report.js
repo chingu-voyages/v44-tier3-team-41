@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {getAllMentorsThunk} from '../store/mentor';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllMentorsThunk } from '../store/mentor';
 import {
 	groupAndCountCompany,
 	groupAndCountRole,
@@ -32,12 +32,15 @@ const Report = () => {
 	// 	console.log(companyGroup);
 	// 	console.log(roleGroup);
 	// }
+	let companyGroup
+	let roleGroup
 
-	const companyGroup = sortArrayDesc(groupAndCountCompany(mentors));
-	const roleGroup = sortArrayDesc(groupAndCountRole(mentors));
-	console.log(companyGroup);
-	console.log(roleGroup);
-
+	if (mentors) {
+		companyGroup = sortArrayDesc(groupAndCountCompany(mentors));
+		roleGroup = sortArrayDesc(groupAndCountRole(mentors));
+		// 	console.log(companyGroup);
+		// 	console.log(roleGroup);
+	}
 	useEffect(() => {
 		const fetchData = async () => {
 			await dispatch(getAllMentorsThunk());
@@ -57,8 +60,8 @@ const Report = () => {
 									statIdx % 2 === 1
 										? 'sm:border-l'
 										: statIdx === 2
-										? 'lg:border-l'
-										: '',
+											? 'lg:border-l'
+											: '',
 									'flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8'
 								)}>
 								<dt className="text-sm font-medium leading-6 text-gray-500">
@@ -73,10 +76,11 @@ const Report = () => {
 				</div>
 				<div className="flex flex-wrap mt-20">
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-						<BarChart title="company chart" />
+						<BarChart title="company chart" data={companyGroup} />
+
 					</div>
 					<div className="w-full md:w-1/2 px-3">
-						<BarChart title="role chart" />
+						<BarChart title="role chart" data={roleGroup} />
 					</div>
 				</div>
 			</div>

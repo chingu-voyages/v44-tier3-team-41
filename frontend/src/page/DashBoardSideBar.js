@@ -80,7 +80,7 @@ function DashBoard() {
 		},
 	];
 
-	const currentUser = useSelector(state => state.session.user.user);
+	const currentUser = useSelector(state => state.session.user);
 	if (currentUser) console.log(currentUser);
 	if (currentUser) {
 		return (

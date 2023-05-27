@@ -428,7 +428,7 @@ export default function LoginForm() {
 						className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-green-800 to-green-400 bg-opacity-20 shadow-lg border border-green-500"></div>
 					<div
 						id="circle2"
-						class="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-indigo-800 to-indigo-950 bg-opacity-20 shadow-lg shadow-indigo-300/30 border border-indigo-500 animate-float"></div>
+						className="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-indigo-800 to-indigo-950 bg-opacity-20 shadow-lg shadow-indigo-300/30 border border-indigo-500 animate-float"></div>
 				</div>
 			</div>
 		</div>
