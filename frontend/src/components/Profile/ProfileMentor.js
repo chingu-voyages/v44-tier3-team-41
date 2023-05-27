@@ -1,28 +1,52 @@
-import React, { useState } from 'react';
-import { CheckCircleIcon } from '@heroicons/react/20/solid';
+import React, {useState} from 'react';
+import {CheckCircleIcon} from '@heroicons/react/20/solid';
 import axios from 'axios';
+import {UserIcon} from '@heroicons/react/24/outline';
 
-export default function ProfileMentor({ currentUser }) {
+export default function ProfileMentor({
+	currentUser,
+}) {
 	console.log(currentUser);
-	const [name, setName] = useState(currentUser.name);
-	const [about, setAbout] = useState(currentUser.about);
-	const [company, setCompany] = useState(currentUser.company);
-	const [role, setRole] = useState(currentUser.role);
-	const [yrsExp, setYrsExp] = useState(currentUser.yrsExp);
-	const [expertise, setExpertise] = useState(currentUser.yrsExp);
+	const [name, setName] = useState(
+		currentUser.name
+	);
+	const [about, setAbout] = useState(
+		currentUser.about
+	);
+	const [company, setCompany] = useState(
+		currentUser.company
+	);
+	const [role, setRole] = useState(
+		currentUser.role
+	);
+	const [yrsExp, setYrsExp] = useState(
+		currentUser.yrsExp
+	);
+	const [expertise, setExpertise] = useState(
+		currentUser.yrsExp
+	);
 	const [image, setImage] = useState('');
-	const [imagePreview, setImagePreview] = useState(currentUser.profileImg);
-	const [country, setCountry] = useState(currentUser.country);
-	const [city, setCity] = useState(currentUser.city);
-	const [state, setState] = useState(currentUser.state);
+	const [imagePreview, setImagePreview] =
+		useState(currentUser.profileImg);
+	const [country, setCountry] = useState(
+		currentUser.country
+	);
+	const [city, setCity] = useState(
+		currentUser.city
+	);
+	const [state, setState] = useState(
+		currentUser.state
+	);
 
 	const [success, setSuccess] = useState(false);
 
 	function handleImageChange(event) {
-		const { files } = event.target;
+		const {files} = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
-			setImagePreview(URL.createObjectURL(files[0]));
+			setImagePreview(
+				URL.createObjectURL(files[0])
+			);
 		}
 	}
 
@@ -59,7 +83,8 @@ export default function ProfileMentor({ currentUser }) {
 				};
 				console.log(body);
 			} else {
-				const imageUrl = await handleImageUpload();
+				const imageUrl =
+					await handleImageUpload();
 				const body = {
 					name: name,
 					about: about,
@@ -99,13 +124,18 @@ export default function ProfileMentor({ currentUser }) {
 		<form>
 			<div className="space-y-12">
 				<div className="border-b border-gray-900/10 pb-12">
-					<h2 className="text-base font-semibold leading-7 text-gray-900">
-						Profile
-					</h2>
-					<p className="mt-1 text-sm leading-6 text-gray-600">
-						This information will be displayed publicly so be careful what you
-						share.
-					</p>
+					{/* Profile Heading */}
+					<div className="p-2 pl-6 bg-white rounded-lg shadow-md w-1/2">
+						<h2 className="text-sm font-medium w-1/3 leading-7 bg-indigo-800 px-4 py-1 text-blue-300 rounded-full shadow-lg">
+							<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
+							Mentor Profile
+						</h2>
+						<p className="text-xs leading-6 text-gray-400 pl-5">
+							This information will be displayed
+							publicly so be careful what you
+							share
+						</p>
+					</div>
 
 					<div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 						<div className="sm:col-span-4">
@@ -122,7 +152,9 @@ export default function ProfileMentor({ currentUser }) {
 										id="username"
 										className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
 										value={name}
-										onChange={e => setName(e.target.value)}
+										onChange={e =>
+											setName(e.target.value)
+										}
 									/>
 								</div>
 							</div>
@@ -141,11 +173,14 @@ export default function ProfileMentor({ currentUser }) {
 									rows={3}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 									value={about}
-									onChange={e => setAbout(e.target.value)}
+									onChange={e =>
+										setAbout(e.target.value)
+									}
 								/>
 							</div>
 							<p className="mt-3 text-sm leading-6 text-gray-600">
-								Write a few sentences about yourself.
+								Write a few sentences about
+								yourself.
 							</p>
 						</div>
 						<div className="sm:col-span-2 sm:col-start-1">
@@ -160,7 +195,9 @@ export default function ProfileMentor({ currentUser }) {
 									name="company"
 									id="company"
 									value={company}
-									onChange={e => setCompany(e.target.value)}
+									onChange={e =>
+										setCompany(e.target.value)
+									}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
@@ -177,7 +214,9 @@ export default function ProfileMentor({ currentUser }) {
 									type="text"
 									name="role"
 									value={role}
-									onChange={e => setRole(e.target.value)}
+									onChange={e =>
+										setRole(e.target.value)
+									}
 									id="role"
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
@@ -196,7 +235,9 @@ export default function ProfileMentor({ currentUser }) {
 									name="yearsOfExp"
 									id="yearsOfExp"
 									value={yrsExp}
-									onChange={e => setYrsExp(e.target.value)}
+									onChange={e =>
+										setYrsExp(e.target.value)
+									}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
@@ -214,7 +255,9 @@ export default function ProfileMentor({ currentUser }) {
 									rows={3}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 									value={expertise}
-									onChange={e => setExpertise(e.target.value)}
+									onChange={e =>
+										setExpertise(e.target.value)
+									}
 								/>
 							</div>
 						</div>
@@ -226,7 +269,9 @@ export default function ProfileMentor({ currentUser }) {
 								Profile Image
 							</label>
 							<div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-								<label htmlFor="image">image:</label>
+								<label htmlFor="image">
+									image:
+								</label>
 								<input
 									className="form-control"
 									type="file"
@@ -264,7 +309,9 @@ export default function ProfileMentor({ currentUser }) {
 									name="country"
 									id="country"
 									value={country}
-									onChange={e => setCountry(e.target.value)}
+									onChange={e =>
+										setCountry(e.target.value)
+									}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
@@ -282,7 +329,9 @@ export default function ProfileMentor({ currentUser }) {
 									name="city"
 									id="city"
 									value={city}
-									onChange={e => setCity(e.target.value)}
+									onChange={e =>
+										setCity(e.target.value)
+									}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
@@ -300,7 +349,9 @@ export default function ProfileMentor({ currentUser }) {
 									name="region"
 									id="region"
 									value={state}
-									onChange={e => setState(e.target.value)}
+									onChange={e =>
+										setState(e.target.value)
+									}
 									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
@@ -319,7 +370,8 @@ export default function ProfileMentor({ currentUser }) {
 						</div>
 						<div className="ml-3">
 							<p className="text-sm font-medium text-green-800">
-								Successfully uploaded, refresh to view the updated inforamtion
+								Successfully uploaded, refresh to
+								view the updated inforamtion
 							</p>
 						</div>
 					</div>
