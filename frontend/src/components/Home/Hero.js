@@ -33,7 +33,7 @@ export default function Hero() {
 								DevelopMe
 							</span>
 							<img
-								className="w-auto h-20"
+								className="w-auto h-16"
 								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
 								alt="dm_logo"
 							/>
@@ -169,7 +169,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Orange Guy Avatar */}
-					<div className="absolute top-[260px] right-[600px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+					<div className="absolute top-[260px] right-[600px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
 						<img
 							className="h-20 w-20 rounded-full"
 							src="https://adplist.org/photos/mentors/3.webp"
@@ -185,7 +185,7 @@ export default function Hero() {
 						/>
 					</div>
 					{/* Pink Guy Avatar */}
-					<div className="absolute top-[460px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float">
+					<div className="absolute top-[460px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float2">
 						<img
 							className="h-20 w-20 rounded-full"
 							src="https://adplist.org/photos/mentors/5.webp"
