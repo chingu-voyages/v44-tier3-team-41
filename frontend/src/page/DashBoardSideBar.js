@@ -1,6 +1,10 @@
-import { Fragment, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import {Fragment, useState} from 'react';
+import {useSelector} from 'react-redux';
+import {
+	Link,
+	Outlet,
+	useNavigate,
+} from 'react-router-dom';
 import {
 	Dialog,
 	Menu,
@@ -17,31 +21,32 @@ import {
 	BriefcaseIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../store/session';
+import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
+import {useDispatch} from 'react-redux';
+import {logoutThunk} from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
 function DashBoard() {
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const [sidebarOpen, setSidebarOpen] =
 		useState(false);
 	const [currentTab, setCurrentTab] =
 		useState('Mentors');
-	let navigation
+	let navigation;
 
-	const currentUser = useSelector(state => state.session.user);
+	const currentUser = useSelector(
+		state => state.session.user
+	);
 
-	const handleLogout = async (e) => {
-		e.preventDefault()
-		await dispatch(logoutThunk())
-		navigate('/')
-	}
-
+	const handleLogout = async e => {
+		e.preventDefault();
+		await dispatch(logoutThunk());
+		navigate('/');
+	};
 
 	if (currentUser?.classification === 'Mentor') {
 		navigation = [
@@ -94,9 +99,8 @@ function DashBoard() {
 				icon: BriefcaseIcon,
 				current: currentTab === 'job posts',
 			},
-		]
+		];
 	} else {
-
 		navigation = [
 			{
 				name: 'all mentors',
@@ -141,16 +145,16 @@ function DashBoard() {
 				icon: BriefcaseIcon,
 				current: currentTab === 'job posts',
 			},
-		]
+		];
 	}
-
-
 
 	if (currentUser) {
 		return (
 			<>
 				<div>
-					<Transition.Root show={sidebarOpen} as={Fragment}>
+					<Transition.Root
+						show={sidebarOpen}
+						as={Fragment}>
 						<Dialog
 							as="div"
 							className="relative z-50 lg:hidden"
@@ -188,8 +192,12 @@ function DashBoard() {
 												<button
 													type="button"
 													className="-m-2.5 p-2.5"
-													onClick={() => setSidebarOpen(false)}>
-													<span className="sr-only">Close sidebar</span>
+													onClick={() =>
+														setSidebarOpen(false)
+													}>
+													<span className="sr-only">
+														Close sidebar
+													</span>
 													<XMarkIcon
 														className="h-6 w-6 text-white"
 														aria-hidden="true"
@@ -210,29 +218,36 @@ function DashBoard() {
 												<ul className="flex flex-1 flex-col gap-y-7">
 													<li>
 														<ul className="-mx-2 space-y-1">
-															{navigation.map(item => (
-																<li key={item.name}>
-																	<Link
-																		to={item.href}
-																		className={classNames(
-																			item.current
-																				? 'bg-indigo-700 text-white'
-																				: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
-																			'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-																		)}>
-																		<item.icon
+															{navigation.map(
+																item => (
+																	<li
+																		key={
+																			item.name
+																		}>
+																		<Link
+																			to={
+																				item.href
+																			}
 																			className={classNames(
 																				item.current
-																					? 'text-white'
-																					: 'text-indigo-200 group-hover:text-white',
-																				'h-6 w-6 shrink-0'
-																			)}
-																			aria-hidden="true"
-																		/>
-																		{item.name}
-																	</Link>
-																</li>
-															))}
+																					? 'bg-indigo-700 text-white'
+																					: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
+																				'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+																			)}>
+																			<item.icon
+																				className={classNames(
+																					item.current
+																						? 'text-white'
+																						: 'text-indigo-200 group-hover:text-white',
+																					'h-6 w-6 shrink-0'
+																				)}
+																				aria-hidden="true"
+																			/>
+																			{item.name}
+																		</Link>
+																	</li>
+																)
+															)}
 														</ul>
 													</li>
 												</ul>
@@ -252,28 +267,34 @@ function DashBoard() {
 					</Transition.Root>
 
 					{/* Static sidebar for desktop */}
-					<div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+					<div className="hidden relative lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
 						{/* Sidebar component, swap this element with another sidebar if you like */}
-						<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
-							<div className="flex h-16 shrink-0 items-center">
+						<div className="h-16 shrink-0 items-center mb-10">
+							<a href="/" className="">
 								<img
-									className="h-12 w-auto"
-									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_white_blue_clear_nffi46.png"
-									alt="Your Company"
+									className="h-16 w-auto ml-10"
+									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
+									alt="DM Logo"
 								/>
-							</div>
+							</a>
+						</div>
+						<div className="flex absolute items-center justify-center align-middle flex-col gap-y-5 overflow-y-auto bg-gradient-to-b from-indigo-800 to-indigo-950 px-16 py-20 pl-20 pb-60 min-h-80 rounded-2xl shadow-2xl shadow-blue-500/30 top-28 -left-5">
 							<nav className="flex flex-1 flex-col">
 								<ul className="flex flex-1 flex-col gap-y-7">
 									<li>
-										<ul className="-mx-2 space-y-1">
+										<ul className="-mx-2 space-y-4">
 											{navigation.map(item => (
 												<li key={item.name}>
 													<Link
 														to={item.href}
-														onClick={() => setCurrentTab(item.name)}
+														onClick={() =>
+															setCurrentTab(
+																item.name
+															)
+														}
 														className={classNames(
 															item.current
-																? 'bg-indigo-700 text-white'
+																? 'bg-gradient-to-r from-indigo-900 to-indigo-700 text-white shadow-lg shadow-blue-500/30 border border-blue-600'
 																: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
 															'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
 														)}>
@@ -282,7 +303,7 @@ function DashBoard() {
 																item.current
 																	? 'text-white'
 																	: 'text-indigo-200 group-hover:text-white',
-																'h-6 w-6 shrink-0'
+																'h-5 w-5 shrink-0'
 															)}
 															aria-hidden="true"
 														/>
@@ -298,13 +319,20 @@ function DashBoard() {
 					</div>
 
 					<div className="lg:pl-72">
-						<div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+						<div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 bg-white px-4 sm:gap-x-6 sm:px-6 lg:px-8">
 							<button
 								type="button"
 								className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
-								onClick={() => setSidebarOpen(true)}>
-								<span className="sr-only">Open sidebar</span>
-								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+								onClick={() =>
+									setSidebarOpen(true)
+								}>
+								<span className="sr-only">
+									Open sidebar
+								</span>
+								<Bars3Icon
+									className="h-6 w-6"
+									aria-hidden="true"
+								/>
 							</button>
 
 							{/* Separator */}
@@ -323,12 +351,18 @@ function DashBoard() {
 									/>
 
 									{/* Profile dropdown */}
-									<Menu as="div" className="relative">
+									<Menu
+										as="div"
+										className="relative">
 										<Menu.Button className="-m-1.5 flex items-center p-1.5">
-											<span className="sr-only">Open user menu</span>
+											<span className="sr-only">
+												Open user menu
+											</span>
 											<img
 												className="h-8 w-8 rounded-full bg-gray-50"
-												src={currentUser.profileImg}
+												src={
+													currentUser.profileImg
+												}
 												alt=""
 											/>
 											<span className="hidden lg:flex lg:items-center">
@@ -342,9 +376,8 @@ function DashBoard() {
 													type="button"
 													onClick={handleLogout}
 													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
-													sign out
+													Sign out
 												</button>
-
 											</span>
 										</Menu.Button>
 									</Menu>

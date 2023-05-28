@@ -12,6 +12,15 @@ module.exports = {
 			},
 			animation: {
 				float: 'float 3s ease-in-out infinite',
+				float2: 'float 2s ease-in-out infinite',
+			},
+			color: {
+				textlight: '#fafafa',
+				textgary: '#6B7381',
+				textdark: '#111829',
+				dark1: '#1F2937',
+				dark2: '#111829',
+				light1: '#fafafa',
 			},
 		},
 	},
