@@ -1,47 +1,54 @@
-import React, {useState} from 'react';
-import {CheckCircleIcon} from '@heroicons/react/20/solid';
+import React, { useState } from 'react';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
-import {UserIcon} from '@heroicons/react/24/outline';
+import { UserIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from 'react-redux'
+import { editMenteeThunk } from '../../store/mentee';
 
-export default function ProfileMentee({
-	currentUser,
-}) {
-	console.log(currentUser);
-	const [name, setName] = useState(
-		currentUser.name
-	);
-	const [about, setAbout] = useState(
-		currentUser.about
-	);
-	const [occupation, setOccupation] = useState(
-		currentUser.occupation
-	);
-	const [skill, setSkill] = useState(
-		currentUser.skill
-	);
-	const [goal, setGoal] = useState(
-		currentUser.goal
-	);
-	const [project, setProject] = useState(
-		currentUser.project
-	);
+export default function ProfileMentee({ currentUser }) {
+
+	const dispatch = useDispatch()
+
+	const [name, setName] = useState('');
+	const [about, setAbout] = useState('');
+	const [email, setEmail] = useState('');
+	const [countryCode, setCountryCode] = useState('');
+	const [phone, setPhone] = useState('');
+	const [occupation, setOccupation] = useState('');
+	const [skill, setSkill] = useState('');
+	const [goal, setGoal] = useState('');
+	const [project, setProject] = useState('');
 	const [image, setImage] = useState('');
-	const [imagePreview, setImagePreview] =
-		useState(currentUser.profileImg);
-	const [country, setCountry] = useState(
-		currentUser.country
-	);
-	const [city, setCity] = useState(
-		currentUser.city
-	);
-	const [state, setState] = useState(
-		currentUser.state
-	);
+	const [imagePreview, setImagePreview] = useState('');
+	const [country, setCountry] = useState('');
+	const [city, setCity] = useState('');
+	const [state, setState] = useState('');
+	const [valid, setValid] = useState(false)
+	const [validateErrors, setValidateErrors] = useState([])
 
 	const [success, setSuccess] = useState(false);
 
+
+	const validate = () => {
+		const errors = [];
+		if (!name) errors.push("Please provide a 'Name'");
+		if (!about) errors.push("Please provide a 'About'");
+		if (!email) errors.push("Please provide a 'Email'");
+		if (!phone) errors.push("Please provide a 'Phone'");
+		if (!occupation) errors.push("Please provide a 'Occupation'");
+		if (!skill) errors.push("Please provide a 'Skill'");
+		if (!goal) errors.push("Please provide a 'Goal'");
+		if (!project) errors.push("Please provide a 'Project'");
+		if (!country) errors.push("Please provide a 'Country'");
+		if (!state) errors.push("Please provide a 'State'");
+		if (!city) errors.push("Please provide a 'City'");
+		if (!countryCode) errors.push("Please provide a 'CountryCode'");
+
+		return errors;
+	};
+
 	function handleImageChange(event) {
-		const {files} = event.target;
+		const { files } = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
 			setImagePreview(
@@ -65,59 +72,94 @@ export default function ProfileMentee({
 		}
 	}
 
+	if (currentUser) {
+		if (!valid) {
+			setName(currentUser.name);
+			setAbout(currentUser.about);
+			setOccupation(currentUser.occupation);
+			setSkill(currentUser.skill);
+			setEmail(currentUser.email);
+			setCountryCode(currentUser.countryCode);
+			setPhone(currentUser.phone);
+			setGoal(currentUser.goal);
+			setProject(currentUser.project);
+			setImage(currentUser.image);
+			setImagePreview(imagePreview);
+			setCountry(currentUser.country);
+			setCity(currentUser.city);
+			setState(currentUser.state);
+			setValid(true);
+		}
+	}
+
 	async function handleOnUpdate(e) {
 		e.preventDefault();
-		try {
-			if (image === '') {
-				const body = {
-					name: name,
-					about: about,
-					occupation: occupation,
-					skill: skill,
-					goal: goal,
-					project: project,
-					country: country,
-					city: city,
-					state: state,
-					profileImg: imagePreview,
-				};
-				console.log(body);
-			} else {
-				const imageUrl =
-					await handleImageUpload();
-				const body = {
-					name: name,
-					about: about,
-					occupation: occupation,
-					skill: skill,
-					goal: goal,
-					project: project,
-					country: country,
-					city: city,
-					state: state,
-					profileImg: imageUrl,
-				};
-				console.log(body);
-			}
+		let body = {}
 
-			// updatePurchaseById(id, body);
-			// console.log(body);
-			setSuccess(true);
-		} catch (err) {
-			console.error(err.message);
+		const errors = validate()
+
+		if (errors.length > 0) {
+			return setValidateErrors(errors)
 		}
+
+		if (image === '') {
+			body = {
+				id: Number(currentUser.id),
+				name,
+				about,
+				email,
+				countryCode,
+				phone,
+				occupation,
+				skill,
+				goal,
+				project,
+				country,
+				city,
+				state,
+				profileImg: imagePreview,
+			};
+			console.log(body);
+		} else {
+			const imageUrl =
+				await handleImageUpload();
+			body = {
+				id: Number(currentUser.id),
+				name,
+				about,
+				email,
+				countryCode,
+				phone,
+				occupation,
+				skill,
+				goal,
+				project,
+				country,
+				city,
+				state,
+				profileImg: imageUrl,
+			};
+			console.log(body);
+		}
+		await dispatch(editMenteeThunk(body))
+
+		setSuccess(true);
 
 		setName('');
 		setAbout('');
 		setOccupation('');
 		setSkill('');
-		setGoal(0);
+		setEmail('');
+		setCountryCode('');
+		setPhone('');
+		setGoal('');
 		setProject('');
 		setImage('');
 		setImagePreview('');
 		setCountry('');
 		setCity('');
 		setState('');
+
 	}
 
 	return (
@@ -155,9 +197,9 @@ export default function ProfileMentee({
 												name="username"
 												id="username"
 												autoComplete="username"
-												className="block flex-1 bg-white rounded-md shadow-md py-2 pl-2 text-gray-400 placeholder:text-gray-600 text-xs leading-2"
-												placeholder="John Smith"
-												value="John Smith"
+												className="block flex-1 bg-white rounded-md shadow-md py-2 pl-2 text-gray-600 text-xs leading-2"
+												value={name}
+												onChange={e => setName(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -393,6 +435,15 @@ export default function ProfileMentee({
 									to view the updated inforamtion
 								</p>
 							</div>
+						</div>
+					</div>
+				)}
+				{validateErrors.length > 0 && (
+					<div className="flex flex-col my-2 ml-2">
+						<div className="text-red-600 text-[13px] font-semibold  ">
+							{validateErrors.map((error, i) => (
+								<div key={i}>{error}</div>
+							))}
 						</div>
 					</div>
 				)}

@@ -1,47 +1,55 @@
-import React, {useState} from 'react';
-import {CheckCircleIcon} from '@heroicons/react/20/solid';
+import React, { useState } from 'react';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
-import {UserIcon} from '@heroicons/react/24/outline';
+import { UserIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from 'react-redux';
+import { editMentorThunk } from '../../store/mentor';
 
 export default function ProfileMentor({
 	currentUser,
 }) {
-	console.log(currentUser);
-	const [name, setName] = useState(
-		currentUser.name
-	);
-	const [about, setAbout] = useState(
-		currentUser.about
-	);
-	const [company, setCompany] = useState(
-		currentUser.company
-	);
-	const [role, setRole] = useState(
-		currentUser.role
-	);
-	const [yrsExp, setYrsExp] = useState(
-		currentUser.yrsExp
-	);
-	const [expertise, setExpertise] = useState(
-		currentUser.yrsExp
-	);
+	const dispatch = useDispatch()
+
+
+	const [name, setName] = useState('');
+	const [about, setAbout] = useState('');
+	const [email, setEmail] = useState('');
+	const [countryCode, setCountryCode] = useState('');
+	const [phone, setPhone] = useState('');
+	const [role, setRole] = useState('');
+	const [yrsExp, setYrsExp] = useState(0);
+	const [expertise, setExpertise] = useState('');
 	const [image, setImage] = useState('');
-	const [imagePreview, setImagePreview] =
-		useState(currentUser.profileImg);
-	const [country, setCountry] = useState(
-		currentUser.country
-	);
-	const [city, setCity] = useState(
-		currentUser.city
-	);
-	const [state, setState] = useState(
-		currentUser.state
-	);
+	const [imagePreview, setImagePreview] = useState('');
+	const [country, setCountry] = useState('');
+	const [city, setCity] = useState('');
+	const [state, setState] = useState('');
+	const [company, setCompany] = useState('');
+	const [valid, setValid] = useState(false)
+	const [validateErrors, setValidateErrors] = useState([])
 
 	const [success, setSuccess] = useState(false);
 
+	const validate = () => {
+		const errors = [];
+		if (!name) errors.push("Please provide a 'Name'");
+		if (!about) errors.push("Please provide a 'About'");
+		if (!email) errors.push("Please provide a 'Email'");
+		if (!phone) errors.push("Please provide a 'Phone'");
+		if (!role) errors.push("Please provide a 'Role'");
+		if (!yrsExp) errors.push("Please provide a 'YrsExp'");
+		if (!company) errors.push("Please provide a 'Company'");
+		if (!expertise) errors.push("Please provide a 'Expertise'");
+		if (!country) errors.push("Please provide a 'Country'");
+		if (!state) errors.push("Please provide a 'State'");
+		if (!city) errors.push("Please provide a 'City'");
+		if (!countryCode) errors.push("Please provide a 'CountryCode'");
+
+		return errors;
+	};
+
 	function handleImageChange(event) {
-		const {files} = event.target;
+		const { files } = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
 			setImagePreview(
@@ -65,59 +73,94 @@ export default function ProfileMentor({
 		}
 	}
 
+	if (currentUser) {
+		if (!valid) {
+			setName(currentUser.name);
+			setAbout(currentUser.about);
+			setRole(currentUser.role);
+			setExpertise(currentUser.expertise);
+			setEmail(currentUser.email);
+			setCountryCode(currentUser.countryCode);
+			setPhone(currentUser.phone);
+			setYrsExp(currentUser.yrsExp);
+			setCompany(currentUser.company);
+			setImage(currentUser.image);
+			setImagePreview(imagePreview);
+			setCountry(currentUser.country);
+			setCity(currentUser.city);
+			setState(currentUser.state);
+			setValid(true);
+		}
+	}
+
 	async function handleOnUpdate(e) {
 		e.preventDefault();
-		try {
-			if (image === '') {
-				const body = {
-					name: name,
-					about: about,
-					company: company,
-					role: role,
-					yrsExp: yrsExp,
-					expertise: expertise,
-					country: country,
-					city: city,
-					state: state,
-					profileImg: imagePreview,
-				};
-				console.log(body);
-			} else {
-				const imageUrl =
-					await handleImageUpload();
-				const body = {
-					name: name,
-					about: about,
-					company: company,
-					role: role,
-					yrsExp: yrsExp,
-					expertise: expertise,
-					country: country,
-					city: city,
-					state: state,
-					profileImg: imageUrl,
-				};
-				console.log(body);
-			}
+		let body = {}
 
-			// updatePurchaseById(id, body);
-			// console.log(body);
-			setSuccess(true);
-		} catch (err) {
-			console.error(err.message);
+		const errors = validate()
+
+		if (errors.length > 0) {
+			return setValidateErrors(errors)
 		}
+
+		if (image === '') {
+			body = {
+				id: Number(currentUser.id),
+				name,
+				about,
+				email,
+				countryCode,
+				phone,
+				role,
+				expertise,
+				yrsExp,
+				company,
+				country,
+				city,
+				state,
+				profileImg: imagePreview,
+			};
+			console.log(body);
+		} else {
+			const imageUrl =
+				await handleImageUpload();
+			body = {
+				id: Number(currentUser.id),
+				name,
+				about,
+				email,
+				countryCode,
+				phone,
+				role,
+				expertise,
+				yrsExp,
+				company,
+				country,
+				city,
+				state,
+				profileImg: imageUrl,
+			};
+			console.log(body);
+		}
+		await dispatch(editMentorThunk(body))
+
+		setSuccess(true);
 
 		setName('');
 		setAbout('');
-		setCompany('');
 		setRole('');
-		setYrsExp(0);
 		setExpertise('');
+		setEmail('');
+		setCountryCode('');
+		setPhone('');
+		setYrsExp('');
+		setCompany('');
 		setImage('');
 		setImagePreview('');
 		setCountry('');
 		setCity('');
 		setState('');
+
 	}
 
 	return (
@@ -377,11 +420,20 @@ export default function ProfileMentor({
 					</div>
 				</div>
 			)}
+			{validateErrors.length > 0 && (
+				<div className="flex flex-col my-2 ml-2">
+					<div className="text-red-600 text-[13px] font-semibold  ">
+						{validateErrors.map((error, i) => (
+							<div key={i}>{error}</div>
+						))}
+					</div>
+				</div>
+			)}
 			<div className="mt-6 flex items-center justify-end gap-x-6">
 				<button
 					onClick={handleOnUpdate}
 					className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-					Update
+					Save to update
 				</button>
 			</div>
 		</form>
