@@ -1,5 +1,5 @@
-import {Fragment, useState} from 'react';
-import {useSelector} from 'react-redux';
+import { Fragment, useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
 	Link,
 	Outlet,
@@ -21,9 +21,9 @@ import {
 	BriefcaseIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
-import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
-import {useDispatch} from 'react-redux';
-import {logoutThunk} from '../store/session';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -47,6 +47,9 @@ function DashBoard() {
 		await dispatch(logoutThunk());
 		navigate('/');
 	};
+	if (!currentUser) {
+		navigate('/login')
+	}
 
 	if (currentUser?.classification === 'Mentor') {
 		navigation = [
