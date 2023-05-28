@@ -22,8 +22,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+
   <a href="">
-    <img width="200" alt="DM_logo" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/92185695/45e02588-a583-4b31-92ef-bcd160d41984"></a>
+    <img width="200" alt="DM_logo" src="./frontend/public/dm_logo_white_blue_clear.png"></a>
 
   <h3 align="center">DevelopMe (ADPList Clone)</h3>
 
