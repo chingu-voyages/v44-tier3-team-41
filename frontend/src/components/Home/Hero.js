@@ -70,7 +70,7 @@ export default function Hero() {
 							<button
 								type="button"
 								className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
-								Log in
+								Log in Now
 							</button>
 						</Link>
 					</div>
@@ -148,7 +148,7 @@ export default function Hero() {
 							<strong> 16,736+ mentors </strong>
 							for 1:1
 							<br /> mentorship in our global
-							community.
+							community
 						</p>
 						<hr className="mt-4 border-blue-500 w-16 border-2" />
 					</div>
