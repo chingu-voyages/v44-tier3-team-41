@@ -127,7 +127,7 @@ export default function ProfileMentee({
 					<div className="border-b border-gray-900/10">
 						{/* Profile Heading */}
 						<div className="p-2 pl-6 bg-white rounded-lg shadow-md w-1/2 -mt-12">
-							<h2 className="text-sm font-medium w-1/3 leading-7 bg-green-800 px-4 py-1 text-green-300 rounded-full shadow-lg">
+							<h2 className="text-sm font-medium w-1/3 leading-7 bg-green-800 px-4 py-1 text-green-300 rounded-full shadow-lg shadow-green-700/20">
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentee Profile
 							</h2>
