@@ -2,7 +2,7 @@ import {
 	Link,
 	useNavigate,
 } from 'react-router-dom';
-import React, {Fragment, useState} from 'react';
+import React, {useState} from 'react';
 import {
 	useDispatch,
 	useSelector,
@@ -62,10 +62,10 @@ export default function SignupMentor() {
 								alt="DM logo"
 							/>
 						</Link>
-						<h2 className="mt-5 text-left text-2xl font-bold leading-9 tracking-tight text-gray-900">
-							Sign up for a new account
+						<h2 className="mt-5 text-center text-lg font-bold leading-9 tracking-tight text-blue-900">
+							Sign up for a new Mentor account
 						</h2>
-						<p className="mt-4 text-sm font-light leading-5 text-gray-500">
+						<p className="mt-4 text-sm text-center font-light leading-5 text-gray-500">
 							Connect with our community of
 							mentors and users from 141+
 							countries around the world.
@@ -194,7 +194,7 @@ export default function SignupMentor() {
 							</div>
 						</form>
 
-						<p className="mt-10 text-center text-sm text-gray-500">
+						<p className="mt-5 text-center text-xs text-gray-500">
 							Already have an account?{' '}
 							<Link
 								to="/login"
@@ -204,15 +204,20 @@ export default function SignupMentor() {
 						</p>
 					</div>
 				</div>
-				<div className="w-1/3 bg-gradient-to-r from-blue-700 to-blue-900 text-white flex items-center">
-					<div className="p-10 ml-14 hover:scale-105 transition-all duration-200 ease-in-out border border-blue-600 rounded-2xl bg-black bg-opacity-20 shadow-2xl">
+				{/* Right side */}
+				<div className="w-1/3 bg-gradient-to-r from-blue-700 to-blue-950 text-white flex items-center">
+					{/* Text div */}
+					<div className="p-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-blue-600 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-2xl">
 						<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
 							Accelerate your
 							<br /> career growth.
 						</h2>
-						<p className="mt-4 text-sm font-light leading-5 text-blue-200">
-							Join members from over 141+
-							countries to <br />
+						<p className="mt-4 text-xs font-light leading-5 text-indigo-200">
+							Join members from over{' '}
+							<strong className="font-bold text-white">
+								141+ countries
+							</strong>{' '}
+							to <br />
 							learn from curated mentors in tech.
 						</p>
 						<div className="mt-10">
@@ -222,6 +227,15 @@ export default function SignupMentor() {
 								Contact us for more info
 							</button>
 						</div>
+					</div>
+					{/* Circles */}
+					<div className="relative">
+						<div
+							id="circle1"
+							className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-indigo-800 to-blue-700 bg-opacity-20 shadow-lg border border-indigo-400"></div>
+						<div
+							id="circle2"
+							class="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-indigo-800 to-indigo-950 bg-opacity-20 shadow-xl shadow-indigo-400/50 border border-indigo-600 animate-float"></div>
 					</div>
 				</div>
 			</div>

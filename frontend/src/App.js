@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
 import HomePage from './page/Home';
 import LoginForm from './components/Login/LoginForm';
 import SignupMentor from './components/Signup/SignupMentor';
@@ -10,13 +10,24 @@ import MenteeDetail from './page/MenteeDetail';
 import DashBoardSideBar from './page/DashBoardSideBar';
 import MentorList from './page/MentorList';
 import MenteeList from './page/MenteeList';
-import Message from './page/Message';
+import MessageBoard from './page/MessageBoard';
+import DirectMessage from './page/DirectMessage';
 import Search from './page/Search';
 import Report from './page/Report';
 import Profile from './page/Profile';
-
+import JobBoard from './page/JobBoard';
+import { restoreUserThunk } from './store/session';
 
 const App = () => {
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			await dispatch(restoreUserThunk())
+		}
+		fetchUser()
+	}, [dispatch])
+
 	return (
 		<>
 			<Routes>
@@ -27,12 +38,14 @@ const App = () => {
 				<Route path="/dashboard" element={<DashBoardSideBar />}>
 					<Route path="mentorlist" element={<MentorList />} />
 					<Route path="menteelist" element={<MenteeList />} />
-					<Route path="message" element={<Message />} />
+					<Route path="messageBoard" element={<MessageBoard />} />
 					<Route path="search" element={<Search />} />
 					<Route path="report" element={<Report />} />
 					<Route path="userProfile" element={<Profile />} />
-					<Route path="mentor_detail/:id" element={<MentorDetail />} />
-					<Route path="mentee_detail/:id" element={<MenteeDetail />} />
+					<Route path="mentor_detail" element={<MentorDetail />} />
+					<Route path="mentee_detail" element={<MenteeDetail />} />
+					<Route path="directMessage" element={<DirectMessage />} />
+					<Route path="jobBoard" element={<JobBoard />} />
 				</Route>
 			</Routes>
 		</>

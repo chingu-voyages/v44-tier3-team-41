@@ -75,7 +75,6 @@ export const editMentorThunk = (user) => async dispatch => {
             yrsExp: user.yrsExp,
             about: user.about,
             role: user.role,
-            skill: user.skill,
             expertise: user.expertise,
             company: user.company,
         })
