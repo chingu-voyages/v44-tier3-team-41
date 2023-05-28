@@ -23,13 +23,13 @@ export default function MentorList() {
 
 	return (
 		<div>
-			<div className="mb-4 z-10 bg-gradient-to-r from-indigo-700 to-indigo-950 shadow-lg shadow-indigo-700/30 w-1/4 rounded-lg">
-				<h2 className="p-3 text-center text-indigo-100 font-normal text-sm tracking-wide">
+			<div className="mb-4 z-10 bg-gradient-to-r from-dark1 to-dark3 shadow-lg shadow-dark6/30 w-1/4 rounded-lg">
+				<h2 className="p-3 text-center text-light4 font-normal text-sm tracking-wide">
 					<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 					Mentor list
 				</h2>
 			</div>
-			<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-[#fafafa] p-4 py-10 rounded-lg shadow-lg">
+			<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-[#fafafa] p-4 py-10 rounded-lg shadow-lg border border-light4">
 				{mentors?.map((mentor, index) => (
 					<MentorCard
 						key={index}

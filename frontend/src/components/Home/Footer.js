@@ -1,6 +1,8 @@
 export default function Footer() {
 	return (
-		<footer className="bg-[#fafafa]" aria-labelledby="footer-heading">
+		<footer
+			className="bg-[#fafafa]"
+			aria-labelledby="footer-heading">
 			<h2 id="footer-heading" className="sr-only">
 				Footer
 			</h2>
@@ -15,13 +17,15 @@ export default function Footer() {
 							/>
 						</a>
 						<p className="text-xs text-gray-400 pl-5 py-4">
-							Platform for aspiring software developers to connect with Mentors!
+							Platform for aspiring software
+							developers to connect with Mentors.
 						</p>
 					</div>
 				</div>
 				<div className="mt-4 border-t border-gray-900/10 pb-8 sm:mt-3 lg:mt-4">
 					<p className="text-xs leading-5 text-gray-500 pt-4">
-						&copy; 2023 DevelopMe. All rights reserved.
+						&copy; 2023 DevelopMe. All rights
+						reserved.
 					</p>
 				</div>
 			</div>

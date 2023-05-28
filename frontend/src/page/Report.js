@@ -59,8 +59,8 @@ const Report = () => {
 
 	if (mentors) {
 		return (
-			<div className="bg-[#fafafa] p-5 rounded-lg shadow-lg pt-10">
-				<div className="flex gap-x-4 bg-slate-700 p-3 -mt-10 shadow-lg shadow-blue-700/30 rounded-lg py-5 items-center justify-center">
+			<div className="bg-[#fafafa] p-5 rounded-lg shadow-lg pt-10 border border-light4">
+				<div className="flex gap-x-4 bg-dark1 shadow-dark2/30 p-3 -mt-5 shadow-lg rounded-lg py-5 items-center justify-center">
 					<div>
 						<h2 className="p-2 text-base text-gray-200 tracking-wide">
 							User Report

@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react';
-import { useSelector } from 'react-redux';
+import {Fragment, useState} from 'react';
+import {useSelector} from 'react-redux';
 import {
 	Link,
 	Outlet,
@@ -21,9 +21,9 @@ import {
 	BriefcaseIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../store/session';
+import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
+import {useDispatch} from 'react-redux';
+import {logoutThunk} from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -48,7 +48,7 @@ function DashBoard() {
 		navigate('/');
 	};
 	if (!currentUser) {
-		navigate('/login')
+		navigate('/login');
 	}
 
 	if (currentUser?.classification === 'Mentor') {
@@ -281,7 +281,7 @@ function DashBoard() {
 								/>
 							</a>
 						</div>
-						<div className="flex absolute items-center justify-center align-middle flex-col gap-y-5 overflow-y-auto bg-gradient-to-b from-indigo-800 to-indigo-950 px-16 py-20 pl-20 pb-60 min-h-80 rounded-2xl shadow-2xl shadow-blue-500/30 top-28 -left-5">
+						<div className="flex absolute items-center justify-center align-middle flex-col gap-y-5 overflow-y-auto bg-gradient-to-b from-dark3 to-dark1 px-16 py-20 pl-20 pb-60 min-h-80 rounded-2xl shadow-2xl shadow-dark5/50 top-[105px] -left-5">
 							<nav className="flex flex-1 flex-col">
 								<ul className="flex flex-1 flex-col gap-y-7">
 									<li>
@@ -297,15 +297,15 @@ function DashBoard() {
 														}
 														className={classNames(
 															item.current
-																? 'bg-gradient-to-r from-indigo-900 to-indigo-700 text-white shadow-lg shadow-blue-500/30 border border-blue-600'
-																: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
+																? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
+																: 'text-light3 hover:text-white hover:bg-dark3',
 															'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
 														)}>
 														<item.icon
 															className={classNames(
 																item.current
 																	? 'text-white'
-																	: 'text-indigo-200 group-hover:text-white',
+																	: 'text-light3 group-hover:text-white',
 																'h-5 w-5 shrink-0'
 															)}
 															aria-hidden="true"

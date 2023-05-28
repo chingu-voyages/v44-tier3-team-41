@@ -50,12 +50,12 @@ function Search() {
 
 	return (
 		<div>
-			<div className="flex gap-x-4 bg-slate-700 p-3 shadow-lg shadow-blue-700/30 rounded-lg py-5 items-center justify-center">
+			<div className="flex gap-x-4 bg-dark1 p-3 shadow-lg shadow-dark2/30 rounded-lg py-5 items-center justify-center">
 				<div className="justify-center align-middle items-center">
 					<select
 						id="searchField"
 						name="searchField"
-						className="block w-full rounded-md py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						className="block w-full rounded-md px-4 py-2 text-dark6 ring-1 ring-inset ring-dark4 focus:ring-2 focus:ring-dark2 sm:text-sm sm:leading-6 bg-dark3"
 						value={searchfield}
 						onChange={e =>
 							setSearchField(e.target.value)
@@ -85,16 +85,16 @@ function Search() {
 								setSearchTerm(e.target.value)
 							}
 							required
-							className="min-w-0 flex-auto rounded-md px-3.5 py-2 text-gray-900 shadow-lg placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+							className="min-w-0 flex-auto bg-dark3 border border-dark4 rounded-md px-3.5 py-2 text-gray-900 shadow-lg placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark3 sm:text-sm sm:leading-6"
 						/>
 						<button
 							onClick={handleOnSubmit}
-							className="flex-none rounded-md hover:bg-indigo-800 px-8 py-1 text-sm font-normal text-white shadow-lg bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+							className="flex-none rounded-md hover:bg-dark3 px-8 py-1 text-sm font-normal text-white shadow-lg bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 border border-black hover:border hover:border-dark4">
 							Search
 						</button>
 						<button
 							onClick={handleOnReset}
-							className="flex-none rounded-md hover:bg-indigo-800 px-8 py-1 text-sm font-normal text-white shadow-lg bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+							className="flex-none rounded-md hover:bg-dark3 px-8 py-1 text-sm font-normal text-white shadow-lg bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 border border-black hover:border hover:border-dark4">
 							Reset
 						</button>
 					</div>
@@ -113,7 +113,7 @@ function Search() {
 				</div>
 			</div>
 			<div>
-				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-light1 p-4 py-10 rounded-lg shadow-lg border border-light4">
 					{mentors &&
 						mentors.map((mentor, index) => (
 							<MentorCard

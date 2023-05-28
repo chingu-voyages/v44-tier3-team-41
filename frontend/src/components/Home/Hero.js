@@ -70,7 +70,7 @@ export default function Hero() {
 							<button
 								type="button"
 								className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
-								Log in Now
+								Log in
 							</button>
 						</Link>
 					</div>
