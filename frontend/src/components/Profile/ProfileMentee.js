@@ -127,7 +127,7 @@ export default function ProfileMentee({
 					<div className="border-b border-gray-900/10">
 						{/* Profile Heading */}
 						<div className="p-2 pl-6 bg-[#1F2937] rounded-lg shadow-md w-1/2 -mt-12">
-							<h2 className="text-sm font-medium w-1/3 -mt-5 leading-7 bg-green-800 px-4 py-1 text-green-300 rounded-full shadow-lg shadow-green-700/20">
+							<h2 className="text-sm font-medium w-1/3 -mt-5 leading-7 bg-gradient-to-r from-[#092523] to-[#134E4A] shadow-lg shadow-green-700/20 px-6 py-1 text-green-100 rounded-full">
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentee Profile
 							</h2>
@@ -399,7 +399,7 @@ export default function ProfileMentee({
 				<div className="mt-6 flex items-center justify-end gap-x-6">
 					<button
 						onClick={handleOnUpdate}
-						className="rounded-md bg-[#1F2937] px-5 py-2 text-xs font-semibold text-white hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-800 shadow-md hover:shadow-lg">
+						className="rounded-md bg-dark1 px-5 py-2 text-xs font-semibold text-white hover:bg-dark3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 shadow-md hover:shadow-lg">
 						Save to update
 					</button>
 				</div>

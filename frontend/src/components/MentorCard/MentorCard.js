@@ -8,7 +8,7 @@ function MentorCard({mentor}) {
 	}
 
 	return (
-		<li className="col-span-1 flex flex-col rounded-lg bg-white text-center shadow-md hover:shadow-lg hover:shadow-indigo-900/20">
+		<li className="col-span-1 flex flex-col rounded-lg bg-white text-center shadow-md hover:shadow-lg hover:shadow-indigo-900/20 border border-light4">
 			<Link
 				to={'/dashboard/mentor_detail'}
 				state={mentor}>
@@ -19,7 +19,7 @@ function MentorCard({mentor}) {
 							src={mentor.profileImg}
 							alt=""
 						/>{' '}
-						<div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-blue-800 to-blue-200/5 mix-blend-multiply rounded-lg"></div>
+						<div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-dark1 to-dark6/5 mix-blend-multiply rounded-lg"></div>
 					</div>
 					<h3 className="mt-2 text-sm font-medium text-gray-900">
 						{mentor.name}
