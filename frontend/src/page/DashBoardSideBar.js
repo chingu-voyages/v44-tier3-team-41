@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import {
 	Dialog,
 	Menu,
@@ -18,13 +18,16 @@ import {
 	UsersIcon,
 } from '@heroicons/react/24/outline';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
 function DashBoard() {
-
+	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	const [sidebarOpen, setSidebarOpen] =
 		useState(false);
 	const [currentTab, setCurrentTab] =
@@ -32,6 +35,12 @@ function DashBoard() {
 	let navigation
 
 	const currentUser = useSelector(state => state.session.user);
+
+	const handleLogout = async (e) => {
+		e.preventDefault()
+		await dispatch(logoutThunk())
+		navigate('/')
+	}
 
 
 	if (currentUser?.classification === 'Mentor') {
@@ -102,12 +111,6 @@ function DashBoard() {
 				icon: UserGroupIcon,
 				current: currentTab === 'all mentees',
 			},
-			// {
-			// 	name: 'my mentees',
-			// 	href: 'menteelist',
-			// 	icon: UsersIcon,
-			// 	current: currentTab === 'my mentees',
-			// },
 			{
 				name: 'chat',
 				href: 'messageBoard',
@@ -334,13 +337,14 @@ function DashBoard() {
 													aria-hidden="true">
 													{currentUser.name}
 												</span>
-												<Link to={'/'}>
-													<button
-														type="button"
-														className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
-														sign out
-													</button>
-												</Link>
+
+												<button
+													type="button"
+													onClick={handleLogout}
+													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+													sign out
+												</button>
+
 											</span>
 										</Menu.Button>
 									</Menu>

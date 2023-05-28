@@ -38,20 +38,22 @@ export default function LoginForm() {
 
 	const demoLoginMentor = async e => {
 		e.preventDefault();
+		console.log("Mentor Frontend")
 
-		await dispatch(
+		return await dispatch(
 			loginThunk(
 				'mentor@gu.io',
 				'password',
 				'Mentor'
 			)
 		);
+
 	};
 
 	const demoLoginMentee = async e => {
 		e.preventDefault();
 
-		await dispatch(
+		return await dispatch(
 			loginThunk(
 				'john.doe@cgu.io',
 				'password',
@@ -70,8 +72,6 @@ export default function LoginForm() {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		setErrors([]);
-
-		// TODO update the value of classification
 
 		return await dispatch(
 			loginThunk(
@@ -107,43 +107,27 @@ export default function LoginForm() {
 						</h2>
 					</div>
 
-					<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-						<form
-							className="space-y-6"
-							action="#"
-							method="POST"
-							onSubmit={handleSubmit}>
-							<ul>
-								{errors.map((error, idx) => (
-									<li
-										key={idx}
-										className="text-red-500">
-										{error}
-									</li>
-								))}
-							</ul>
+					<div className="text-center flex flex-row mx-auto mt-3">
+						<div className=" mx-2 my-2 ">
+							<button className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+								onClick={demoLoginMentee}>
+								<UserIcon
+									className="w-4 h-4 inline-block align-text-bottom mr-1"
 
-							<div className="flex">
-								<div className=" mx-2 my-2 ">
-									<button className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out">
-										<UserIcon
-											className="w-4 h-4 inline-block align-text-bottom mr-1"
-											onClick={demoLoginMentee}
-										/>
-										Mentee demo login
-									</button>
-								</div>
-								<div className=" mx-2 my-2 ">
-									<button className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out">
-										<UserIcon
-											className="w-4 h-4 inline-block align-text-bottom mr-1"
-											onClick={demoLoginMentor}
-										/>
-										Mentor demo login
-									</button>
-								</div>
-							</div>
-						</form>
+								/>
+								Mentee demo login
+							</button>
+						</div>
+						<div className=" mx-2 my-2 ">
+							<button className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+								onClick={demoLoginMentor}>
+								<UserIcon
+									className="w-4 h-4 inline-block align-text-bottom mr-1"
+
+								/>
+								Mentor demo login
+							</button>
+						</div>
 					</div>
 
 					<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
