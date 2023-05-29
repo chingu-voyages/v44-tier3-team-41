@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {ChevronRightIcon} from '@heroicons/react/20/solid';
+import React, { useEffect, useState } from 'react';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
 
 function JobBoard() {

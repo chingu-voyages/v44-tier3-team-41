@@ -119,7 +119,7 @@ export default function ProfileMentee({ currentUser }) {
 				state,
 				profileImg: imagePreview,
 			};
-			console.log(body);
+
 		} else {
 			const imageUrl =
 				await handleImageUpload();
@@ -139,7 +139,7 @@ export default function ProfileMentee({ currentUser }) {
 				state,
 				profileImg: imageUrl,
 			};
-			console.log(body);
+
 		}
 		await dispatch(editMenteeThunk(body))
 

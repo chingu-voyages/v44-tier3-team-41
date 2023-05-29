@@ -37,7 +37,7 @@ export const clearSearch = () => {
 //** Thunk */
 
 export const getAllMentorsThunk = (filters = {}) => async dispatch => {
-    console.log(filters)
+
     const params = new URLSearchParams(filters)
 
     const response = await csrfFetch(`/api/mentor?${params}`);

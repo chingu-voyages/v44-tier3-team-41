@@ -8,8 +8,8 @@ import {
 	Legend,
 } from 'recharts';
 
-function BarChart({data, title}) {
-	console.log(data);
+function BarChart({ data, title }) {
+
 	return (
 		<div className="border border-gray-400 rounded-lg mb-5">
 			<p className="text-center mt-5 font-normal text-sm text-gray-500">
