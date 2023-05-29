@@ -258,7 +258,7 @@ function DashBoard() {
 											<Link to={'/'}>
 												<button
 													type="button"
-													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 													sign out
 												</button>
 											</Link>
@@ -352,7 +352,7 @@ function DashBoard() {
 								</div>
 							</div>
 						</div>
-						<div className="p-2 absolute bottom-[80px] right-10">
+						<div className="p-2 absolute bottom-[50px] right-10">
 							<p className="text-xs text-dark6">
 								© 2023 DevelopMe. All rights
 								reserved.
@@ -417,7 +417,7 @@ function DashBoard() {
 												<button
 													type="button"
 													onClick={handleLogout}
-													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 													Sign out
 												</button>
 											</span>

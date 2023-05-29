@@ -205,9 +205,9 @@ export default function SignupMentee() {
 					</div>
 				</div>
 				{/* Right side */}
-				<div className="w-1/3 bg-gradient-to-r from-green-700 to-green-950 text-white flex items-center">
+				<div className="w-1/3 bg-gradient-to-tr from-green-800 to-green-950 text-white flex items-center">
 					{/* Text div */}
-					<div className="p-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-green-600 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-40 shadow-2xl">
+					<div className="p-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-green-800 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-40 shadow-2xl">
 						<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
 							Accelerate your
 							<br /> career growth.
@@ -232,10 +232,10 @@ export default function SignupMentee() {
 					<div className="relative">
 						<div
 							id="circle1"
-							className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-green-800 to-green-400 bg-opacity-20 shadow-lg border border-green-400"></div>
+							className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-green-800 to-green-400 bg-opacity-20 shadow-lg border border-green-700"></div>
 						<div
 							id="circle2"
-							class="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-green-800 to-green-950 bg-opacity-20 shadow-xl shadow-green-400/20 border border-green-600 animate-float"></div>
+							class="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-green-800 to-green-950 bg-opacity-20 shadow-xl shadow-green-400/20 border border-green-800 animate-float"></div>
 					</div>
 				</div>
 			</div>
