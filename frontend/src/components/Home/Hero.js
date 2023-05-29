@@ -1,12 +1,18 @@
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
+import {useState} from 'react';
+import {Dialog} from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { logoutThunk } from '../../store/session';
+import {
+	Link,
+	useNavigate,
+} from 'react-router-dom';
+import {
+	useSelector,
+	useDispatch,
+} from 'react-redux';
+import {logoutThunk} from '../../store/session';
 
 const navigation = [
 	{
@@ -23,17 +29,17 @@ export default function Hero() {
 	const [mobileMenuOpen, setMobileMenuOpen] =
 		useState(false);
 
-	const currentUser = useSelector(state => state.session.user)
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
-
+	const currentUser = useSelector(
+		state => state.session.user
+	);
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const handleLogout = async e => {
 		e.preventDefault();
 		await dispatch(logoutThunk());
-		navigate('/')
+		navigate('/');
 	};
-
 
 	return (
 		<div className="bg-white">
@@ -70,7 +76,7 @@ export default function Hero() {
 						</button>
 					</div>
 
-					{!currentUser ?
+					{!currentUser ? (
 						<div className="hidden lg:flex lg:gap-x-12">
 							{navigation.map(item => (
 								<a
@@ -80,19 +86,20 @@ export default function Hero() {
 									{item.name}
 								</a>
 							))}
-						</div> : null}
+						</div>
+					) : null}
 
-					{!currentUser ?
+					{!currentUser ? (
 						<div className="hidden lg:flex lg:flex-1 lg:justify-end mr-10">
 							<Link to={'/login'}>
 								<button
 									type="button"
 									className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
-									Log in Now
+									Log in
 								</button>
 							</Link>
 						</div>
-						:
+					) : (
 						<div className="hidden lg:flex lg:flex-1 lg:justify-end mr-10">
 							<button
 								type="button"
@@ -100,8 +107,8 @@ export default function Hero() {
 								className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
 								Log out
 							</button>
-						</div>}
-
+						</div>
+					)}
 				</nav>
 				<Dialog
 					as="div"
