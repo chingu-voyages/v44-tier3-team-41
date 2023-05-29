@@ -94,7 +94,7 @@ export default function Hero() {
 							<Link to={'/login'}>
 								<button
 									type="button"
-									className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+									className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 									Log in
 								</button>
 							</Link>
@@ -104,7 +104,7 @@ export default function Hero() {
 							<button
 								type="button"
 								onClick={handleLogout}
-								className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+								className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 								Log out
 							</button>
 						</div>
@@ -160,7 +160,7 @@ export default function Hero() {
 								<div className="py-6">
 									<Link
 										to={'/login'}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 										Log in
 									</Link>
 								</div>

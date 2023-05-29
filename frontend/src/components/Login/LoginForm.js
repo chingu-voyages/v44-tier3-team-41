@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, {useState, Fragment} from 'react';
 import {
 	useDispatch,
 	useSelector,
@@ -16,11 +16,11 @@ import {
 	ChevronUpDownIcon,
 	UserIcon,
 } from '@heroicons/react/20/solid';
-import { loginThunk } from '../../store/session';
+import {loginThunk} from '../../store/session';
 
 const roles = [
-	{ id: 1, name: 'Mentor' },
-	{ id: 2, name: 'Mentee' },
+	{id: 1, name: 'Mentor'},
+	{id: 2, name: 'Mentee'},
 ];
 
 function classNames(...classes) {
@@ -39,7 +39,6 @@ export default function LoginForm() {
 	const demoLoginMentor = async e => {
 		e.preventDefault();
 
-
 		return await dispatch(
 			loginThunk(
 				'mentor@gu.io',
@@ -47,7 +46,6 @@ export default function LoginForm() {
 				'Mentor'
 			)
 		);
-
 	};
 
 	const demoLoginMentee = async e => {
@@ -109,22 +107,18 @@ export default function LoginForm() {
 
 					<div className="text-center flex flex-row mx-auto mt-3">
 						<div className=" mx-2 my-2 ">
-							<button className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+							<button
+								className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
 								onClick={demoLoginMentee}>
-								<UserIcon
-									className="w-4 h-4 inline-block align-text-bottom mr-1"
-
-								/>
+								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentee demo login
 							</button>
 						</div>
 						<div className=" mx-2 my-2 ">
-							<button className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+							<button
+								className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
 								onClick={demoLoginMentor}>
-								<UserIcon
-									className="w-4 h-4 inline-block align-text-bottom mr-1"
-
-								/>
+								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentor demo login
 							</button>
 						</div>
@@ -148,7 +142,7 @@ export default function LoginForm() {
 							<Listbox
 								value={classification}
 								onChange={setClassification}>
-								{({ open }) => (
+								{({open}) => (
 									<>
 										<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
 											Role
@@ -302,9 +296,9 @@ export default function LoginForm() {
 				</div>
 			</div>
 			{/* Right side */}
-			<div className="w-1/3 bg-gradient-to-r from-green-700 to-indigo-900 text-white flex items-center ">
+			<div className="w-1/3 bg-gradient-to-tr from-dark3 to-dark1 text-white flex items-center ">
 				{/* Text Div */}
-				<div className="p-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-green-600 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-40 shadow-2xl hover:border-indigo-800">
+				<div className="p-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 shadow-2xl hover:border-dark5">
 					<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
 						Accelerate your
 						<br /> career growth.
@@ -320,7 +314,7 @@ export default function LoginForm() {
 					<div className="mt-10">
 						<button
 							type=""
-							className="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100">
+							className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100">
 							Contact us for more info
 						</button>
 					</div>
@@ -329,10 +323,10 @@ export default function LoginForm() {
 				<div className="relative">
 					<div
 						id="circle1"
-						className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-green-800 to-green-400 bg-opacity-20 shadow-lg border border-green-500"></div>
+						className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-dark1 to-dark3 bg-opacity-20 shadow-lg border border-dark5"></div>
 					<div
 						id="circle2"
-						className="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-indigo-800 to-indigo-950 bg-opacity-20 shadow-lg shadow-indigo-300/30 border border-indigo-500 animate-float"></div>
+						className="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-dark3 to-dark1 bg-opacity-20 shadow-lg shadow-dark6/30 border border-dark4 animate-float"></div>
 				</div>
 			</div>
 		</div>

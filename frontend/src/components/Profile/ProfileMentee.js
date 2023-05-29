@@ -180,11 +180,11 @@ export default function ProfileMentee({
 
 	return (
 		<forsetSkillm>
-			<div className="bg-[#fafafa] p-8 rounded-lg shadow-lg mt-4">
+			<div className="bg-light1 p-8 rounded-lg shadow-lg mt-4">
 				<div className="space-y-12">
-					<div className="border-b border-gray-900/10">
+					<div className="border-b border-dark1/10 pb-12">
 						{/* Profile Heading */}
-						<div className="p-2 pl-6 bg-[#1F2937] rounded-lg shadow-md w-1/2 -mt-12 ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+						<div className="p-2 pl-6 bg-dark2 rounded-lg shadow-md w-1/2 -mt-12 ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 							<h2 className="text-sm font-medium w-1/3 -mt-5 leading-7 bg-gradient-to-r from-[#092523] to-[#134E4A] shadow-lg shadow-green-700/20 px-6 py-1 text-green-100 rounded-full">
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentee Profile
@@ -206,8 +206,8 @@ export default function ProfileMentee({
 										className="block text-xs font-normal leading-2 text-gray-500">
 										Name & Surname
 									</label>
-									<div className="mt-1">
-										<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+									<div className="mt-2">
+										<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-dark4 sm:max-w-md">
 											<input
 												type="text"
 												name="username"
@@ -234,7 +234,7 @@ export default function ProfileMentee({
 											id="about"
 											name="about"
 											rows={3}
-											className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+											className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 											value={about}
 											onChange={e =>
 												setAbout(e.target.value)
@@ -274,9 +274,9 @@ export default function ProfileMentee({
 									</div>
 								</div>
 							</div>
-							{/* Right div */}
 
-							<div className="border-gray-900/10 pb-12 w-1/2">
+							{/* Right div */}
+							<div className="border-dark1/10 pb-12 w-1/2">
 								{/* Work div */}
 								<div className="col-span-full">
 									<div className="col-span-full">
@@ -290,7 +290,7 @@ export default function ProfileMentee({
 												id="occupation"
 												name="occupation"
 												rows={2}
-												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={occupation}
 												onChange={e =>
 													setOccupation(
@@ -312,7 +312,7 @@ export default function ProfileMentee({
 												id="skills"
 												name="skills"
 												rows={2}
-												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={skill}
 												onChange={e =>
 													setSkill(e.target.value)
@@ -331,7 +331,7 @@ export default function ProfileMentee({
 												id="goals"
 												name="goals"
 												rows={2}
-												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={goal}
 												onChange={e =>
 													setGoal(e.target.value)
@@ -362,6 +362,7 @@ export default function ProfileMentee({
 									</div>
 								</div>
 
+								{/* Location */}
 								<div className="border-gray-900/10 mt-5">
 									<h2 className="text-sm font-semibold text-gray-600">
 										Location
@@ -384,7 +385,7 @@ export default function ProfileMentee({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
 										</div>
@@ -428,7 +429,7 @@ export default function ProfileMentee({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
 										</div>
@@ -468,7 +469,7 @@ export default function ProfileMentee({
 				<div className="mt-6 flex items-center justify-end gap-x-6">
 					<button
 						onClick={handleOnUpdate}
-						className="rounded-md bg-dark1 px-5 py-2 text-xs font-semibold text-white hover:bg-dark3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 shadow-md hover:shadow-lg">
+						className="rounded-md bg-dark1 px-5 py-2 text-xs font-semibold text-white hover:bg-dark3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 shadow-md hover:shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 						Save to update
 					</button>
 				</div>
