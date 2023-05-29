@@ -1,11 +1,10 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const MenteeDetail = () => {
 	const data = useLocation();
 	const mentee = data.state;
-
 
 	if (mentee)
 		return (
@@ -111,6 +110,14 @@ const MenteeDetail = () => {
 										</dt>
 										<dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
 											{mentee.city}, {mentee.state}, {mentee.country}
+										</dd>
+									</div>
+									<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+										<dt className="text-sm font-medium text-gray-900">
+											Contact
+										</dt>
+										<dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+											(+{mentee.countryCode}) {mentee.phone}
 										</dd>
 									</div>
 									<div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

@@ -4,13 +4,10 @@ import {useSelector} from 'react-redux';
 import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
 
 function MessageBoard() {
-	const currentUser = useSelector(
-		state => state.session.user
-	);
+	const currentUser = useSelector(state => state.session.user);
 	const chatboxEl = useRef();
 	// wait for TalkJS to load
-	const [talkLoaded, markTalkLoaded] =
-		useState(false);
+	const [talkLoaded, markTalkLoaded] = useState(false);
 
 	useEffect(() => {
 		Talk.ready.then(() => markTalkLoaded(true));

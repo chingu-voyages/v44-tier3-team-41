@@ -1,18 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import MenteeCard from '../components/MenteeCard/MenteeCard';
-import {
-	useSelector,
-	useDispatch,
-} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {getAllMenteesThunk} from '../store/mentee';
 import {UserIcon} from '@heroicons/react/24/outline';
 
 export default function MenteeList() {
-	const [options, setOptions] = useState('all');
 	const dispatch = useDispatch();
-	const mentees = useSelector(
-		state => state.mentee.search
-	);
+	const mentees = useSelector(state => state.mentee.search);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -32,10 +26,7 @@ export default function MenteeList() {
 			<div className="z-0">
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-[#fafafa] p-4 py-10 rounded-lg shadow-lg border border-light4">
 					{mentees?.map((mentee, index) => (
-						<MenteeCard
-							key={index}
-							mentee={mentee}
-						/>
+						<MenteeCard key={index} mentee={mentee} />
 					))}
 				</ul>
 			</div>
