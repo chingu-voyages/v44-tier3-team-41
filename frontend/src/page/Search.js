@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MentorCard from '../components/MentorCard/MentorCard';
 import {
 	useSelector,
@@ -13,6 +13,10 @@ function Search() {
 	const [searchTerm, setSearchTerm] =
 		useState('');
 	const mentors = useSelector(state => state.mentor.search)
+
+	useEffect(() => {
+		dispatch(clearSearch())
+	}, [])
 
 	async function handleOnSubmit(e) {
 		e.preventDefault();
