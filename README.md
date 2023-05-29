@@ -90,16 +90,22 @@
 # Images
 
 ### Landing Page
+<img width="1673" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/40a8dca0-ab4b-4939-babd-d994afc9c60f">
 
 ### Mentor list Page
+<img width="1656" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/4e473035-116a-4f2b-a17f-223d29d23a9c">
 
 ### Mentee list Page
+<img width="1714" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/49d9d299-fab4-4f06-918e-0b4571ea7764">
 
 ### Message Page
+<img width="1399" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/aa27536c-8bd4-4371-ae80-c09758fba61e">
 
 ### Search Page
+<img width="1387" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/b98db4de-9282-443b-8ca8-9e42bd17c2cd">
 
 ### Profile Page
+<img width="1435" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/41f5545b-7005-4cf6-bca2-c879cee0c879">
 
 ### Reports Page
 
