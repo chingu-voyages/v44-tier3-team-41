@@ -55,8 +55,8 @@ export default function MiddleSection() {
 						across the globe
 					</p>
 				</div>
-				<div className="mx-auto mt-10 max-w-2xl sm:mt-10 lg:mt-16 lg:max-w-4xl">
-					<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-8">
+				<div className="mx-auto items-center justify-center mt-10 max-w-2xl sm:mt-10 lg:mt-16 lg:max-w-4xl">
+					<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:max-w-none lg:grid-cols-3 lg:gap-y-8">
 						{features.map(feature => (
 							<div
 								key={feature.name}
