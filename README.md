@@ -109,6 +109,9 @@
 
 ### Reports Page
 
+### Job Posts Page
+<img width="1685" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/4393eaed-4af8-45a2-a6fb-9bf4198f3dc6">
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
