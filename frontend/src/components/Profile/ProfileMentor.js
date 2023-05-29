@@ -120,7 +120,7 @@ export default function ProfileMentor({
 				state,
 				profileImg: imagePreview,
 			};
-			console.log(body);
+
 		} else {
 			const imageUrl =
 				await handleImageUpload();
@@ -140,7 +140,7 @@ export default function ProfileMentor({
 				state,
 				profileImg: imageUrl,
 			};
-			console.log(body);
+
 		}
 		await dispatch(editMentorThunk(body))
 

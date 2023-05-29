@@ -38,7 +38,7 @@ export default function LoginForm() {
 
 	const demoLoginMentor = async e => {
 		e.preventDefault();
-		console.log("Mentor Frontend")
+
 
 		return await dispatch(
 			loginThunk(
