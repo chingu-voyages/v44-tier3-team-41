@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const Profile = () => {
 	const currentUser = useSelector(state => state.session.user);
 
-	if (currentUser.classification === 'mentor') {
+	if (currentUser.classification === 'Mentor') {
 		return <ProfileMentor currentUser={currentUser} />;
 	}
 	return <ProfileMentee currentUser={currentUser} />;
