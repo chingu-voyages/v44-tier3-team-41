@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
     where: {}
   };
 
+  console.log(query);
   // ? capitalize the first letter of every word in the input
   const capitalizeFirstLetters = (str) => {
     return str.replace(/\b\w/g, (match) => {

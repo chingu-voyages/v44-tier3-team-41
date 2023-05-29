@@ -2,8 +2,8 @@ import { csrfFetch } from "./csrf";
 
 const GETALLMENTORS = 'mentor/GETALLMENTORS'
 const GETMENTOR = 'mentor/GETMENTOR'
-const GETSTUDENTS = 'mentor/GETSTUDENTS'
 const EDITMENTOR = 'mentor/EDITMENTOR'
+const CLEARSEARCH = 'mentor/CLEARSEARCH'
 
 //** Action creator */
 
@@ -21,13 +21,6 @@ const getMentor = data => {
     }
 }
 
-const mentorStudents = data => {
-    return {
-        type: GETSTUDENTS,
-        payload: data
-    }
-}
-
 const editMentor = data => {
     return {
         type: EDITMENTOR,
@@ -35,10 +28,16 @@ const editMentor = data => {
     }
 }
 
+export const clearSearch = () => {
+    return {
+        type: CLEARSEARCH
+    }
+}
+
 //** Thunk */
 
 export const getAllMentorsThunk = (filters = {}) => async dispatch => {
-
+    console.log(filters)
     const params = new URLSearchParams(filters)
 
     const response = await csrfFetch(`/api/mentor?${params}`);
@@ -85,7 +84,7 @@ export const editMentorThunk = (user) => async dispatch => {
     }
 }
 
-const initialState = { search: null, mentor: null, students: null }
+const initialState = { search: null, mentor: null }
 
 //** Reducers */
 
@@ -106,9 +105,8 @@ const mentorReducer = (state = initialState, action) => {
             currentState.mentor = { ...action.payload }
             return currentState
 
-        case GETSTUDENTS:
-            currentState.students = null
-            currentState.students = [...action.payload]
+        case CLEARSEARCH:
+            currentState.search = null
             return currentState
 
         default:

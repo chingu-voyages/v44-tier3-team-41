@@ -1,52 +1,40 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import MentorCard from '../components/MentorCard/MentorCard';
 import {
 	useSelector,
 	useDispatch,
 } from 'react-redux';
-import {getAllMentorsThunk} from '../store/mentor';
+import { getAllMentorsThunk, clearSearch } from '../store/mentor';
 
 function Search() {
+	const dispatch = useDispatch();
 	const [searchfield, setSearchField] =
 		useState('expertise');
 	const [searchTerm, setSearchTerm] =
 		useState('');
-	const [searchResult, setSearchResult] =
-		useState('');
+	const mentors = useSelector(state => state.mentor.search)
 
 	async function handleOnSubmit(e) {
 		e.preventDefault();
 		try {
 			const body = {
-				searchfield,
-				searchTerm,
+				// [searchfield] is dynamically being passed to the body obj
+				[searchfield]: searchTerm
 			};
+			await dispatch(getAllMentorsThunk(body))
 
-			console.log(body);
 		} catch (err) {
 			console.error(err.message);
 		}
 
-		setSearchField('expertise');
-		setSearchTerm('');
 	}
 	async function handleOnReset(e) {
 		e.preventDefault();
 		setSearchField('expertise');
 		setSearchTerm('');
+		dispatch(clearSearch())
+
 	}
-
-	const dispatch = useDispatch();
-	let mentors = useSelector(
-		state => state.mentor.search
-	);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			await dispatch(getAllMentorsThunk());
-		};
-		fetchData();
-	}, [dispatch]);
 
 	return (
 		<div>
@@ -114,13 +102,12 @@ function Search() {
 			</div>
 			<div>
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-					{mentors &&
-						mentors.map((mentor, index) => (
-							<MentorCard
-								key={index}
-								mentor={mentor}
-							/>
-						))}
+					{mentors?.map((mentor, index) => (
+						<MentorCard
+							key={index}
+							mentor={mentor}
+						/>
+					))}
 				</ul>
 			</div>
 		</div>
