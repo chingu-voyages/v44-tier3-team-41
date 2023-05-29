@@ -272,7 +272,7 @@ function DashBoard() {
 					{/* Static sidebar for desktop */}
 					<div className="hidden relative lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
 						{/* Sidebar component, swap this element with another sidebar if you like */}
-						<div className="h-16 shrink-0 items-center mb-10">
+						<div className="">
 							<a href="/" className="">
 								<img
 									className="h-16 w-auto ml-10"
@@ -281,11 +281,12 @@ function DashBoard() {
 								/>
 							</a>
 						</div>
-						<div className="flex absolute items-center justify-center align-middle flex-col gap-y-5 overflow-y-auto bg-gradient-to-b from-dark3 to-dark1 px-16 py-20 pl-20 pb-60 min-h-80 rounded-2xl shadow-2xl shadow-dark5/50 top-[105px] -left-5">
+						{/* Sidebar */}
+						<div className="flex absolute items-start justify-center align-middle flex-col gap-y-4 overflow-y-auto bg-gradient-to-b from-dark3 to-dark1 px-8 py-10 pl-20 min-h-80 rounded-2xl shadow-2xl shadow-dark5/50 top-[105px] -left-5 ring-1 ring-offset-8 ring-offset-light2 ring-light4">
 							<nav className="flex flex-1 flex-col">
-								<ul className="flex flex-1 flex-col gap-y-7">
+								<ul className="flex flex-1 flex-col gap-y-3">
 									<li>
-										<ul className="-mx-2 space-y-4">
+										<ul className="-mx-2 space-y-3">
 											{navigation.map(item => (
 												<li key={item.name}>
 													<Link
@@ -317,7 +318,45 @@ function DashBoard() {
 										</ul>
 									</li>
 								</ul>
-							</nav>
+							</nav>{' '}
+							<div className="pt-5 relative">
+								{/* Text div */}
+								<div className="p-4 z-30 border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-2xl shadow-slate-500/50">
+									<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
+										Our vision.
+									</h2>
+									<p className="mt-4 text-xs font-light leading-5 text-light3">
+										Platform for aspiring software
+										developers to{' '}
+										<strong className="font-bold text-light1">
+											connect with Mentors
+										</strong>
+										.
+									</p>
+									<div className="mt-4">
+										<button
+											type=""
+											className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100">
+											Contact us
+										</button>
+									</div>
+								</div>
+								{/* Circles */}
+								<div className="">
+									<div
+										id="circle1"
+										className="absolute top-[200px] -left-[40px] h-16 w-16 rounded-full bg-gradient-to-r from-dark1 to-dark4 shadow-lg border border-dark4 animate-float"></div>
+									<div
+										id="circle2"
+										className="absolute top-[50px] left-[170px] h-12 w-12 rounded-full bg-gradient-to-r from-dark4 to-dark1 shadow-lg border border-dark4"></div>
+								</div>
+							</div>
+						</div>
+						<div className="p-2 absolute bottom-[80px] right-10">
+							<p className="text-xs text-dark6">
+								© 2023 DevelopMe. All rights
+								reserved.
+							</p>
 						</div>
 					</div>
 

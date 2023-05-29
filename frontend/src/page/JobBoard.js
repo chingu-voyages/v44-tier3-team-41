@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import React, {useEffect, useState} from 'react';
+import {ChevronRightIcon} from '@heroicons/react/20/solid';
 import axios from 'axios';
 
 function JobBoard() {
@@ -53,7 +53,7 @@ function JobBoard() {
 	};
 	return (
 		<div>
-			<div className="flex gap-x-4 bg-dark1 p-3 shadow-lg shadow-dark2/30 rounded-lg py-5 items-center justify-center">
+			<div className="flex gap-x-4 bg-dark1 p-3 shadow-lg shadow-dark2/30 rounded-lg py-5 items-center justify-center ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 				<div className="flex gap-x-4">
 					<form className="w-full max-w-md lg:col-span-5">
 						<div className="flex gap-x-4">
@@ -71,7 +71,7 @@ function JobBoard() {
 									setSearchTerm(e.target.value)
 								}
 								required
-								className="min-w-0 flex-auto rounded-md bg-dark3 border border-dark4 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-dark4 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+								className="min-w-0 flex-auto rounded-md bg-dark3 border border-dark4 px-3.5 py-2 text-light4 shadow-sm ring-1 ring-inset ring-dark4 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							/>
 							<button
 								onClick={handleOnSubmit}

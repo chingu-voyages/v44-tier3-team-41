@@ -38,7 +38,7 @@ function MessageBoard() {
 
 	return (
 		<div>
-			<div className="mb-5 bg-gradient-to-r from-dark1 to-dark3 shadow-lg shadow-dark6/30 w-1/4 rounded-lg">
+			<div className="mb-5 bg-gradient-to-r from-dark1 to-dark3 shadow-lg shadow-dark6/30 w-1/4 rounded-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 				<h2 className="p-3 text-center text-light3 font-normal text-sm tracking-wide">
 					<ChatBubbleLeftIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 					Chat history

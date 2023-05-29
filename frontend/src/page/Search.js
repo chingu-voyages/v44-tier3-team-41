@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import MentorCard from '../components/MentorCard/MentorCard';
 import {
 	useSelector,
 	useDispatch,
 } from 'react-redux';
-import { getAllMentorsThunk, clearSearch } from '../store/mentor';
+import {
+	getAllMentorsThunk,
+	clearSearch,
+} from '../store/mentor';
 
 function Search() {
 	const dispatch = useDispatch();
@@ -12,37 +15,36 @@ function Search() {
 		useState('expertise');
 	const [searchTerm, setSearchTerm] =
 		useState('');
-	const mentors = useSelector(state => state.mentor.search)
+	const mentors = useSelector(
+		state => state.mentor.search
+	);
 
 	useEffect(() => {
-		dispatch(clearSearch())
-	}, [])
+		dispatch(clearSearch());
+	}, []);
 
 	async function handleOnSubmit(e) {
 		e.preventDefault();
 		try {
 			const body = {
 				// [searchfield] is dynamically being passed to the body obj
-				[searchfield]: searchTerm
+				[searchfield]: searchTerm,
 			};
-			await dispatch(getAllMentorsThunk(body))
-
+			await dispatch(getAllMentorsThunk(body));
 		} catch (err) {
 			console.error(err.message);
 		}
-
 	}
 	async function handleOnReset(e) {
 		e.preventDefault();
 		setSearchField('expertise');
 		setSearchTerm('');
-		dispatch(clearSearch())
-
+		dispatch(clearSearch());
 	}
 
 	return (
 		<div>
-			<div className="flex gap-x-4 bg-dark1 p-3 shadow-lg shadow-dark2/30 rounded-lg py-5 items-center justify-center">
+			<div className="flex gap-x-4 bg-dark1 p-3 shadow-lg shadow-dark2/30 rounded-lg py-5 items-center justify-center ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 				<div className="justify-center align-middle items-center">
 					<select
 						id="searchField"
@@ -77,7 +79,7 @@ function Search() {
 								setSearchTerm(e.target.value)
 							}
 							required
-							className="min-w-0 flex-auto bg-dark3 border border-dark4 rounded-md px-3.5 py-2 text-gray-900 shadow-lg placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark3 sm:text-sm sm:leading-6"
+							className="min-w-0 flex-auto bg-dark3 border border-dark4 rounded-md px-3.5 py-2 text-light4 shadow-lg placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark3 sm:text-sm sm:leading-6"
 						/>
 						<button
 							onClick={handleOnSubmit}
