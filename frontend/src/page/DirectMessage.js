@@ -1,7 +1,7 @@
 import Talk from 'talkjs';
-import { useEffect, useState, useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import {useEffect, useState, useRef} from 'react';
+import {useSelector} from 'react-redux';
+import {useLocation} from 'react-router-dom';
 
 function DirectMessage() {
 	const data = useLocation();
@@ -29,7 +29,7 @@ function DirectMessage() {
 				id: otherUser.email,
 				name: otherUser.name,
 				email: otherUser.email,
-				photoUrl: otherUser.profileImgUrl,
+				photoUrl: otherUser.profileImg,
 				welcomeMessage: 'Hello!',
 				role: 'default',
 			});
@@ -56,7 +56,7 @@ function DirectMessage() {
 		<div>
 			<div
 				ref={chatboxEl}
-				style={{ width: '90%', margin: '30px', height: '500px' }}
+				style={{width: '90%', margin: '30px', height: '500px'}}
 			/>
 		</div>
 	);

@@ -8,8 +8,8 @@ import {
 	Legend,
 } from 'recharts';
 
-function BarChart({ data, title }) {
-
+function BarChart({title, data}) {
+	console.log(data);
 	return (
 		<div className="border border-gray-400 rounded-lg mb-5">
 			<p className="text-center mt-5 font-normal text-sm text-gray-500">
@@ -28,14 +28,10 @@ function BarChart({ data, title }) {
 				}}>
 				<CartesianGrid stroke="#f5f5f5" />
 				<XAxis type="number" />
-				<YAxis dataKey="name" scale="band" />
+				<YAxis dataKey="name" type="category" scale="band" />
 				<Tooltip />
 				<Legend />
-				<Bar
-					dataKey="amount"
-					barSize={20}
-					fill="#334155"
-				/>
+				<Bar dataKey="amount" barSize={20} fill="#334155" />
 			</ComposedChart>
 		</div>
 	);

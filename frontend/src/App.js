@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import React, {useEffect} from 'react';
+import {Route, Routes} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 import HomePage from './page/Home';
 import LoginForm from './components/Login/LoginForm';
 import SignupMentor from './components/Signup/SignupMentor';
@@ -16,17 +16,17 @@ import Search from './page/Search';
 import Report from './page/Report';
 import Profile from './page/Profile';
 import JobBoard from './page/JobBoard';
-import { restoreUserThunk } from './store/session';
+import {restoreUserThunk} from './store/session';
 
 const App = () => {
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		const fetchUser = async () => {
-			await dispatch(restoreUserThunk())
-		}
-		fetchUser()
-	}, [dispatch])
+			await dispatch(restoreUserThunk());
+		};
+		fetchUser();
+	}, [dispatch]);
 
 	return (
 		<>

@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
-import {CheckCircleIcon} from '@heroicons/react/20/solid';
+import React, { useState } from 'react';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
-import {UserIcon} from '@heroicons/react/24/outline';
-import {useDispatch} from 'react-redux';
-import {editMenteeThunk} from '../../store/mentee';
+import { UserIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from 'react-redux';
+import { editMenteeThunk } from '../../store/mentee';
 
-export default function ProfileMentee({
-	currentUser,
-}) {
+export default function ProfileMentee({ currentUser }) {
 	const dispatch = useDispatch();
 
 	const [name, setName] = useState('');
@@ -28,8 +26,7 @@ export default function ProfileMentee({
 	const [city, setCity] = useState('');
 	const [state, setState] = useState('');
 	const [valid, setValid] = useState(false);
-	const [validateErrors, setValidateErrors] =
-		useState([]);
+	const [validateErrors, setValidateErrors] = useState([]);
 
 	const [success, setSuccess] = useState(false);
 
@@ -68,12 +65,10 @@ export default function ProfileMentee({
 	};
 
 	function handleImageChange(event) {
-		const {files} = event.target;
+		const { files } = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
-			setImagePreview(
-				URL.createObjectURL(files[0])
-			);
+			setImagePreview(URL.createObjectURL(files[0]));
 		}
 	}
 
@@ -190,9 +185,8 @@ export default function ProfileMentee({
 								Mentee Profile
 							</h2>
 							<p className="text-xs leading-6 text-slate-400 pl-5">
-								This information will be displayed
-								publicly so be careful what you
-								share
+								This information will be displayed publicly so be careful what
+								you share
 							</p>
 						</div>
 						{/* Info div */}
@@ -236,14 +230,11 @@ export default function ProfileMentee({
 											rows={3}
 											className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 											value={about}
-											onChange={e =>
-												setAbout(e.target.value)
-											}
+											onChange={e => setAbout(e.target.value)}
 										/>
 									</div>
 									<p className="mt-1 pl-3 text-xs leading-6 text-gray-400">
-										Write a few sentences about
-										yourself
+										Write a few sentences about yourself
 									</p>
 								</div>
 								{/* Profile image */}
@@ -254,9 +245,7 @@ export default function ProfileMentee({
 										Profile Image
 									</label>
 									<div className="mt-1 text-xs text-gray-500 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-5">
-										<label htmlFor="image">
-											image:
-										</label>
+										<label htmlFor="image">image:</label>
 										<input
 											className="form-control"
 											type="file"
@@ -292,11 +281,7 @@ export default function ProfileMentee({
 												rows={2}
 												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={occupation}
-												onChange={e =>
-													setOccupation(
-														e.target.value
-													)
-												}
+												onChange={e => setOccupation(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -314,9 +299,7 @@ export default function ProfileMentee({
 												rows={2}
 												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={skill}
-												onChange={e =>
-													setSkill(e.target.value)
-												}
+												onChange={e => setSkill(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -333,9 +316,7 @@ export default function ProfileMentee({
 												rows={2}
 												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={goal}
-												onChange={e =>
-													setGoal(e.target.value)
-												}
+												onChange={e => setGoal(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -352,11 +333,7 @@ export default function ProfileMentee({
 												rows={2}
 												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
 												value={project}
-												onChange={e =>
-													setProject(
-														e.target.value
-													)
-												}
+												onChange={e => setProject(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -380,12 +357,8 @@ export default function ProfileMentee({
 													name="country"
 													id="country"
 													value={country}
-													onChange={e =>
-														setCountry(
-															e.target.value
-														)
-													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													onChange={e => setCountry(e.target.value)}
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
 												/>
 											</div>
 										</div>
@@ -402,11 +375,7 @@ export default function ProfileMentee({
 													name="city"
 													id="city"
 													value={city}
-													onChange={e =>
-														setCity(
-															e.target.value
-														)
-													}
+													onChange={e => setCity(e.target.value)}
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
 												/>
 											</div>
@@ -424,12 +393,50 @@ export default function ProfileMentee({
 													name="region"
 													id="region"
 													value={state}
-													onChange={e =>
-														setState(
-															e.target.value
-														)
-													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													onChange={e => setState(e.target.value)}
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-gray-600 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-xs sm:leading-6"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="border-b border-gray-900/10 pb-12">
+									<h2 className="text-base font-semibold leading-7 text-gray-900">
+										Contact inforamtion
+									</h2>
+									<div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<div className="sm:col-span-2 sm:col-start-1">
+											<label
+												htmlFor="country"
+												className="block text-sm font-medium leading-6 text-gray-900">
+												Country Code
+											</label>
+											<div className="mt-2">
+												<input
+													type="number"
+													name="countryCode"
+													id="countryCode"
+													value={countryCode}
+													onChange={e => setCountryCode(e.target.value)}
+													className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+												/>
+											</div>
+										</div>
+
+										<div className="sm:col-span-2">
+											<label
+												htmlFor="phone"
+												className="block text-sm font-medium leading-6 text-gray-900">
+												Phone number
+											</label>
+											<div className="mt-2">
+												<input
+													type="number"
+													name="phone"
+													id="phone"
+													value={phone}
+													onChange={e => setPhone(e.target.value)}
+													className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 												/>
 											</div>
 										</div>
@@ -450,8 +457,7 @@ export default function ProfileMentee({
 							</div>
 							<div className="ml-3">
 								<p className="text-sm font-medium text-green-800">
-									Successfully uploaded, refresh
-									to view the updated inforamtion
+									Successfully uploaded, refresh to view the updated inforamtion
 								</p>
 							</div>
 						</div>
