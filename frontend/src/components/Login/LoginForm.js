@@ -85,9 +85,9 @@ export default function LoginForm() {
 	};
 
 	return (
-		<div className="flex flex-col sm:flex-row  h-screen bg-[#fafafa]">
+		<div className="flex flex-col lg:flex-row  h-screen bg-[#fafafa]">
 			{/* Left side */}
-			<div className="sm:w-2/3 w-full">
+			<div className="sm:w-full lg:w-2/3">
 				<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 					<div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition-all duration-200 ease-in-out">
 						<h2 className="text-center text-xs font-thin tracking-wider text-gray-600 uppercase">
@@ -108,7 +108,7 @@ export default function LoginForm() {
 					<div className="text-center flex flex-row mx-auto mt-3">
 						<div className=" mx-2 my-2 ">
 							<button
-								className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+								className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-xs md:text-sm hover:scale-105 transition-all duration-200 ease-in-out"
 								onClick={demoLoginMentee}>
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentee demo login
@@ -116,7 +116,7 @@ export default function LoginForm() {
 						</div>
 						<div className=" mx-2 my-2 ">
 							<button
-								className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+								className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-xs md:text-sm hover:scale-105 transition-all duration-200 ease-in-out"
 								onClick={demoLoginMentor}>
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentor demo login
@@ -296,9 +296,9 @@ export default function LoginForm() {
 				</div>
 			</div>
 			{/* Right side */}
-			<div className="sm:w-1/3 w-full min-h-full md:h-full bg-gradient-to-tr from-dark3 to-dark1 text-white flex items-center">
+			<div className="sm:w-full lg:w-1/3 min-h-full md:h-full bg-gradient-to-tr from-dark3 to-dark1 text-white flex items-center md:justify-center md:p-5 sm:p-2">
 				{/* Text Div */}
-				<div className="p-10 md:m-10 md:py-10 md:ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 shadow-2xl hover:border-dark5">
+				<div className="p-10 md:m-10 md:py-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 shadow-2xl hover:border-dark5">
 					<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
 						Accelerate your
 						<br /> career growth.

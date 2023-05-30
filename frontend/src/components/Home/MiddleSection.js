@@ -45,24 +45,24 @@ export default function MiddleSection() {
 	return (
 		<div className="bg-[#F0F6F9] py-24 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
-				<div className="mx-auto max-w-2xl lg:text-center">
-					<p className="text-3xl font-extrabold tracking-wide text-gray-900">
-						Learn and grow across expertise for
-						free
+				<div className="mx-auto max-w-2xl text-center">
+					<p className="md:text-4xl text-2xl md:font-extrabold font-bold md:tracking-wide text-gray-900">
+						Learn and grow across <br />
+						expertise for free
 					</p>
 					<p className="mt-2 text-base leading-6 text-gray-600">
 						Find mentors from product fields
 						across the globe
 					</p>
 				</div>
-				<div className="mx-auto items-center justify-center mt-10 max-w-2xl sm:mt-10 lg:mt-16 lg:max-w-4xl">
-					<dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:max-w-none lg:grid-cols-3 lg:gap-y-8">
+				<div className="mx-auto items-center justify-center align-middle mt-10 max-w-2xl sm:mt-10 lg:mt-16 lg:max-w-4xl">
+					<dl className="grid md:max-w-none grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-8">
 						{features.map(feature => (
 							<div
 								key={feature.name}
 								className="relative pl-24 bg-white p-5 rounded-2xl shadow-xl bg-opacity-50 ">
 								<dt className="font-bold text-lg leading-7 text-gray-900">
-									<div className="absolute left-8 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600">
+									<div className="absolute left-8 top-6 flex h-12 w-12 items-center justify-center rounded-full bg-dark4">
 										<feature.icon
 											className="h-6 w-6 text-white"
 											aria-hidden="true"
@@ -77,11 +77,11 @@ export default function MiddleSection() {
 						))}
 					</dl>
 				</div>
-				<div className="flex justify-center my-12">
+				<div className="flex mx-auto justify-center items-center my-12 max-w-2xl">
 					<Link>
 						<button
 							type="button"
-							className="rounded-md bg-black px-10 py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600">
+							className="rounded-md bg-dark1 px-10 py-4 text-sm font-semibold text-white shadow-sm hover:bg-dark3">
 							Explore all courses
 						</button>
 					</Link>
