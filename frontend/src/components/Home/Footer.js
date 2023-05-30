@@ -11,7 +11,7 @@ export default function Footer() {
 					<div className="flex">
 						<a href="/" className="">
 							<img
-								className="h-12"
+								className="md:h-12 h-10"
 								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_clear_w1sleb.png"
 								alt="DM Logo"
 							/>

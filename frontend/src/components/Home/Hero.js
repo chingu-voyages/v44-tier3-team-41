@@ -125,7 +125,7 @@ export default function Hero() {
 									DevelopMe
 								</span>
 								<img
-									className="h-8 w-auto"
+									className="h-16 w-auto"
 									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
 									alt="dm_logo"
 								/>
@@ -146,21 +146,21 @@ export default function Hero() {
 							</button>
 						</div>
 						<div className="mt-6 flow-root">
-							<div className="-my-6 divide-y divide-gray-500/10">
-								<div className="space-y-2 py-6">
+							<div className="-my-6 divide-y divide-gray-500/10 w-1/2">
+								<div className="space-y-4 py-6">
 									{navigation.map(item => (
 										<a
 											key={item.name}
 											href={item.href}
-											className="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+											className="-mx-3 block text-sm font-normal text-gray-600 py-2 px-3 bg-light1 rounded-lg hover:bg-light4 shadow-lg">
 											{item.name}
 										</a>
 									))}
 								</div>
-								<div className="py-6">
+								<div className="py-10">
 									<Link
 										to={'/login'}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+										className="-mx-3 block rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 										Log in
 									</Link>
 								</div>
@@ -170,10 +170,10 @@ export default function Hero() {
 				</Dialog>
 			</header>
 
-			<div className="relative isolate px-8">
+			<div className="relative px-8 pt-24 isolate">
 				<div className="mx-auto max-w-6xl sm:py-48 lg:py-72">
 					<div className="text-left justify-start">
-						<h1 className="text-4xl font-extrabold tracking-wide text-gray-900">
+						<h1 className="md:text-4xl text-2xl md:font-extrabold font-bold md:tracking-wide text-gray-900">
 							Learn and grow with help from
 							<br />
 							world-class mentors for free
@@ -187,61 +187,65 @@ export default function Hero() {
 						</p>
 						<hr className="mt-4 border-blue-500 w-16 border-2" />
 					</div>
-					{/* Blue Guy Avatar */}
-					<div className="absolute top-[100px] right-[400px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
-						<img
-							className="h-24 w-24 rounded-full"
-							src="https://adplist.org/photos/mentors/1.webp"
-							alt="avatar"
-						/>
-					</div>
-					{/* Blue Lady Avatar */}
-					<div className="absolute top-[160px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
-						<img
-							className="h-20 w-20 rounded-full"
-							src="https://adplist.org/photos/mentors/2.webp"
-							alt="avatar"
-						/>
-					</div>
-					{/* Orange Guy Avatar */}
-					<div className="absolute top-[260px] right-[600px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
-						<img
-							className="h-20 w-20 rounded-full"
-							src="https://adplist.org/photos/mentors/3.webp"
-							alt="avatar"
-						/>
-					</div>
-					{/* Purple Lady Avatar */}
-					<div className="absolute top-[330px] right-[280px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float">
-						<img
-							className="h-40 w-40 rounded-full"
-							src="https://adplist.org/photos/mentors/4.webp"
-							alt="avatar"
-						/>
-					</div>
-					{/* Pink Guy Avatar */}
-					<div className="absolute top-[460px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float2">
-						<img
-							className="h-20 w-20 rounded-full"
-							src="https://adplist.org/photos/mentors/5.webp"
-							alt="avatar"
-						/>
-					</div>
-					{/* White Lady Avatar */}
-					<div className="absolute top-[530px] right-[420px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
-						<img
-							className="h-20 w-20 rounded-full"
-							src="https://adplist.org/photos/mentors/6.webp"
-							alt="avatar"
-						/>
-					</div>
-					{/* Pink Lady Avatar */}
-					<div className="absolute top-[530px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
-						<img
-							className="h-24 w-24 rounded-full"
-							src="https://adplist.org/photos/mentors/7.webp"
-							alt="avatar"
-						/>
+
+					{/* People */}
+					<div className="hidden lg:block">
+						{/* Blue Guy Avatar */}
+						<div className="absolute top-[100px] right-[400px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out ">
+							<img
+								className="h-24 w-24 rounded-full"
+								src="https://adplist.org/photos/mentors/1.webp"
+								alt="avatar"
+							/>
+						</div>
+						{/* Blue Lady Avatar */}
+						<div className="absolute top-[160px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
+							<img
+								className="h-20 w-20 rounded-full"
+								src="https://adplist.org/photos/mentors/2.webp"
+								alt="avatar"
+							/>
+						</div>
+						{/* Orange Guy Avatar */}
+						<div className="absolute top-[260px] right-[600px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
+							<img
+								className="h-20 w-20 rounded-full"
+								src="https://adplist.org/photos/mentors/3.webp"
+								alt="avatar"
+							/>
+						</div>
+						{/* Purple Lady Avatar */}
+						<div className="absolute top-[330px] right-[280px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float">
+							<img
+								className="h-40 w-40 rounded-full"
+								src="https://adplist.org/photos/mentors/4.webp"
+								alt="avatar"
+							/>
+						</div>
+						{/* Pink Guy Avatar */}
+						<div className="absolute top-[460px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float2">
+							<img
+								className="h-20 w-20 rounded-full"
+								src="https://adplist.org/photos/mentors/5.webp"
+								alt="avatar"
+							/>
+						</div>
+						{/* White Lady Avatar */}
+						<div className="absolute top-[530px] right-[420px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
+							<img
+								className="h-20 w-20 rounded-full"
+								src="https://adplist.org/photos/mentors/6.webp"
+								alt="avatar"
+							/>
+						</div>
+						{/* Pink Lady Avatar */}
+						<div className="absolute top-[530px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
+							<img
+								className="h-24 w-24 rounded-full"
+								src="https://adplist.org/photos/mentors/7.webp"
+								alt="avatar"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

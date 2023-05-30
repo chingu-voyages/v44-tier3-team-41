@@ -11,7 +11,7 @@ export default function Team() {
 						<h2 className="text-xl font-bold tracking-wide text-gray-900">
 							Our team
 						</h2>
-						<p className="mt-1 text-sm leading-8 text-gray-500">
+						<p className="mt-1 text-sm leading-6 text-gray-500">
 							We’re a dynamic group of individuals
 							who are passionate about what we do
 						</p>

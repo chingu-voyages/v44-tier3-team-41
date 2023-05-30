@@ -85,9 +85,9 @@ export default function LoginForm() {
 	};
 
 	return (
-		<div className="flex h-screen bg-[#fafafa]">
+		<div className="flex flex-col lg:flex-row  h-screen bg-[#fafafa]">
 			{/* Left side */}
-			<div className=" w-2/3">
+			<div className="sm:w-full lg:w-2/3">
 				<div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 					<div className="sm:mx-auto sm:w-full sm:max-w-sm bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transition-all duration-200 ease-in-out">
 						<h2 className="text-center text-xs font-thin tracking-wider text-gray-600 uppercase">
@@ -108,7 +108,7 @@ export default function LoginForm() {
 					<div className="text-center flex flex-row mx-auto mt-3">
 						<div className=" mx-2 my-2 ">
 							<button
-								className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+								className="bg-green-800 hover:bg-green-900 px-4 py-2 text-green-300 rounded-full shadow-lg text-xs md:text-sm hover:scale-105 transition-all duration-200 ease-in-out"
 								onClick={demoLoginMentee}>
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentee demo login
@@ -116,7 +116,7 @@ export default function LoginForm() {
 						</div>
 						<div className=" mx-2 my-2 ">
 							<button
-								className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-sm hover:scale-105 transition-all duration-200 ease-in-out"
+								className="bg-indigo-800 hover:bg-indigo-900 px-4 py-2 text-indigo-300 rounded-full shadow-lg text-xs md:text-sm hover:scale-105 transition-all duration-200 ease-in-out"
 								onClick={demoLoginMentor}>
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentor demo login
@@ -280,25 +280,25 @@ export default function LoginForm() {
 						<p className="mt-5 text-center text-xs text-gray-500">
 							Don't have an account? Sign Up{' '}
 							<Link
-								to={`/signupMentor`}
-								className="font-semibold leading-6 text-indigo-600 hover:text-indigo-800">
-								Mentor
+								to={`/signupMentee`}
+								className="font-semibold leading-6 text-green-600 hover:text-green-800">
+								Mentee
 							</Link>
 							{'   '}
 							or{'   '}
 							<Link
-								to={`/signupMentee`}
-								className="font-semibold leading-6 text-green-600 hover:text-green-800">
-								Mentee
+								to={`/signupMentor`}
+								className="font-semibold leading-6 text-indigo-600 hover:text-indigo-800">
+								Mentor
 							</Link>
 						</p>
 					</div>
 				</div>
 			</div>
 			{/* Right side */}
-			<div className="w-1/3 bg-gradient-to-tr from-dark3 to-dark1 text-white flex items-center ">
+			<div className="sm:w-full lg:w-1/3 min-h-full md:h-full bg-gradient-to-tr from-dark3 to-dark1 text-white flex items-center md:justify-center md:p-5 sm:p-2">
 				{/* Text Div */}
-				<div className="p-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 shadow-2xl hover:border-dark5">
+				<div className="p-10 md:m-10 md:py-10 ml-14 z-10 hover:scale-105 transition-all duration-200 ease-in-out border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 shadow-2xl hover:border-dark5">
 					<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
 						Accelerate your
 						<br /> career growth.
@@ -326,7 +326,7 @@ export default function LoginForm() {
 						className="absolute top-[100px] right-[150px] h-20 w-20 rounded-full bg-gradient-to-r from-dark1 to-dark3 bg-opacity-20 shadow-lg border border-dark5"></div>
 					<div
 						id="circle2"
-						className="absolute bottom-[100px] -right-[50px] h-24 w-24 rounded-full bg-gradient-to-r from-dark3 to-dark1 bg-opacity-20 shadow-lg shadow-dark6/30 border border-dark4 animate-float"></div>
+						className="absolute bottom-[100px] -right-[20px] h-24 w-24 rounded-full bg-gradient-to-r from-dark3 to-dark1 bg-opacity-20 shadow-lg shadow-dark6/30 border border-dark4 animate-float"></div>
 				</div>
 			</div>
 		</div>
