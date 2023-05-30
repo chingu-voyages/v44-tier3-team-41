@@ -4,62 +4,45 @@ import axios from 'axios';
 import {UserIcon} from '@heroicons/react/24/outline';
 import {useDispatch} from 'react-redux';
 import {editMentorThunk} from '../../store/mentor';
+import {useNavigate} from 'react-router';
 
-export default function ProfileMentor({
-	currentUser,
-}) {
+export default function ProfileMentor({currentUser}) {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const [name, setName] = useState('');
 	const [about, setAbout] = useState('');
 	const [email, setEmail] = useState('');
-	const [countryCode, setCountryCode] =
-		useState('');
+	const [countryCode, setCountryCode] = useState('');
 	const [phone, setPhone] = useState('');
 	const [role, setRole] = useState('');
 	const [yrsExp, setYrsExp] = useState(0);
 	const [expertise, setExpertise] = useState('');
 	const [image, setImage] = useState('');
-	const [imagePreview, setImagePreview] =
-		useState('');
+	const [imagePreview, setImagePreview] = useState('');
 	const [country, setCountry] = useState('');
 	const [city, setCity] = useState('');
 	const [state, setState] = useState('');
 	const [company, setCompany] = useState('');
 	const [valid, setValid] = useState(false);
-	const [validateErrors, setValidateErrors] =
-		useState([]);
+	const [validateErrors, setValidateErrors] = useState([]);
 
 	const [success, setSuccess] = useState(false);
 
 	const validate = () => {
 		const errors = [];
-		if (!name)
-			errors.push("Please provide a 'Name'");
-		if (!about)
-			errors.push("Please provide a 'About'");
-		if (!email)
-			errors.push("Please provide a 'Email'");
-		if (!phone)
-			errors.push("Please provide a 'Phone'");
-		if (!role)
-			errors.push("Please provide a 'Role'");
-		if (!yrsExp)
-			errors.push("Please provide a 'YrsExp'");
-		if (!company)
-			errors.push("Please provide a 'Company'");
-		if (!expertise)
-			errors.push("Please provide a 'Expertise'");
-		if (!country)
-			errors.push("Please provide a 'Country'");
-		if (!state)
-			errors.push("Please provide a 'State'");
-		if (!city)
-			errors.push("Please provide a 'City'");
-		if (!countryCode)
-			errors.push(
-				"Please provide a 'CountryCode'"
-			);
+		if (!name) errors.push("Please provide a 'Name'");
+		if (!about) errors.push("Please provide a 'About'");
+		if (!email) errors.push("Please provide a 'Email'");
+		if (!phone) errors.push("Please provide a 'Phone'");
+		if (!role) errors.push("Please provide a 'Role'");
+		if (!yrsExp) errors.push("Please provide a 'YrsExp'");
+		if (!company) errors.push("Please provide a 'Company'");
+		if (!expertise) errors.push("Please provide a 'Expertise'");
+		if (!country) errors.push("Please provide a 'Country'");
+		if (!state) errors.push("Please provide a 'State'");
+		if (!city) errors.push("Please provide a 'City'");
+		if (!countryCode) errors.push("Please provide a 'CountryCode'");
 
 		return errors;
 	};
@@ -68,9 +51,7 @@ export default function ProfileMentor({
 		const {files} = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
-			setImagePreview(
-				URL.createObjectURL(files[0])
-			);
+			setImagePreview(URL.createObjectURL(files[0]));
 		}
 	}
 
@@ -159,20 +140,8 @@ export default function ProfileMentor({
 
 		setSuccess(true);
 
-		setName('');
-		setAbout('');
-		setRole('');
-		setExpertise('');
-		setEmail('');
-		setCountryCode('');
-		setPhone('');
-		setYrsExp('');
-		setCompany('');
-		setImage('');
-		setImagePreview('');
-		setCountry('');
-		setCity('');
-		setState('');
+		// refresh
+		navigate(0);
 	}
 
 	return (
@@ -187,9 +156,8 @@ export default function ProfileMentor({
 								Mentor Profile
 							</h2>
 							<p className="text-xs leading-6 text-gray-400 pl-5">
-								This information will be displayed
-								publicly so be careful what you
-								share
+								This information will be displayed publicly so be careful what
+								you share
 							</p>
 						</div>
 						{/* Info div */}
@@ -214,9 +182,7 @@ export default function ProfileMentor({
 												id="username"
 												className="block flex-1 bg-white rounded-md shadow-md py-2 pl-2 text-gray-600 text-xs leading-2"
 												value={name}
-												onChange={e =>
-													setName(e.target.value)
-												}
+												onChange={e => setName(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -237,11 +203,7 @@ export default function ProfileMentor({
 													name="countryCode"
 													id="countryCode"
 													value={countryCode}
-													onChange={e =>
-														setCountryCode(
-															e.target.value
-														)
-													}
+													onChange={e => setCountryCode(e.target.value)}
 													className="block flex-1 bg-white rounded-md shadow-md py-2 pl-2 text-gray-600 text-xs leading-2"
 												/>
 											</div>
@@ -259,11 +221,7 @@ export default function ProfileMentor({
 													name="phone"
 													id="phone"
 													value={phone}
-													onChange={e =>
-														setPhone(
-															e.target.value
-														)
-													}
+													onChange={e => setPhone(e.target.value)}
 													className="block flex-1 bg-white rounded-md shadow-md py-2 pl-2 text-gray-600 text-xs leading-2"
 												/>
 											</div>
@@ -285,14 +243,11 @@ export default function ProfileMentor({
 											rows={3}
 											className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 											value={about}
-											onChange={e =>
-												setAbout(e.target.value)
-											}
+											onChange={e => setAbout(e.target.value)}
 										/>
 									</div>
 									<p className="mt-1 pl-3 text-xs leading-6 text-gray-400">
-										Write a few sentences about
-										yourself.
+										Write a few sentences about yourself.
 									</p>
 								</div>
 								{/* Profile image */}
@@ -303,9 +258,7 @@ export default function ProfileMentor({
 										Profile Image
 									</label>
 									<div className="mt-1 text-xs text-gray-500 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-5">
-										<label htmlFor="image">
-											image:
-										</label>
+										<label htmlFor="image">image:</label>
 										<input
 											className="form-control"
 											type="file"
@@ -341,11 +294,7 @@ export default function ProfileMentor({
 													name="company"
 													id="company"
 													value={company}
-													onChange={e =>
-														setCompany(
-															e.target.value
-														)
-													}
+													onChange={e => setCompany(e.target.value)}
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
@@ -362,11 +311,7 @@ export default function ProfileMentor({
 													type="text"
 													name="role"
 													value={role}
-													onChange={e =>
-														setRole(
-															e.target.value
-														)
-													}
+													onChange={e => setRole(e.target.value)}
 													id="role"
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
@@ -385,11 +330,7 @@ export default function ProfileMentor({
 													name="yearsOfExp"
 													id="yearsOfExp"
 													value={yrsExp}
-													onChange={e =>
-														setYrsExp(
-															e.target.value
-														)
-													}
+													onChange={e => setYrsExp(e.target.value)}
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
@@ -409,11 +350,7 @@ export default function ProfileMentor({
 												rows={3}
 												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												value={expertise}
-												onChange={e =>
-													setExpertise(
-														e.target.value
-													)
-												}
+												onChange={e => setExpertise(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -437,11 +374,7 @@ export default function ProfileMentor({
 													name="country"
 													id="country"
 													value={country}
-													onChange={e =>
-														setCountry(
-															e.target.value
-														)
-													}
+													onChange={e => setCountry(e.target.value)}
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
@@ -459,11 +392,7 @@ export default function ProfileMentor({
 													name="city"
 													id="city"
 													value={city}
-													onChange={e =>
-														setCity(
-															e.target.value
-														)
-													}
+													onChange={e => setCity(e.target.value)}
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
@@ -481,11 +410,7 @@ export default function ProfileMentor({
 													name="region"
 													id="region"
 													value={state}
-													onChange={e =>
-														setState(
-															e.target.value
-														)
-													}
+													onChange={e => setState(e.target.value)}
 													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
 												/>
 											</div>
@@ -507,8 +432,7 @@ export default function ProfileMentor({
 							</div>
 							<div className="ml-3">
 								<p className="text-sm font-medium text-green-800">
-									Successfully uploaded, refresh
-									to view the updated inforamtion
+									Successfully uploaded, refresh to view the updated inforamtion
 								</p>
 							</div>
 						</div>

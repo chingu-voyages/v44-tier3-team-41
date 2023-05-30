@@ -8,7 +8,6 @@ import SignupMentee from './components/Signup/SignupMentee';
 import MentorDetail from './page/MentorDetail';
 import MenteeDetail from './page/MenteeDetail';
 import DashBoardSideBar from './page/DashBoardSideBar';
-import MentorList from './page/MentorList';
 import MenteeList from './page/MenteeList';
 import MessageBoard from './page/MessageBoard';
 import DirectMessage from './page/DirectMessage';
@@ -36,7 +35,6 @@ const App = () => {
 				<Route path="/signupMentor" element={<SignupMentor />} />
 				<Route path="/signupMentee" element={<SignupMentee />} />
 				<Route path="/dashboard" element={<DashBoardSideBar />}>
-					<Route path="mentorlist" element={<MentorList />} />
 					<Route path="menteelist" element={<MenteeList />} />
 					<Route path="messageBoard" element={<MessageBoard />} />
 					<Route path="search" element={<Search />} />
