@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MapPinIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
+import React, {useState, useEffect} from 'react';
+import {MapPinIcon, CheckCircleIcon} from '@heroicons/react/20/solid';
 import axios from 'axios';
 
 function JobBoard() {
@@ -48,6 +48,32 @@ function JobBoard() {
 			return pattern.test(url);
 		}
 	};
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const options = {
+				method: 'GET',
+				url: 'https://jsearch.p.rapidapi.com/search',
+				params: {
+					query: 'HTML',
+				},
+				headers: {
+					'X-RapidAPI-Key':
+						'f67d8c10f4msh1893221b32f3c59p1d0e4ajsnf8c0bddeff87',
+					'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+				},
+			};
+
+			try {
+				const response = await axios.request(options);
+				setSearchResult(response.data.data);
+				console.log(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, []);
 	return (
 		<div>
 			<div className="flex gap-x-4 bg-dark1 p-3 shadow-lg shadow-dark2/30 rounded-lg py-5 items-center justify-center ring-1 ring-offset-4 ring-offset-light2 ring-light4">
@@ -158,7 +184,7 @@ function JobBoard() {
 								onClick={() =>
 									window.open(
 										currentJob?.job_google_link ??
-										'https://careers.google.com/jobs/results/',
+											'https://careers.google.com/jobs/results/',
 										'_blank'
 									)
 								}

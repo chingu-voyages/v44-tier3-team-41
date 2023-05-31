@@ -1,16 +1,7 @@
 import React, {useState, Fragment} from 'react';
-import {
-	useDispatch,
-	useSelector,
-} from 'react-redux';
-import {
-	Link,
-	useNavigate,
-} from 'react-router-dom';
-import {
-	Listbox,
-	Transition,
-} from '@headlessui/react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, useNavigate} from 'react-router-dom';
+import {Listbox, Transition} from '@headlessui/react';
 import {
 	CheckIcon,
 	ChevronUpDownIcon,
@@ -33,54 +24,33 @@ export default function LoginForm() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [errors, setErrors] = useState([]);
-	const [classification, setClassification] =
-		useState(roles[0]);
+	const [classification, setClassification] = useState(roles[0]);
 
 	const demoLoginMentor = async e => {
 		e.preventDefault();
 
-		return await dispatch(
-			loginThunk(
-				'mentor@gu.io',
-				'password',
-				'Mentor'
-			)
-		);
+		return await dispatch(loginThunk('mentor@gu.io', 'password', 'Mentor'));
 	};
 
 	const demoLoginMentee = async e => {
 		e.preventDefault();
 
-		return await dispatch(
-			loginThunk(
-				'john.doe@cgu.io',
-				'password',
-				'Mentee'
-			)
-		);
+		return await dispatch(loginThunk('john.doe@cgu.io', 'password', 'Mentee'));
 	};
 
-	const sessionUser = useSelector(
-		state => state.session.user
-	);
+	const sessionUser = useSelector(state => state.session.user);
 
-	if (sessionUser)
-		navigate('/dashboard/mentorlist');
+	if (sessionUser) navigate('/dashboard');
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 		setErrors([]);
 
 		return await dispatch(
-			loginThunk(
-				email,
-				password,
-				classification.name
-			)
+			loginThunk(email, password, classification.name)
 		).catch(async res => {
 			const data = await res.json();
-			if (data && data.errors)
-				setErrors(data.errors);
+			if (data && data.errors) setErrors(data.errors);
 		});
 	};
 
@@ -132,16 +102,12 @@ export default function LoginForm() {
 							onSubmit={handleSubmit}>
 							<ul>
 								{errors.map((error, idx) => (
-									<li
-										key={idx}
-										className="text-red-500">
+									<li key={idx} className="text-red-500">
 										{error}
 									</li>
 								))}
 							</ul>
-							<Listbox
-								value={classification}
-								onChange={setClassification}>
+							<Listbox value={classification} onChange={setClassification}>
 								{({open}) => (
 									<>
 										<Listbox.Label className="block text-sm font-medium leading-6 text-gray-900">
@@ -170,9 +136,7 @@ export default function LoginForm() {
 													{roles.map(role => (
 														<Listbox.Option
 															key={role.id}
-															className={({
-																active,
-															}) =>
+															className={({active}) =>
 																classNames(
 																	active
 																		? 'bg-indigo-600 text-white'
@@ -181,10 +145,7 @@ export default function LoginForm() {
 																)
 															}
 															value={role}>
-															{({
-																classification,
-																active,
-															}) => (
+															{({classification, active}) => (
 																<>
 																	<span
 																		className={classNames(
@@ -233,9 +194,7 @@ export default function LoginForm() {
 										type="email"
 										placeholder="  email"
 										value={email}
-										onChange={e =>
-											setEmail(e.target.value)
-										}
+										onChange={e => setEmail(e.target.value)}
 										autoComplete="email"
 										required
 										className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -258,9 +217,7 @@ export default function LoginForm() {
 										type="password"
 										value={password}
 										placeholder="  password"
-										onChange={e =>
-											setPassword(e.target.value)
-										}
+										onChange={e => setPassword(e.target.value)}
 										autoComplete="current-password"
 										required
 										className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -305,10 +262,8 @@ export default function LoginForm() {
 					</h2>
 					<p className="mt-4 text-xs font-light leading-5 text-gray-200">
 						Join members from over{' '}
-						<strong className="font-bold text-white">
-							141+ countries
-						</strong>{' '}
-						to <br />
+						<strong className="font-bold text-white">141+ countries</strong> to{' '}
+						<br />
 						learn from curated mentors in tech.
 					</p>
 					<div className="mt-10">

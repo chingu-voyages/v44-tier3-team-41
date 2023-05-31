@@ -1,23 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import MentorCard from '../components/MentorCard/MentorCard';
-import {
-	useSelector,
-	useDispatch,
-} from 'react-redux';
-import {
-	getAllMentorsThunk,
-	clearSearch,
-} from '../store/mentor';
+import {useSelector, useDispatch} from 'react-redux';
+import {getAllMentorsThunk, clearSearch} from '../store/mentor';
 
-function Search() {
+function SearchMentors() {
 	const dispatch = useDispatch();
-	const [searchfield, setSearchField] =
-		useState('expertise');
-	const [searchTerm, setSearchTerm] =
-		useState('');
-	const mentors = useSelector(
-		state => state.mentor.search
-	);
+	const [searchfield, setSearchField] = useState('expertise');
+	const [searchTerm, setSearchTerm] = useState('');
+	const mentors = useSelector(state => state.mentor.search);
 
 	useEffect(() => {
 		dispatch(clearSearch());
@@ -51,23 +41,15 @@ function Search() {
 						name="searchField"
 						className="block w-full rounded-md px-4 py-2 text-dark6 ring-1 ring-inset ring-dark4 focus:ring-2 focus:ring-dark2 sm:text-xs sm:leading-6 bg-dark3"
 						value={searchfield}
-						onChange={e =>
-							setSearchField(e.target.value)
-						}>
-						<option value="expertise">
-							expertise
-						</option>
+						onChange={e => setSearchField(e.target.value)}>
+						<option value="expertise">expertise</option>
 						<option value="role">role</option>
-						<option value="company">
-							company
-						</option>
+						<option value="company">company</option>
 					</select>
 				</div>
 				<form className="w-auto max-w-md lg:col-span-5">
 					<div className="flex md:gap-x-4 gap-x-2">
-						<label
-							htmlFor="search"
-							className="sr-only">
+						<label htmlFor="search" className="sr-only">
 							search
 						</label>
 						<input
@@ -75,9 +57,7 @@ function Search() {
 							name="search"
 							type="search"
 							value={searchTerm}
-							onChange={e =>
-								setSearchTerm(e.target.value)
-							}
+							onChange={e => setSearchTerm(e.target.value)}
 							required
 							className="md:min-w-0 w-28 flex-auto bg-dark3 border border-dark4 rounded-md px-3.5 py-2 text-light4 shadow-lg placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark3 sm:text-sm sm:leading-6"
 						/>
@@ -95,9 +75,7 @@ function Search() {
 				</form>
 			</div>
 			<div className="relative">
-				<div
-					className="absolute inset-0 flex items-center"
-					aria-hidden="true">
+				<div className="absolute inset-0 flex items-center" aria-hidden="true">
 					<div className="w-full border-t border-gray-300" />
 				</div>
 				<div className="relative flex justify-center my-5">
@@ -109,10 +87,7 @@ function Search() {
 			<div className="">
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{mentors?.map((mentor, index) => (
-						<MentorCard
-							key={index}
-							mentor={mentor}
-						/>
+						<MentorCard key={index} mentor={mentor} />
 					))}
 				</ul>
 			</div>
@@ -120,4 +95,4 @@ function Search() {
 	);
 }
 
-export default Search;
+export default SearchMentors;

@@ -1,17 +1,8 @@
 import {useState} from 'react';
 import {Dialog} from '@headlessui/react';
-import {
-	Bars3Icon,
-	XMarkIcon,
-} from '@heroicons/react/24/outline';
-import {
-	Link,
-	useNavigate,
-} from 'react-router-dom';
-import {
-	useSelector,
-	useDispatch,
-} from 'react-redux';
+import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
+import {Link, useNavigate} from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
 import {logoutThunk} from '../../store/session';
 
 const navigation = [
@@ -26,12 +17,9 @@ const navigation = [
 ];
 
 export default function Hero() {
-	const [mobileMenuOpen, setMobileMenuOpen] =
-		useState(false);
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-	const currentUser = useSelector(
-		state => state.session.user
-	);
+	const currentUser = useSelector(state => state.session.user);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -49,9 +37,7 @@ export default function Hero() {
 					aria-label="Global">
 					<div className="flex lg:flex-1">
 						<a href="/" className="-m-1.5 p-1.5">
-							<span className="sr-only">
-								DevelopMe
-							</span>
+							<span className="sr-only">DevelopMe</span>
 							<img
 								className="w-auto h-16"
 								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
@@ -63,16 +49,9 @@ export default function Hero() {
 						<button
 							type="button"
 							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-							onClick={() =>
-								setMobileMenuOpen(true)
-							}>
-							<span className="sr-only">
-								Open main menu
-							</span>
-							<Bars3Icon
-								className="h-6 w-6"
-								aria-hidden="true"
-							/>
+							onClick={() => setMobileMenuOpen(true)}>
+							<span className="sr-only">Open main menu</span>
+							<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 						</button>
 					</div>
 
@@ -118,12 +97,8 @@ export default function Hero() {
 					<div className="fixed inset-0 z-50" />
 					<Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 						<div className="flex items-center justify-between">
-							<a
-								href="/"
-								className="-m-1.5 p-1.5">
-								<span className="sr-only">
-									DevelopMe
-								</span>
+							<a href="/" className="-m-1.5 p-1.5">
+								<span className="sr-only">DevelopMe</span>
 								<img
 									className="h-16 w-auto"
 									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
@@ -133,16 +108,9 @@ export default function Hero() {
 							<button
 								type="button"
 								className="-m-2.5 rounded-md p-2.5 text-gray-700"
-								onClick={() =>
-									setMobileMenuOpen(false)
-								}>
-								<span className="sr-only">
-									Close menu
-								</span>
-								<XMarkIcon
-									className="h-6 w-6"
-									aria-hidden="true"
-								/>
+								onClick={() => setMobileMenuOpen(false)}>
+								<span className="sr-only">Close menu</span>
+								<XMarkIcon className="h-6 w-6" aria-hidden="true" />
 							</button>
 						</div>
 						<div className="mt-6 flow-root">
@@ -182,8 +150,7 @@ export default function Hero() {
 							Book and meet over
 							<strong> 16,736+ mentors </strong>
 							for 1:1
-							<br /> mentorship in our global
-							community
+							<br /> mentorship in our global community
 						</p>
 						<hr className="mt-4 border-blue-500 w-16 border-2" />
 					</div>
