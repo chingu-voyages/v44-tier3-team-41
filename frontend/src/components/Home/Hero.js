@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {Dialog} from '@headlessui/react';
+import { useState } from 'react';
+import { Dialog } from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
@@ -12,7 +12,7 @@ import {
 	useSelector,
 	useDispatch,
 } from 'react-redux';
-import {logoutThunk} from '../../store/session';
+import { logoutThunk } from '../../store/session';
 
 const navigation = [
 	{
@@ -100,11 +100,19 @@ export default function Hero() {
 							</Link>
 						</div>
 					) : (
+
 						<div className="hidden lg:flex lg:flex-1 lg:justify-end mr-10">
+							<Link to={'/dashboard'}>
+								<button
+									type="button"
+									className="rounded-md border border-solid border-black bg-[#0857b2] px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+									Dashboard
+								</button>
+							</Link>
 							<button
 								type="button"
 								onClick={handleLogout}
-								className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+								className="rounded-md border ml-5 border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 								Log out
 							</button>
 						</div>
@@ -249,6 +257,6 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 }

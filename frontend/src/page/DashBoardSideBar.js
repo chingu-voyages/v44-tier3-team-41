@@ -1,7 +1,7 @@
-import {Fragment, useState} from 'react';
-import {useSelector} from 'react-redux';
-import {Link, Outlet, useNavigate} from 'react-router-dom';
-import {Dialog, Menu, Transition} from '@headlessui/react';
+import { Fragment, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
 	Bars3Icon,
 	UserGroupIcon,
@@ -13,9 +13,9 @@ import {
 	BriefcaseIcon,
 	UsersIcon,
 } from '@heroicons/react/24/outline';
-import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
-import {useDispatch} from 'react-redux';
-import {logoutThunk} from '../store/session';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -41,12 +41,7 @@ function DashBoard() {
 
 	if (currentUser?.classification === 'Mentor') {
 		navigation = [
-			{
-				name: 'All mentees',
-				href: 'menteelist',
-				icon: UserGroupIcon,
-				current: currentTab === 'all mentees',
-			},
+
 			{
 				name: 'My mentees',
 				href: 'menteelist',
@@ -60,10 +55,10 @@ function DashBoard() {
 				current: currentTab === 'chat',
 			},
 			{
-				name: 'Search mentors',
+				name: 'Search',
 				href: 'search',
 				icon: MagnifyingGlassIcon,
-				current: currentTab === 'search mentors',
+				current: currentTab === 'search',
 			},
 			{
 				name: 'My profile',
@@ -86,12 +81,7 @@ function DashBoard() {
 		];
 	} else {
 		navigation = [
-			{
-				name: 'All mentees',
-				href: 'menteelist',
-				icon: UserGroupIcon,
-				current: currentTab === 'all mentees',
-			},
+
 			{
 				name: 'Chat',
 				href: 'messageBoard',
@@ -99,10 +89,10 @@ function DashBoard() {
 				current: currentTab === 'chat',
 			},
 			{
-				name: 'Search mentors',
+				name: 'Search',
 				href: 'search',
 				icon: MagnifyingGlassIcon,
-				current: currentTab === 'search mentors',
+				current: currentTab === 'search',
 			},
 			{
 				name: 'My profile',
