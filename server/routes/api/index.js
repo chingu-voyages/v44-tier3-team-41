@@ -3,6 +3,7 @@ const mentorRouter = require('./mentor.js');
 const menteeRouter = require('./mentee.js');
 const sessionRouter = require('./session.js');
 const signupRouter = require('./signup.js');
+const chatRouter = require('./chat.js');
 const { restoreUser } = require('../../utils/auth.js');
 
 // Connect restoreUser middleware to the API router
@@ -10,6 +11,7 @@ const { restoreUser } = require('../../utils/auth.js');
 // If current user session is not valid, set req.user to null
 router.use(restoreUser);
 
+router.use('/chat', chatRouter);
 router.use('/session', sessionRouter);
 router.use('/signup', signupRouter);
 router.use('/mentor', mentorRouter);
