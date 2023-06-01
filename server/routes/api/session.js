@@ -10,13 +10,22 @@ const router = express.Router();
 router.post('/', async (req, res, next) => {
     const { email, password, classification } = req.body;
 
-    let User;
+    let user;
     if (classification === 'Mentee') {
-        User = Mentee;
-    } else if (classification === 'Mentor') {
-        User = Mentor;
+        user = await Mentee.login({ email, password });
+    } else {
+        user = await Mentor.login({ email, password });
+        user = await Mentor.findOne({
+            where: { id: user.id },
+            attributes: { exclude: ['hashedPassword'] },
+            include: [
+                {
+                    model: Mentee,
+                    attributes: ['name', 'email', 'city', 'state', 'country', 'profileImg', 'goal', 'occupation', 'skill']
+                }
+            ]
+        });
     }
-    const user = await User.login({ email, password });
 
     //* User validation
     if (!user) {
