@@ -17,6 +17,7 @@ import Report from './page/Report';
 import Profile from './page/Profile';
 import JobBoard from './page/JobBoard';
 import AiChat from './page/AiChat';
+import VideoCall from './page/VideoCall';
 import {restoreUserThunk} from './store/session';
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
 					<Route path="directMessage" element={<DirectMessage />} />
 					<Route path="jobBoard" element={<JobBoard />} />
 					<Route path="aiChatBot" element={<AiChat />} />
+					<Route path="videoCall" element={<VideoCall />} />
 				</Route>
 			</Routes>
 		</>
