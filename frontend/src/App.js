@@ -11,7 +11,8 @@ import DashBoardSideBar from './page/DashBoardSideBar';
 import MenteeList from './page/MenteeList';
 import MessageBoard from './page/MessageBoard';
 import DirectMessage from './page/DirectMessage';
-import Search from './page/Search';
+import SearchMentors from './page/SearchMentors';
+import SearchMentees from './page/SearchMentees';
 import Report from './page/Report';
 import Profile from './page/Profile';
 import JobBoard from './page/JobBoard';
@@ -37,7 +38,8 @@ const App = () => {
 				<Route path="/dashboard" element={<DashBoardSideBar />}>
 					<Route path="menteelist" element={<MenteeList />} />
 					<Route path="messageBoard" element={<MessageBoard />} />
-					<Route path="search" element={<Search />} />
+					<Route path="searchMentors" element={<SearchMentors />} />
+					<Route path="searchMentees" element={<SearchMentees />} />
 					<Route path="report" element={<Report />} />
 					<Route path="userProfile" element={<Profile />} />
 					<Route path="mentor_detail" element={<MentorDetail />} />

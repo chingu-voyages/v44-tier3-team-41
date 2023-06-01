@@ -41,76 +41,86 @@ function DashBoard() {
 
 	if (currentUser?.classification === 'Mentor') {
 		navigation = [
-
+			{
+				name: 'Search mentors',
+				href: 'searchMentors',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentors',
+			},
+			{
+				name: 'Search mentees',
+				href: 'searchMentees',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentees',
+			},
 			{
 				name: 'My mentees',
 				href: 'menteelist',
 				icon: UsersIcon,
-				current: currentTab === 'my mentees',
+				current: currentTab === 'My mentees',
 			},
 			{
 				name: 'Chat',
 				href: 'messageBoard',
 				icon: ChatBubbleLeftIcon,
-				current: currentTab === 'chat',
-			},
-			{
-				name: 'Search',
-				href: 'search',
-				icon: MagnifyingGlassIcon,
-				current: currentTab === 'search',
+				current: currentTab === 'Chat',
 			},
 			{
 				name: 'My profile',
 				href: 'userProfile',
 				icon: UserCircleIcon,
-				current: currentTab === 'my profile',
+				current: currentTab === 'My profile',
 			},
 			{
 				name: 'User data',
 				href: 'report',
 				icon: ChartPieIcon,
-				current: currentTab === 'user data',
+				current: currentTab === 'User data',
 			},
 			{
 				name: 'Job posts',
 				href: 'jobBoard',
 				icon: BriefcaseIcon,
-				current: currentTab === 'job posts',
+				current: currentTab === 'Job posts',
 			},
 		];
 	} else {
 		navigation = [
-
+			{
+				name: 'Search mentors',
+				href: 'searchMentors',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentors',
+			},
+			{
+				name: 'Search mentees',
+				href: 'searchMentees',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentees',
+			},
 			{
 				name: 'Chat',
 				href: 'messageBoard',
 				icon: ChatBubbleLeftIcon,
-				current: currentTab === 'chat',
-			},
-			{
-				name: 'Search',
-				href: 'search',
-				icon: MagnifyingGlassIcon,
-				current: currentTab === 'search',
+				current: currentTab === 'Chat',
 			},
 			{
 				name: 'My profile',
 				href: 'userProfile',
 				icon: UserCircleIcon,
-				current: currentTab === 'my profile',
+				current: currentTab === 'My profile',
 			},
 			{
 				name: 'User data',
 				href: 'report',
 				icon: ChartPieIcon,
-				current: currentTab === 'user data',
+				current: currentTab === 'User data',
 			},
 			{
 				name: 'Job posts',
 				href: 'jobBoard',
 				icon: BriefcaseIcon,
-				current: currentTab === 'job posts',
+				current: currentTab === 'Job posts',
 			},
 		];
 	}
