@@ -4,14 +4,13 @@ import {Link, Outlet, useNavigate} from 'react-router-dom';
 import {Dialog, Menu, Transition} from '@headlessui/react';
 import {
 	Bars3Icon,
-	UserGroupIcon,
-	HomeIcon,
 	XMarkIcon,
 	ChatBubbleLeftIcon,
 	UserCircleIcon,
 	ChartPieIcon,
 	BriefcaseIcon,
 	UsersIcon,
+	FaceSmileIcon,
 } from '@heroicons/react/24/outline';
 import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
 import {useDispatch} from 'react-redux';
@@ -83,6 +82,12 @@ function DashBoard() {
 				icon: BriefcaseIcon,
 				current: currentTab === 'Job posts',
 			},
+			{
+				name: 'Chatbot',
+				href: 'aiChatBot',
+				icon: FaceSmileIcon,
+				current: currentTab === 'Chatbot',
+			},
 		];
 	} else {
 		navigation = [
@@ -121,6 +126,12 @@ function DashBoard() {
 				href: 'jobBoard',
 				icon: BriefcaseIcon,
 				current: currentTab === 'Job posts',
+			},
+			{
+				name: 'Chatbot',
+				href: 'aiChatBot',
+				icon: FaceSmileIcon,
+				current: currentTab === 'Chatbot',
 			},
 		];
 	}

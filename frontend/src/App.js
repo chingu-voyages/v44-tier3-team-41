@@ -16,6 +16,7 @@ import SearchMentees from './page/SearchMentees';
 import Report from './page/Report';
 import Profile from './page/Profile';
 import JobBoard from './page/JobBoard';
+import AiChat from './page/AiChat';
 import {restoreUserThunk} from './store/session';
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
 					<Route path="mentee_detail" element={<MenteeDetail />} />
 					<Route path="directMessage" element={<DirectMessage />} />
 					<Route path="jobBoard" element={<JobBoard />} />
+					<Route path="aiChatBot" element={<AiChat />} />
 				</Route>
 			</Routes>
 		</>
