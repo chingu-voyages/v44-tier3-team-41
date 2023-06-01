@@ -3,7 +3,7 @@ import { csrfFetch } from "./csrf";
 const GETALLMENTORS = 'mentor/GETALLMENTORS'
 const GETMENTOR = 'mentor/GETMENTOR'
 const EDITMENTOR = 'mentor/EDITMENTOR'
-const CLEARSEARCH = 'mentor/CLEARSEARCH'
+// const CLEARSEARCH = 'mentor/CLEARSEARCH'
 
 //** Action creator */
 
@@ -28,11 +28,11 @@ const editMentor = data => {
     }
 }
 
-export const clearSearch = () => {
-    return {
-        type: CLEARSEARCH
-    }
-}
+// export const clearSearch = () => {
+//     return {
+//         type: CLEARSEARCH
+//     }
+// }
 
 //** Thunk */
 
@@ -105,13 +105,12 @@ const mentorReducer = (state = initialState, action) => {
             currentState.mentor = { ...action.payload }
             return currentState
 
-        case CLEARSEARCH:
-            currentState.search = null
-            return currentState
+        // case CLEARSEARCH:
+        //     currentState.search = null
+        //     return currentState
 
         default:
             return currentState;
-
     }
 };
 

@@ -44,7 +44,6 @@ export const getAllMenteesThunk = (filters = {}) => async dispatch => {
     const response = await csrfFetch(`/api/mentee?${params}`);
     if (response.ok) {
         const data = await response.json();
-
         dispatch(getMentees(data));
     }
 };

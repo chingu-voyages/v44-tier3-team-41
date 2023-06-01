@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import MenteeCard from '../components/MenteeCard/MenteeCard';
-import {useSelector, useDispatch} from 'react-redux';
-import {getAllMenteesThunk} from '../store/mentee';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllMenteesThunk } from '../store/mentee';
 
 function SearchMentees() {
 	const dispatch = useDispatch();
@@ -9,14 +9,23 @@ function SearchMentees() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const mentees = useSelector(state => state.mentee.search);
 
+	useEffect(() => {
+
+		const fetchData = async () => {
+			await dispatch(getAllMenteesThunk())
+		}
+		fetchData()
+	}, [dispatch])
+
 	async function handleOnSubmit(e) {
 		e.preventDefault();
 		try {
 			const body = {
-				// [searchfield] is dynamically being passed to the body obj
 				[searchfield]: searchTerm,
 			};
+
 			await dispatch(getAllMenteesThunk(body));
+
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -25,6 +34,7 @@ function SearchMentees() {
 		e.preventDefault();
 		setSearchField('goal');
 		setSearchTerm('');
+		await dispatch(getAllMenteesThunk())
 	}
 
 	return (
@@ -79,7 +89,7 @@ function SearchMentees() {
 					</span>
 				</div>
 			</div>
-			<div className="">
+			<div>
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{mentees?.map((mentee, index) => (
 						<MenteeCard key={index} mentee={mentee} />

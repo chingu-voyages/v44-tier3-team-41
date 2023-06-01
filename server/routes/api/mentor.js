@@ -98,7 +98,7 @@ router.get('/', async (req, res) => {
     });
   }
 
-  // Send response to client
+  //! Send response to client
   if (!Object.entries(req.query).length) {
     res.json(response);
   } else {
