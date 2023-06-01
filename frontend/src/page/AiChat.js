@@ -14,10 +14,17 @@ const AiChat = () => {
 
 	const getResponse = async message => {
 		try {
+
 			const response = await csrfFetch('/api/chat', {
-				input: message,
-			}); // replace this with your GPT API endpoint
-			return response.data.message;
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ input: message })
+
+			});
+			const data = await response.json();
+			return data.message;
 		} catch (err) {
 			console.error(err);
 			return 'Error getting response';

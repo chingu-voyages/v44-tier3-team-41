@@ -9,10 +9,9 @@ const openai = new OpenAIApi(configuration);
 
 const router = express.Router();
 
-//!
+//! Openai API
 router.post('/', async (req, res) => {
     const { input } = req.body;
-    console.log(req.body);
 
     const response = await openai.createCompletion({
         model: 'text-davinci-003',

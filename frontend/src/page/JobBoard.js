@@ -6,7 +6,6 @@ function JobBoard() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchResult, setSearchResult] = useState([]);
 	const [currentJob, setCurrentJob] = useState(null);
-	console.log(currentJob);
 
 	async function handleOnSubmit(event) {
 		event.preventDefault();
@@ -26,7 +25,7 @@ function JobBoard() {
 		try {
 			const response = await axios.request(options);
 			setSearchResult(response.data.data);
-			console.log(response.data);
+
 		} catch (error) {
 			console.error(error);
 		}
@@ -67,7 +66,7 @@ function JobBoard() {
 			try {
 				const response = await axios.request(options);
 				setSearchResult(response.data.data);
-				console.log(response.data);
+
 			} catch (error) {
 				console.error(error);
 			}
