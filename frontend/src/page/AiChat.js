@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { csrfFetch } from "../store/csrf";
+
 
 const AiChat = () => {
 	const [messages, setMessages] = useState(
@@ -13,7 +14,7 @@ const AiChat = () => {
 
 	const getResponse = async message => {
 		try {
-			const response = await axios.post('http://localhost:8080', {
+			const response = await csrfFetch('/api/chat', {
 				input: message,
 			}); // replace this with your GPT API endpoint
 			return response.data.message;
@@ -26,14 +27,14 @@ const AiChat = () => {
 	const handleSubmit = async event => {
 		event.preventDefault();
 
-		setMessages([...messages, {text: input, user: 'human'}]);
+		setMessages([...messages, { text: input, user: 'human' }]);
 		setInput('');
 
 		const response = await getResponse(input);
 
 		setMessages(prevMessages => [
 			...prevMessages,
-			{text: response, user: 'AI'},
+			{ text: response, user: 'AI' },
 		]);
 	};
 
