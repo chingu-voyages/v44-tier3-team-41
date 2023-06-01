@@ -90,27 +90,25 @@
 # Images
 
 ### Landing Page
-<img width="1673" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/40a8dca0-ab4b-4939-babd-d994afc9c60f">
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/646eb0df-3a37-4e67-9299-7a73d6c799d7)
 
-### Mentor list Page
-<img width="1656" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/4e473035-116a-4f2b-a17f-223d29d23a9c">
+### Mentor search Page
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/33af6825-0778-4129-8ecb-539c2937f873)
 
-### Mentee list Page
-<img width="1714" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/49d9d299-fab4-4f06-918e-0b4571ea7764">
+### Mentee search Page
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/41438f59-dbf6-4634-bb94-07cf291538a1)
 
-### Message Page
-<img width="1399" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/aa27536c-8bd4-4371-ae80-c09758fba61e">
+### Chat Page
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/509da942-d793-45c2-bbbc-a8416c1310e2)
 
-### Search Page
-<img width="1387" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/b98db4de-9282-443b-8ca8-9e42bd17c2cd">
+### User data Page
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/49a50bc8-a466-4290-96b4-b46e0de88e69)
 
-### Profile Page
-<img width="1435" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/41f5545b-7005-4cf6-bca2-c879cee0c879">
-
-### Reports Page
+### My profile Page
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/9167f908-0321-4752-a459-f8069bbc0c4c)
 
 ### Job Posts Page
-<img width="1685" alt="Untitled" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/4393eaed-4af8-45a2-a6fb-9bf4198f3dc6">
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/b472c315-93ca-443c-8c5c-71c51eb6e81f)
 
 <!-- GETTING STARTED -->
 
@@ -159,10 +157,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] Sign Up, Login users to the 'Develop Me' app
 - [x] Demo login Mentee & Mentor
+- [x] Add profile images
+- [X] Search/views Mentors
+- [x] Search/view Mentees
+- [x] Search/view job postings
+- [x] Chat with other users
 
 ## Goals
+- [ ] Chatbot integration
 
-- [ ] Add profile images
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
