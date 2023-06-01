@@ -8,7 +8,7 @@ function MenteeCard({mentee}) {
 	}
 
 	return (
-		<li className="col-span-1 flex flex-col rounded-lg bg-white text-center shadow-md hover:shadow-lg hover:shadow-green-900/20">
+		<li className="col-span-1 flex flex-col rounded-lg bg-white text-center shadow-md hover:shadow-lg hover:shadow-green-900/20 border border-light4">
 			<Link
 				to={'/dashboard/mentee_detail'}
 				state={mentee}>
@@ -19,7 +19,7 @@ function MenteeCard({mentee}) {
 							src={mentee.profileImg}
 							alt=""
 						/>
-						<div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-green-800 to-green-200/5 mix-blend-overlay"></div>
+						<div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark2 to-dark6/5"></div>
 					</div>
 					<h3 className="mt-2 text-sm font-medium text-gray-900">
 						{mentee.name}

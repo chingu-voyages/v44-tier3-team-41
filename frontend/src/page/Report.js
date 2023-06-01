@@ -4,23 +4,13 @@ import {
 	useDispatch,
 } from 'react-redux';
 import {getAllMentorsThunk} from '../store/mentor';
+import {getAllMenteesThunk} from '../store/mentee';
 import {
 	groupAndCountCompany,
 	groupAndCountRole,
 	sortArrayDesc,
 } from '../util/helper';
 import BarChart from '../components/Chart/BarChart';
-
-const stats = [
-	{
-		name: 'Total mentors',
-		value: '128',
-	},
-	{
-		name: 'Total  mentees',
-		value: '53',
-	},
-];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -31,43 +21,45 @@ const Report = () => {
 	const mentors = useSelector(
 		state => state.mentor.search
 	);
-	// if (mentors) {
-	// 	const companyGroup = sortArrayDesc(groupAndCountCompany(mentors));
-	// 	const roleGroup = sortArrayDesc(groupAndCountRole(mentors));
-	// 	console.log(companyGroup);
-	// 	console.log(roleGroup);
-	// }
-	let companyGroup;
-	let roleGroup;
+	const mentees = useSelector(
+		state => state.mentee.search
+	);
+	const companyGroup = mentors
+		? sortArrayDesc(groupAndCountCompany(mentors))
+		: [];
+	const roleGroup = mentors
+		? sortArrayDesc(groupAndCountRole(mentors))
+		: [];
 
-	if (mentors) {
-		companyGroup = sortArrayDesc(
-			groupAndCountCompany(mentors)
-		);
-		roleGroup = sortArrayDesc(
-			groupAndCountRole(mentors)
-		);
-		// 	console.log(companyGroup);
-		// 	console.log(roleGroup);
-	}
+	const stats = [
+		{
+			name: 'Total mentors',
+			value: mentors ? mentors.length : 0,
+		},
+		{
+			name: 'Total  mentees',
+			value: mentees ? mentees.length : 0,
+		},
+	];
 	useEffect(() => {
 		const fetchData = async () => {
 			await dispatch(getAllMentorsThunk());
+			await dispatch(getAllMenteesThunk());
 		};
 		fetchData();
 	}, [dispatch]);
 
-	if (mentors) {
+	if (mentors && mentees) {
 		return (
-			<div className="bg-[#fafafa] p-5 rounded-lg shadow-lg pt-10">
-				<div className="flex gap-x-4 bg-slate-700 p-3 -mt-10 shadow-lg shadow-blue-700/30 rounded-lg py-5 items-center justify-center">
+			<div className="bg-[#fafafa] p-5 rounded-lg shadow-lg pt-10 border border-light4">
+				<div className="flex gap-x-4 bg-dark1 shadow-dark2/30 p-3 -mt-5 shadow-lg rounded-lg py-5 items-center justify-center ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 					<div>
 						<h2 className="p-2 text-base text-gray-200 tracking-wide">
 							User Report
 						</h2>
 					</div>
 				</div>
-				<div className="border-b border-b-gray-900/10 lg:border-t lg:border-t-gray-900/5">
+				<div className="border-b border-b-gray-900/10 lg:border-t lg:border-t-gray-900/10">
 					<dl className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:px-2 xl:px-0">
 						{stats.map((stat, statIdx) => (
 							<div
@@ -90,7 +82,7 @@ const Report = () => {
 						))}
 					</dl>
 				</div>
-				<div className="flex flex-wrap my-10">
+				<div className="flex flex-wrap my-4">
 					<div className="w-full md:w-1/2 px-8">
 						<BarChart
 							title="Company Chart"

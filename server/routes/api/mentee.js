@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     country,
     goal,
     occupation,
-  } = req.body;
+  } = req.query;
 
   const query = {
     where: {}
@@ -67,7 +67,7 @@ router.get('/', async (req, res) => {
     Mentees,
   };
 
-  //! No mentors found error message
+  //! No mentees found error message
   if (Mentees.length === 0) {
     return res.status(404).json({
       message: 'No mentee is found for the current search parameters',
@@ -75,7 +75,7 @@ router.get('/', async (req, res) => {
     });
   }
 
-  // Send response to client
+  //! Send response to client
   if (!Object.entries(req.query).length) {
     res.json(response);
   } else {
@@ -87,7 +87,7 @@ router.get('/', async (req, res) => {
 /** ******************************************************** */
 
 //! Query Mentee by Id
-router.get('/:id', requireAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   const menteeObj = await Mentee.findOne({
     where: { id: req.params.id },
     attributes: { exclude: ['hashedPassword'] },

@@ -1,15 +1,7 @@
 import { Fragment, useState } from 'react';
 import { useSelector } from 'react-redux';
-import {
-	Link,
-	Outlet,
-	useNavigate,
-} from 'react-router-dom';
-import {
-	Dialog,
-	Menu,
-	Transition,
-} from '@headlessui/react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
 	Bars3Icon,
 	UserGroupIcon,
@@ -32,15 +24,11 @@ function classNames(...classes) {
 function DashBoard() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const [sidebarOpen, setSidebarOpen] =
-		useState(false);
-	const [currentTab, setCurrentTab] =
-		useState('Mentors');
+	const [sidebarOpen, setSidebarOpen] = useState(false);
+	const [currentTab, setCurrentTab] = useState('Mentors');
 	let navigation;
 
-	const currentUser = useSelector(
-		state => state.session.user
-	);
+	const currentUser = useSelector(state => state.session.user);
 
 	const handleLogout = async e => {
 		e.preventDefault();
@@ -48,105 +36,91 @@ function DashBoard() {
 		navigate('/');
 	};
 	if (!currentUser) {
-		navigate('/login')
+		navigate('/login');
 	}
 
 	if (currentUser?.classification === 'Mentor') {
 		navigation = [
 			{
-				name: 'all mentors',
-				href: 'mentorlist',
-				icon: HomeIcon,
-				current: currentTab === 'all mentors',
-			},
-
-			{
-				name: 'all mentees',
-				href: 'menteelist',
-				icon: UserGroupIcon,
-				current: currentTab === 'all mentees',
+				name: 'Search mentors',
+				href: 'searchMentors',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentors',
 			},
 			{
-				name: 'my mentees',
+				name: 'Search mentees',
+				href: 'searchMentees',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentees',
+			},
+			{
+				name: 'My mentees',
 				href: 'menteelist',
 				icon: UsersIcon,
-				current: currentTab === 'my mentees',
+				current: currentTab === 'My mentees',
 			},
 			{
-				name: 'chat',
+				name: 'Chat',
 				href: 'messageBoard',
 				icon: ChatBubbleLeftIcon,
-				current: currentTab === 'chat',
+				current: currentTab === 'Chat',
 			},
 			{
-				name: 'search mentors',
-				href: 'search',
-				icon: MagnifyingGlassIcon,
-				current: currentTab === 'search mentors',
-			},
-			{
-				name: 'my profile',
+				name: 'My profile',
 				href: 'userProfile',
 				icon: UserCircleIcon,
-				current: currentTab === 'my profile',
+				current: currentTab === 'My profile',
 			},
 			{
-				name: 'user data',
+				name: 'User data',
 				href: 'report',
 				icon: ChartPieIcon,
-				current: currentTab === 'user data',
+				current: currentTab === 'User data',
 			},
 			{
-				name: 'job posts',
+				name: 'Job posts',
 				href: 'jobBoard',
 				icon: BriefcaseIcon,
-				current: currentTab === 'job posts',
+				current: currentTab === 'Job posts',
 			},
 		];
 	} else {
 		navigation = [
 			{
-				name: 'all mentors',
-				href: 'mentorlist',
-				icon: HomeIcon,
-				current: currentTab === 'all mentors',
-			},
-
-			{
-				name: 'all mentees',
-				href: 'menteelist',
-				icon: UserGroupIcon,
-				current: currentTab === 'all mentees',
+				name: 'Search mentors',
+				href: 'searchMentors',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentors',
 			},
 			{
-				name: 'chat',
+				name: 'Search mentees',
+				href: 'searchMentees',
+				icon: MagnifyingGlassIcon,
+				current: currentTab === 'Search mentees',
+			},
+			{
+				name: 'Chat',
 				href: 'messageBoard',
 				icon: ChatBubbleLeftIcon,
-				current: currentTab === 'chat',
+				current: currentTab === 'Chat',
 			},
 			{
-				name: 'search mentors',
-				href: 'search',
-				icon: MagnifyingGlassIcon,
-				current: currentTab === 'search mentors',
-			},
-			{
-				name: 'my profile',
+				name: 'My profile',
 				href: 'userProfile',
 				icon: UserCircleIcon,
-				current: currentTab === 'my profile',
+				current: currentTab === 'My profile',
 			},
 			{
-				name: 'user data',
+				name: 'User data',
 				href: 'report',
 				icon: ChartPieIcon,
-				current: currentTab === 'user data',
+				current: currentTab === 'User data',
 			},
 			{
-				name: 'job posts',
+				name: 'Job posts',
 				href: 'jobBoard',
 				icon: BriefcaseIcon,
-				current: currentTab === 'job posts',
+				current: currentTab === 'Job posts',
 			},
 		];
 	}
@@ -155,9 +129,7 @@ function DashBoard() {
 		return (
 			<>
 				<div>
-					<Transition.Root
-						show={sidebarOpen}
-						as={Fragment}>
+					<Transition.Root show={sidebarOpen} as={Fragment}>
 						<Dialog
 							as="div"
 							className="relative z-50 lg:hidden"
@@ -195,12 +167,8 @@ function DashBoard() {
 												<button
 													type="button"
 													className="-m-2.5 p-2.5"
-													onClick={() =>
-														setSidebarOpen(false)
-													}>
-													<span className="sr-only">
-														Close sidebar
-													</span>
+													onClick={() => setSidebarOpen(false)}>
+													<span className="sr-only">Close sidebar</span>
 													<XMarkIcon
 														className="h-6 w-6 text-white"
 														aria-hidden="true"
@@ -221,36 +189,29 @@ function DashBoard() {
 												<ul className="flex flex-1 flex-col gap-y-7">
 													<li>
 														<ul className="-mx-2 space-y-1">
-															{navigation.map(
-																item => (
-																	<li
-																		key={
-																			item.name
-																		}>
-																		<Link
-																			to={
-																				item.href
-																			}
+															{navigation.map(item => (
+																<li key={item.name}>
+																	<Link
+																		to={item.href}
+																		className={classNames(
+																			item.current
+																				? 'bg-indigo-700 text-white'
+																				: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
+																			'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+																		)}>
+																		<item.icon
 																			className={classNames(
 																				item.current
-																					? 'bg-indigo-700 text-white'
-																					: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
-																				'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-																			)}>
-																			<item.icon
-																				className={classNames(
-																					item.current
-																						? 'text-white'
-																						: 'text-indigo-200 group-hover:text-white',
-																					'h-6 w-6 shrink-0'
-																				)}
-																				aria-hidden="true"
-																			/>
-																			{item.name}
-																		</Link>
-																	</li>
-																)
-															)}
+																					? 'text-white'
+																					: 'text-indigo-200 group-hover:text-white',
+																				'h-6 w-6 shrink-0'
+																			)}
+																			aria-hidden="true"
+																		/>
+																		{item.name}
+																	</Link>
+																</li>
+															))}
 														</ul>
 													</li>
 												</ul>
@@ -258,7 +219,7 @@ function DashBoard() {
 											<Link to={'/'}>
 												<button
 													type="button"
-													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 													sign out
 												</button>
 											</Link>
@@ -272,7 +233,7 @@ function DashBoard() {
 					{/* Static sidebar for desktop */}
 					<div className="hidden relative lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
 						{/* Sidebar component, swap this element with another sidebar if you like */}
-						<div className="h-16 shrink-0 items-center mb-10">
+						<div className="">
 							<a href="/" className="">
 								<img
 									className="h-16 w-auto ml-10"
@@ -281,31 +242,28 @@ function DashBoard() {
 								/>
 							</a>
 						</div>
-						<div className="flex absolute items-center justify-center align-middle flex-col gap-y-5 overflow-y-auto bg-gradient-to-b from-indigo-800 to-indigo-950 px-16 py-20 pl-20 pb-60 min-h-80 rounded-2xl shadow-2xl shadow-blue-500/30 top-28 -left-5">
+						{/* Sidebar */}
+						<div className="flex absolute items-start justify-center align-middle flex-col gap-y-4 overflow-y-auto bg-gradient-to-b from-dark3 to-dark1 px-8 py-10 pl-20 min-h-80 rounded-2xl shadow-2xl shadow-dark5/50 top-[105px] -left-5 ring-1 ring-offset-8 ring-offset-light2 ring-light4">
 							<nav className="flex flex-1 flex-col">
-								<ul className="flex flex-1 flex-col gap-y-7">
+								<ul className="flex flex-1 flex-col gap-y-3">
 									<li>
-										<ul className="-mx-2 space-y-4">
+										<ul className="-mx-2 space-y-3">
 											{navigation.map(item => (
 												<li key={item.name}>
 													<Link
 														to={item.href}
-														onClick={() =>
-															setCurrentTab(
-																item.name
-															)
-														}
+														onClick={() => setCurrentTab(item.name)}
 														className={classNames(
 															item.current
-																? 'bg-gradient-to-r from-indigo-900 to-indigo-700 text-white shadow-lg shadow-blue-500/30 border border-blue-600'
-																: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
+																? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
+																: 'text-light3 hover:text-white hover:bg-dark3',
 															'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
 														)}>
 														<item.icon
 															className={classNames(
 																item.current
 																	? 'text-white'
-																	: 'text-indigo-200 group-hover:text-white',
+																	: 'text-light3 group-hover:text-white',
 																'h-5 w-5 shrink-0'
 															)}
 															aria-hidden="true"
@@ -317,7 +275,43 @@ function DashBoard() {
 										</ul>
 									</li>
 								</ul>
-							</nav>
+							</nav>{' '}
+							<div className="pt-5 relative">
+								{/* Text div */}
+								<div className="p-4 z-30 border border-dark4 rounded-2xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-2xl shadow-slate-500/50">
+									<h2 className="text-3xl font-bold tracking-wider leading-7 text-white">
+										Our vision.
+									</h2>
+									<p className="mt-4 text-xs font-light leading-5 text-light3">
+										Platform for aspiring software developers to{' '}
+										<strong className="font-bold text-light1">
+											connect with Mentors
+										</strong>
+										.
+									</p>
+									<div className="mt-4">
+										<button
+											type=""
+											className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100">
+											Contact us
+										</button>
+									</div>
+								</div>
+								{/* Circles */}
+								<div className="">
+									<div
+										id="circle1"
+										className="absolute top-[200px] -left-[40px] h-16 w-16 rounded-full bg-gradient-to-r from-dark1 to-dark4 shadow-lg border border-dark4 animate-float"></div>
+									<div
+										id="circle2"
+										className="absolute top-[50px] left-[170px] h-12 w-12 rounded-full bg-gradient-to-r from-dark4 to-dark1 shadow-lg border border-dark4"></div>
+								</div>
+							</div>
+						</div>
+						<div className="p-2 absolute bottom-[50px] right-10">
+							<p className="text-xs text-dark6">
+								© 2023 DevelopMe. All rights reserved.
+							</p>
 						</div>
 					</div>
 
@@ -326,16 +320,9 @@ function DashBoard() {
 							<button
 								type="button"
 								className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
-								onClick={() =>
-									setSidebarOpen(true)
-								}>
-								<span className="sr-only">
-									Open sidebar
-								</span>
-								<Bars3Icon
-									className="h-6 w-6"
-									aria-hidden="true"
-								/>
+								onClick={() => setSidebarOpen(true)}>
+								<span className="sr-only">Open sidebar</span>
+								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 							</button>
 
 							{/* Separator */}
@@ -354,18 +341,12 @@ function DashBoard() {
 									/>
 
 									{/* Profile dropdown */}
-									<Menu
-										as="div"
-										className="relative">
+									<Menu as="div" className="relative">
 										<Menu.Button className="-m-1.5 flex items-center p-1.5">
-											<span className="sr-only">
-												Open user menu
-											</span>
+											<span className="sr-only">Open user menu</span>
 											<img
 												className="h-8 w-8 rounded-full bg-gray-50"
-												src={
-													currentUser.profileImg
-												}
+												src={currentUser.profileImg}
 												alt=""
 											/>
 											<span className="hidden lg:flex lg:items-center">
@@ -378,7 +359,7 @@ function DashBoard() {
 												<button
 													type="button"
 													onClick={handleLogout}
-													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg">
+													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 													Sign out
 												</button>
 											</span>
