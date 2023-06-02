@@ -1,7 +1,15 @@
-import { Fragment, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { Dialog, Menu, Transition } from '@headlessui/react';
+import {Fragment, useState} from 'react';
+import {useSelector} from 'react-redux';
+import {
+	Link,
+	Outlet,
+	useNavigate,
+} from 'react-router-dom';
+import {
+	Dialog,
+	Menu,
+	Transition,
+} from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
@@ -13,9 +21,9 @@ import {
 	FaceSmileIcon,
 	VideoCameraIcon,
 } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../store/session';
+import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
+import {useDispatch} from 'react-redux';
+import {logoutThunk} from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -24,11 +32,15 @@ function classNames(...classes) {
 function DashBoard() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const [sidebarOpen, setSidebarOpen] = useState(false);
-	const [currentTab, setCurrentTab] = useState('Mentors');
+	const [sidebarOpen, setSidebarOpen] =
+		useState(false);
+	const [currentTab, setCurrentTab] =
+		useState('Mentors');
 	let navigation;
 
-	const currentUser = useSelector(state => state.session.user);
+	const currentUser = useSelector(
+		state => state.session.user
+	);
 
 	const handleLogout = async e => {
 		e.preventDefault();
@@ -90,7 +102,7 @@ function DashBoard() {
 				current: currentTab === 'Chatbot',
 			},
 			{
-				name: 'videoCall',
+				name: 'VideoCall',
 				href: 'videoCall',
 				icon: VideoCameraIcon,
 				current: currentTab === 'videoCall',
@@ -141,7 +153,7 @@ function DashBoard() {
 				current: currentTab === 'Chatbot',
 			},
 			{
-				name: 'videoCall',
+				name: 'VideoCall',
 				href: 'videoCall',
 				icon: VideoCameraIcon,
 				current: currentTab === 'videoCall',
@@ -153,7 +165,9 @@ function DashBoard() {
 		return (
 			<>
 				<div>
-					<Transition.Root show={sidebarOpen} as={Fragment}>
+					<Transition.Root
+						show={sidebarOpen}
+						as={Fragment}>
 						<Dialog
 							as="div"
 							className="relative z-50 lg:hidden"
@@ -191,8 +205,12 @@ function DashBoard() {
 												<button
 													type="button"
 													className="-m-2.5 p-2.5"
-													onClick={() => setSidebarOpen(false)}>
-													<span className="sr-only">Close sidebar</span>
+													onClick={() =>
+														setSidebarOpen(false)
+													}>
+													<span className="sr-only">
+														Close sidebar
+													</span>
 													<XMarkIcon
 														className="h-6 w-6 text-white"
 														aria-hidden="true"
@@ -213,29 +231,36 @@ function DashBoard() {
 												<ul className="flex flex-1 flex-col gap-y-7">
 													<li>
 														<ul className="-mx-2 space-y-1">
-															{navigation.map(item => (
-																<li key={item.name}>
-																	<Link
-																		to={item.href}
-																		className={classNames(
-																			item.current
-																				? 'bg-indigo-700 text-white'
-																				: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
-																			'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-																		)}>
-																		<item.icon
+															{navigation.map(
+																item => (
+																	<li
+																		key={
+																			item.name
+																		}>
+																		<Link
+																			to={
+																				item.href
+																			}
 																			className={classNames(
 																				item.current
-																					? 'text-white'
-																					: 'text-indigo-200 group-hover:text-white',
-																				'h-6 w-6 shrink-0'
-																			)}
-																			aria-hidden="true"
-																		/>
-																		{item.name}
-																	</Link>
-																</li>
-															))}
+																					? 'bg-indigo-700 text-white'
+																					: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
+																				'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+																			)}>
+																			<item.icon
+																				className={classNames(
+																					item.current
+																						? 'text-white'
+																						: 'text-indigo-200 group-hover:text-white',
+																					'h-6 w-6 shrink-0'
+																				)}
+																				aria-hidden="true"
+																			/>
+																			{item.name}
+																		</Link>
+																	</li>
+																)
+															)}
 														</ul>
 													</li>
 												</ul>
@@ -271,12 +296,16 @@ function DashBoard() {
 							<nav className="flex flex-1 flex-col">
 								<ul className="flex flex-1 flex-col gap-y-3">
 									<li>
-										<ul className="-mx-2 space-y-3">
+										<ul className="-mx-2 space-y-1">
 											{navigation.map(item => (
 												<li key={item.name}>
 													<Link
 														to={item.href}
-														onClick={() => setCurrentTab(item.name)}
+														onClick={() =>
+															setCurrentTab(
+																item.name
+															)
+														}
 														className={classNames(
 															item.current
 																? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
@@ -307,7 +336,8 @@ function DashBoard() {
 										Our vision.
 									</h2>
 									<p className="mt-4 text-xs font-light leading-5 text-light3">
-										Platform for aspiring software developers to{' '}
+										Platform for aspiring software
+										developers to{' '}
 										<strong className="font-bold text-light1">
 											connect with Mentors
 										</strong>
@@ -334,7 +364,8 @@ function DashBoard() {
 						</div>
 						<div className="p-2 absolute bottom-[50px] right-10">
 							<p className="text-xs text-dark6">
-								© 2023 DevelopMe. All rights reserved.
+								© 2023 DevelopMe. All rights
+								reserved.
 							</p>
 						</div>
 					</div>
@@ -344,9 +375,16 @@ function DashBoard() {
 							<button
 								type="button"
 								className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
-								onClick={() => setSidebarOpen(true)}>
-								<span className="sr-only">Open sidebar</span>
-								<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+								onClick={() =>
+									setSidebarOpen(true)
+								}>
+								<span className="sr-only">
+									Open sidebar
+								</span>
+								<Bars3Icon
+									className="h-6 w-6"
+									aria-hidden="true"
+								/>
 							</button>
 
 							{/* Separator */}
@@ -365,12 +403,18 @@ function DashBoard() {
 									/>
 
 									{/* Profile dropdown */}
-									<Menu as="div" className="relative">
+									<Menu
+										as="div"
+										className="relative">
 										<Menu.Button className="-m-1.5 flex items-center p-1.5">
-											<span className="sr-only">Open user menu</span>
+											<span className="sr-only">
+												Open user menu
+											</span>
 											<img
 												className="h-8 w-8 rounded-full bg-gray-50"
-												src={currentUser.profileImg}
+												src={
+													currentUser.profileImg
+												}
 												alt=""
 											/>
 											<span className="hidden lg:flex lg:items-center">
