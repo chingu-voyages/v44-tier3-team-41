@@ -11,6 +11,7 @@ import {
 	BriefcaseIcon,
 	UsersIcon,
 	FaceSmileIcon,
+	VideoCameraIcon,
 } from '@heroicons/react/24/outline';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { useDispatch } from 'react-redux';
@@ -88,6 +89,12 @@ function DashBoard() {
 				icon: FaceSmileIcon,
 				current: currentTab === 'Chatbot',
 			},
+			{
+				name: 'videoCall',
+				href: 'videoCall',
+				icon: VideoCameraIcon,
+				current: currentTab === 'videoCall',
+			},
 		];
 	} else {
 		navigation = [
@@ -132,6 +139,12 @@ function DashBoard() {
 				href: 'aiChatBot',
 				icon: FaceSmileIcon,
 				current: currentTab === 'Chatbot',
+			},
+			{
+				name: 'videoCall',
+				href: 'videoCall',
+				icon: VideoCameraIcon,
+				current: currentTab === 'videoCall',
 			},
 		];
 	}
