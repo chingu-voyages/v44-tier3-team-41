@@ -1,8 +1,12 @@
-const { OpenAIApi } = require('openai');
+const { OpenAIApi, Configuration } = require('openai');
 const express = require('express');
 const { OPENAI_API_KEY } = require('../../config');
 
-const openai = new OpenAIApi(OPENAI_API_KEY);
+const configuration = new Configuration({
+    organization: 'org-RXoakR4d3wdHI1q8QoZIq3Xy',
+    apiKey: OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 const router = express.Router();
 
@@ -12,13 +16,13 @@ router.post('/', async (req, res) => {
 
     try {
         const response = await openai.createCompletion({
-            engine: 'davinci',
+            model: 'text-davinci-003',
             prompt: input,
             max_tokens: 100,
             temperature: 0.5,
         });
 
-        res.json({ message: response.choices[0].text });
+        res.json({ message: response.data.choices[0].text });
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ error: 'An error occurred' });

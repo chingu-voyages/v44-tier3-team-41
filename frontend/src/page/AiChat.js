@@ -23,6 +23,7 @@ const AiChat = () => {
 				body: JSON.stringify({ input: message })
 
 			});
+
 			const data = await response.json();
 			return data.message;
 		} catch (err) {
