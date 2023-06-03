@@ -3,14 +3,23 @@ import Hero from '../components/Home/Hero';
 import MiddleSection from '../components/Home/MiddleSection';
 import Team from '../components/Home/Team';
 import Footer from '../components/Home/Footer';
+import { useSelector } from 'react-redux';
 
 const HomePage = () => {
+  const sessionUser = useSelector(state => state.session.user)
+
   return (
     <div className="flex flex-col">
       <Hero />
-      <MiddleSection />
-      <Team />
-      <Footer />
+      <section>
+        <MiddleSection sessionUser={sessionUser} />
+      </section>
+      <section id='Team'>
+        <Team />
+      </section>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 };

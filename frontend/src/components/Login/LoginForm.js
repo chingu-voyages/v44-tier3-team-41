@@ -40,7 +40,7 @@ export default function LoginForm() {
 
 	const sessionUser = useSelector(state => state.session.user);
 
-	if (sessionUser) navigate('/dashboard');
+	if (sessionUser) navigate('/dashboard/aboutUs');
 
 	const handleSubmit = async e => {
 		e.preventDefault();
@@ -269,7 +269,8 @@ export default function LoginForm() {
 					<div className="mt-10">
 						<button
 							type=""
-							className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100">
+							className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100"
+							onClick={() => navigate('/#Team')}>
 							Contact us for more info
 						</button>
 					</div>

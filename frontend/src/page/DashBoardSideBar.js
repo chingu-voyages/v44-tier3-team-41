@@ -228,6 +228,7 @@ function DashBoard() {
 												/>
 											</div>
 											<nav className="flex flex-1 flex-col">
+												{/* render the 'contact us' section between lines 231-234, and define the condition based on the value of the 'currentTab' name*/}
 												<ul className="flex flex-1 flex-col gap-y-7">
 													<li>
 														<ul className="-mx-2 space-y-1">
@@ -346,7 +347,9 @@ function DashBoard() {
 									<div className="mt-4">
 										<button
 											type=""
-											className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100">
+											className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100"
+											onClick={() => navigate('/dashboard/aboutUs')}
+										>
 											Contact us
 										</button>
 									</div>

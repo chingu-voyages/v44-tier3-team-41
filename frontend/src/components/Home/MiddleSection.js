@@ -6,7 +6,8 @@ import {
 	GlobeEuropeAfricaIcon,
 	ArrowPathRoundedSquareIcon,
 } from '@heroicons/react/24/outline';
-import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const features = [
 	{
@@ -41,7 +42,9 @@ const features = [
 	},
 ];
 
-export default function MiddleSection() {
+export default function MiddleSection({ sessionUser }) {
+	const navigate = useNavigate()
+
 	return (
 		<div className="bg-[#F0F6F9] py-24 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -78,13 +81,12 @@ export default function MiddleSection() {
 					</dl>
 				</div>
 				<div className="flex mx-auto justify-center items-center my-12 max-w-2xl">
-					<Link>
-						<button
-							type="button"
-							className="rounded-md bg-dark1 px-10 py-4 text-sm font-semibold text-white shadow-sm hover:bg-dark3">
-							Explore all courses
-						</button>
-					</Link>
+					<button
+						type="button"
+						className={`${sessionUser ? "hidden" : "rounded-md bg-dark1 px-10 py-4 text-sm font-semibold text-white shadow-sm hover:bg-dark3"}`}
+						onClick={() => navigate('/login')}>
+						Get Started
+					</button>
 				</div>
 			</div>
 		</div>

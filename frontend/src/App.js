@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {Route, Routes} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import React, { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import HomePage from './page/Home';
 import LoginForm from './components/Login/LoginForm';
 import SignupMentor from './components/Signup/SignupMentor';
@@ -18,7 +18,8 @@ import Profile from './page/Profile';
 import JobBoard from './page/JobBoard';
 import AiChat from './page/AiChat';
 import VideoCall from './page/VideoCall';
-import {restoreUserThunk} from './store/session';
+import AboutUs from './page/AboutUs';
+import { restoreUserThunk } from './store/session';
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const App = () => {
 				<Route path="/signupMentor" element={<SignupMentor />} />
 				<Route path="/signupMentee" element={<SignupMentee />} />
 				<Route path="/dashboard" element={<DashBoardSideBar />}>
+					<Route path="aboutUs" element={<AboutUs />} />
 					<Route path="menteelist" element={<MenteeList />} />
 					<Route path="messageBoard" element={<MessageBoard />} />
 					<Route path="searchMentors" element={<SearchMentors />} />

@@ -2,13 +2,13 @@ import {
 	Link,
 	useNavigate,
 } from 'react-router-dom';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
 	useDispatch,
 	useSelector,
 } from 'react-redux';
-import {signupThunk} from '../../store/session';
-import {UserIcon} from '@heroicons/react/24/outline';
+import { signupThunk } from '../../store/session';
+import { UserIcon } from '@heroicons/react/24/outline';
 
 export default function SignupMentee() {
 	const dispatch = useDispatch();
@@ -45,7 +45,7 @@ export default function SignupMentee() {
 		}
 	};
 
-	if (sessionUser) navigate('/dashboard');
+	if (sessionUser) navigate('/dashboard/aboutUs');
 
 	return (
 		<div>
