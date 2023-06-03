@@ -4,6 +4,7 @@ import {
 	PaperAirplaneIcon,
 	TrashIcon,
 } from '@heroicons/react/20/solid';
+import {useSelector} from 'react-redux';
 
 const AiChat = () => {
 	const [messages, setMessages] = useState(
@@ -11,6 +12,11 @@ const AiChat = () => {
 			localStorage.getItem('messages')
 		) || []
 	);
+
+	const sessionUser = useSelector(
+		state => state.session.user
+	);
+
 	const [input, setInput] = useState('');
 
 	useEffect(() => {
@@ -46,7 +52,7 @@ const AiChat = () => {
 
 		setMessages([
 			...messages,
-			{text: input, user: 'Me'},
+			{text: input, user: sessionUser.name},
 		]);
 		setInput('');
 
