@@ -1,9 +1,18 @@
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { logoutThunk } from '../../store/session';
+import {useState} from 'react';
+import {Dialog} from '@headlessui/react';
+import {
+	Bars3Icon,
+	XMarkIcon,
+} from '@heroicons/react/24/outline';
+import {
+	Link,
+	useNavigate,
+} from 'react-router-dom';
+import {
+	useSelector,
+	useDispatch,
+} from 'react-redux';
+import {logoutThunk} from '../../store/session';
 
 const navigation = [
 	{
@@ -17,9 +26,12 @@ const navigation = [
 ];
 
 export default function Hero() {
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [mobileMenuOpen, setMobileMenuOpen] =
+		useState(false);
 
-	const currentUser = useSelector(state => state.session.user);
+	const currentUser = useSelector(
+		state => state.session.user
+	);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -37,7 +49,9 @@ export default function Hero() {
 					aria-label="Global">
 					<div className="flex lg:flex-1">
 						<a href="/" className="-m-1.5 p-1.5">
-							<span className="sr-only">DevelopMe</span>
+							<span className="sr-only">
+								DevelopMe
+							</span>
 							<img
 								className="w-auto h-16"
 								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
@@ -49,9 +63,16 @@ export default function Hero() {
 						<button
 							type="button"
 							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-							onClick={() => setMobileMenuOpen(true)}>
-							<span className="sr-only">Open main menu</span>
-							<Bars3Icon className="h-6 w-6" aria-hidden="true" />
+							onClick={() =>
+								setMobileMenuOpen(true)
+							}>
+							<span className="sr-only">
+								Open main menu
+							</span>
+							<Bars3Icon
+								className="h-6 w-6"
+								aria-hidden="true"
+							/>
 						</button>
 					</div>
 
@@ -79,19 +100,18 @@ export default function Hero() {
 							</Link>
 						</div>
 					) : (
-
 						<div className="hidden lg:flex lg:flex-1 lg:justify-end mr-10">
 							<Link to={'/dashboard'}>
 								<button
 									type="button"
-									className="rounded-md border border-solid border-black bg-[#0857b2] px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+									className="rounded-md border border-solid border-black bg-dark1 px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 									Dashboard
 								</button>
 							</Link>
 							<button
 								type="button"
 								onClick={handleLogout}
-								className="rounded-md border ml-5 border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+								className="rounded-md border ml-5 border-solid border-black bg-dark1 px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
 								Log out
 							</button>
 						</div>
@@ -105,8 +125,12 @@ export default function Hero() {
 					<div className="fixed inset-0 z-50" />
 					<Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 						<div className="flex items-center justify-between">
-							<a href="/" className="-m-1.5 p-1.5">
-								<span className="sr-only">DevelopMe</span>
+							<a
+								href="/"
+								className="-m-1.5 p-1.5">
+								<span className="sr-only">
+									DevelopMe
+								</span>
 								<img
 									className="h-16 w-auto"
 									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
@@ -116,9 +140,16 @@ export default function Hero() {
 							<button
 								type="button"
 								className="-m-2.5 rounded-md p-2.5 text-gray-700"
-								onClick={() => setMobileMenuOpen(false)}>
-								<span className="sr-only">Close menu</span>
-								<XMarkIcon className="h-6 w-6" aria-hidden="true" />
+								onClick={() =>
+									setMobileMenuOpen(false)
+								}>
+								<span className="sr-only">
+									Close menu
+								</span>
+								<XMarkIcon
+									className="h-6 w-6"
+									aria-hidden="true"
+								/>
 							</button>
 						</div>
 						<div className="mt-6 flow-root">
@@ -158,7 +189,8 @@ export default function Hero() {
 							Book and meet over
 							<strong> 16,736+ mentors </strong>
 							for 1:1
-							<br /> mentorship in our global community
+							<br /> mentorship in our global
+							community
 						</p>
 						<hr className="mt-4 border-blue-500 w-16 border-2" />
 					</div>
@@ -198,7 +230,7 @@ export default function Hero() {
 							/>
 						</div>
 						{/* Pink Guy Avatar */}
-						<div className="absolute top-[460px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float2">
+						<div className="absolute top-[500px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float2">
 							<img
 								className="h-20 w-20 rounded-full"
 								src="https://adplist.org/photos/mentors/5.webp"
@@ -224,6 +256,6 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
-		</div >
+		</div>
 	);
 }
