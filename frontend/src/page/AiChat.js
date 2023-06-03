@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import {csrfFetch} from '../store/csrf';
+import React, { useState, useEffect } from 'react';
+import { csrfFetch } from '../store/csrf';
 import {
 	PaperAirplaneIcon,
 	TrashIcon,
 } from '@heroicons/react/20/solid';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+import dm_icon_blk_blue from '../assets/dm_icon_blk_blue.png'
 
 const AiChat = () => {
 	const [messages, setMessages] = useState(
@@ -35,7 +36,7 @@ const AiChat = () => {
 					headers: {
 						'Content-Type': 'application/json',
 					},
-					body: JSON.stringify({input: message}),
+					body: JSON.stringify({ input: message }),
 				}
 			);
 
@@ -52,7 +53,7 @@ const AiChat = () => {
 
 		setMessages([
 			...messages,
-			{text: input, user: sessionUser.name},
+			{ text: input, user: sessionUser, },
 		]);
 		setInput('');
 
@@ -60,7 +61,7 @@ const AiChat = () => {
 
 		setMessages(prevMessages => [
 			...prevMessages,
-			{text: response, user: 'AI'},
+			{ text: response, user: 'AI' },
 		]);
 	};
 
@@ -84,11 +85,13 @@ const AiChat = () => {
 									? ' bg-dark3'
 									: '')
 							}>
-							<p
-								key={index}
-								className="bg-dark1 pr-3 rounded-lg shadow-lg px-4 py-2">
-								{message.user}:
-							</p>
+							<div className='flex flex-row'>
+								<img src={`${message.user === 'AI' ? dm_icon_blk_blue : sessionUser.profileImg}`} alt="user_profile" className={`${message.user === 'AI' ? "w-20 h-20" : "w-40 h-40"}`} />
+								<p
+									key={index}
+									className="bg-dark1 pr-3 rounded-lg shadow-lg px-4 py-2">
+									{message.user}:
+								</p></div>
 							<p className="pl-4">
 								{message.text}
 							</p>

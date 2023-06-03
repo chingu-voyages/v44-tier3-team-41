@@ -1,5 +1,5 @@
-import {Fragment, useState} from 'react';
-import {useSelector} from 'react-redux';
+import { Fragment, useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
 	Link,
 	Outlet,
@@ -21,9 +21,9 @@ import {
 	FaceSmileIcon,
 	VideoCameraIcon,
 } from '@heroicons/react/24/outline';
-import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
-import {useDispatch} from 'react-redux';
-import {logoutThunk} from '../store/session';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -105,7 +105,7 @@ function DashBoard() {
 				name: 'VideoCall',
 				href: 'videoCall',
 				icon: VideoCameraIcon,
-				current: currentTab === 'videoCall',
+				current: currentTab === 'VideoCall',
 			},
 		];
 	} else {
@@ -156,7 +156,7 @@ function DashBoard() {
 				name: 'VideoCall',
 				href: 'videoCall',
 				icon: VideoCameraIcon,
-				current: currentTab === 'videoCall',
+				current: currentTab === 'VideoCall',
 			},
 		];
 	}
@@ -256,7 +256,7 @@ function DashBoard() {
 																				)}
 																				aria-hidden="true"
 																			/>
-																			{item.name}
+																			{item.name} { }
 																		</Link>
 																	</li>
 																)
