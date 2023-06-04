@@ -171,33 +171,33 @@ export default function ProfileMentor({
 				<div className="space-y-12">
 					<div className="border-b border-dark1/10 pb-12">
 						{/* Profile Heading */}
-						<div className="p-2 pl-6 bg-dark2 rounded-lg shadow-md min-w-1/2 -mt-12 ring-1 ring-offset-4 ring-offset-light2 ring-light4">
-							<h2 className="text-sm font-medium w-1/3 -mt-5 leading-7 bg-gradient-to-r from-dark1 to-dark3 shadow-lg shadow-light4/10 px-6 py-1 text-blue-100 rounded-full">
+						<div className="p-2 md:pl-6 bg-dark2 rounded-lg shadow-md min-w-1/2 lg:w-1/2 -mt-12 ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+							<h2 className="text-sm font-medium md:w-1/3 -mt-5 leading-7 bg-gradient-to-r from-dark1 to-dark3 shadow-lg shadow-light4/10 px-6 py-1 text-blue-100 rounded-full">
 								<UserIcon className="w-4 h-4 inline-block align-text-bottom mr-1" />
 								Mentor Profile
 							</h2>
-							<p className="text-xs leading-6 text-gray-400 pl-5">
+							<p className="text-xs leading-3 text-light4 pl-5 py-3">
 								This information will be displayed
 								publicly so be careful what you
 								share
 							</p>
 						</div>
 						{/* Info div */}
-						<div className="flex flex-row space-y-16 space-x-10 mt-10 ">
+						<h2 className="text-sm font-semibold mt-5 text-gray-600 w-full">
+							Personal information
+						</h2>
+						<div className="flex flex-col md:flex-row justify-evenly items-start gap-10 my-10">
 							{/* Left div */}
-							<div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6 flex-auto">
+							<div className="space-y-6">
 								{/* Name */}
-								<div className="sm:col-span-2">
-									<h2 className="text-sm font-semibold text-gray-600 w-full">
-										Personal information
-									</h2>
+								<div className="">
 									<label
 										htmlFor="name"
-										className="block pt-2 text-xs font-normal leading-2 text-gray-500">
+										className="block text-xs font-normal leading-2 text-gray-500">
 										Name & Surname
 									</label>
 									<div className="mt-1">
-										<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-dark4 sm:max-w-md">
+										<div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-dark4">
 											<input
 												type="text"
 												name="username"
@@ -213,9 +213,9 @@ export default function ProfileMentor({
 								</div>
 
 								{/* Contact info */}
-								<div className="col-span-full">
-									<div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-										<div className="sm:col-span-2 sm:col-start-1">
+								<div className="">
+									<div className="mt-2 flex justify-between">
+										<div className="">
 											<label
 												htmlFor="country"
 												className="block text-xs font-normal leading-2 text-gray-500">
@@ -237,7 +237,7 @@ export default function ProfileMentor({
 											</div>
 										</div>
 
-										<div className="sm:col-span-2">
+										<div className="">
 											<label
 												htmlFor="phone"
 												className="block text-xs font-normal leading-2 text-gray-500">
@@ -262,7 +262,7 @@ export default function ProfileMentor({
 								</div>
 
 								{/* About */}
-								<div className="col-span-full">
+								<div className="">
 									<label
 										htmlFor="about"
 										className="block text-xs font-normal leading-2 text-gray-500">
@@ -273,7 +273,7 @@ export default function ProfileMentor({
 											id="about"
 											name="about"
 											rows={3}
-											className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+											className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-4"
 											value={about}
 											onChange={e =>
 												setAbout(e.target.value)
@@ -286,7 +286,7 @@ export default function ProfileMentor({
 									</p>
 								</div>
 								{/* Profile image */}
-								<div className="col-span-full">
+								<div className="">
 									<label
 										htmlFor="cover-photo"
 										className="block text-xs font-semibold text-gray-600">
@@ -315,10 +315,10 @@ export default function ProfileMentor({
 							</div>
 
 							{/* Right div */}
-							<div className="border-dark1/10 w-1/2 justify-items-start">
+							<div className="space-y-6">
 								{/* Work div */}
 								<div className="">
-									<div className="flex flex-row justify-between">
+									<div className="flex flex-row justify-between gap-2">
 										<div>
 											<label
 												htmlFor="company"
@@ -336,7 +336,7 @@ export default function ProfileMentor({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												/>
 											</div>
 										</div>
@@ -358,7 +358,7 @@ export default function ProfileMentor({
 														)
 													}
 													id="role"
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												/>
 											</div>
 										</div>
@@ -366,8 +366,8 @@ export default function ProfileMentor({
 										<div className="sm:col-span-2">
 											<label
 												htmlFor="yearsOfExp"
-												className="block text-xs font-normal leading-2 text-gray-500">
-												Years of Experience
+												className="block text-xs font-normal leading-2 text-gray-500 whitespace-nowrap">
+												Years Exp.
 											</label>
 											<div className="mt-1">
 												<input
@@ -380,7 +380,7 @@ export default function ProfileMentor({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													className="block w-10 md:w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												/>
 											</div>
 										</div>
@@ -397,7 +397,7 @@ export default function ProfileMentor({
 												id="expertise"
 												name="expertise"
 												rows={3}
-												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+												className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												value={expertise}
 												onChange={e =>
 													setExpertise(
@@ -432,7 +432,7 @@ export default function ProfileMentor({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												/>
 											</div>
 										</div>
@@ -454,7 +454,7 @@ export default function ProfileMentor({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												/>
 											</div>
 										</div>
@@ -476,7 +476,7 @@ export default function ProfileMentor({
 															e.target.value
 														)
 													}
-													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 sm:text-xs sm:leading-6"
+													className="block w-full rounded-md shadow-md pl-3 py-1.5 text-dark4 ring-inset ring-light2 placeholder:text-dark4 focus:ring-2 focus:ring-inset focus:ring-dark4 text-xs leading-6"
 												/>
 											</div>
 										</div>
