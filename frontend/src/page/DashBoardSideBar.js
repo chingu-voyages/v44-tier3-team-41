@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react';
-import { useSelector } from 'react-redux';
+import {Fragment, useState} from 'react';
+import {useSelector} from 'react-redux';
 import {
 	Link,
 	Outlet,
@@ -21,9 +21,9 @@ import {
 	FaceSmileIcon,
 	VideoCameraIcon,
 } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../store/session';
+import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
+import {useDispatch} from 'react-redux';
+import {logoutThunk} from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -219,12 +219,12 @@ function DashBoard() {
 											</div>
 										</Transition.Child>
 										{/* Sidebar component, swap this element with another sidebar if you like */}
-										<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
+										<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-dark2 px-6 pb-4">
 											<div className="flex h-16 shrink-0 items-center">
 												<img
 													className="h-12 w-auto"
 													src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_white_blue_clear_nffi46.png"
-													alt="Your Company"
+													alt="dm logo"
 												/>
 											</div>
 											<nav className="flex flex-1 flex-col">
@@ -244,20 +244,21 @@ function DashBoard() {
 																			}
 																			className={classNames(
 																				item.current
-																					? 'bg-indigo-700 text-white'
-																					: 'text-indigo-200 hover:text-white hover:bg-indigo-700',
+																					? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
+																					: 'text-light3 hover:text-white hover:bg-dark3',
 																				'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
 																			)}>
 																			<item.icon
 																				className={classNames(
 																					item.current
 																						? 'text-white'
-																						: 'text-indigo-200 group-hover:text-white',
+																						: 'text-light3 group-hover:text-white',
 																					'h-6 w-6 shrink-0'
 																				)}
 																				aria-hidden="true"
 																			/>
-																			{item.name} { }
+																			{item.name}{' '}
+																			{}
 																		</Link>
 																	</li>
 																)
@@ -340,7 +341,7 @@ function DashBoard() {
 										Platform for aspiring software
 										developers to{' '}
 										<strong className="font-bold text-light1">
-											connect with Mentors
+											Connect with Mentors
 										</strong>
 										.
 									</p>
@@ -348,8 +349,11 @@ function DashBoard() {
 										<button
 											type=""
 											className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100"
-											onClick={() => navigate('/dashboard/aboutUs')}
-										>
+											onClick={() =>
+												navigate(
+													'/dashboard/aboutUs'
+												)
+											}>
 											Contact us
 										</button>
 									</div>
