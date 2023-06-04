@@ -1,8 +1,8 @@
-import {EnvelopeIcon} from '@heroicons/react/20/solid';
-import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
-import {Link} from 'react-router-dom';
+import { EnvelopeIcon } from '@heroicons/react/20/solid';
+import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
-function MentorCard({mentor}) {
+function MentorCard({ mentor }) {
 	if (!mentor) {
 		return <div>No mentor data</div>;
 	}

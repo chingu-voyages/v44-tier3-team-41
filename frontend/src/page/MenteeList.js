@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import MenteeCard from '../components/MenteeCard/MenteeCard';
-import {useSelector, useDispatch} from 'react-redux';
-import {getAllMenteesThunk} from '../store/mentee';
-import {UserIcon} from '@heroicons/react/24/outline';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllMenteesThunk } from '../store/mentee';
+import { UserIcon } from '@heroicons/react/24/outline';
 
 export default function MenteeList() {
 	const dispatch = useDispatch();

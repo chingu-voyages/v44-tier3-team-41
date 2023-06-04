@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {CheckCircleIcon} from '@heroicons/react/20/solid';
+import React, { useState } from 'react';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
-import {UserIcon} from '@heroicons/react/24/outline';
-import {useDispatch} from 'react-redux';
-import {editMenteeThunk} from '../../store/mentee';
-import {useNavigate} from 'react-router';
+import { UserIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from 'react-redux';
+import { editMenteeThunk } from '../../store/mentee';
+import { useNavigate } from 'react-router';
 
-export default function ProfileMentee({currentUser}) {
+export default function ProfileMentee({ currentUser }) {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -48,7 +48,7 @@ export default function ProfileMentee({currentUser}) {
 	};
 
 	function handleImageChange(event) {
-		const {files} = event.target;
+		const { files } = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
 			setImagePreview(URL.createObjectURL(files[0]));

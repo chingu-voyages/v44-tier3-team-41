@@ -1,8 +1,8 @@
-import {EnvelopeIcon} from '@heroicons/react/20/solid';
-import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
-import {Link} from 'react-router-dom';
+import { EnvelopeIcon } from '@heroicons/react/20/solid';
+import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
-function MenteeCard({mentee}) {
+function MenteeCard({ mentee }) {
 	if (!mentee) {
 		return <div>No mentee data</div>;
 	}

@@ -1,7 +1,7 @@
 import Talk from 'talkjs';
-import {useEffect, useState, useRef} from 'react';
-import {useSelector} from 'react-redux';
-import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
+import { useEffect, useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
 
 function MessageBoard() {
 	const currentUser = useSelector(state => state.session.user);

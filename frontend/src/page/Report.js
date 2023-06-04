@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import {
 	useSelector,
 	useDispatch,
 } from 'react-redux';
-import {getAllMentorsThunk} from '../store/mentor';
-import {getAllMenteesThunk} from '../store/mentee';
+import { getAllMentorsThunk } from '../store/mentor';
+import { getAllMenteesThunk } from '../store/mentee';
 import {
 	groupAndCountCompany,
 	groupAndCountRole,
@@ -68,8 +68,8 @@ const Report = () => {
 									statIdx % 2 === 1
 										? 'sm:border-l'
 										: statIdx === 2
-										? 'lg:border-l'
-										: '',
+											? 'lg:border-l'
+											: '',
 									'flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-5 sm:px-6 lg:border-t-0 xl:px-8'
 								)}>
 								<dt className="text-sm font-normal tracking-wide leading-6 text-gray-400">
