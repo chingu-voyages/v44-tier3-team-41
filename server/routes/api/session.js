@@ -52,10 +52,25 @@ router.delete('/', (_req, res) => {
 /** ******************************************************************************* */
 
 //! Restore session user
-router.get('/', restoreUser, (req, res) => {
-    const { user } = req;
-
+router.get('/', restoreUser, async (req, res) => {
+    let { user } = req;
+    console.log(user);
     if (user) {
+        if (user.dataValues.classification === 'Mentor') {
+            user = await Mentor.findOne({
+                where: { id: user.id },
+                attributes: { exclude: ['hashedPassword'] },
+                include: [
+                    {
+                        model: Mentee,
+                        attributes: ['name', 'email', 'city', 'state', 'country', 'profileImg', 'goal', 'occupation', 'skill']
+                    }
+                ]
+            });
+            return res.json({
+                user,
+            });
+        }
         return res.json({
             user,
         });
