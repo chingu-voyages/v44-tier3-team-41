@@ -6,13 +6,7 @@ import { useDispatch } from 'react-redux';
 import { editMentorThunk } from '../../store/mentor';
 import { useNavigate } from 'react-router';
 
-<<<<<<< HEAD
-export default function ProfileMentor({
-	currentUser,
-}) {
-=======
 export default function ProfileMentor({ currentUser }) {
->>>>>>> refactor/errorHandling
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
