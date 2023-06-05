@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
+import {useState} from 'react';
+import {Dialog} from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
@@ -12,7 +12,7 @@ import {
 	useSelector,
 	useDispatch,
 } from 'react-redux';
-import { logoutThunk } from '../../store/session';
+import {logoutThunk} from '../../store/session';
 
 const navigation = [
 	{
@@ -178,7 +178,7 @@ export default function Hero() {
 			</header>
 
 			<div className="relative px-8 pt-24 isolate">
-				<div className="mx-auto max-w-6xl sm:py-48 lg:py-72">
+				<div className="mx-auto max-w-6xl sm:py-48 lg:py-56">
 					<div className="text-left justify-start">
 						<h1 className="md:text-4xl text-2xl md:font-extrabold font-bold md:tracking-wide text-gray-900">
 							Learn and grow with help from

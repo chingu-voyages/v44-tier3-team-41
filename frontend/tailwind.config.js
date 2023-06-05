@@ -4,6 +4,12 @@ module.exports = {
 	theme: {
 		extend: {
 			keyframes: {
+				scroll: {
+					'0%': {transform: 'translateX(0)'},
+					'100%': {
+						transform: 'translateX(-100%)',
+					},
+				},
 				float: {
 					'0%': {transform: 'translateY(0)'},
 					'50%': {transform: 'translateY(-15px)'},
@@ -13,6 +19,7 @@ module.exports = {
 			animation: {
 				float: 'float 3s ease-in-out infinite',
 				float2: 'float 2s ease-in-out infinite',
+				scroll: 'scroll 30s linear infinite',
 			},
 			colors: {
 				light1: '#fafafa',
