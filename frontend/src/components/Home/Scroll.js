@@ -1,3 +1,4 @@
+
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {getAllMentorsThunk} from '../../store/mentor';
@@ -14,6 +15,7 @@ function Scroll() {
 		fetchData();
 	}, [dispatch]);
 
+
 	if (mentors)
 		return (
 			<div className="py-10 overflow-hidden bg-light1">
@@ -24,7 +26,6 @@ function Scroll() {
 				</div>
 				<div class="inline-flex space-x-4 whitespace-nowrap">
 					{/* Images */}
-
 					<div
 						div
 						className="inline-flex space-x-4 py-4 mx-auto gap-20 animate-scroll">
@@ -40,6 +41,7 @@ function Scroll() {
 					</div>
 				</div>
 			</div>
+
 		);
 }
 

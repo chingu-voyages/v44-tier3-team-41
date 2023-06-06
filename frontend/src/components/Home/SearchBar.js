@@ -1,5 +1,4 @@
-import { MagnifyingGlassIcon, UsersIcon } from '@heroicons/react/20/solid';
-// import { CiSearch } from "react-icons/fa";
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 
 export default function Example() {
   return (
