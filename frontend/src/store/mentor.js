@@ -28,11 +28,6 @@ const editMentor = data => {
     }
 }
 
-// export const clearSearch = () => {
-//     return {
-//         type: CLEARSEARCH
-//     }
-// }
 
 //** Thunk */
 
@@ -44,6 +39,7 @@ export const getAllMentorsThunk = (filters = {}) => async dispatch => {
     if (response.ok) {
         const data = await response.json();
         dispatch(getMentors(data));
+        return data
     }
 };
 
