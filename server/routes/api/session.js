@@ -13,8 +13,17 @@ router.post('/', async (req, res, next) => {
     let user;
     if (classification === 'Mentee') {
         user = await Mentee.login({ email, password });
-    } else {
+    }
+    if (classification === 'Mentor') {
         user = await Mentor.login({ email, password });
+        //* User validation
+        if (!user) {
+            const err = new Error('Login failed');
+            err.status = 401;
+            err.title = 'Login failed';
+            err.errors = ['The provided credentials were invalid.'];
+            return next(err);
+        }
         user = await Mentor.findOne({
             where: { id: user.id },
             attributes: { exclude: ['hashedPassword'] },
@@ -54,7 +63,7 @@ router.delete('/', (_req, res) => {
 //! Restore session user
 router.get('/', restoreUser, async (req, res) => {
     let { user } = req;
-    console.log(user);
+
     if (user) {
         if (user.dataValues.classification === 'Mentor') {
             user = await Mentor.findOne({
