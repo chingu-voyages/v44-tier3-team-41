@@ -52,6 +52,23 @@ export const getMentorThunk = (id) => async dispatch => {
     }
 }
 
+export const passwordUpdateMentorThunk = (id, oldPassword, password) => async dispatch => {
+
+    const response = await csrfFetch('/api/mentor/password/update', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            id,
+            oldPassword,
+            password
+        })
+    });
+    if (response.ok) {
+        alert("Password was updated")
+    }
+
+}
+
 export const editMentorThunk = (user) => async dispatch => {
 
     const response = await csrfFetch(`/api/mentor/${user.id}`, {

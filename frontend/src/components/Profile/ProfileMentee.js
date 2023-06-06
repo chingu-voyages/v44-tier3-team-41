@@ -3,7 +3,7 @@ import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
 import { UserIcon } from '@heroicons/react/24/outline';
 import { useDispatch } from 'react-redux';
-import { editMenteeThunk } from '../../store/mentee';
+import { editMenteeThunk, passwordUpdateMenteeThunk } from '../../store/mentee';
 import { useNavigate } from 'react-router';
 
 export default function ProfileMentee({ currentUser }) {
@@ -29,23 +29,14 @@ export default function ProfileMentee({ currentUser }) {
 
 	const [success, setSuccess] = useState(false);
 
-	const validate = () => {
-		const errors = [];
-		if (!name) errors.push("Please provide a 'Name'");
-		if (!about) errors.push("Please provide a 'About'");
-		if (!email) errors.push("Please provide a 'Email'");
-		if (!phone) errors.push("Please provide a 'Phone'");
-		if (!occupation) errors.push("Please provide a 'Occupation'");
-		if (!skill) errors.push("Please provide a 'Skill'");
-		if (!goal) errors.push("Please provide a 'Goal'");
-		if (!project) errors.push("Please provide a 'Project'");
-		if (!country) errors.push("Please provide a 'Country'");
-		if (!state) errors.push("Please provide a 'State'");
-		if (!city) errors.push("Please provide a 'City'");
-		if (!countryCode) errors.push("Please provide a 'CountryCode'");
+	//! password update
+	// const [oldPassword, setOldPassword] = useState('')
+	// const [password, setPassword] = useState('')
 
-		return errors;
-	};
+	// const handlePasswordUpdate = async (e) => {
+	// 	e.preventDefault()
+	// 	await dispatch(passwordUpdateMenteeThunk(id, oldPassword, password))
+	// }
 
 	function handleImageChange(event) {
 		const { files } = event.target;
@@ -70,6 +61,26 @@ export default function ProfileMentee({ currentUser }) {
 		}
 	}
 
+	//* Validate the state variable content
+	const validate = () => {
+		const errors = [];
+		if (!name) errors.push("Please provide a 'Name'");
+		if (!about) errors.push("Please provide a 'About'");
+		if (!email) errors.push("Please provide a 'Email'");
+		if (!phone) errors.push("Please provide a 'Phone'");
+		if (!occupation) errors.push("Please provide a 'Occupation'");
+		if (!skill) errors.push("Please provide a 'Skill'");
+		if (!goal) errors.push("Please provide a 'Goal'");
+		if (!project) errors.push("Please provide a 'Project'");
+		if (!country) errors.push("Please provide a 'Country'");
+		if (!state) errors.push("Please provide a 'State'");
+		if (!city) errors.push("Please provide a 'City'");
+		if (!countryCode) errors.push("Please provide a 'CountryCode'");
+
+		return errors;
+	};
+
+	//* set the state variables if user is active
 	if (currentUser) {
 		if (!valid) {
 			setName(currentUser.name);

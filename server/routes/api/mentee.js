@@ -1,5 +1,6 @@
 const express = require('express');
 const { Op } = require('sequelize');
+const bcrypt = require('bcryptjs');
 const { Mentee, Mentor } = require('../../db/models');
 const { requireAuth } = require('../../utils/auth');
 
@@ -102,6 +103,50 @@ router.get('/:id', async (req, res) => {
   return res.json(menteeObj);
 });
 
+/** ***************************************************************** */
+
+//! update Password
+router.put('/password/update', requireAuth, async (req, res) => {
+  const { id, oldPassword, password } = req.body;
+
+  try {
+    // Find the Mentor by ID
+    const mentee = await Mentee.scope('loginMentee').findByPk(id);
+
+    // Check if the Mentor exists
+    if (!mentee) {
+      return res.status(404).json({
+        message: "Mentor couldn't be found",
+        statusCode: 404,
+      });
+    }
+
+    // Validate the old password
+    if (!mentee.validatePassword(oldPassword)) {
+      return res.status(401).json({
+        message: 'Incorrect old password',
+        statusCode: 401,
+      });
+    }
+
+    // Generate the hashed password
+    const hashedPassword = bcrypt.hashSync(password);
+
+    // Update the Mentee's password
+    await mentee.update({ hashedPassword });
+
+    return res.json({
+      message: 'Password updated successfully',
+      statusCode: 200,
+    });
+  } catch (error) {
+    console.error('Error updating password:', error);
+    return res.status(500).json({
+      message: 'Internal server error',
+      statusCode: 500,
+    });
+  }
+});
 /** ********************************************************************** */
 //! Edit Mentee by id
 

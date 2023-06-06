@@ -3,7 +3,7 @@ import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
 import { UserIcon } from '@heroicons/react/24/outline';
 import { useDispatch } from 'react-redux';
-import { editMentorThunk } from '../../store/mentor';
+import { editMentorThunk, passwordUpdateMentorThunk } from '../../store/mentor';
 import { useNavigate } from 'react-router';
 
 export default function ProfileMentor({ currentUser }) {
@@ -32,6 +32,42 @@ export default function ProfileMentor({ currentUser }) {
 
 	const [success, setSuccess] = useState(false);
 
+	//! password update
+	// const [oldPassword, setOldPassword] = useState('')
+	// const [password, setPassword] = useState('')
+
+	// const handlePasswordUpdate = async (e) => {
+	// 	e.preventDefault()
+	// 	await dispatch(passwordUpdateMentorThunk(id, oldPassword, password))
+	// }
+
+
+	function handleImageChange(event) {
+		const { files } = event.target;
+		if (files.length !== 0) {
+			setImage(prevState => files[0]);
+			setImagePreview(
+				URL.createObjectURL(files[0])
+			);
+		}
+	}
+
+	async function handleImageUpload() {
+		try {
+			const data = new FormData();
+			data.append('file', image);
+			data.append('upload_preset', 'purchaseApp');
+			const response = await axios.post(
+				'https://api.cloudinary.com/v1_1/yilin1234/image/upload',
+				data
+			);
+			return response.data.secure_url;
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	//* Validate the state variable content
 	const validate = () => {
 		const errors = [];
 		if (!name)
@@ -64,31 +100,7 @@ export default function ProfileMentor({ currentUser }) {
 		return errors;
 	};
 
-	function handleImageChange(event) {
-		const { files } = event.target;
-		if (files.length !== 0) {
-			setImage(prevState => files[0]);
-			setImagePreview(
-				URL.createObjectURL(files[0])
-			);
-		}
-	}
-
-	async function handleImageUpload() {
-		try {
-			const data = new FormData();
-			data.append('file', image);
-			data.append('upload_preset', 'purchaseApp');
-			const response = await axios.post(
-				'https://api.cloudinary.com/v1_1/yilin1234/image/upload',
-				data
-			);
-			return response.data.secure_url;
-		} catch (error) {
-			console.error(error);
-		}
-	}
-
+	//* set the state variables if user is active
 	if (currentUser) {
 		if (!valid) {
 			setName(currentUser.name);

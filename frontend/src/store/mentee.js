@@ -58,6 +58,21 @@ export const getMenteeThunk = (id) => async dispatch => {
     }
 }
 
+export const passwordUpdateMenteeThunk = (id, oldPassword, password) => async dispatch => {
+
+    const response = await csrfFetch('/api/mentee/password/update', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            id,
+            oldPassword,
+            password
+        })
+    });
+    if (response.ok) {
+        alert('Password was updated')
+    }
+}
 
 export const editMenteeThunk = (user) => async dispatch => {
 

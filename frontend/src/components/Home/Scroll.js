@@ -1,7 +1,6 @@
-
-import React, {useEffect, useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {getAllMentorsThunk} from '../../store/mentor';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { getAllMentorsThunk } from '../../store/mentor';
 
 function Scroll() {
 	const dispatch = useDispatch();
