@@ -1,7 +1,7 @@
 const express = require('express');
 const { Op } = require('sequelize');
+const bcrypt = require('bcryptjs');
 const { requireAuth } = require('../../utils/auth');
-
 const { Mentor, Mentee } = require('../../db/models');
 
 const router = express.Router();
@@ -126,6 +126,50 @@ router.get('/:id', async (req, res) => {
   return res.json(mentorObj);
 });
 
+/** ***************************************************************** */
+
+//! update Password
+router.put('/password/update', requireAuth, async (req, res) => {
+  const { id, oldPassword, password } = req.body;
+
+  try {
+    // Find the Mentor by ID
+    const mentor = await Mentor.scope('loginMentor').findByPk(id);
+
+    // Check if the Mentor exists
+    if (!mentor) {
+      return res.status(404).json({
+        message: "Mentor couldn't be found",
+        statusCode: 404,
+      });
+    }
+
+    // Validate the old password
+    if (!mentor.validatePassword(oldPassword)) {
+      return res.status(401).json({
+        message: 'Incorrect old password',
+        statusCode: 401,
+      });
+    }
+
+    // Generate the hashed password
+    const hashedPassword = bcrypt.hashSync(password);
+
+    // Update the Mentor's password
+    await mentor.update({ hashedPassword });
+
+    return res.json({
+      message: 'Password updated successfully',
+      statusCode: 200,
+    });
+  } catch (error) {
+    console.error('Error updating password:', error);
+    return res.status(500).json({
+      message: 'Internal server error',
+      statusCode: 500,
+    });
+  }
+});
 /** ***************************************************************** */
 
 //! Edit Mentor by Id
