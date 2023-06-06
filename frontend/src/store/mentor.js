@@ -3,7 +3,6 @@ import { csrfFetch } from "./csrf";
 const GETALLMENTORS = 'mentor/GETALLMENTORS'
 const GETMENTOR = 'mentor/GETMENTOR'
 const EDITMENTOR = 'mentor/EDITMENTOR'
-// const CLEARSEARCH = 'mentor/CLEARSEARCH'
 
 //** Action creator */
 
@@ -28,11 +27,6 @@ const editMentor = data => {
     }
 }
 
-// export const clearSearch = () => {
-//     return {
-//         type: CLEARSEARCH
-//     }
-// }
 
 //** Thunk */
 

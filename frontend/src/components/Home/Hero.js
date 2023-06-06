@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {Dialog} from '@headlessui/react';
+import { useState } from 'react';
+import { Dialog } from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
@@ -12,7 +12,7 @@ import {
 	useSelector,
 	useDispatch,
 } from 'react-redux';
-import {logoutThunk} from '../../store/session';
+import { logoutThunk } from '../../store/session';
 
 const navigation = [
 	{
@@ -48,16 +48,11 @@ export default function Hero() {
 					className="flex items-center justify-between p-2 lg:px-8"
 					aria-label="Global">
 					<div className="flex lg:flex-1">
-						<a href="/" className="-m-1.5 p-1.5">
-							<span className="sr-only">
-								DevelopMe
-							</span>
-							<img
-								className="w-auto h-16"
-								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
-								alt="dm_logo"
-							/>
-						</a>
+						<img
+							className="w-auto h-16"
+							src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
+							alt="dm_logo"
+						/>
 					</div>
 					<div className="flex lg:hidden">
 						<button
