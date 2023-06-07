@@ -418,7 +418,7 @@ function DashBoard() {
 												Open user menu
 											</span>
 											<img
-												className="h-8 w-8 rounded-full bg-gray-50"
+												className="h-10 w-10 rounded-full bg-gray-50 overflow-hidden object-cover shadow-md border"
 												src={
 													currentUser.profileImg
 												}
