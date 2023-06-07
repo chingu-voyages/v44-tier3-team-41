@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import MenteeCard from '../components/MenteeCard/MenteeCard';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllMenteesThunk } from '../store/mentee';
+
 import { UserIcon } from '@heroicons/react/24/outline';
 
 export default function MenteeList() {
-	const dispatch = useDispatch();
-	const mentees = useSelector(state => state.mentee.search);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			await dispatch(getAllMenteesThunk());
-		};
-		fetchData();
-	}, [dispatch]);
-
+	const mentees = useSelector(state => state.session.user.Mentees);
 	return (
 		<div>
 			<div className="mb-4 z-10 bg-gradient-to-r from-[#092523] to-[#134E4A] shadow-lg shadow-green-700/20 w-1/4 rounded-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
