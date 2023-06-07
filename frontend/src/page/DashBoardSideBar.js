@@ -354,7 +354,7 @@ function DashBoard() {
 													'/dashboard/aboutUs'
 												)
 											}>
-											Contact us
+											About us
 										</button>
 									</div>
 								</div>
