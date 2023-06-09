@@ -1,9 +1,9 @@
 const { OpenAIApi, Configuration } = require('openai');
 const express = require('express');
-const { OPENAI_API_KEY } = require('../../config');
+const { OPENAI_API_KEY, OPENORG } = require('../../config');
 
 const configuration = new Configuration({
-    organization: 'org-RXoakR4d3wdHI1q8QoZIq3Xy',
+    organization: OPENORG,
     apiKey: OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
