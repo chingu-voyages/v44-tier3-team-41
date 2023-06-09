@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { csrfFetch } from '../store/csrf';
+import React, {useState, useEffect} from 'react';
+import {csrfFetch} from '../store/csrf';
 import {
 	PaperAirplaneIcon,
 	TrashIcon,
 } from '@heroicons/react/20/solid';
-import { useSelector } from 'react-redux';
-import dm_icon_blk_blue from '../assets/dm_icon_blk_blue.png'
+import {useSelector} from 'react-redux';
+import dm_icon_blk_blue from '../assets/dm_icon_blk_blue.png';
 
 const AiChat = () => {
 	const [messages, setMessages] = useState(
@@ -14,7 +14,7 @@ const AiChat = () => {
 		) || []
 	);
 
-	const { Mentees, ...sessionUser } = useSelector(
+	const {Mentees, ...sessionUser} = useSelector(
 		state => state.session.user
 	);
 
@@ -36,7 +36,7 @@ const AiChat = () => {
 					headers: {
 						'Content-Type': 'application/json',
 					},
-					body: JSON.stringify({ input: message }),
+					body: JSON.stringify({input: message}),
 				}
 			);
 
@@ -53,7 +53,7 @@ const AiChat = () => {
 
 		setMessages([
 			...messages,
-			{ text: input, user: sessionUser, },
+			{text: input, user: sessionUser},
 		]);
 		setInput('');
 
@@ -61,7 +61,7 @@ const AiChat = () => {
 
 		setMessages(prevMessages => [
 			...prevMessages,
-			{ text: response, user: 'AI' },
+			{text: response, user: 'AI'},
 		]);
 	};
 
@@ -69,7 +69,6 @@ const AiChat = () => {
 		localStorage.removeItem('messages');
 		setMessages([]);
 	};
-
 
 	return (
 		<div className="flex">
@@ -81,18 +80,26 @@ const AiChat = () => {
 					{messages.map((message, index) => (
 						<div
 							className={
-								'flex justify-start items-center rounded-lg shadow-lg pl-2 py-3 text-sm text-light4' +
+								'flex justify-start items-center bg-dark1 rounded-lg shadow-lg pl-2 py-3 text-sm text-light4' +
 								(message.user === 'AI'
 									? ' bg-dark3'
 									: '')
 							}>
-							<div className='flex flex-row items-center'>
-								<img src={`${message.user === 'AI' ? dm_icon_blk_blue : sessionUser.profileImg}`} alt="user_profile" className={`${message.user === 'AI' ? "w-20 h-20" : "w-40 h-40"}`} />
-								<p
-									key={index}
-									className="bg-dark1 pr-3 rounded-lg shadow-lg px-4 py-2 text-center">
-									{message.user.name ? message.user.name : 'AI'}
-								</p></div>
+							<div className="flex flex-row items-center">
+								<img
+									src={`${
+										message.user === 'AI'
+											? dm_icon_blk_blue
+											: sessionUser.profileImg
+									}`}
+									alt="user_profile"
+									className={`${
+										message.user === 'AI'
+											? 'w-10 h-10 object-cover'
+											: 'w-10 h-10 rounded-full object-cover border'
+									}`}
+								/>
+							</div>
 							<p className="pl-4">
 								{message.text}
 							</p>
