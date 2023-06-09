@@ -193,7 +193,7 @@ module.exports = {
         profileImg: 'https://images.unsplash.com/photo-1601412436009-d964bd02edbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcyfHxwZXJzb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60',
         yrsExp: 11,
         expertise: 'Java, Python, React, Angular, PostgreSQL',
-        role: 'Frontend Engineer',
+        role: 'Web Developer',
         about: 'Excited about the future of Software Engineering, and i would love to do my part to push it forward',
         company: 'Dach Group'
       },
@@ -362,7 +362,7 @@ module.exports = {
         profileImg: 'https://images.unsplash.com/photo-1533120527314-5770a1d153f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fGZlbWFsZSUyMGluZGlhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
         yrsExp: 6,
         expertise: 'Java, Python, React, Angular, PostgreSQL',
-        role: 'Frontend Engineer',
+        role: 'Staff Software Engineer',
         about: 'Excited about the future of Software Engineering, and i would love to do my part to push it forward',
         company: 'Upton Group'
       },
@@ -395,7 +395,7 @@ module.exports = {
         profileImg: 'https://images.unsplash.com/photo-1653055645127-54ec96add7b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbiUyMGltYWdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
         yrsExp: 5,
         expertise: 'Java, Python, React, Angular, PostgreSQL',
-        role: 'DevOps Engineer',
+        role: 'Staff Software Engineer',
         about: 'Excited about the future of Software Engineering, and i would love to do my part to push it forward',
         company: 'Function Group'
       }

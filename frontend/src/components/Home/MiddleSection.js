@@ -1,3 +1,4 @@
+import React from 'react'
 import {
 	PencilIcon,
 	CircleStackIcon,
@@ -9,41 +10,43 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 
-const features = [
-	{
-		name: 'Design',
-		description: '1403 mentors',
-		icon: PencilIcon,
-	},
-	{
-		name: 'Product',
-		description: '1021 mentors',
-		icon: CircleStackIcon,
-	},
-	{
-		name: 'Data Science',
-		description: '2034 mentors',
-		icon: Square3Stack3DIcon,
-	},
-	{
-		name: 'DevOps Engineer',
-		description: '1206 mentors',
-		icon: ArrowPathRoundedSquareIcon,
-	},
-	{
-		name: 'Marketing',
-		description: '2733 mentors',
-		icon: Bars3Icon,
-	},
-	{
-		name: 'Engineering',
-		description: '1226 mentors',
-		icon: GlobeEuropeAfricaIcon,
-	},
-];
-
-export default function MiddleSection({ sessionUser }) {
+export default function MiddleSection({ sessionUser, mentors }) {
 	const navigate = useNavigate()
+	function getMentorsCount(role) {
+		return mentors ? mentors.filter(mentor => mentor.role === role) : null
+	}
+	const features = [
+		{
+			name: 'Frontend Engineer',
+			description: `${getMentorsCount('Frontend Engineer')?.length} mentors`,
+			icon: PencilIcon,
+		},
+		{
+			name: 'Full Stack Engineer',
+			description: `${getMentorsCount('Full Stack Engineer')?.length} mentors`,
+			icon: CircleStackIcon,
+		},
+		{
+			name: 'Backend Engineer',
+			description: `${getMentorsCount('Backend Engineer')?.length} mentors`,
+			icon: Square3Stack3DIcon,
+		},
+		{
+			name: 'DevOps Engineer',
+			description: `${getMentorsCount('DevOps Engineer')?.length} mentors`,
+			icon: ArrowPathRoundedSquareIcon,
+		},
+		{
+			name: 'Web Developer',
+			description: `${getMentorsCount('Web Developer')?.length} mentors`,
+			icon: Bars3Icon,
+		},
+		{
+			name: 'Staff Software Engineer',
+			description: `${getMentorsCount('Staff Software Engineer')?.length} mentors`,
+			icon: GlobeEuropeAfricaIcon,
+		},
+	];
 
 	return (
 		<div className="bg-[#F0F6F9] py-24 sm:py-32">

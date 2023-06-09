@@ -1,7 +1,13 @@
-import {Player} from '@lottiefiles/react-lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const AboutUs = () => {
+	const navigate = useNavigate()
+	const sessionUser = useSelector(state => state.session.user)
+
+	if (!sessionUser) { return navigate('/login') }
 	return (
 		<div>
 			<section className="bg-light1 text-dark1 rounded-xl shadow-lg">

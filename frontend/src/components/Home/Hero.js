@@ -25,13 +25,10 @@ const navigation = [
 	},
 ];
 
-export default function Hero() {
+export default function Hero({ sessionUser }) {
 	const [mobileMenuOpen, setMobileMenuOpen] =
 		useState(false);
 
-	const currentUser = useSelector(
-		state => state.session.user
-	);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -71,7 +68,7 @@ export default function Hero() {
 						</button>
 					</div>
 
-					{!currentUser ? (
+					{!sessionUser ? (
 						<div className="hidden lg:flex lg:gap-x-12">
 							{navigation.map(item => (
 								<a
@@ -84,7 +81,7 @@ export default function Hero() {
 						</div>
 					) : null}
 
-					{!currentUser ? (
+					{!sessionUser ? (
 						<div className="hidden lg:flex lg:flex-1 lg:justify-end mr-10">
 							<Link to={'/login'}>
 								<button
