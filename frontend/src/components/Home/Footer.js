@@ -9,13 +9,13 @@ export default function Footer() {
 			<div className="mx-auto px-6 pb-8 pt-6 sm:pt-24 lg:px-8 lg:pt-6">
 				<div className="">
 					<div className="flex">
-						<a href="/" className="">
-							<img
-								className="md:h-12 h-10"
-								src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_clear_w1sleb.png"
-								alt="DM Logo"
-							/>
-						</a>
+
+						<img
+							className="md:h-12 h-10"
+							src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_clear_w1sleb.png"
+							alt="DM Logo"
+						/>
+
 						<p className="text-xs text-gray-400 pl-5 py-4">
 							Platform for aspiring software
 							developers to connect with Mentors.
