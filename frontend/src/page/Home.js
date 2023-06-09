@@ -23,7 +23,7 @@ const HomePage = () => {
 
 	return (
 		<div className="flex flex-col">
-			<Hero sessionUser={sessionUser} />
+			<Hero sessionUser={sessionUser} mentors={mentors} />
 			<Scroll />
 			<section>
 				<MiddleSection

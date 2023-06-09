@@ -1,5 +1,5 @@
-import {Fragment, useState} from 'react';
-import {useSelector} from 'react-redux';
+import { Fragment, useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
 	Link,
 	Outlet,
@@ -21,9 +21,9 @@ import {
 	FaceSmileIcon,
 	VideoCameraIcon,
 } from '@heroicons/react/24/outline';
-import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
-import {useDispatch} from 'react-redux';
-import {logoutThunk} from '../store/session';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -258,7 +258,7 @@ function DashBoard() {
 																				aria-hidden="true"
 																			/>
 																			{item.name}{' '}
-																			{}
+																			{ }
 																		</Link>
 																	</li>
 																)
@@ -431,13 +431,14 @@ function DashBoard() {
 													{currentUser.name}
 												</span>
 
-												<button
-													type="button"
-													onClick={handleLogout}
-													className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
-													Sign out
-												</button>
 											</span>
+
+											<button
+												type="button"
+												onClick={handleLogout}
+												className="rounded-md border border-solid border-black bg-black px-4 py-2 text-xs font-normal text-gray-200 hover:bg-gray-700 shadow-lg ring-1 ring-offset-4 ring-offset-light2 ring-light4">
+												Sign out
+											</button>
 										</Menu.Button>
 									</Menu>
 								</div>

@@ -30,7 +30,7 @@ router.post('/', async (req, res, next) => {
             include: [
                 {
                     model: Mentee,
-                    attributes: ['name', 'email', 'city', 'state', 'country', 'profileImg', 'goal', 'occupation', 'skill']
+                    attributes: { exclude: ['hashedPassword', 'mentorId', ''] }
                 }
             ]
         });

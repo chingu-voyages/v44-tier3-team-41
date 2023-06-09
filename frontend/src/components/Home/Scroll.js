@@ -23,13 +23,12 @@ function Scroll() {
 						List of our current mentors
 					</p>
 				</div>
-				<div class="inline-flex space-x-4 whitespace-nowrap">
+				<div className="inline-flex space-x-4 whitespace-nowrap">
 					{/* Images */}
 					<div
-						div
 						className="inline-flex space-x-4 py-4 mx-auto gap-20 animate-scroll">
-						{mentors?.map(mentor => (
-							<div className="rounded-full flex-none">
+						{mentors?.map((mentor, indx) => (
+							<div className="rounded-full flex-none" key={indx}>
 								<img
 									className="object-cover object-center h-20 bg-gray-500 rounded-full shadow-lg aspect-square"
 									src={mentor.profileImg}

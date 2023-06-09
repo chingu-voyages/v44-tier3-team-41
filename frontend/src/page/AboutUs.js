@@ -15,9 +15,9 @@ const AboutUs = () => {
 					<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-xl lg:text-left">
 						<a
 							href="/"
-							class="bg-dark1 text-dark6 text-xs w-28 font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2 shadow-lg">
+							className="bg-dark1 text-dark6 text-xs w-28 font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2 shadow-lg">
 							<svg
-								class="w-3 h-3 mr-1"
+								className="w-3 h-3 mr-1"
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg"
@@ -56,22 +56,22 @@ const AboutUs = () => {
 			</section>
 
 			{/* More info */}
-			<div class="container my-32 mx-auto md:px-6">
-				<section class="mb-32">
-					<div class="flex flex-wrap">
-						<div class="mb-6 w-full shrink-0 grow-0 basis-auto px-3 lg:mb-0 lg:w-4/12">
-							<p class="mb-6 font-bold uppercase text-gray-400">
+			<div className="container my-32 mx-auto md:px-6">
+				<section className="mb-32">
+					<div className="flex flex-wrap">
+						<div className="mb-6 w-full shrink-0 grow-0 basis-auto px-3 lg:mb-0 lg:w-4/12">
+							<p className="mb-6 font-bold uppercase text-gray-400">
 								Features
 							</p>
-							<h2 class="mb-6 text-3xl font-bold">
+							<h2 className="mb-6 text-3xl font-bold">
 								Why is it so
-								<u class="text-mentor1">
+								<u className="text-mentor1">
 									{' '}
 									great?
 								</u>
 							</h2>
 
-							<p class="mb-12 text-dark4 text-sm">
+							<p className="mb-12 text-dark4 text-sm">
 								If you’re looking for advice,
 								jamming or networking -
 								<strong> DevelopMe </strong>
@@ -81,19 +81,19 @@ const AboutUs = () => {
 							</p>
 						</div>
 
-						<div class="mb-md-0 mb-6 w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
-							<div class="flex flex-wrap">
-								<div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
-									<div class="flex">
-										<div class="shrink-0">
-											<div class="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
+						<div className="mb-md-0 mb-6 w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
+							<div className="flex flex-wrap">
+								<div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
+									<div className="flex">
+										<div className="shrink-0">
+											<div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													fill="none"
 													viewBox="0 0 24 24"
 													stroke-width="2"
 													stroke="currentColor"
-													class="h-6 w-6">
+													className="h-6 w-6">
 													<path
 														stroke-linecap="round"
 														stroke-linejoin="round"
@@ -102,8 +102,8 @@ const AboutUs = () => {
 												</svg>
 											</div>
 										</div>
-										<div class="ml-4 grow text-xs text-dark4">
-											<p class="mb-3 font-bold text-sm text-dark2">
+										<div className="ml-4 grow text-xs text-dark4">
+											<p className="mb-3 font-bold text-sm text-dark2">
 												Connect with Mentors
 											</p>
 											<p>
@@ -112,7 +112,7 @@ const AboutUs = () => {
 												between developers and
 												mentors.
 											</p>
-											<p class="pt-2">
+											<p className="pt-2">
 												Developers can find
 												experienced mentors who
 												can offer valuable
@@ -124,17 +124,17 @@ const AboutUs = () => {
 									</div>
 								</div>
 
-								<div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
-									<div class="flex">
-										<div class="shrink-0">
-											<div class="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
+								<div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
+									<div className="flex">
+										<div className="shrink-0">
+											<div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													fill="none"
 													viewBox="0 0 24 24"
 													stroke-width="2"
 													stroke="currentColor"
-													class="h-6 w-6">
+													className="h-6 w-6">
 													<path
 														stroke-linecap="round"
 														stroke-linejoin="round"
@@ -143,8 +143,8 @@ const AboutUs = () => {
 												</svg>
 											</div>
 										</div>
-										<div class="ml-4 grow text-xs text-dark4">
-											<p class="mb-3 font-bold text-sm text-dark2">
+										<div className="ml-4 grow text-xs text-dark4">
+											<p className="mb-3 font-bold text-sm text-dark2">
 												Video Calls
 											</p>
 											<p>
@@ -152,7 +152,7 @@ const AboutUs = () => {
 												experience, we provide a
 												video call feature.
 											</p>
-											<p class="pt-2">
+											<p className="pt-2">
 												This allows developers and
 												mentors to have
 												face-to-face interactions,
@@ -164,17 +164,17 @@ const AboutUs = () => {
 									</div>
 								</div>
 
-								<div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
-									<div class="flex">
-										<div class="shrink-0">
-											<div class="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
+								<div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
+									<div className="flex">
+										<div className="shrink-0">
+											<div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													fill="none"
 													viewBox="0 0 24 24"
 													stroke-width="2"
 													stroke="currentColor"
-													class="h-6 w-6">
+													className="h-6 w-6">
 													<path
 														stroke-linecap="round"
 														stroke-linejoin="round"
@@ -183,8 +183,8 @@ const AboutUs = () => {
 												</svg>
 											</div>
 										</div>
-										<div class="ml-4 grow text-xs text-dark4">
-											<p class="mb-3 font-bold text-sm text-dark2">
+										<div className="ml-4 grow text-xs text-dark4">
+											<p className="mb-3 font-bold text-sm text-dark2">
 												Ai Chat
 											</p>
 											<p>
@@ -194,7 +194,7 @@ const AboutUs = () => {
 												specifically for
 												developers and mentors.
 											</p>
-											<p class="pt-2">
+											<p className="pt-2">
 												It enables real-time
 												messaging, making it
 												convenient for users to
@@ -206,17 +206,17 @@ const AboutUs = () => {
 									</div>
 								</div>
 
-								<div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
-									<div class="flex">
-										<div class="shrink-0">
-											<div class="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
+								<div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:px-3">
+									<div className="flex">
+										<div className="shrink-0">
+											<div className="mb-6 inline-block rounded-md bg-primary-100 p-4 text-primary">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													fill="none"
 													viewBox="0 0 24 24"
 													stroke-width="2"
 													stroke="currentColor"
-													class="h-6 w-6">
+													className="h-6 w-6">
 													<path
 														stroke-linecap="round"
 														stroke-linejoin="round"
@@ -225,11 +225,11 @@ const AboutUs = () => {
 												</svg>
 											</div>
 										</div>
-										<div class="ml-4 grow text-xs text-dark4">
-											<p class="mb-3 font-bold text-sm text-dark2">
+										<div className="ml-4 grow text-xs text-dark4">
+											<p className="mb-3 font-bold text-sm text-dark2">
 												Job Search
 											</p>
-											<p class="">
+											<p className="">
 												In addition to mentorship,
 												we understand the
 												importance of career
@@ -239,7 +239,7 @@ const AboutUs = () => {
 												relevant job
 												opportunities.
 											</p>
-											<p class="pt-2">
+											<p className="pt-2">
 												This helps developers
 												explore new career
 												prospects and find
@@ -256,68 +256,68 @@ const AboutUs = () => {
 			</div>
 
 			{/* Contact */}
-			<div class="container my-24 mx-auto md:px-6">
-				<section class="mb-32">
-					<div class="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/284.jpg')]"></div>
-					<div class="container px-6 md:px-12">
-						<div class="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
-							<div class="flex flex-wrap">
-								<div class="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
+			<div className="container my-24 mx-auto md:px-6">
+				<section className="mb-32">
+					<div className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat bg-[url('https://mdbcdn.b-cdn.net/img/new/textures/full/284.jpg')]"></div>
+					<div className="container px-6 md:px-12">
+						<div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
+							<div className="flex flex-wrap">
+								<div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
 									<form>
 										<div
-											class="relative mb-6 border border-light1 rounded-lg"
+											className="relative mb-6 border border-light1 rounded-lg"
 											data-te-input-wrapper-init>
 											<input
 												type="text"
-												class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none placeholder:text-dark3 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+												className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none placeholder:text-dark3 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 												id="exampleInput90"
 												placeholder="Name"
 											/>
 											<label
-												class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none  peer-focus:text-primary"
+												className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none  peer-focus:text-primary"
 												for="exampleInput90">
 												Name
 											</label>
 										</div>
 										<div
-											class="relative mb-6 border border-light4 rounded-lg"
+											className="relative mb-6 border border-light4 rounded-lg"
 											data-te-input-wrapper-init>
 											<input
 												type="email"
-												class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+												className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 												id="exampleInput91"
 												placeholder="Email address"
 											/>
 											<label
-												class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-sm peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none  dark:peer-focus:text-sm"
+												className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-sm peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none  dark:peer-focus:text-sm"
 												for="exampleInput91">
 												Email address
 											</label>
 										</div>
 										<div
-											class="relative mb-6 border border-light4 rounded-lg"
+											className="relative mb-6 border border-light4 rounded-lg"
 											data-te-input-wrapper-init>
 											<textarea
-												class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+												className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none  dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 												id="exampleFormControlTextarea1"
 												rows="3"
 												placeholder="Your message"></textarea>
 											<label
 												for="exampleFormControlTextarea1"
-												class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none  dark:peer-focus:text-primary">
+												className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none  dark:peer-focus:text-primary">
 												Message
 											</label>
 										</div>
-										<div class="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
+										<div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
 											<input
-												class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent  dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+												className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent  dark:checked:border-primary dark:checked:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
 												type="checkbox"
 												value=""
 												id="exampleCheck96"
 												checked
 											/>
 											<label
-												class="inline-block pl-[0.15rem] hover:cursor-pointer text-xs"
+												className="inline-block pl-[0.15rem] hover:cursor-pointer text-xs"
 												for="exampleCheck96">
 												Send me a copy of this
 												message
@@ -327,24 +327,24 @@ const AboutUs = () => {
 											type="button"
 											data-te-ripple-init
 											data-te-ripple-color="light"
-											class="mb-6 inline-block w-full rounded bg-dark2 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-lg focus:bg-dark1 focus:outline-none focus:ring-0  lg:mb-0">
+											className="mb-6 inline-block w-full rounded bg-dark2 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-lg focus:bg-dark1 focus:outline-none focus:ring-0  lg:mb-0">
 											Send
 										</button>
 									</form>
 								</div>
-								<div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-									<div class="flex flex-wrap">
-										<div class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
-											<div class="flex items-start">
-												<div class="shrink-0">
-													<div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+								<div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
+									<div className="flex flex-wrap">
+										<div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
+											<div className="flex items-start">
+												<div className="shrink-0">
+													<div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
 															fill="none"
 															viewBox="0 0 24 24"
 															stroke-width="2"
 															stroke="currentColor"
-															class="h-6 w-6">
+															className="h-6 w-6">
 															<path
 																stroke-linecap="round"
 																stroke-linejoin="round"
@@ -353,30 +353,30 @@ const AboutUs = () => {
 														</svg>
 													</div>
 												</div>
-												<div class="ml-6 grow text-xs text-dark4">
-													<p class="mb-1 font-bold text-sm text-dark2">
+												<div className="ml-6 grow text-xs text-dark4">
+													<p className="mb-1 font-bold text-sm text-dark2">
 														Alex Hunt
 													</p>
-													<p class="">
+													<p className="">
 														support@example.com
 													</p>
-													<p class="">
+													<p className="">
 														+1 234-567-89
 													</p>
 												</div>
 											</div>
 										</div>
-										<div class="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
-											<div class="flex items-start">
-												<div class="shrink-0">
-													<div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+										<div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
+											<div className="flex items-start">
+												<div className="shrink-0">
+													<div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
 															fill="none"
 															viewBox="0 0 24 24"
 															stroke-width="2"
 															stroke="currentColor"
-															class="h-6 w-6">
+															className="h-6 w-6">
 															<path
 																stroke-linecap="round"
 																stroke-linejoin="round"
@@ -385,30 +385,30 @@ const AboutUs = () => {
 														</svg>
 													</div>
 												</div>
-												<div class="ml-6 grow text-xs text-dark4">
-													<p class="mb-1 font-bold text-sm text-dark2">
+												<div className="ml-6 grow text-xs text-dark4">
+													<p className="mb-1 font-bold text-sm text-dark2">
 														Yi Lin
 													</p>
-													<p class="">
+													<p className="">
 														sales@example.com
 													</p>
-													<p class="">
+													<p className="">
 														+1 234-567-89
 													</p>
 												</div>
 											</div>
 										</div>
-										<div class="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
-											<div class="align-start flex">
-												<div class="shrink-0">
-													<div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+										<div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
+											<div className="align-start flex">
+												<div className="shrink-0">
+													<div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
 															fill="none"
 															viewBox="0 0 24 24"
 															stroke-width="2"
 															stroke="currentColor"
-															class="h-6 w-6">
+															className="h-6 w-6">
 															<path
 																stroke-linecap="round"
 																stroke-linejoin="round"
@@ -417,30 +417,30 @@ const AboutUs = () => {
 														</svg>
 													</div>
 												</div>
-												<div class="ml-6 grow text-xs text-dark4">
-													<p class="mb-1 font-bold text-sm text-dark2">
+												<div className="ml-6 grow text-xs text-dark4">
+													<p className="mb-1 font-bold text-sm text-dark2">
 														Ali Mora
 													</p>
-													<p class="">
+													<p className="">
 														press@example.com
 													</p>
-													<p class="">
+													<p className="">
 														+1 234-567-89
 													</p>
 												</div>
 											</div>
 										</div>
-										<div class="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
-											<div class="align-start flex">
-												<div class="shrink-0">
-													<div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+										<div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
+											<div className="align-start flex">
+												<div className="shrink-0">
+													<div className="inline-block rounded-md bg-primary-100 p-4 text-primary">
 														<svg
 															xmlns="http://www.w3.org/2000/svg"
 															fill="none"
 															viewBox="0 0 24 24"
 															stroke-width="2"
 															stroke="currentColor"
-															class="h-6 w-6">
+															className="h-6 w-6">
 															<path
 																stroke-linecap="round"
 																stroke-linejoin="round"
@@ -449,14 +449,14 @@ const AboutUs = () => {
 														</svg>
 													</div>
 												</div>
-												<div class="ml-6 grow text-xs text-dark4">
-													<p class="mb-1 font-bold text-sm text-dark2">
+												<div className="ml-6 grow text-xs text-dark4">
+													<p className="mb-1 font-bold text-sm text-dark2">
 														GitHub Repo
 													</p>
-													<p class="">
+													<p className="">
 														bugs@example.com
 													</p>
-													<p class="">
+													<p className="">
 														+1 234-567-89
 													</p>
 												</div>

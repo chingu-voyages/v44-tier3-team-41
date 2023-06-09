@@ -79,6 +79,7 @@ export const logoutThunk = () => async dispatch => {
     });
     if (response.ok) {
         dispatch(removeUser());
+        localStorage.removeItem('messages')
     }
     return response;
 };

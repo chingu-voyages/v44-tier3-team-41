@@ -9,7 +9,6 @@ import {
 	useNavigate,
 } from 'react-router-dom';
 import {
-	useSelector,
 	useDispatch,
 } from 'react-redux';
 import { logoutThunk } from '../../store/session';
@@ -25,7 +24,7 @@ const navigation = [
 	},
 ];
 
-export default function Hero({ sessionUser }) {
+export default function Hero({ sessionUser, mentors }) {
 	const [mobileMenuOpen, setMobileMenuOpen] =
 		useState(false);
 
@@ -179,7 +178,7 @@ export default function Hero({ sessionUser }) {
 						</h1>
 						<p className="mt-6 text-base leading-6 text-gray-600">
 							Book and meet over
-							<strong> 16,736+ mentors </strong>
+							<strong> {mentors.length - 1}+ mentors </strong>
 							for 1:1
 							<br /> mentorship in our global
 							community
@@ -193,7 +192,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[100px] right-[400px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out ">
 							<img
 								className="h-24 w-24 rounded-full"
-								src="https://adplist.org/photos/mentors/1.webp"
+								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
@@ -201,7 +200,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[160px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
 							<img
 								className="h-20 w-20 rounded-full"
-								src="https://adplist.org/photos/mentors/2.webp"
+								src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
@@ -209,7 +208,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[260px] right-[600px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
 							<img
 								className="h-20 w-20 rounded-full"
-								src="https://adplist.org/photos/mentors/3.webp"
+								src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
@@ -217,7 +216,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[330px] right-[280px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float">
 							<img
 								className="h-40 w-40 rounded-full"
-								src="https://adplist.org/photos/mentors/4.webp"
+								src="https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
@@ -225,7 +224,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[500px] right-[700px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-float2">
 							<img
 								className="h-20 w-20 rounded-full"
-								src="https://adplist.org/photos/mentors/5.webp"
+								src="https://images.unsplash.com/photo-1587057173081-36bc799b78ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjgxfHxwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
@@ -233,7 +232,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[530px] right-[420px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out animate-pulse">
 							<img
 								className="h-20 w-20 rounded-full"
-								src="https://adplist.org/photos/mentors/6.webp"
+								src="https://images.unsplash.com/photo-1611695434398-4f4b330623e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
@@ -241,7 +240,7 @@ export default function Hero({ sessionUser }) {
 						<div className="absolute top-[530px] right-[240px] rounded-full shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-200 ease-in-out">
 							<img
 								className="h-24 w-24 rounded-full"
-								src="https://adplist.org/photos/mentors/7.webp"
+								src="https://images.unsplash.com/photo-1557296387-5358ad7997bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjgyfHxwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
 								alt="avatar"
 							/>
 						</div>
