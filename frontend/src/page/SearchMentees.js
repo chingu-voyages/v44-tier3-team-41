@@ -47,9 +47,8 @@ function SearchMentees() {
 						className="block w-full rounded-md px-4 py-2 text-dark6 ring-1 ring-inset ring-dark4 focus:ring-2 focus:ring-dark2 sm:text-xs sm:leading-6 bg-dark3"
 						value={searchfield}
 						onChange={e => setSearchField(e.target.value)}>
-						<option value="goal">goal</option>
-						<option value="skill">skill</option>
-						<option value="occupation">occupation</option>
+						<option value="goal">career goal</option>
+						<option value="occupation">current occupation</option>
 					</select>
 				</div>
 				<form className="w-auto max-w-md lg:col-span-5">
