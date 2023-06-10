@@ -91,23 +91,25 @@
 
 ### - Landing Page:
 
-![Alt text](image.png)
+![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3328ac8d-2561-4d65-bf5d-6d375fe7c5cc)
+
 
 ### - Dashboard:
 
-![Alt text](image-1.png)
+![image-1](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3fde4f2c-5bcf-4963-a51d-d8f5876b529b)
+
 
 ### - Mentor search Page:
 
-![Alt text](image-4.png)
+![image-4](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/582fd48a-6250-4678-89bf-52b3a34eef1a)
 
 ### - Chat:
 
-![Alt text](image-3.png)
+![image-3](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/ac62aba0-a284-4cdc-91c2-646fa804662e)
 
 ### - Video Call:
 
-![Alt text](image-2.png)
+![image-2](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/e5ff9a68-5c2d-4ad8-9886-5a6d806b427c)
 
 <!-- GETTING STARTED -->
 
@@ -144,7 +146,7 @@ This is an example of how to list things you need to use the software and how to
 3. Locate the .env-example file within the server directory. Rename the file to '.env', and then set the "OPENAI_API_KEY=" to the openAI API Key [that can be obtained from https://platform.openai.com/account/api-keys].
 
    ```js
-   ex.OPENAI_API_KEY = sk - 000000000000000000000000;
+   ex.OPENAI_API_KEY=sk-000000000000000000000000;
    ```
 
    a. Save the .env update.
