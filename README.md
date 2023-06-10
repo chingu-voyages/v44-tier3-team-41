@@ -180,9 +180,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Features
 
-- [x] Sign Up, Login users to the 'Develop Me' app
+- [x] Sign Up, Login users to the 'developMe' app
 - [x] Demo login Mentee & Mentor
-- [x] Add profile images
+- [x] Edit user profiles
+- [x] View the current Mentor breakdown by roles & companies
 - [x] Search/views Mentors
 - [x] Search/view Mentees
 - [x] Search/view job postings
@@ -192,6 +193,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Goals
 
 - [ ] Chatbot integration
+- [ ] Functionality to assign taks to Mentees by Mentors
+- [ ] Functionality for Mentees to connect with Multiple Mentors
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
