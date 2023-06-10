@@ -169,7 +169,7 @@ export default function ProfileMentor({ currentUser }) {
 
 	return (
 		<>
-			<PasswordUpdate />
+
 			<form>
 				<div className="bg-light1 p-8 rounded-lg shadow-lg mt-4">
 					<div className="space-y-12">
@@ -525,6 +525,8 @@ export default function ProfileMentor({ currentUser }) {
 						</button>
 					</div>
 				</div>
-			</form></>
+			</form>
+			<PasswordUpdate />
+		</>
 	);
 }
