@@ -195,6 +195,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] Functionality to assign taks to Mentees by Mentors
 - [ ] Functionality for Mentees to connect with Multiple Mentors
+- [ ] Mobile Responsiveness
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
