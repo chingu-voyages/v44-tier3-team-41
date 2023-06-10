@@ -89,26 +89,25 @@
 
 # Images
 
-### Landing Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/646eb0df-3a37-4e67-9299-7a73d6c799d7)
+### - Landing Page:
 
-### Mentor search Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/33af6825-0778-4129-8ecb-539c2937f873)
+![Alt text](image.png)
 
-### Mentee search Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/41438f59-dbf6-4634-bb94-07cf291538a1)
+### - Dashboard:
 
-### Chat Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/509da942-d793-45c2-bbbc-a8416c1310e2)
+![Alt text](image-1.png)
 
-### User data Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/49a50bc8-a466-4290-96b4-b46e0de88e69)
+### - Mentor search Page:
 
-### My profile Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/9167f908-0321-4752-a459-f8069bbc0c4c)
+![Alt text](image-4.png)
 
-### Job Posts Page
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/b472c315-93ca-443c-8c5c-71c51eb6e81f)
+### - Chat:
+
+![Alt text](image-3.png)
+
+### - Video Call:
+
+![Alt text](image-2.png)
 
 <!-- GETTING STARTED -->
 
@@ -122,25 +121,49 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ``` -->
 
-<!-- ### Installation
+### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/chingu-voyages/v44-tier3-team-41.git
    ```
-3. Install NPM packages
+2. Install NPM packages
+
+   a. Navigate to the 'frontend' directory, and install the NPM packages
+
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+
+   b. Open a separate terminal, and navigate to the 'server' directory to install the NPM packages
+
+   ```sh
+   npm install
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+3. Locate the .env-example file within the server directory. Rename the file to '.env', and then set the "OPENAI_API_KEY=" to the openAI API Key [that can be obtained from https://platform.openai.com/account/api-keys].
+
+   ```js
+   ex.OPENAI_API_KEY = sk - 000000000000000000000000;
+   ```
+
+   a. Save the .env update.
+
+4. Run the application
+
+   a. On the "frontend" terminal run the following command
+
+   ```sh
+   npm start
+   ```
+
+   b. On the "server" terminal run the following command
+
+   ```sh
+   npm start
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
@@ -158,22 +181,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Sign Up, Login users to the 'Develop Me' app
 - [x] Demo login Mentee & Mentor
 - [x] Add profile images
-- [X] Search/views Mentors
+- [x] Search/views Mentors
 - [x] Search/view Mentees
 - [x] Search/view job postings
 - [x] Chat with other users
+- [x] Video Call
 
 ## Goals
+
 - [ ] Chatbot integration
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-`npm i`
-
-cd server `nmp start`
-
-cd frontend `npm start`
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
