@@ -189,10 +189,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Search/view job postings
 - [x] Chat with other users
 - [x] Video Call
+- [x] Chatbot integration 
 
 ## Goals
 
-- [ ] Chatbot integration
 - [ ] Functionality to assign taks to Mentees by Mentors
 - [ ] Functionality for Mentees to connect with Multiple Mentors
 
