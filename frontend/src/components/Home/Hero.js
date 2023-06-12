@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import {Dialog} from '@headlessui/react';
+import { useState } from 'react';
+import { Dialog } from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
@@ -8,8 +8,8 @@ import {
 	Link,
 	useNavigate,
 } from 'react-router-dom';
-import {useDispatch} from 'react-redux';
-import {logoutThunk} from '../../store/session';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../../store/session';
 
 const navigation = [
 	{
@@ -74,7 +74,7 @@ export default function Hero({
 								<a
 									key={item.name}
 									href={item.href}
-									className="text-sm font-normal text-gray-600 py-2 px-3 bg-[#fafafa] rounded-lg hover:shadow-lg">
+									className={`text-sm font-normal text-gray-600 py-2 px-3 bg-[#fafafa] rounded-lg hover:shadow-lg hover:font-bold hover:text-white ${item.name === "Become a mentor" ? "hover:bg-[#302e81]" : "hover:bg-[#166434]"}`}>
 									{item.name}
 								</a>
 							))}
