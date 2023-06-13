@@ -93,11 +93,9 @@
 
 ![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3328ac8d-2561-4d65-bf5d-6d375fe7c5cc)
 
-
 ### - Dashboard:
 
 ![image-1](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3fde4f2c-5bcf-4963-a51d-d8f5876b529b)
-
 
 ### - Mentor search Page:
 
@@ -145,9 +143,7 @@ This is an example of how to list things you need to use the software and how to
 
 3. Locate the .env-example file within the server directory. Rename the file to '.env', and then set the "OPENAI_API_KEY=" to the openAI API Key [that can be obtained from https://platform.openai.com/account/api-keys].
 
-   ```js
-   ex.OPENAI_API_KEY=sk-000000000000000000000000;
-   ```
+   "ex.OPENAI_API_KEY=sk-000000000000000000000000"
 
    a. Save the .env update.
 
@@ -189,7 +185,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Search/view job postings
 - [x] Chat with other users
 - [x] Video Call
-- [x] Chatbot integration 
+- [x] Chatbot integration
 
 ## Goals
 
