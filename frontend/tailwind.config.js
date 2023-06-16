@@ -19,7 +19,7 @@ module.exports = {
 			animation: {
 				float: 'float 3s ease-in-out infinite',
 				float2: 'float 2s ease-in-out infinite',
-				scroll: 'scroll 30s linear infinite',
+				scroll: 'scroll 60s linear infinite',
 			},
 			colors: {
 				light1: '#fafafa',

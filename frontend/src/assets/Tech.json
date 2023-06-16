@@ -1,0 +1,66 @@
+[
+	{
+		"name": "React.js",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+	},
+	{
+		"name": "Tailwind",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+	},
+	{
+		"name": "Lottie",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/LottieFiles_logo.svg/2560px-LottieFiles_logo.svg.png"
+	},
+	{
+		"name": "Axios",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Axios_logo_%282020%29.svg"
+	},
+	{
+		"name": "Redux",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Cib-redux_%28CoreUI_Icons_v1.0.0%29.svg"
+	},
+	{
+		"name": "Talkjs",
+		"imageUrl": "data:image/png;base64,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"
+	},
+	{
+		"name": "MongoDB",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/640px-MongoDB_Logo.svg.png"
+	},
+	{
+		"name": "Express",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
+	},
+	{
+		"name": "Postman",
+		"imageUrl": "https://cdn.shopify.com/s/files/1/0057/5668/2355/files/Postman-logo-orange-2021_1155x.png?v=1637252529"
+	},
+	{
+		"name": "Nextjs",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/640px-Nextjs-logo.svg.png"
+	},
+	{
+		"name": "Postgres",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+	},
+	{
+		"name": "AWS",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/640px-Amazon_Web_Services_Logo.svg.png"
+	},
+	{
+		"name": "Firebase",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Firebase_Logo.png/640px-Firebase_Logo.png"
+	},
+	{
+		"name": "Angular",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/640px-Angular_full_color_logo.svg.png"
+	},
+	{
+		"name": "NodeJs",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/640px-Node.js_logo_2015.svg.png"
+	},
+	{
+		"name": "MySql",
+		"imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/MySQL_textlogo.svg/640px-MySQL_textlogo.svg.png"
+	}
+]
