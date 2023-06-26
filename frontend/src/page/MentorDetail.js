@@ -1,10 +1,7 @@
-import {
-	PaperAirplaneIcon,
-	UserIcon,
-} from '@heroicons/react/20/solid';
+import {PaperAirplaneIcon, UserIcon} from '@heroicons/react/20/solid';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const MentorDetail = () => {
 	const data = useLocation();
@@ -42,9 +39,7 @@ const MentorDetail = () => {
 									</div>
 									<div className="mt-5 flex justify-center sm:mt-0">
 										<Link
-											to={
-												'/dashboard/directMessage'
-											}
+											to={'/dashboard/directMessage'}
 											state={mentor}
 											className="flex rounded-md hover:bg-dark3 md:px-8 px-4 py-2 text-sm font-normal text-white shadow-lg bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 border hover:border hover:border-dark4 border-dark4">
 											Message
@@ -69,9 +64,7 @@ const MentorDetail = () => {
 							<div className="border-t border-gray-100">
 								<dl className="divide-y divide-gray-100">
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-dark1">
-											About
-										</dt>
+										<dt className="text-sm font-medium text-dark1">About</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
 											{mentor.about}
 										</dd>
@@ -85,17 +78,13 @@ const MentorDetail = () => {
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-dark1">
-											Company
-										</dt>
+										<dt className="text-sm font-medium text-dark1">Company</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
 											{mentor.company}
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-dark1">
-											Role
-										</dt>
+										<dt className="text-sm font-medium text-dark1">Role</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
 											{mentor.role}
 										</dd>
@@ -125,22 +114,15 @@ const MentorDetail = () => {
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-dark1">
-											Location
-										</dt>
+										<dt className="text-sm font-medium text-dark1">Location</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
-											{mentor.city},{' '}
-											{mentor.state},{' '}
-											{mentor.country}
+											{mentor.city}, {mentor.state}, {mentor.country}
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-dark1">
-											Contact
-										</dt>
+										<dt className="text-sm font-medium text-dark1">Contact</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
-											(+{mentor.countryCode}){' '}
-											{mentor.phone}
+											(+{mentor.countryCode}) {mentor.phone}
 										</dd>
 									</div>
 								</dl>

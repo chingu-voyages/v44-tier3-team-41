@@ -1,6 +1,6 @@
 import ProfileMentor from '../components/Profile/ProfileMentor';
 import ProfileMentee from '../components/Profile/ProfileMentee';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const Profile = () => {
 	const currentUser = useSelector(state => state.session.user);

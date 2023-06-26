@@ -1,10 +1,7 @@
-import {
-	PaperAirplaneIcon,
-	UserIcon,
-} from '@heroicons/react/20/solid';
+import {PaperAirplaneIcon, UserIcon} from '@heroicons/react/20/solid';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const MenteeDetail = () => {
 	const data = useLocation();
@@ -42,9 +39,7 @@ const MenteeDetail = () => {
 									</div>
 									<div className="mt-5 flex justify-center sm:mt-0">
 										<Link
-											to={
-												'/dashboard/directMessage'
-											}
+											to={'/dashboard/directMessage'}
 											state={mentee}
 											className="flex rounded-md hover:bg-dark3 md:px-8 px-4 py-2 text-sm font-normal text-white shadow-lg bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark3 border hover:border hover:border-dark4 border-dark4">
 											Message
@@ -69,9 +64,7 @@ const MenteeDetail = () => {
 							<div className="border-t border-gray-100">
 								<dl className="divide-y divide-gray-100">
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-dark1">
-											About
-										</dt>
+										<dt className="text-sm font-medium text-dark1">About</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
 											{mentee.about}
 										</dd>
@@ -110,9 +103,7 @@ const MenteeDetail = () => {
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-										<dt className="text-sm font-medium text-gray-900">
-											Goal
-										</dt>
+										<dt className="text-sm font-medium text-gray-900">Goal</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
 											{mentee.goal}
 										</dd>
@@ -122,9 +113,7 @@ const MenteeDetail = () => {
 											Location
 										</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
-											{mentee.city},{' '}
-											{mentee.state},{' '}
-											{mentee.country}
+											{mentee.city}, {mentee.state}, {mentee.country}
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -132,8 +121,7 @@ const MenteeDetail = () => {
 											Contact
 										</dt>
 										<dd className="mt-1 text-xs leading-3 text-dark5 sm:col-span-2 sm:mt-0">
-											(+{mentee.countryCode}){' '}
-											{mentee.phone}
+											(+{mentee.countryCode}) {mentee.phone}
 										</dd>
 									</div>
 									<div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

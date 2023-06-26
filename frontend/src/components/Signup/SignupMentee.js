@@ -1,12 +1,6 @@
-import {
-	Link,
-	useNavigate,
-} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import React, {useState} from 'react';
-import {
-	useDispatch,
-	useSelector,
-} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {signupThunk} from '../../store/session';
 import {UserIcon} from '@heroicons/react/24/outline';
 
@@ -16,32 +10,23 @@ export default function SignupMentee() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const [confirmPassword, setConfirmPassword] =
-		useState('');
+	const [confirmPassword, setConfirmPassword] = useState('');
 
 	const [errors, setErrors] = useState([]);
 
-	const sessionUser = useSelector(
-		state => state.session.user
-	);
+	const sessionUser = useSelector(state => state.session.user);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
 		if (password === confirmPassword) {
 			setErrors([]);
 
-			return dispatch(
-				signupThunk(
-					name,
-					email,
-					password,
-					'Mentee'
-				)
-			).catch(async res => {
-				const data = await res.json();
-				if (data && data.errors)
-					setErrors(data.errors);
-			});
+			return dispatch(signupThunk(name, email, password, 'Mentee')).catch(
+				async res => {
+					const data = await res.json();
+					if (data && data.errors) setErrors(data.errors);
+				}
+			);
 		}
 	};
 
@@ -68,8 +53,7 @@ export default function SignupMentee() {
 								Sign up for a new Mentee account
 							</h2>
 							<p className="mt-2 text-sm font-light text-center leading-5 text-gray-500">
-								Connect with our community of
-								mentors and users from 141+
+								Connect with our community of mentors and users from 141+
 								countries around the world.
 							</p>
 						</div>
@@ -110,9 +94,7 @@ export default function SignupMentee() {
 											type="text"
 											placeholder="name"
 											value={name}
-											onChange={e =>
-												setName(e.target.value)
-											}
+											onChange={e => setName(e.target.value)}
 											// autoComplete="off"
 											required
 											className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-md placeholder:text-gray-400 sm:text-sm sm:leading-6 pl-3"
@@ -131,9 +113,7 @@ export default function SignupMentee() {
 											type="email"
 											placeholder="email"
 											value={email}
-											onChange={e =>
-												setEmail(e.target.value)
-											}
+											onChange={e => setEmail(e.target.value)}
 											// autoComplete="on"
 											required
 											className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-md placeholder:text-gray-400  sm:text-sm sm:leading-6 pl-3"
@@ -154,11 +134,7 @@ export default function SignupMentee() {
 											type="password"
 											placeholder="Password"
 											value={password}
-											onChange={e =>
-												setPassword(
-													e.target.value
-												)
-											}
+											onChange={e => setPassword(e.target.value)}
 											// autoComplete="off"
 											required
 											className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-md placeholder:text-gray-400 sm:text-sm sm:leading-6 pl-3"
@@ -176,11 +152,7 @@ export default function SignupMentee() {
 											name="confirm_password"
 											type="password"
 											value={confirmPassword}
-											onChange={e =>
-												setConfirmPassword(
-													e.target.value
-												)
-											}
+											onChange={e => setConfirmPassword(e.target.value)}
 											placeholder="Confirm Password"
 											// autoComplete="off"
 											required
@@ -219,9 +191,7 @@ export default function SignupMentee() {
 						</h2>
 						<p className="mt-4 text-xs font-light leading-5 text-green-200">
 							Join members from over{' '}
-							<strong className="font-bold text-white">
-								141+ countries
-							</strong>{' '}
+							<strong className="font-bold text-white">141+ countries</strong>{' '}
 							to <br />
 							learn from curated mentors in tech.
 						</p>

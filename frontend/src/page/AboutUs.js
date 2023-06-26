@@ -6,9 +6,7 @@ import People from '../assets/People.json';
 
 const AboutUs = () => {
 	const navigate = useNavigate();
-	const sessionUser = useSelector(
-		state => state.session.user
-	);
+	const sessionUser = useSelector(state => state.session.user);
 
 	if (!sessionUser) {
 		return navigate('/login');
@@ -32,18 +30,11 @@ const AboutUs = () => {
 							Dashboard
 						</a>
 						<h1 className="text-5xl font-bold leading-none">
-							Hello and{' '}
-							<span className="text-mentor1">
-								welcome
-							</span>{' '}
-							👋
+							Hello and <span className="text-mentor1">welcome</span> 👋
 						</h1>
 						<p className="mt-6 mb-8 text-base text-dark4">
 							Use this website to connect with
-							<strong>
-								{' '}
-								experienced mentors
-							</strong>
+							<strong> experienced mentors</strong>
 							<br />
 							from all over the world
 						</p>
@@ -65,24 +56,17 @@ const AboutUs = () => {
 				<section className="mb-32">
 					<div className="flex flex-wrap">
 						<div className="mb-6 w-full shrink-0 grow-0 basis-auto px-3 lg:mb-0 lg:w-4/12">
-							<p className="mb-6 font-bold uppercase text-gray-400">
-								Features
-							</p>
+							<p className="mb-6 font-bold uppercase text-gray-400">Features</p>
 							<h2 className="mb-6 text-3xl font-bold">
 								Why is it so
-								<u className="text-mentor1">
-									{' '}
-									great?
-								</u>
+								<u className="text-mentor1"> great?</u>
 							</h2>
 
 							<p className="mb-12 text-dark4 text-sm">
-								If you’re looking for advice,
-								jamming or networking -
+								If you’re looking for advice, jamming or networking -
 								<strong> DevelopMe </strong>
-								lets you freely schedule a 1:1
-								mentorship session in fun new ways
-								and work with them directly.
+								lets you freely schedule a 1:1 mentorship session in fun new
+								ways and work with them directly.
 							</p>
 						</div>
 
@@ -112,17 +96,12 @@ const AboutUs = () => {
 												Connect with Mentors
 											</p>
 											<p>
-												Our platform facilitates
-												seamless connections
-												between developers and
-												mentors.
+												Our platform facilitates seamless connections between
+												developers and mentors.
 											</p>
 											<p className="pt-2">
-												Developers can find
-												experienced mentors who
-												can offer valuable
-												insights, advice, and
-												support throughout their
+												Developers can find experienced mentors who can offer
+												valuable insights, advice, and support throughout their
 												journey.
 											</p>
 										</div>
@@ -153,16 +132,12 @@ const AboutUs = () => {
 												Video Calls
 											</p>
 											<p>
-												To enhance the mentoring
-												experience, we provide a
-												video call feature.
+												To enhance the mentoring experience, we provide a video
+												call feature.
 											</p>
 											<p className="pt-2">
-												This allows developers and
-												mentors to have
-												face-to-face interactions,
-												fostering effective
-												communication and
+												This allows developers and mentors to have face-to-face
+												interactions, fostering effective communication and
 												personalized guidance.
 											</p>
 										</div>
@@ -193,18 +168,12 @@ const AboutUs = () => {
 												Ai Chat
 											</p>
 											<p>
-												Our website includes Ali
-												Chat, a built-in chat
-												feature designed
-												specifically for
-												developers and mentors.
+												Our website includes Ali Chat, a built-in chat feature
+												designed specifically for developers and mentors.
 											</p>
 											<p className="pt-2">
-												It enables real-time
-												messaging, making it
-												convenient for users to
-												ask questions, seek
-												advice, and engage in
+												It enables real-time messaging, making it convenient for
+												users to ask questions, seek advice, and engage in
 												meaningful discussions.
 											</p>
 										</div>
@@ -235,21 +204,14 @@ const AboutUs = () => {
 												Job Search
 											</p>
 											<p className="">
-												In addition to mentorship,
-												we understand the
-												importance of career
-												growth. Our website offers
-												a job search feature that
-												connects developers with
-												relevant job
+												In addition to mentorship, we understand the importance
+												of career growth. Our website offers a job search
+												feature that connects developers with relevant job
 												opportunities.
 											</p>
 											<p className="pt-2">
-												This helps developers
-												explore new career
-												prospects and find
-												suitable positions within
-												the industry.
+												This helps developers explore new career prospects and
+												find suitable positions within the industry.
 											</p>
 										</div>
 									</div>
@@ -271,9 +233,7 @@ const AboutUs = () => {
 								<section className="mb-8">
 									<div className="flex justify-center">
 										<div className="text-center md:max-w-xl lg:max-w-3xl">
-											<h2 className="px-6 text-xl font-bold">
-												Contact us
-											</h2>
+											<h2 className="px-6 text-xl font-bold">Contact us</h2>
 										</div>
 									</div>
 
@@ -298,24 +258,16 @@ const AboutUs = () => {
 																{person.name}
 															</h4>
 															<div className="text-dark5 text-xs">
-																<p>
-																	{person.role}
-																</p>
-																<p>
-																	{person.email}
-																</p>
+																<p>{person.role}</p>
+																<p>{person.email}</p>
 																<ul className="mt-2 flex gap-x-3 items-center justify-center">
 																	<li className="flex">
 																		<a
-																			href={
-																				person.githubUrl
-																			}
+																			href={person.githubUrl}
 																			className="text-gray-400 hover:text-gray-500"
 																			target="_blank"
 																			rel="noreferrer">
-																			<span className="sr-only">
-																				GitHub
-																			</span>
+																			<span className="sr-only">GitHub</span>
 																			<svg
 																				className="h-4 w-4"
 																				aria-hidden="true"
@@ -327,15 +279,11 @@ const AboutUs = () => {
 																	</li>
 																	<li>
 																		<a
-																			href={
-																				person.linkedinUrl
-																			}
+																			href={person.linkedinUrl}
 																			className="text-gray-400 hover:text-gray-500"
 																			target="_blank"
 																			rel="noreferrer">
-																			<span className="sr-only">
-																				LinkedIn
-																			</span>
+																			<span className="sr-only">LinkedIn</span>
 																			<svg
 																				className="h-4 w-4"
 																				aria-hidden="true"

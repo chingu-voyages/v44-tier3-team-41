@@ -1,8 +1,8 @@
-import { EnvelopeIcon } from '@heroicons/react/20/solid';
-import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
+import {EnvelopeIcon} from '@heroicons/react/20/solid';
+import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
+import {Link} from 'react-router-dom';
 
-function MentorCard({ mentor }) {
+function MentorCard({mentor}) {
 	if (!mentor) {
 		return <div>No mentor data</div>;
 	}
@@ -25,9 +25,7 @@ function MentorCard({ mentor }) {
 						{mentor.name}
 					</h3>
 					<dl className="mt-1 flex flex-grow flex-col justify-between">
-						<dd className="text-xs text-gray-500">
-							{mentor.role}
-						</dd>
+						<dd className="text-xs text-gray-500">{mentor.role}</dd>
 						<dd className="mt-2">
 							<span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
 								{mentor.company}
