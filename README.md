@@ -93,8 +93,12 @@ Our platform caters to aspiring software developers who are seeking guidance and
 
 <br/>
 <br/>
+=======
+# Images
 
-![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3328ac8d-2561-4d65-bf5d-6d375fe7c5cc)
+### - Landing Page:
+<img width="1664" alt="Screenshot 2023-07-09 at 12 08 17" src="https://github.com/chingu-voyages/v44-tier3-team-41/assets/56822813/fe0e51bd-d60f-4001-b159-d99ba1028695">
+
 
 <!-- GETTING STARTED -->
 
