@@ -75,7 +75,7 @@
 
 ## About The Project
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Our platform caters to aspiring software developers who are seeking guidance and support from senior professionals. Whether they need assistance in landing a job, upskilling in specific technologies, or simply connecting with like-minded individuals, our platform provides a valuable resource.
 
 ### Built With:
 
@@ -91,9 +91,8 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Images
-
-### - Landing Page:
+<br/>
+<br/>
 
 ![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3328ac8d-2561-4d65-bf5d-6d375fe7c5cc)
 
@@ -177,9 +176,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Goals
 
-- [ ] Functionality to assign taks to Mentees by Mentors
+- [ ] Functionality to assign tasks to Mentees by Mentors
 - [ ] Functionality for Mentees to connect with Multiple Mentors
 - [ ] Mobile Responsiveness
+- [ ] Include DevOps
+- [ ] Incorporate MongoDB
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,28 +201,30 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LICENSE -->
-<!-- ## License
+
+## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
-<!-- ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+## Contact
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Alex Hunt - [LinkedIn](https://www.linkedin.com/in/alexhuntdev)
+
+Yi Lin - [LinkedIn](https://www.linkedin.com/in/yi-lin-97b694232)
+
+Ali Mora - [LinkedIn](https://www.linkedin.com/in/daurius-ali-swarts-1b151420b/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
- -->
 
 <!-- ACKNOWLEDGMENTS -->
-<!-- ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+## Acknowledgments
+
+[Chingu.io](https://www.chingu.io/)
 
 <!-- * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
