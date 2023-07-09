@@ -1,5 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
@@ -26,20 +24,26 @@
   <a href="">
     <img width="200" alt="DM_logo" src="./frontend/public/dm_logo_white_blue_clear.png"></a>
 
-  <h3 align="center">DevelopMe (ADPList Clone)</h3>
+  <h3 align="center">DevelopMe</h3>
 
   <p align="center">
+  Platform for aspiring software developers to connect with Mentors.
+    <br />
+    <br />
     This is an social application inspired by the popular mentor site <a href="https://app.adplist.org">ADPList</a>. Users can view experienced mentor from industry, chat with mentor.
     <br />
     <br />
     <br />
     <a href="https://develop-me.onrender.com/" target="_blank">Live Site</a>
     ·
+    <a href="https://github.com/chingu-voyages/v44-tier3-team-41/issues" target="_blank">Report Bug</a>
+    ·
     <a href="https://dbdiagram.io/d/64545220dca9fb07c489563d">DB Schema</a>
     <!-- ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
   </p>
 </div>
+    <br />
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -92,22 +96,6 @@
 ### - Landing Page:
 
 ![image](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3328ac8d-2561-4d65-bf5d-6d375fe7c5cc)
-
-### - Dashboard:
-
-![image-1](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/3fde4f2c-5bcf-4963-a51d-d8f5876b529b)
-
-### - Mentor search Page:
-
-![image-4](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/582fd48a-6250-4678-89bf-52b3a34eef1a)
-
-### - Chat:
-
-![image-3](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/ac62aba0-a284-4cdc-91c2-646fa804662e)
-
-### - Video Call:
-
-![image-2](https://github.com/chingu-voyages/v44-tier3-team-41/assets/95322089/e5ff9a68-5c2d-4ad8-9886-5a6d806b427c)
 
 <!-- GETTING STARTED -->
 
