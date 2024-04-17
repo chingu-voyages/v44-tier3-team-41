@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { CheckCircleIcon } from '@heroicons/react/20/solid';
+import React, {useState} from 'react';
+import {CheckCircleIcon} from '@heroicons/react/20/solid';
 import axios from 'axios';
-import { UserIcon } from '@heroicons/react/24/outline';
-import { useDispatch } from 'react-redux';
-import { editMenteeThunk } from '../../store/mentee';
-import { useNavigate } from 'react-router';
-import PasswordUpdate from './PasswordUpdate'
+import {UserIcon} from '@heroicons/react/24/outline';
+import {useDispatch} from 'react-redux';
+import {editMenteeThunk} from '../../store/mentee';
+import {useNavigate} from 'react-router';
+import PasswordUpdate from './PasswordUpdate';
 
-export default function ProfileMentee({ currentUser }) {
+export default function ProfileMentee({currentUser}) {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ export default function ProfileMentee({ currentUser }) {
 	const [success, setSuccess] = useState(false);
 
 	function handleImageChange(event) {
-		const { files } = event.target;
+		const {files} = event.target;
 		if (files.length !== 0) {
 			setImage(prevState => files[0]);
 			setImagePreview(URL.createObjectURL(files[0]));
@@ -149,7 +149,6 @@ export default function ProfileMentee({ currentUser }) {
 
 	return (
 		<>
-
 			<forsetSkillm>
 				<div className="bg-light1 p-8 rounded-lg shadow-lg mt-4">
 					<div className="space-y-12">
@@ -434,7 +433,8 @@ export default function ProfileMentee({ currentUser }) {
 								</div>
 								<div className="ml-3">
 									<p className="text-sm font-medium text-green-800">
-										Successfully uploaded, refresh to view the updated inforamtion
+										Successfully uploaded, refresh to view the updated
+										inforamtion
 									</p>
 								</div>
 							</div>

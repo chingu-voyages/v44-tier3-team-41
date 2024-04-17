@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { MapPinIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
+import React, {useState, useEffect} from 'react';
+import {MapPinIcon, CheckCircleIcon} from '@heroicons/react/20/solid';
 import axios from 'axios';
 
 function JobBoard() {
@@ -25,7 +25,6 @@ function JobBoard() {
 		try {
 			const response = await axios.request(options);
 			setSearchResult(response.data.data);
-
 		} catch (error) {
 			console.error(error);
 		}
@@ -66,7 +65,6 @@ function JobBoard() {
 			try {
 				const response = await axios.request(options);
 				setSearchResult(response.data.data);
-
 			} catch (error) {
 				console.error(error);
 			}
@@ -79,7 +77,9 @@ function JobBoard() {
 				<div className="flex gap-x-4">
 					<form className="w-full max-w-md lg:col-span-5">
 						<div className="flex gap-x-4">
-							<label htmlFor="search" className="sr-only">
+							<label
+								htmlFor="search"
+								className="sr-only">
 								search
 							</label>
 							<input
@@ -106,7 +106,9 @@ function JobBoard() {
 				</div>
 			</div>
 			<div className="relative">
-				<div className="absolute inset-0 flex items-center" aria-hidden="true">
+				<div
+					className="absolute inset-0 flex items-center"
+					aria-hidden="true">
 					<div className="w-full border-t border-gray-300" />
 				</div>
 				<div className="relative flex justify-center my-5">
@@ -183,7 +185,7 @@ function JobBoard() {
 								onClick={() =>
 									window.open(
 										currentJob?.job_google_link ??
-										'https://careers.google.com/jobs/results/',
+											'https://careers.google.com/jobs/results/',
 										'_blank'
 									)
 								}

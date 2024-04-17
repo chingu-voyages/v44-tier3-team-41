@@ -9,14 +9,9 @@ export default function Scroll() {
 			try {
 				const logos = await Promise.all(
 					Tech.map(async logo => {
-						const response = await fetch(
-							logo.imageUrl
-						);
+						const response = await fetch(logo.imageUrl);
 						if (!response.ok) {
-							throw new Error(
-								'Failed to fetch image: ' +
-									response.status
-							);
+							throw new Error('Failed to fetch image: ' + response.status);
 						}
 						const blob = await response.blob();
 						const url = URL.createObjectURL(blob);
@@ -28,10 +23,7 @@ export default function Scroll() {
 				);
 				setTechLogos(logos);
 			} catch (error) {
-				console.error(
-					'Error fetching tech logos:',
-					error
-				);
+				console.error('Error fetching tech logos:', error);
 			}
 		};
 

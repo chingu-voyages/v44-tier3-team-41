@@ -1,8 +1,5 @@
 import React, {useEffect} from 'react';
-import {
-	useSelector,
-	useDispatch,
-} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {getAllMentorsThunk} from '../store/mentor';
 import {getAllMenteesThunk} from '../store/mentee';
 import {
@@ -18,18 +15,12 @@ function classNames(...classes) {
 
 const Report = () => {
 	const dispatch = useDispatch();
-	const mentors = useSelector(
-		state => state.mentor.search
-	);
-	const mentees = useSelector(
-		state => state.mentee.search
-	);
+	const mentors = useSelector(state => state.mentor.search);
+	const mentees = useSelector(state => state.mentee.search);
 	const companyGroup = mentors
 		? sortArrayDesc(groupAndCountCompany(mentors))
 		: [];
-	const roleGroup = mentors
-		? sortArrayDesc(groupAndCountRole(mentors))
-		: [];
+	const roleGroup = mentors ? sortArrayDesc(groupAndCountRole(mentors)) : [];
 
 	const stats = [
 		{

@@ -1,15 +1,9 @@
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import {
-	Bars3Icon,
-	XMarkIcon,
-} from '@heroicons/react/24/outline';
-import {
-	Link,
-	useNavigate,
-} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../../store/session';
+import {useState} from 'react';
+import {Dialog} from '@headlessui/react';
+import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
+import {Link, useNavigate} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {logoutThunk} from '../../store/session';
 
 const navigation = [
 	{
@@ -22,12 +16,8 @@ const navigation = [
 	},
 ];
 
-export default function Hero({
-	sessionUser,
-	mentors,
-}) {
-	const [mobileMenuOpen, setMobileMenuOpen] =
-		useState(false);
+export default function Hero({sessionUser, mentors}) {
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -55,12 +45,8 @@ export default function Hero({
 						<button
 							type="button"
 							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-							onClick={() =>
-								setMobileMenuOpen(true)
-							}>
-							<span className="sr-only">
-								Open main menu
-							</span>
+							onClick={() => setMobileMenuOpen(true)}>
+							<span className="sr-only">Open main menu</span>
 							<Bars3Icon
 								className="h-6 w-6"
 								aria-hidden="true"
@@ -74,7 +60,11 @@ export default function Hero({
 								<a
 									key={item.name}
 									href={item.href}
-									className={`text-sm font-normal text-gray-600 py-2 px-3 bg-[#fafafa] rounded-lg hover:shadow-lg hover:font-bold hover:text-white ${item.name === "Become a mentor" ? "hover:bg-[#302e81]" : "hover:bg-[#166434]"}`}>
+									className={`text-sm font-normal text-gray-600 py-2 px-3 bg-[#fafafa] rounded-lg hover:shadow-lg hover:font-bold hover:text-white ${
+										item.name === 'Become a mentor'
+											? 'hover:bg-[#302e81]'
+											: 'hover:bg-[#166434]'
+									}`}>
 									{item.name}
 								</a>
 							))}
@@ -120,9 +110,7 @@ export default function Hero({
 							<a
 								href="/"
 								className="-m-1.5 p-1.5">
-								<span className="sr-only">
-									DevelopMe
-								</span>
+								<span className="sr-only">DevelopMe</span>
 								<img
 									className="h-16 w-auto"
 									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
@@ -132,12 +120,8 @@ export default function Hero({
 							<button
 								type="button"
 								className="-m-2.5 rounded-md p-2.5 text-gray-700"
-								onClick={() =>
-									setMobileMenuOpen(false)
-								}>
-								<span className="sr-only">
-									Close menu
-								</span>
+								onClick={() => setMobileMenuOpen(false)}>
+								<span className="sr-only">Close menu</span>
 								<XMarkIcon
 									className="h-6 w-6"
 									aria-hidden="true"
@@ -179,13 +163,9 @@ export default function Hero({
 						</h1>
 						<p className="mt-6 text-base leading-6 text-gray-600">
 							Book and meet over
-							<strong>
-								{' '}
-								{mentors.length - 1}+ mentors{' '}
-							</strong>
+							<strong> {mentors.length - 1}+ mentors </strong>
 							for 1:1
-							<br /> mentorship in our global
-							community
+							<br /> mentorship in our global community
 						</p>
 						<hr className="mt-4 border-blue-500 w-16 border-2" />
 					</div>

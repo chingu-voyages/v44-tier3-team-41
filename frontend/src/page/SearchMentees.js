@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import MenteeCard from '../components/MenteeCard/MenteeCard';
-import { useSelector, useDispatch } from 'react-redux';
-import { getAllMenteesThunk } from '../store/mentee';
+import {useSelector, useDispatch} from 'react-redux';
+import {getAllMenteesThunk} from '../store/mentee';
 
 function SearchMentees() {
 	const dispatch = useDispatch();
@@ -10,12 +10,11 @@ function SearchMentees() {
 	const mentees = useSelector(state => state.mentee.search);
 
 	useEffect(() => {
-
 		const fetchData = async () => {
-			await dispatch(getAllMenteesThunk())
-		}
-		fetchData()
-	}, [dispatch])
+			await dispatch(getAllMenteesThunk());
+		};
+		fetchData();
+	}, [dispatch]);
 
 	async function handleOnSubmit(e) {
 		e.preventDefault();
@@ -25,7 +24,6 @@ function SearchMentees() {
 			};
 
 			await dispatch(getAllMenteesThunk(body));
-
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -34,7 +32,7 @@ function SearchMentees() {
 		e.preventDefault();
 		setSearchField('goal');
 		setSearchTerm('');
-		await dispatch(getAllMenteesThunk())
+		await dispatch(getAllMenteesThunk());
 	}
 
 	return (
@@ -53,7 +51,9 @@ function SearchMentees() {
 				</div>
 				<form className="w-auto max-w-md lg:col-span-5">
 					<div className="flex md:gap-x-4 gap-x-2">
-						<label htmlFor="search" className="sr-only">
+						<label
+							htmlFor="search"
+							className="sr-only">
 							search
 						</label>
 						<input
@@ -79,7 +79,9 @@ function SearchMentees() {
 				</form>
 			</div>
 			<div className="relative">
-				<div className="absolute inset-0 flex items-center" aria-hidden="true">
+				<div
+					className="absolute inset-0 flex items-center"
+					aria-hidden="true">
 					<div className="w-full border-t border-gray-300" />
 				</div>
 				<div className="relative flex justify-center my-5">
@@ -91,7 +93,10 @@ function SearchMentees() {
 			<div>
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{mentees?.map((mentee, index) => (
-						<MenteeCard key={index} mentee={mentee} />
+						<MenteeCard
+							key={index}
+							mentee={mentee}
+						/>
 					))}
 				</ul>
 			</div>

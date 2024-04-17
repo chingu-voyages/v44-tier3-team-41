@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import MentorCard from '../components/MentorCard/MentorCard';
-import { useSelector, useDispatch } from 'react-redux';
-import { getAllMentorsThunk } from '../store/mentor';
+import {useSelector, useDispatch} from 'react-redux';
+import {getAllMentorsThunk} from '../store/mentor';
 
 function SearchMentors() {
 	const dispatch = useDispatch();
@@ -10,12 +10,11 @@ function SearchMentors() {
 	const mentors = useSelector(state => state.mentor.search);
 
 	useEffect(() => {
-
 		const fetchData = async () => {
-			await dispatch(getAllMentorsThunk())
-		}
-		fetchData()
-	}, [dispatch])
+			await dispatch(getAllMentorsThunk());
+		};
+		fetchData();
+	}, [dispatch]);
 
 	async function handleOnSubmit(e) {
 		e.preventDefault();
@@ -33,7 +32,7 @@ function SearchMentors() {
 		e.preventDefault();
 		setSearchField('expertise');
 		setSearchTerm('');
-		await dispatch(getAllMentorsThunk())
+		await dispatch(getAllMentorsThunk());
 	}
 
 	return (
@@ -53,7 +52,9 @@ function SearchMentors() {
 				</div>
 				<form className="w-auto max-w-md lg:col-span-5">
 					<div className="flex md:gap-x-4 gap-x-2">
-						<label htmlFor="search" className="sr-only">
+						<label
+							htmlFor="search"
+							className="sr-only">
 							search
 						</label>
 						<input
@@ -79,7 +80,9 @@ function SearchMentors() {
 				</form>
 			</div>
 			<div className="relative">
-				<div className="absolute inset-0 flex items-center" aria-hidden="true">
+				<div
+					className="absolute inset-0 flex items-center"
+					aria-hidden="true">
 					<div className="w-full border-t border-gray-300" />
 				</div>
 				<div className="relative flex justify-center my-5">
@@ -91,7 +94,10 @@ function SearchMentors() {
 			<div>
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{mentors?.map((mentor, index) => (
-						<MentorCard key={index} mentor={mentor} />
+						<MentorCard
+							key={index}
+							mentor={mentor}
+						/>
 					))}
 				</ul>
 			</div>

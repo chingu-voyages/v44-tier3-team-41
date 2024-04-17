@@ -1,16 +1,7 @@
 import React, {useState, Fragment} from 'react';
-import {
-	useDispatch,
-	useSelector,
-} from 'react-redux';
-import {
-	Link,
-	useNavigate,
-} from 'react-router-dom';
-import {
-	Listbox,
-	Transition,
-} from '@headlessui/react';
+import {useDispatch, useSelector} from 'react-redux';
+import {Link, useNavigate} from 'react-router-dom';
+import {Listbox, Transition} from '@headlessui/react';
 import {
 	CheckIcon,
 	ChevronUpDownIcon,
@@ -33,36 +24,21 @@ export default function LoginForm() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [errors, setErrors] = useState([]);
-	const [classification, setClassification] =
-		useState(roles[0]);
+	const [classification, setClassification] = useState(roles[0]);
 
 	const demoLoginMentor = async e => {
 		e.preventDefault();
 
-		return await dispatch(
-			loginThunk(
-				'mentor@gu.io',
-				'password',
-				'Mentor'
-			)
-		);
+		return await dispatch(loginThunk('mentor@gu.io', 'password', 'Mentor'));
 	};
 
 	const demoLoginMentee = async e => {
 		e.preventDefault();
 
-		return await dispatch(
-			loginThunk(
-				'john.doe@cgu.io',
-				'password',
-				'Mentee'
-			)
-		);
+		return await dispatch(loginThunk('john.doe@cgu.io', 'password', 'Mentee'));
 	};
 
-	const sessionUser = useSelector(
-		state => state.session.user
-	);
+	const sessionUser = useSelector(state => state.session.user);
 
 	if (sessionUser) navigate('/dashboard/aboutUs');
 
@@ -71,15 +47,10 @@ export default function LoginForm() {
 		setErrors([]);
 
 		return await dispatch(
-			loginThunk(
-				email,
-				password,
-				classification.name
-			)
+			loginThunk(email, password, classification.name)
 		).catch(async res => {
 			const data = await res.json();
-			if (data && data.errors)
-				setErrors(data.errors);
+			if (data && data.errors) setErrors(data.errors);
 		});
 	};
 
@@ -169,9 +140,7 @@ export default function LoginForm() {
 													{roles.map(role => (
 														<Listbox.Option
 															key={role.id}
-															className={({
-																active,
-															}) =>
+															className={({active}) =>
 																classNames(
 																	active
 																		? 'bg-indigo-600 text-white'
@@ -180,10 +149,7 @@ export default function LoginForm() {
 																)
 															}
 															value={role}>
-															{({
-																classification,
-																active,
-															}) => (
+															{({classification, active}) => (
 																<>
 																	<span
 																		className={classNames(
@@ -232,9 +198,7 @@ export default function LoginForm() {
 										type="email"
 										placeholder="email"
 										value={email}
-										onChange={e =>
-											setEmail(e.target.value)
-										}
+										onChange={e => setEmail(e.target.value)}
 										autoComplete="email"
 										required
 										className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-md   placeholder:text-gray-400 sm:text-sm sm:leading-6 pl-3"
@@ -257,9 +221,7 @@ export default function LoginForm() {
 										type="password"
 										value={password}
 										placeholder="password"
-										onChange={e =>
-											setPassword(e.target.value)
-										}
+										onChange={e => setPassword(e.target.value)}
 										autoComplete="current-password"
 										required
 										className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-md  placeholder:text-gray-400  sm:text-sm sm:leading-6 pl-3"
@@ -304,10 +266,8 @@ export default function LoginForm() {
 					</h2>
 					<p className="mt-4 text-xs font-light leading-5 text-gray-200">
 						Join members from over{' '}
-						<strong className="font-bold text-white">
-							141+ countries
-						</strong>{' '}
-						to <br />
+						<strong className="font-bold text-white">141+ countries</strong> to{' '}
+						<br />
 						learn from curated mentors in tech.
 					</p>
 					<div className="mt-10">

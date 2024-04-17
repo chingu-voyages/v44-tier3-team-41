@@ -1,8 +1,8 @@
-import { EnvelopeIcon } from '@heroicons/react/20/solid';
-import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
+import {EnvelopeIcon} from '@heroicons/react/20/solid';
+import {ChatBubbleLeftIcon} from '@heroicons/react/24/outline';
+import {Link} from 'react-router-dom';
 
-function MenteeCard({ mentee }) {
+function MenteeCard({mentee}) {
 	if (!mentee) {
 		return <div>No mentee data</div>;
 	}
@@ -25,9 +25,7 @@ function MenteeCard({ mentee }) {
 						{mentee.name}
 					</h3>
 					<dl className="mt-1 flex flex-grow flex-col justify-between">
-						<dd className="text-xs text-gray-500">
-							{mentee.occupation}
-						</dd>
+						<dd className="text-xs text-gray-500">{mentee.occupation}</dd>
 					</dl>
 				</div>
 			</Link>

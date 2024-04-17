@@ -1,15 +1,7 @@
-import { Fragment, useState } from 'react';
-import { useSelector } from 'react-redux';
-import {
-	Link,
-	Outlet,
-	useNavigate,
-} from 'react-router-dom';
-import {
-	Dialog,
-	Menu,
-	Transition,
-} from '@headlessui/react';
+import {Fragment, useState} from 'react';
+import {useSelector} from 'react-redux';
+import {Link, Outlet, useNavigate} from 'react-router-dom';
+import {Dialog, Menu, Transition} from '@headlessui/react';
 import {
 	Bars3Icon,
 	XMarkIcon,
@@ -21,9 +13,9 @@ import {
 	FaceSmileIcon,
 	VideoCameraIcon,
 } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../store/session';
+import {MagnifyingGlassIcon} from '@heroicons/react/20/solid';
+import {useDispatch} from 'react-redux';
+import {logoutThunk} from '../store/session';
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
@@ -32,15 +24,11 @@ function classNames(...classes) {
 function DashBoard() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const [sidebarOpen, setSidebarOpen] =
-		useState(false);
-	const [currentTab, setCurrentTab] =
-		useState('Mentors');
+	const [sidebarOpen, setSidebarOpen] = useState(false);
+	const [currentTab, setCurrentTab] = useState('Mentors');
 	let navigation;
 
-	const currentUser = useSelector(
-		state => state.session.user
-	);
+	const currentUser = useSelector(state => state.session.user);
 
 	const handleLogout = async e => {
 		e.preventDefault();
@@ -205,12 +193,8 @@ function DashBoard() {
 												<button
 													type="button"
 													className="-m-2.5 p-2.5"
-													onClick={() =>
-														setSidebarOpen(false)
-													}>
-													<span className="sr-only">
-														Close sidebar
-													</span>
+													onClick={() => setSidebarOpen(false)}>
+													<span className="sr-only">Close sidebar</span>
 													<XMarkIcon
 														className="h-6 w-6 text-white"
 														aria-hidden="true"
@@ -232,37 +216,29 @@ function DashBoard() {
 												<ul className="flex flex-1 flex-col gap-y-7">
 													<li>
 														<ul className="-mx-2 space-y-1">
-															{navigation.map(
-																item => (
-																	<li
-																		key={
-																			item.name
-																		}>
-																		<Link
-																			to={
-																				item.href
-																			}
+															{navigation.map(item => (
+																<li key={item.name}>
+																	<Link
+																		to={item.href}
+																		className={classNames(
+																			item.current
+																				? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
+																				: 'text-light3 hover:text-white hover:bg-dark3',
+																			'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+																		)}>
+																		<item.icon
 																			className={classNames(
 																				item.current
-																					? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
-																					: 'text-light3 hover:text-white hover:bg-dark3',
-																				'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-																			)}>
-																			<item.icon
-																				className={classNames(
-																					item.current
-																						? 'text-white'
-																						: 'text-light3 group-hover:text-white',
-																					'h-6 w-6 shrink-0'
-																				)}
-																				aria-hidden="true"
-																			/>
-																			{item.name}{' '}
-																			{ }
-																		</Link>
-																	</li>
-																)
-															)}
+																					? 'text-white'
+																					: 'text-light3 group-hover:text-white',
+																				'h-6 w-6 shrink-0'
+																			)}
+																			aria-hidden="true"
+																		/>
+																		{item.name} {}
+																	</Link>
+																</li>
+															))}
 														</ul>
 													</li>
 												</ul>
@@ -285,7 +261,9 @@ function DashBoard() {
 					<div className="hidden relative lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
 						{/* Sidebar component, swap this element with another sidebar if you like */}
 						<div className="">
-							<a href="/" className="">
+							<a
+								href="/"
+								className="">
 								<img
 									className="h-16 w-auto ml-10"
 									src="https://res.cloudinary.com/yilin1234/image/upload/v1684821275/dm_logo_wht_blue_ca0ot0.png"
@@ -303,11 +281,7 @@ function DashBoard() {
 												<li key={item.name}>
 													<Link
 														to={item.href}
-														onClick={() =>
-															setCurrentTab(
-																item.name
-															)
-														}
+														onClick={() => setCurrentTab(item.name)}
 														className={classNames(
 															item.current
 																? 'bg-gradient-to-r from-dark1 to-dark2 text-white shadow-lg shadow-dark5/30 border border-dark5'
@@ -338,8 +312,7 @@ function DashBoard() {
 										Our vision.
 									</h2>
 									<p className="mt-4 text-xs font-light leading-5 text-light3">
-										Platform for aspiring software
-										developers to{' '}
+										Platform for aspiring software developers to{' '}
 										<strong className="font-bold text-light1">
 											Connect with Mentors
 										</strong>
@@ -349,11 +322,7 @@ function DashBoard() {
 										<button
 											type=""
 											className="flex w-full justify-center rounded-md bg-dark1 px-3 py-1.5 text-sm font-medium leading-6 text-white shadow-sm hover:bg-dark4 focus-visible:outline  border border-dark4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-100"
-											onClick={() =>
-												navigate(
-													'/dashboard/aboutUs'
-												)
-											}>
+											onClick={() => navigate('/dashboard/aboutUs')}>
 											About us
 										</button>
 									</div>
@@ -371,8 +340,7 @@ function DashBoard() {
 						</div>
 						<div className="p-2 absolute bottom-[50px] right-10">
 							<p className="text-xs text-dark6">
-								© 2023 DevelopMe. All rights
-								reserved.
+								© 2023 DevelopMe. All rights reserved.
 							</p>
 						</div>
 					</div>
@@ -382,12 +350,8 @@ function DashBoard() {
 							<button
 								type="button"
 								className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
-								onClick={() =>
-									setSidebarOpen(true)
-								}>
-								<span className="sr-only">
-									Open sidebar
-								</span>
+								onClick={() => setSidebarOpen(true)}>
+								<span className="sr-only">Open sidebar</span>
 								<Bars3Icon
 									className="h-6 w-6"
 									aria-hidden="true"
@@ -414,14 +378,10 @@ function DashBoard() {
 										as="div"
 										className="relative">
 										<Menu.Button className="-m-1.5 flex items-center p-1.5">
-											<span className="sr-only">
-												Open user menu
-											</span>
+											<span className="sr-only">Open user menu</span>
 											<img
 												className="h-10 w-10 rounded-full bg-gray-50 overflow-hidden object-cover shadow-md border"
-												src={
-													currentUser.profileImg
-												}
+												src={currentUser.profileImg}
 												alt=""
 											/>
 											<span className="hidden lg:flex lg:items-center">
@@ -430,7 +390,6 @@ function DashBoard() {
 													aria-hidden="true">
 													{currentUser.name}
 												</span>
-
 											</span>
 
 											<button

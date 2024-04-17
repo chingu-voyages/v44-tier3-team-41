@@ -8,13 +8,10 @@ import {
 	Legend,
 } from 'recharts';
 
-function BarChart({ title, data }) {
-
+function BarChart({title, data}) {
 	return (
 		<div className="rounded-lg mb-5 bg-white shadow-lg py-6">
-			<p className="text-center font-bold text-sm text-gray-700">
-				{title}
-			</p>
+			<p className="text-center font-bold text-sm text-gray-700">{title}</p>
 			<ComposedChart
 				layout="vertical"
 				width={500}
@@ -29,13 +26,13 @@ function BarChart({ title, data }) {
 				<CartesianGrid stroke="#f5f5f5" />
 				<XAxis
 					type="number"
-					tick={{ fontSize: '12px' }} // Adjust the label text size here
+					tick={{fontSize: '12px'}} // Adjust the label text size here
 				/>
 				<YAxis
 					dataKey="name"
 					type="category"
 					scale="band"
-					tick={{ fontSize: '12px' }} // Adjust the label text size here
+					tick={{fontSize: '12px'}} // Adjust the label text size here
 					tickLine={true} // Remove tick lines if necessary
 				/>
 				<Tooltip
@@ -62,7 +59,7 @@ function BarChart({ title, data }) {
 					barSize={30}
 					fill="url(#colorGradient)"
 					shape={props => {
-						const { x, y, width, height } = props;
+						const {x, y, width, height} = props;
 						return (
 							<g>
 								<defs>
@@ -83,9 +80,9 @@ function BarChart({ title, data }) {
 									</linearGradient>
 								</defs>
 								<path
-									d={`M${x},${y + height} h${width - 10
-										} v${-height} h${-width + 10
-										} L${x},${y} Z`}
+									d={`M${x},${y + height} h${width - 10} v${-height} h${
+										-width + 10
+									} L${x},${y} Z`}
 									fill="url(#colorGradient)"
 								/>
 							</g>
