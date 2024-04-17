@@ -24,15 +24,15 @@
   },
   "homepage": "https://github.com/chingu-voyages/v44-tier3-team-41#readme",
   "devDependencies": {
-    "eslint": "^8.41.0",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0"
   },
   "dependencies": {
     "react-infinite-scroll-component": "^6.1.0",
-    "scroll-animations-js": "^1.0.11"
+    "scroll-animations-js": "^1.0.12"
   }
 }
