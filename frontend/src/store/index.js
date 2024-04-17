@@ -1,5 +1,5 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import thunk from 'redux-thunk';
+import {thunk} from 'redux-thunk';
 import sessionReducer from './session';
 import mentorReducer from './mentor';
 import menteeReducer from './mentee';

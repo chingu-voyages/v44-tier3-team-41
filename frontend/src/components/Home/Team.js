@@ -12,8 +12,8 @@ export default function Team() {
 							Our team
 						</h2>
 						<p className="mt-1 text-sm leading-6 text-gray-500">
-							We’re a dynamic group of individuals
-							who are passionate about what we do
+							We’re a dynamic group of individuals who are passionate about what
+							we do
 						</p>
 					</div>
 					<div>
@@ -38,15 +38,11 @@ export default function Team() {
 											<ul className="mt-2 flex gap-x-3">
 												<li>
 													<a
-														href={
-															person.githubUrl
-														}
+														href={person.githubUrl}
 														className="text-gray-400 hover:text-gray-500"
 														target="_blank"
 														rel="noreferrer">
-														<span className="sr-only">
-															GitHub
-														</span>
+														<span className="sr-only">GitHub</span>
 														<svg
 															className="h-4 w-4"
 															aria-hidden="true"
@@ -58,15 +54,11 @@ export default function Team() {
 												</li>
 												<li>
 													<a
-														href={
-															person.linkedinUrl
-														}
+														href={person.linkedinUrl}
 														className="text-gray-400 hover:text-gray-500"
 														target="_blank"
 														rel="noreferrer">
-														<span className="sr-only">
-															LinkedIn
-														</span>
+														<span className="sr-only">LinkedIn</span>
 														<svg
 															className="h-4 w-4"
 															aria-hidden="true"
